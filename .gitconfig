@@ -2,6 +2,7 @@
   a = add
   au = add -u .
   br = branch
+  bl = blame
   sh = show
   sb = show-branch
   ds = diff --stat
@@ -12,6 +13,7 @@
   ci = commit
   df = diff
   w = whatchaned
+  cia = commit -a
   info = config --list
   summary = log --oneline
   rank = shortlog -sn --no-merges
