@@ -14,6 +14,7 @@
   df = diff
   w = whatchaned
   cia = commit -a
+  com = checkout master
   info = config --list
   summary = log --oneline
   rank = shortlog -sn --no-merges
