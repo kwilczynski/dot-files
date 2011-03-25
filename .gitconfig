@@ -1,0 +1,44 @@
+[alias]
+  a = add
+  au = add -u .
+  br = branch
+  sh = show
+  sb = show-branch
+  ds = diff --stat
+  ls = ls-files
+  st = status
+  co = checkout
+  cp = cherry-pick
+  ci = commit
+  df = diff
+  w = whatchaned
+  info = config --list
+  summary = log --oneline
+  rank = shortlog -sn --no-merges
+  tree = log --graph --oneline --decorate
+  pom = push origin master
+  amend = commit --amend -C HEAD
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
+  ui = true
+  pager = true
+
+[pack]
+  threads = 0
+
+[rename]
+  limit = 0
+
+[core]
+  pager = less -FRSX
+
+[push]
+  default = current
+
+[branch]
+  autosetuprebase = always
+
