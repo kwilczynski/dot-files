@@ -13,7 +13,10 @@
   cp = cherry-pick
   ci = commit
   df = diff
-  w = whatchaned
+  rb = rebase
+  pu = pull
+  w = whatchanged
+  rst = reset
   cia = commit -a
   com = checkout master
   info = config --list
@@ -42,7 +45,3 @@
 
 [push]
   default = current
-
-[branch]
-  autosetuprebase = always
-
