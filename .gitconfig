@@ -1,7 +1,8 @@
 [alias]
   a = add
   au = add -u .
-  br = branch
+  ap = add -p
+  br = branch -v
   bl = blame
   sh = show
   sb = show-branch
@@ -16,6 +17,8 @@
   rb = rebase
   pu = pull
   w = whatchanged
+  dfs = diff --staged
+  sts = status -s
   rst = reset
   cia = commit -a
   com = checkout master
@@ -24,7 +27,7 @@
   rank = shortlog -sn --no-merges
   tree = log --graph --oneline --decorate
   pom = push origin master
-  amend = commit --amend -C HEAD
+  amend = commit --amend
 
 [color]
   branch = auto
@@ -45,3 +48,7 @@
 
 [push]
   default = current
+
+[giggle]
+  main-window-maximized = true
+  main-window-view = HistoryView
