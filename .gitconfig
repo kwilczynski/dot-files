@@ -19,6 +19,7 @@
 	w = whatchanged
 	dfs = diff --staged
 	sts = status -s
+	ref = reflog
 	rst = reset
 	cia = commit -a
 	com = checkout master
