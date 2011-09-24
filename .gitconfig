@@ -1,54 +1,54 @@
 [alias]
-  a = add
-  au = add -u .
-  ap = add -p
-  br = branch -v
-  bl = blame
-  sh = show
-  sb = show-branch
-  ds = diff --stat
-  ls = ls-files
-  lo = log
-  st = status
-  co = checkout
-  cp = cherry-pick
-  ci = commit
-  df = diff
-  rb = rebase
-  pu = pull
-  w = whatchanged
-  dfs = diff --staged
-  sts = status -s
-  rst = reset
-  cia = commit -a
-  com = checkout master
-  info = config --list
-  summary = log --oneline
-  rank = shortlog -sn --no-merges
-  tree = log --graph --oneline --decorate
-  pom = push origin master
-  amend = commit --amend
+	a = add
+	au = add -u .
+	ap = add -p
+	br = branch -v
+	bl = blame
+	sh = show
+	sb = show-branch
+	ds = diff --stat
+	ls = ls-files
+	lo = log
+	st = status
+	co = checkout
+	cp = cherry-pick
+	ci = commit
+	df = diff
+	rb = rebase
+	pu = pull
+	w = whatchanged
+	dfs = diff --staged
+	sts = status -s
+	rst = reset
+	cia = commit -a
+	com = checkout master
+	info = config --list
+	summary = log --oneline
+	rank = shortlog -sn --no-merges
+	tree = log --graph --oneline --decorate
+	pom = push origin master
+	amend = commit --amend
 
 [color]
-  branch = auto
-  diff = auto
-  status = auto
-  interactive = auto
-  ui = true
-  pager = true
+	branch = auto
+	diff = auto
+	status = auto
+	interactive = auto
+	ui = true
+	pager = true
 
 [pack]
-  threads = 0
+	threads = 0
 
 [rename]
-  limit = 0
+	limit = 0
 
 [core]
-  pager = less -FRSX
+	pager = less -FRSX
 
 [push]
-  default = current
+	default = current
 
 [giggle]
-  main-window-maximized = true
-  main-window-view = HistoryView
+	main-window-maximized = true
+	main-window-view = HistoryView
