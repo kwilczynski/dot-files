@@ -21,6 +21,7 @@
 	sts = status -s
 	ref = reflog
 	rst = reset
+	rup = remote update
 	cia = commit -a
 	com = checkout master
 	info = config --list
