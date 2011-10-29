@@ -22,6 +22,7 @@
 	ref = reflog
 	rst = reset
 	rup = remote update
+	rbi = rebase -i
 	cia = commit -a
 	com = checkout master
 	info = config --list
