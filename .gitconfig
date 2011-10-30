@@ -31,6 +31,7 @@
 	tree = log --graph --oneline --decorate
 	pom = push origin master
 	amend = commit --amend
+	last = log --oneline -10
 
 [color]
 	branch = auto
