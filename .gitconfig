@@ -40,7 +40,7 @@
 	rank = shortlog -sn --no-merges
 	tree = log --graph --oneline --decorate
 	pom = push origin master
-	pob = push origin `__git_current_branch`
+	pob = !sh -c 'git push origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\")'
 	amend = commit --amend
 	last = log --oneline -10
 	review = log --stat=160,180 -p -w --patience --reverse -M -C -C -c
