@@ -1,5 +1,6 @@
 [alias]
 	a = add
+	t = tag
 	au = add -u .
 	ap = add -p
 	br = branch -v
@@ -16,6 +17,7 @@
 	df = diff
 	rb = rebase
 	pu = pull
+	pt = push --tags
 	w = whatchanged
 	dfs = diff --staged
 	sts = status -s
