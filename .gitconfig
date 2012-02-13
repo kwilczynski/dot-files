@@ -18,6 +18,7 @@
 	rb = rebase
 	rbc = rebase --continue
 	rbs = rebase --skip
+	rbi = rebase --interactive
 	rs = remote show
 	sb = show-branch
 	pu = pull
@@ -31,7 +32,6 @@
 	rt = remote
 	rup = remote update
 	rpr = remote prune
-	rbi = rebase -i
 	cia = commit -a
 	com = checkout master
 	detach = checkout HEAD^0
