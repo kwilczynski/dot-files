@@ -44,6 +44,7 @@
 	amend = commit --amend
 	last = log --oneline -10
 	review = log --stat=160,180 -p -w --patience --reverse -M -C -C -c
+	undo = reset --hard
 
 [color]
 	branch = auto
