@@ -32,8 +32,10 @@
 	rank = shortlog -sn --no-merges
 	tree = log --graph --oneline --decorate
 	pom = push origin master
+	pob = push origin `__git_current_branch`
 	amend = commit --amend
 	last = log --oneline -10
+	review = log --stat=160,180 -p -w --patience --reverse -M -C -C -c
 
 [color]
 	branch = auto
@@ -60,10 +62,10 @@
 	main-window-view = HistoryView
 
 [sendemail]
-	smtpuser = 
-	smtppass = 
-	smtpserver = 
-	smtpserverport = 
+	smtpuser =
+	smtppass =
+	smtpserver =
+	smtpserverport =
 	smtpencryption = tls
 	suppresscc = self
 	signedoffbycc = false
