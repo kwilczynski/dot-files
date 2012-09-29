@@ -24,6 +24,8 @@ filetype indent on
 
 set encoding=utf-8
 set fileencodings=utf-8
+set termencoding=utf-8
+set textwidth=120
 set nowritebackup
 set nobackup
 set history=128
@@ -57,6 +59,14 @@ set ttyfast
 
 set noerrorbells
 
+set pastetoggle=<F5>
+
+nnoremap <F5> :set invpaste paste?<CR>
+
+if version >= 700
+    set spelllang=en_GB,en_US,en
+endif
+
 autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType sh,bash setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType rb,ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
@@ -64,3 +74,4 @@ autocmd FileType php setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType html,xhtml,xml,xslt setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType js,javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType c,cpp,cs,h,hpp,objc setlocal cindent textwidth=80 expandtab shiftwidth=4 tabstop=8 softtabstop=4
