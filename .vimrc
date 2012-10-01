@@ -61,7 +61,10 @@ set noerrorbells
 
 set pastetoggle=<F5>
 
-nnoremap <F5> :set invpaste paste?<CR>
+nnoremap <silent> <F5> :set invpaste paste?<CR>
+nnoremap <silent> <F10> :set invnumber number?<CR>
+
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 if version >= 700
     set spelllang=en_GB,en_US,en
