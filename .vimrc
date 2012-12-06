@@ -17,6 +17,7 @@ set expandtab
 set smarttab
 
 syntax on
+colorscheme slate
 
 filetype on
 filetype plugin on
