@@ -3,11 +3,8 @@ require 'rubygems'
 require 'ap'
 require 'pp'
 require 'wirble'
-require 'duration'
 require 'irb/completion'
 require 'irb/ext/save-history'
-
-IRB_START_TIME = Time.now
 
 ARGV.concat [ '--readline' ]
  
@@ -42,11 +39,5 @@ def reset_irb
   exec $0
 end
 
-Kernel.at_exit do
-  puts Duration.new(Time.now - IRB_START_TIME)
-end
-
 Wirble.init
 Wirble.colorize
-
-puts IRB_START_TIME
