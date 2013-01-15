@@ -37,7 +37,8 @@ set formatoptions+=1
 set wildmenu
 set wildmode=list:longest,full
 
-set number
+set nolist
+set nonumber
 set ignorecase
 set smartcase
 
@@ -64,6 +65,7 @@ set pastetoggle=<F5>
 
 nnoremap <silent> <F5> :set invpaste paste?<CR>
 nnoremap <silent> <F10> :set invnumber number?<CR>
+nnoremap <silent> <F11> :set invlist list?<CR>
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
