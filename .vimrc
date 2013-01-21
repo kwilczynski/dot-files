@@ -81,3 +81,4 @@ autocmd FileType html,xhtml,xml,xslt setlocal expandtab shiftwidth=2 tabstop=2 s
 autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType js,javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType c,cpp,cs,h,hpp,objc setlocal cindent textwidth=80 expandtab shiftwidth=4 tabstop=8 softtabstop=4
+autocmd FileType go setlocal textwidth=120 expandtab shiftwidth=8 tabstop=8 softtabstop=8
