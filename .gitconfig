@@ -30,6 +30,11 @@
 	ref = reflog
 	rst = reset
 	rt = remote
+	sm = submodule
+	sms = submodule status
+	smi = submodule init
+	smu = submodule update
+	smf = submodule foreach
 	rup = remote update
 	rpr = remote prune
 	cia = commit -a
