@@ -5,6 +5,8 @@
 	ap = add -p
 	br = branch -v
 	bl = blame
+	cl = clean
+	clf = clean --force
 	sh = show
 	sb = show-branch
 	ds = diff --stat
@@ -19,6 +21,7 @@
 	rbc = rebase --continue
 	rbs = rebase --skip
 	rbi = rebase --interactive
+	me = merge
 	rs = remote show
 	sb = show-branch
 	pu = pull
