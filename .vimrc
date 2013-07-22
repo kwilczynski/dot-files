@@ -17,6 +17,11 @@ set softtabstop=2
 set tabstop=8
 set expandtab
 set smarttab
+set nowrap
+set nojoinspaces
+
+set splitright
+set splitbelow
 
 syntax on
 colorscheme slate
@@ -33,8 +38,14 @@ set nowritebackup
 set nobackup
 set history=128
 
+set scrolloff=3
+
 set viminfo='20,\"50
 set formatoptions+=1
+
+if v:version > 703
+    set formatoptions+=j
+endif
 
 set wildmenu
 set wildmode=list:longest,full
@@ -45,6 +56,7 @@ set ignorecase
 set smartcase
 
 set nohidden
+set autoread
 
 set autochdir
 
@@ -71,7 +83,7 @@ nnoremap <silent> <F11> :set invlist list?<CR>
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-if version >= 700
+if v:version >= 700
     set spelllang=en_GB,en_US,en
 endif
 
