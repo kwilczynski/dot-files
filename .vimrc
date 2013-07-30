@@ -38,24 +38,37 @@ set nowritebackup
 set nobackup
 set history=128
 
+set virtualedit=block
+
 set scrolloff=3
 
 set viminfo='20,\"50
 set formatoptions+=1
+set formatoptions+=n
 
 if v:version > 703
     set formatoptions+=j
 endif
 
+set clipboard+=unnamed
+
+set iskeyword+=_,$,@,%,#
+
 set wildmenu
 set wildmode=list:longest,full
+
+set lazyredraw
+set linespace=0
+set matchtime=5
+set report=0
 
 set nolist
 set nonumber
 set ignorecase
+set infercase
 set smartcase
 
-set nohidden
+set hidden
 set autoread
 
 set autochdir
@@ -75,6 +88,8 @@ set ttyfast
 
 set noerrorbells
 
+set nostartofline
+
 set pastetoggle=<F5>
 
 nnoremap <silent> <F5> :set invpaste paste?<CR>
@@ -87,12 +102,21 @@ if v:version >= 700
     set spelllang=en_GB,en_US,en
 endif
 
+set laststatus=2
+
+set statusline=%F
+set statusline+=\ %Y\ %{toupper(strlen(&ff)?&ff:'none')}
+set statusline+=\ %{toupper(strlen(&fenc)?&fenc:'none')}
+set statusline+=\ %c,%l/%L\ %p%%
+set statusline+=\ -\ %{strftime(\"%d/%m/%Y\ %T\",getftime(expand(\"%:p\")))}
+
+autocmd FileType gitcommit setlocal textwidth=78
 autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType sh,bash setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
-autocmd FileType rb,ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType rb,ruby setlocal textwidth=120 expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType php setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType html,xhtml,xml,xslt setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType js,javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType c,cpp,cs,h,hpp,objc setlocal cindent textwidth=80 expandtab shiftwidth=4 tabstop=8 softtabstop=4
-autocmd FileType go setlocal textwidth=120 expandtab shiftwidth=8 tabstop=8 softtabstop=8
+autocmd FileType c,cpp,cs,h,hpp,objc setlocal cindent textwidth=80 noexpandtab shiftwidth=4 tabstop=8 softtabstop=4
+autocmd FileType go setlocal textwidth=120 noexpandtab shiftwidth=8 tabstop=8 softtabstop=8
