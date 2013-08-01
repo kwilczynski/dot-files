@@ -38,8 +38,6 @@ set nowritebackup
 set nobackup
 set history=128
 
-set virtualedit=block
-
 set scrolloff=3
 
 set viminfo='20,\"50
@@ -104,11 +102,11 @@ endif
 
 set laststatus=2
 
-set statusline=%F
+set statusline=[%n]\ %<%F%{fugitive#statusline()}%M%R%H%W
 set statusline+=\ %Y\ %{toupper(strlen(&ff)?&ff:'none')}
 set statusline+=\ %{toupper(strlen(&fenc)?&fenc:'none')}
 set statusline+=\ %c,%l/%L\ %p%%
-set statusline+=\ -\ %{strftime(\"%d/%m/%Y\ %T\",getftime(expand(\"%:p\")))}
+set statusline+=\ ~\ %{strftime(\"%d/%m/%Y\ %T\",getftime(expand(\"%:p\")))}
 
 autocmd FileType gitcommit setlocal textwidth=78
 autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
