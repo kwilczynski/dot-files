@@ -26,9 +26,7 @@ set splitbelow
 syntax on
 colorscheme slate
 
-filetype on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 set encoding=utf-8
 set fileencodings=utf-8
@@ -90,14 +88,16 @@ set nostartofline
 
 set pastetoggle=<F5>
 
-nnoremap <silent> <F5> :set invpaste paste?<CR>
+nnoremap <silent> <F5> :set invpaste paste?<CR><Bar>:echo "Paste mode: " . strpart("OffOn", 3 * &paste, 3)<CR>
+
 nnoremap <silent> <F10> :set invnumber number?<CR>
 nnoremap <silent> <F11> :set invlist list?<CR>
 
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-if v:version >= 700
-    set spelllang=en_GB,en_US,en
+if v:version >= 700 && has("spell")
+    set spelllang=en_gb,en_us,en
+    nnoremap <silent> <F4> :set invspell spell?<CR><Bar>:echo "Spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 endif
 
 set laststatus=2
