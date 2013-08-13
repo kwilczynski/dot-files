@@ -23,6 +23,8 @@ set nojoinspaces
 set splitright
 set splitbelow
 
+set t_Co=256
+
 syntax on
 colorscheme slate
 

@@ -69,7 +69,8 @@
 
 [rename]
         limit = 0
-
+[merge]
+        log = true
 [core]
         pager = less -FRSX
 
