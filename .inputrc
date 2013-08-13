@@ -1,5 +1,5 @@
-set keymap vi
-set editing-mode vi
+set keymap emacs
+set editing-mode emacs
 
 set meta-flag on
 set input-meta on
