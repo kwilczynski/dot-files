@@ -105,7 +105,8 @@ endif
 set laststatus=2
 
 set statusline=[%n]\ %<%F%{fugitive#statusline()}%M%R%H%W
-set statusline+=\ %Y\ %{toupper(strlen(&ff)?&ff:'none')}
+set statusline+=\ %=%Y
+set statusline+=\ %{toupper(strlen(&ff)?&ff:'none')}
 set statusline+=\ %{toupper(strlen(&fenc)?&fenc:'none')}
 set statusline+=\ %c,%l/%L\ %p%%
 set statusline+=\ ~\ %{strftime(\"%d/%m/%Y\ %T\",getftime(expand(\"%:p\")))}
