@@ -25,8 +25,9 @@
         rs = remote show
         sb = show-branch
         pu = pull
+        pur = pull --rebase
         pus = submodule foreach git pull origin master
-        pur = pull --recurse-submodules
+        purs = pull --recurse-submodules
         pt = push --tags
         w = whatchanged
         dfs = diff --staged
