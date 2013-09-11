@@ -1,5 +1,6 @@
 [alias]
         a = add
+        c = clone
         t = tag
         au = add -u .
         ap = add -p
