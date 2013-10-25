@@ -90,11 +90,11 @@ set nostartofline
 
 set pastetoggle=<F5>
 
-nnoremap <silent> <F5> :set invpaste paste?<CR><Bar>:echo "Paste mode: " . strpart("OffOn", 3 * &paste, 3)<CR>
+nnoremap <leader>p "_dP
 
+nnoremap <silent> <F5> :set invpaste paste?<CR><Bar>:echo "Paste mode: " . strpart("OffOn", 3 * &paste, 3)<CR>
 nnoremap <silent> <F10> :set invnumber number?<CR>
 nnoremap <silent> <F11> :set invlist list?<CR>
-
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 if v:version >= 700 && has("spell")
