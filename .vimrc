@@ -90,7 +90,7 @@ set nostartofline
 
 set pastetoggle=<F5>
 
-nnoremap <leader>p "_dP
+vnoremap r "_dP
 
 nnoremap <silent> <F5> :set invpaste paste?<CR><Bar>:echo "Paste mode: " . strpart("OffOn", 3 * &paste, 3)<CR>
 nnoremap <silent> <F10> :set invnumber number?<CR>
