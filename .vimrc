@@ -1,6 +1,8 @@
 execute pathogen#infect()
 
 set nocompatible
+set modeline
+
 set showcmd
 
 set autoindent
