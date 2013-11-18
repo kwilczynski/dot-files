@@ -10,6 +10,7 @@
 *.class
 *.sqlite
 *.tmproj*
+*.sw[a-z]
 .*.sw[a-z]
 
 .git
