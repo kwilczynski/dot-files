@@ -111,6 +111,10 @@ if v:version >= 700 && has("spell")
     nnoremap <silent> <F4> :set invspell spell?<CR><Bar>:echo "Spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 endif
 
+if has("gui_macvim")
+    colorscheme solarized
+endif
+
 set laststatus=2
 
 set statusline=[%n]\ %<%F%{fugitive#statusline()}%M%R%H%W
