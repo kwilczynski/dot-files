@@ -1,2 +1,26 @@
+--color
+--context
 --smart-case
---unrestricted
+--sort-files
+--pager=less -ix4SRFX
+
+--ignore-dir=.git
+--ignore-dir=.idea
+--ignore-dir=.svn
+--ignore-dir=compiled_templates
+--ignore-dir=deploy/node_modules
+--ignore-dir=gems
+--ignore-dir=third_party
+--ignore-dir=tmp
+--ignore-dir=vendor/bundle
+
+--type-set=coffeescript=.coffee
+--type-set=erb=.erb
+--type-set=haml=.haml
+--type-set=handlebars=.handlebars,.hbars,.hbs
+--type-set=jst=.jst
+--type-set=less=.less
+--type-set=mustache=.mustache,.mu
+--type-set=sass=.sass
+--type-set=scss=.scss
+--type-set=slim=.slim
