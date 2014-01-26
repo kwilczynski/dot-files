@@ -1,3 +1,5 @@
+$include /etc/inputrc
+
 set keymap emacs
 set editing-mode emacs
 
@@ -9,6 +11,7 @@ set convert-meta off
 set expand-tilde on
 set visible-stats on
 set show-all-if-ambiguous on
+set show-all-if-unmodified on
 
 set completion-ignore-case on
 set print-completions-horizontally on
