@@ -1,0 +1,6 @@
+--exclude=*.js
+--exclude=*.coffee
+--exclude=*.git*
+--exclude=vendor/*
+--recurse=yes
+--links=no
