@@ -55,10 +55,18 @@ export LC_ALL='en_US.UTF-8'
 
 export RUBYOPT='-rubygems'
 
-alias l='ls --color -CF'
-alias ll='ls --color -alF'
-alias ls='ls --color -G'
-alias la='ls --color -Ah'
+if ls --color &> /dev/null ; then
+    alias l='ls --color -CF'
+    alias ls='ls --color -G'
+    alias ll='ls --color -alF'
+    alias la='ls --color -Ah'
+else
+    alias l='ls -G -CF'
+    alias ls='ls -G'
+    alias ll='ls -G -alF'
+    alias la='ls -G -Ah'
+fi
+
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
