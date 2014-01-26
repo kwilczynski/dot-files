@@ -80,6 +80,8 @@
         log = true
 [core]
         pager = less -FRSX
+[credential]
+        helper = osxkeychain
 [push]
         default = current
 [giggle]
@@ -94,6 +96,9 @@
         suppresscc = self
         signedoffbycc = false
         chainreplyto = false
+[guthub]
+        user = kwilczynski
+        token = !security find-generic-password -gs \"github API token\" 2>&1 >/dev/null | awk '/password/ { print $2 }' | tr -d \\\"
 [url "git@github.com:"]
         insteadOf = "gh:"
         pushInsteadOf = "github:"
