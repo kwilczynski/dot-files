@@ -12,6 +12,7 @@
         sb = show-branch
         ds = diff --stat
         ls = ls-files
+        lo = log
         st = status
         co = checkout
         cp = cherry-pick
@@ -52,7 +53,6 @@
         summary = log --oneline
         rank = shortlog -sn --no-merges
         tree = log --graph --oneline --decorate
-        lo = log
         ll = log --graph --pretty='format:%h | %an | %s'
         los = log --graph --oneline --abbrev-commit
         llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
