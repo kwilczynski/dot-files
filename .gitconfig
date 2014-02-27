@@ -8,6 +8,7 @@
         bl = blame
         cl = clean
         clf = clean --force
+        clo = clone
         sh = show
         sb = show-branch
         ds = diff --stat
@@ -40,6 +41,9 @@
         rst = reset
         rt = remote
         sm = submodule
+        sts = stash
+        stsp = stash pop
+        stsd = stash drop
         sms = submodule status
         smi = submodule init
         smu = submodule update
@@ -56,13 +60,14 @@
         ll = log --graph --pretty='format:%h | %an | %s'
         los = log --graph --oneline --abbrev-commit
         llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+        po = push origin
         pom = push origin master
         changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
         pob = !sh -c 'git push origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\")'
         amend = commit --amend
         last = log --oneline -10
         review = log --stat=160,180 -p -w --patience --reverse -M -C -C -c
-        undo = reset --hard
+        undo = reset --soft HEAD^
         serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
         hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
 [color]
@@ -113,6 +118,8 @@
         insteadOf = "gist:"
 [diff]
         tool = diffmerge
+        renames = copies
+        mnemonicprefix = true
 [difftool "diffmerge"]
         cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [merge]
