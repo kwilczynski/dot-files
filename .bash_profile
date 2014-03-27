@@ -83,9 +83,14 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias b='bundle '
+alias br='brew'
 alias be='bundle exec '
 
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
+
+if brew --help &> /dev/null ; then
+    export HOMEBREW_BUILD_FROM_SOURCE=1
+fi
 
 function vic {
     echo -e "\033]50;SetProfile=Solarized Dark\a"
