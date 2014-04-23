@@ -124,11 +124,11 @@ set statusline+=\ %{toupper(strlen(&fenc)?&fenc:'none')}
 set statusline+=\ %c,%l/%L\ %p%%
 set statusline+=\ ~\ %{strftime(\"%d/%m/%Y\ %T\",getftime(expand(\"%:p\")))}
 
-autocmd FileType gitcommit setlocal textwidth=78
+autocmd FileType gitcommit setlocal textwidth=80
 autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType sh,bash setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType rb,ruby setlocal textwidth=120 expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType py,python setlocal textwidth=120 expandtab shiftwidth=4 tabstop=8 softtabstop=4
+autocmd FileType py,python setlocal textwidth=80 expandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType php setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType html,xhtml,xml,xslt setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
