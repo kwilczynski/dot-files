@@ -135,4 +135,5 @@ autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType js,javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType c,cpp,cs,h,hpp,objc setlocal cindent textwidth=80 noexpandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType go setlocal textwidth=120 noexpandtab shiftwidth=8 tabstop=8 softtabstop=8
+autocmd FileType rs,rc setlocal textwidth=100 expandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType make setlocal noexpandtab
