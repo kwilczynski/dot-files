@@ -99,7 +99,9 @@ set nostartofline
 
 set pastetoggle=<F5>
 
-cmap w!! w !sudo tee >/dev/null %
+command W  :execute ':silent w !sudo tee % >/dev/null' | :edit!
+command Wq :execute ':W' | :q
+command WQ :Wq
 
 vnoremap r "_dP
 
