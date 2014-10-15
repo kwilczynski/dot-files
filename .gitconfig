@@ -1,3 +1,6 @@
+[user]
+        name = Krzysztof Wilczynski
+        email = krzysztof.wilczynski@linux.com
 [alias]
         a = add
         c = clone
@@ -85,10 +88,15 @@
         log = true
 [core]
         pager = less -FRSX
+	excludesfile = /Users/kwilczynski/.gitignore_global
 [credential]
         helper = osxkeychain
 [push]
         default = current
+[pull]
+        rebase = true
+[branch]
+        autosetuprebase = always
 [giggle]
         main-window-maximized = true
         main-window-view = HistoryView
@@ -127,3 +135,6 @@
 [mergetool "diffmerge"]
         cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
         trustExitCode = true
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
