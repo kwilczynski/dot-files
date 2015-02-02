@@ -10,6 +10,10 @@ if which rbenv > /dev/null ; then
     eval "$(rbenv init -)"
 fi
 
+if which direnv > /dev/null ; then
+    eval "$(direnv hook bash)"
+fi
+
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWSTASHSTATE=true
