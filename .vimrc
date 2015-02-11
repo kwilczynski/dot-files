@@ -128,6 +128,7 @@ set statusline+=\ %{toupper(strlen(&fenc)?&fenc:'none')}
 set statusline+=\ %c,%l/%L\ %p%%
 set statusline+=\ ~\ %{strftime(\"%d/%m/%Y\ %T\",getftime(expand(\"%:p\")))}
 
+autocmd FileType human setlocal formatoptions-=t textwidth=0
 autocmd FileType gitcommit setlocal textwidth=80
 autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType sh,bash setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
@@ -140,4 +141,8 @@ autocmd FileType js,javascript setlocal expandtab shiftwidth=2 tabstop=2 softtab
 autocmd FileType c,cpp,cs,h,hpp,objc setlocal cindent textwidth=80 noexpandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType go setlocal textwidth=120 noexpandtab shiftwidth=8 tabstop=8 softtabstop=8
 autocmd FileType rs,rc setlocal textwidth=100 expandtab shiftwidth=4 tabstop=8 softtabstop=4
-autocmd FileType make setlocal noexpandtab
+autocmd FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
+autocmd FileType yml,yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+autocmd BufRead,BufNewFile *.txt set filetype=human
+autocmd BufRead,BufNewFile *.sls set filetype=yaml
