@@ -65,8 +65,13 @@ Gemfile.lock
 .Spotlight*
 .Trash*
 
+.vagrant
+
 Icon?
 
 tmp
 temp
 coverage
+
+packer_cache
+virtualfloppy.vfd
