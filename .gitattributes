@@ -1,0 +1,14 @@
+* text=auto
+
+ks.cfg eol=lf
+preseed.cfg eol=lf
+
+*.sh eol=lf
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+Autounattend.xml text eol=crlf
+
+*.cer binary
