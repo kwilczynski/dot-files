@@ -26,6 +26,7 @@
         rbc = rebase --continue
         rbs = rebase --skip
         rbi = rebase --interactive
+        rbr = rebase --root
         me = merge
         rs = remote show
         pu = pull
