@@ -67,6 +67,9 @@ Gemfile.lock
 
 .vagrant
 
+.direnv
+.envrc
+
 Icon?
 
 tmp
