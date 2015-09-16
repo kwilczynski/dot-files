@@ -67,7 +67,7 @@
         po = push origin
         pom = push origin master
         changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
-        pob = !sh -c 'git push origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\")'
+        pob = !sh -c 'git push origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") "$@"' -
         amend = commit --amend
         last = log --oneline -10
         review = log --stat=160,180 -p -w --patience --reverse -M -C -C -c
