@@ -56,6 +56,8 @@
         rpr = remote prune
         cia = commit -a
         com = checkout master
+        cob = checkout -b
+        cod = checkout develop
         detach = checkout HEAD^0
         info = config --list
         summary = log --oneline
@@ -68,6 +70,7 @@
         pom = push origin master
         changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
         pob = !sh -c 'git push origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") "$@"' -
+        purb = !sh -c 'git pull origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") --rebase "$@"' -
         amend = commit --amend
         last = log --oneline -10
         review = log --stat=160,180 -p -w --patience --reverse -M -C -C -c
