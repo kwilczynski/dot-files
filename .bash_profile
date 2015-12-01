@@ -14,6 +14,10 @@ if which direnv > /dev/null ; then
     eval "$(direnv hook bash)"
 fi
 
+if which aws > /dev/null ; then
+    complete -C aws_completer aws
+fi
+
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWSTASHSTATE=true
