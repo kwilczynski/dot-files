@@ -8,6 +8,11 @@ _cgo_*
 _obj
 _test
 _testmain.go
+test.out
+_?vendor
+Godeps/_vendor
+Godeps/_workspace
+**/*.coverprofile
 
 __pycache__/
 
@@ -77,4 +82,5 @@ temp
 coverage
 
 packer_cache
+packet_test*.log
 virtualfloppy.vfd
