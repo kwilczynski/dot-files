@@ -1,0 +1,8 @@
+{
+  "plugin_min_port": 8192,
+  "plugin_max_port": 32768,
+  "builders": {},
+  "commands": {},
+  "post-processors": {},
+  "provisioners": {}
+}
