@@ -1,6 +1,7 @@
 [user]
         name = Krzysztof Wilczynski
         email = krzysztof.wilczynski@linux.com
+        signingkey = B63419A6
 [alias]
         a = add
         c = clone
@@ -95,6 +96,8 @@
 	excludesfile = /Users/kwilczynski/.gitignore_global
 [credential]
         helper = osxkeychain
+[commit]
+        gpgsign = true
 [push]
         default = current
 [pull]
