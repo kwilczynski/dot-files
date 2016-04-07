@@ -15,7 +15,6 @@
         clo = clone
         sh = show
         sb = show-branch
-        ds = diff --stat
         ls = ls-files
         lo = log
         st = status
@@ -23,6 +22,17 @@
         cp = cherry-pick
         ci = commit
         df = diff
+        ds = diff --stat
+        dfs = diff --staged
+        dfn = diff --name-only
+        dfm = diff master
+        df1 = diff HEAD~
+        df2 = diff HEAD~~
+        df3 = diff HEAD~~~
+        df4 = diff HEAD~~~~
+        df5 = diff HEAD~~~~~
+        ddc = diff --cached
+        wdc = diff --color-words --cache
         rb = rebase
         rbc = rebase --continue
         rbs = rebase --skip
@@ -37,9 +47,6 @@
         pull-all = pull --recurse-submodules -r
         pt = push --tags
         w = whatchanged
-        wdc = diff --color-words --cache
-        ddc = diff --cached
-        dfs = diff --staged
         sts = status -s
         rl = reflog
         ref = reflog
@@ -78,6 +85,9 @@
         undo = reset --soft HEAD^
         serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
         hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
+        this = !git init && git add . && git commit -m \"Initial commit.\"
+        empty = !git init && git commit --allow-empty -m \"Initial commit.\"
+        r = !git ls-files -z --deleted | xargs -0 git rm
 [color]
         branch = auto
         diff = auto
@@ -94,6 +104,8 @@
 [core]
         pager = less -FRSX
 	excludesfile = /Users/kwilczynski/.gitignore_global
+[init]
+        templatedir = ~/.git-templates
 [credential]
         helper = osxkeychain
 [commit]
