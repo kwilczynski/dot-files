@@ -81,6 +81,7 @@ tmp
 temp
 coverage
 
-packer_cache
-packet_test*.log
+*.box
+packer*.log
 virtualfloppy.vfd
+packer_cache
