@@ -67,6 +67,7 @@ Gemfile.lock
 .directory
 
 .DS_Store?
+.AppleDouble
 .Spotlight*
 .Trash*
 
