@@ -96,9 +96,10 @@ alias be='bundle exec '
 
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
-if brew --help &> /dev/null ; then
-    export HOMEBREW_BUILD_FROM_SOURCE=1
-fi
+# Only use when bottles are not working as expected.
+#if brew --help &> /dev/null ; then
+#    export HOMEBREW_BUILD_FROM_SOURCE=1
+#fi
 
 function vic {
     echo -e "\033]50;SetProfile=Solarized Dark\a"
