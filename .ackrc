@@ -7,6 +7,10 @@
 --ignore-dir=.git
 --ignore-dir=.idea
 --ignore-dir=.svn
+--ignore-dir=.vagrant
+--ignore-dir=.kitchen
+--ignore-dir=.terraform
+--ignore-dir=packer_cache
 --ignore-dir=compiled_templates
 --ignore-dir=deploy/node_modules
 --ignore-dir=gems
