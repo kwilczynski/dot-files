@@ -94,6 +94,10 @@ alias b='bundle '
 alias br='brew'
 alias be='bundle exec '
 
+if nvim --version &>/dev/null; then
+    alias vim='nvim'
+fi
+
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
 # Only use when bottles are not working as expected.
