@@ -94,9 +94,9 @@ alias b='bundle '
 alias br='brew'
 alias be='bundle exec '
 
-if nvim --version &>/dev/null; then
-    alias vim='nvim'
-fi
+#if nvim --version &>/dev/null; then
+#    alias vim='nvim'
+#fi
 
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
@@ -105,8 +105,17 @@ export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 #    export HOMEBREW_BUILD_FROM_SOURCE=1
 #fi
 
-function vic {
-    echo -e "\033]50;SetProfile=Solarized Dark\a"
-    vim +"colorscheme solarized" $@
-    echo -e "\033]50;SetProfile=Default\a"
-}
+[ -f ${HOME}/.gpg-agent-info ] && source ${HOME}/.gpg-agent-info
+
+if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
+    export GPG_AGENT_INFO
+    export GPG_TTY=$(tty)
+else
+    eval $(gpg-agent --daemon --write-env-file ${HOME}/.gpg-agent-info)
+fi
+
+#function vic {
+#    echo -e "\033]50;SetProfile=Solarized Dark\a"
+#    vim +"colorscheme solarized" $@
+#    echo -e "\033]50;SetProfile=Default\a"
+#}
