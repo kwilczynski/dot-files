@@ -99,9 +99,14 @@ set nostartofline
 
 set pastetoggle=<F5>
 
-command W  :execute ':silent w !sudo tee % >/dev/null' | :edit!
-command Wq :execute ':W' | :q
-command WQ :Wq
+if has('nvim')
+else
+    command W  :execute ':silent w !sudo tee % >/dev/null' | :edit!
+    command Wq :execute ':W' | :q
+    command WQ :Wq
+endif
+
+command Jq  :execute '%!jq . 2>/dev/null'
 
 vnoremap r "_dP
 
