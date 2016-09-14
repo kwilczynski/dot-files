@@ -114,6 +114,7 @@ nnoremap <silent> <F5> :set invpaste paste?<CR><Bar>:echo "Paste mode: " . strpa
 nnoremap <silent> <F10> :set invnumber number?<CR>
 nnoremap <silent> <F11> :set invlist list?<CR>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 if v:version >= 700 && has("spell")
     set spelllang=en_gb,en_us,en
@@ -132,6 +133,14 @@ set statusline+=\ %{toupper(strlen(&ff)?&ff:'none')}
 set statusline+=\ %{toupper(strlen(&fenc)?&fenc:'none')}
 set statusline+=\ %c,%l/%L\ %p%%
 set statusline+=\ ~\ %{strftime(\"%d/%m/%Y\ %T\",getftime(expand(\"%:p\")))}
+
+let NERDTreeMinimalUI=1
+let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=1
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 autocmd FileType human setlocal formatoptions-=t textwidth=0
 autocmd FileType gitcommit setlocal textwidth=80
