@@ -10,13 +10,30 @@ syn case match
 syn keyword terraSection connection output provider variable
 syn keyword terraValueBool true false on off yes no
 
-""" resource
+""" data
+syn keyword terraDataTypeBI
+          \ atlas_artifact
+          \ aws_ami
+          \ aws_availability_zones
+          \ aws_ecs_container_definition
+          \ aws_iam_policy_document
+          \ aws_s3_bucket_object
+          \ consul_keys
+          \ docker_registry_image
+          \ null_data_source
+          \ template_cloudinit_config
+          \ template_file
+          \ terraform_remote_state
+          \ tls_cert_request
+""" end data sources
 
+""" resource
 syn keyword terraResourceTypeBI
           \ atlas_artifact
           \ aws_ami
           \ aws_ami_copy
           \ aws_ami_from_instance
+          \ aws_ami_launch_permission
           \ aws_api_gateway_account
           \ aws_api_gateway_api_key
           \ aws_api_gateway_authorizer
@@ -29,6 +46,8 @@ syn keyword terraResourceTypeBI
           \ aws_api_gateway_resource
           \ aws_api_gateway_rest_api
           \ aws_app_cookie_stickiness_policy
+          \ aws_appautoscaling_policy
+          \ aws_appautoscaling_target
           \ aws_autoscaling_group
           \ aws_autoscaling_lifecycle_hook
           \ aws_autoscaling_notification
@@ -126,10 +145,12 @@ syn keyword terraResourceTypeBI
           \ aws_opsworks_memcached_layer
           \ aws_opsworks_mysql_layer
           \ aws_opsworks_nodejs_app_layer
+          \ aws_opsworks_permission
           \ aws_opsworks_php_app_layer
           \ aws_opsworks_rails_app_layer
           \ aws_opsworks_stack
           \ aws_opsworks_static_web_layer
+          \ aws_opsworks_user_profile
           \ aws_placement_group
           \ aws_proxy_protocol_policy
           \ aws_rds_cluster
@@ -152,8 +173,14 @@ syn keyword terraResourceTypeBI
           \ aws_s3_bucket_object
           \ aws_security_group
           \ aws_security_group_rule
+          \ aws_ses_active_receipt_rule_set
+          \ aws_ses_receipt_filter
+          \ aws_ses_receipt_rule
+          \ aws_ses_receipt_rule_set
+          \ aws_simpledb_domain
           \ aws_sns_topic
           \ aws_sns_topic_subscription
+          \ aws_spot_fleet_request
           \ aws_spot_instance_request
           \ aws_sqs_queue
           \ aws_subnet
@@ -166,6 +193,7 @@ syn keyword terraResourceTypeBI
           \ aws_vpn_connection
           \ aws_vpn_connection_route
           \ aws_vpn_gateway
+          \ aws_vpn_gateway_attachment
           \ azure_affinity_group
           \ azure_data_disk
           \ azure_dns_server
@@ -209,8 +237,11 @@ syn keyword terraResourceTypeBI
           \ azurerm_storage_blob
           \ azurerm_storage_container
           \ azurerm_storage_queue
+          \ azurerm_storage_table
           \ azurerm_subnet
           \ azurerm_template_deployment
+          \ azurerm_traffic_manager_endpoint
+          \ azurerm_traffic_manager_profile
           \ azurerm_virtual_machine
           \ azurerm_virtual_machine_scale_set
           \ azurerm_virtual_network
@@ -252,14 +283,21 @@ syn keyword terraResourceTypeBI
           \ cobbler_profile
           \ cobbler_snippet
           \ cobbler_system
+          \ consul_agent_service
+          \ consul_catalog_entry
           \ consul_key_prefix
           \ consul_keys
+          \ consul_node
+          \ consul_service
           \ datadog_monitor
+          \ datadog_timeboard
           \ digitalocean_domain
           \ digitalocean_droplet
           \ digitalocean_floating_ip
           \ digitalocean_record
           \ digitalocean_ssh_key
+          \ digitalocean_tag
+          \ digitalocean_volume
           \ dme_record
           \ dnsimple_record
           \ docker_container
@@ -315,10 +353,17 @@ syn keyword terraResourceTypeBI
           \ heroku_cert
           \ heroku_domain
           \ heroku_drain
+          \ influxdb_continuous_query
+          \ influxdb_database
+          \ influxdb_user
           \ librato_space
           \ librato_space_chart
+          \ logentries_log
+          \ logentries_logset
           \ mailgun_domain
           \ mysql_database
+          \ mysql_grant
+          \ mysql_user
           \ null_resource
           \ openstack_blockstorage_volume_v1
           \ openstack_blockstorage_volume_v2
@@ -361,12 +406,15 @@ syn keyword terraResourceTypeBI
           \ rundeck_private_key
           \ rundeck_project
           \ rundeck_public_key
+          \ scaleway_ip
+          \ scaleway_security_group
+          \ scaleway_security_group_rule
+          \ scaleway_server
+          \ scaleway_volume
+          \ scaleway_volume_attachment
           \ softlayer_ssh_key
           \ softlayer_virtual_guest
           \ statuscake_test
-          \ template_cloudinit_config
-          \ template_file
-          \ tls_cert_request
           \ tls_locally_signed_cert
           \ tls_private_key
           \ tls_self_signed_cert
@@ -385,8 +433,7 @@ syn keyword terraResourceTypeBI
           \ vsphere_folder
           \ vsphere_virtual_disk
           \ vsphere_virtual_machine
-          \
-          \ contained
+""" end resources
 
 syn keyword terraTodo         contained TODO FIXME XXX BUG
 syn cluster terraCommentGroup contains=terraTodo
@@ -399,6 +446,13 @@ syn region terraResourceTypeStr start=/"/ end=/"/ contains=terraResourceTypeBI
                               \ nextgroup=terraResourceName skipwhite
 syn region terraResourceName    start=/"/ end=/"/
                               \ nextgroup=terraResourceBlock skipwhite
+
+syn match  terraData        /\<data\>/ nextgroup=terraDataTypeStr skipwhite
+syn region terraDataTypeStr start=/"/ end=/"/ contains=terraDataTypeBI
+                              \ nextgroup=terraDataName skipwhite
+syn region terraDataName    start=/"/ end=/"/
+                              \ nextgroup=terraDataBlock skipwhite
+
 """ provider
 syn match  terraProvider      /\<provider\>/ nextgroup=terraProviderName skipwhite
 syn region terraProviderName  start=/"/ end=/"/ nextgroup=terraProviderBlock skipwhite
@@ -433,6 +487,10 @@ hi def link terraResource          Structure
 hi def link terraResourceName      String
 hi def link terraResourceTypeBI    Tag
 hi def link terraResourceTypeStr   String
+hi def link terraData              Structure
+hi def link terraDataName          String
+hi def link terraDataTypeBI        Tag
+hi def link terraDataTypeStr       String
 hi def link terraSection           Structure
 hi def link terraStringInterp      Identifier
 hi def link terraValueBool         Boolean
