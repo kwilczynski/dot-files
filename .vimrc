@@ -139,10 +139,13 @@ let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-autocmd FileType human setlocal formatoptions-=t textwidth=0
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+autocmd BufEnter * if &filetype == "" | setlocal filetype=text | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | quit | endif
+
+autocmd FileType text setlocal formatoptions-=t textwidth=0
 autocmd FileType gitcommit setlocal textwidth=80
 autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType sh,bash setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
@@ -158,5 +161,5 @@ autocmd FileType rs,rc setlocal textwidth=100 expandtab shiftwidth=4 tabstop=8 s
 autocmd FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
 autocmd FileType yml,yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-autocmd BufRead,BufNewFile *.txt set filetype=human
+autocmd BufRead,BufNewFile *.txt set filetype=text
 autocmd BufRead,BufNewFile *.sls set filetype=yaml
