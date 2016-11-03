@@ -110,16 +110,18 @@ command Jq  :execute '%!jq . 2>/dev/null'
 
 vnoremap r "_dP
 
-nnoremap <silent> <F5> :set invpaste paste?<CR><Bar>:echo "Paste mode: " . strpart("OffOn", 3 * &paste, 3)<CR>
-nnoremap <silent> <F10> :set invnumber number?<CR>
-nnoremap <silent> <F11> :set invlist list?<CR>
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <F3> :GitGutterToggle<CR>
 
 if v:version >= 700 && has("spell")
     set spelllang=en_gb,en_us,en
     nnoremap <silent> <F4> :set invspell spell?<CR><Bar>:echo "Spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 endif
+
+nnoremap <silent> <F5> :set invpaste paste?<CR><Bar>:echo "Paste mode: " . strpart("OffOn", 3 * &paste, 3)<CR>
+nnoremap <silent> <F10> :set invnumber number?<CR>
+nnoremap <silent> <F11> :set invlist list?<CR>
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 if has("gui_macvim")
     colorscheme solarized
@@ -134,9 +136,11 @@ set statusline+=\ %{toupper(strlen(&fenc)?&fenc:'none')}
 set statusline+=\ %c,%l/%L\ %p%%
 set statusline+=\ ~\ %{strftime(\"%d/%m/%Y\ %T\",getftime(expand(\"%:p\")))}
 
-let NERDTreeMinimalUI=1
-let NERDTreeShowHidden=1
-let NERDTreeQuitOnOpen=1
+let NERDTreeMinimalUI = 1
+let NERDTreeShowHidden = 1
+let NERDTreeQuitOnOpen = 1
+
+let g:gitgutter_enabled = 0
 
 autocmd StdinReadPre * let s:std_in=1
 
