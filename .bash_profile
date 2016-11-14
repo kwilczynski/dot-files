@@ -94,6 +94,7 @@ alias b='bundle '
 alias br='brew'
 alias be='bundle exec '
 
+# Temporarily disabled.
 #if nvim --version &>/dev/null; then
 #    alias vim='nvim'
 #fi
@@ -114,6 +115,7 @@ else
     eval $(gpg-agent --daemon --write-env-file ${HOME}/.gpg-agent-info)
 fi
 
+# Temporarily disabled.
 #function vic {
 #    echo -e "\033]50;SetProfile=Solarized Dark\a"
 #    vim +"colorscheme solarized" $@
