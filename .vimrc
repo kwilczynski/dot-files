@@ -35,7 +35,8 @@ set splitbelow
 set t_Co=256
 
 syntax on
-colorscheme slate
+"colorscheme slate
+colorscheme dracula
 
 filetype plugin indent on
 
@@ -63,6 +64,12 @@ set iskeyword+=_,$,@,%,#
 
 set wildmenu
 set wildmode=list:longest,full
+
+set wildignore+=.svn,.git
+set wildignore+=*.bmp,*.gif,*.png,*.jpg,*.jpeg,*.woff,*.ttf,*.svg,*.eot
+set wildignore+=*.o,*.obj,*.exe,*.dll
+set wildignore+=*.sw?
+set wildignore+=*.DS_Store
 
 set lazyredraw
 set linespace=0
