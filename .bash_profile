@@ -106,9 +106,9 @@ export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 #    export HOMEBREW_BUILD_FROM_SOURCE=1
 #fi
 
-[ -f ${HOME}/.gpg-agent-info ] && source ${HOME}/.gpg-agent-info
+[[ -f ${HOME}/.gpg-agent-info ]] && source ${HOME}/.gpg-agent-info
 
-if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
+if [[ -S "${GPG_AGENT_INFO%%:*}" -a -n "$(pgrep gpg-agent)" ]]; then
     export GPG_AGENT_INFO
     export GPG_TTY=$(tty)
 else

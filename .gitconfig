@@ -112,7 +112,6 @@
         helper = osxkeychain
 [commit]
         gpgsign = true
-	template = /Users/krzysztof/.stCommitMsg
 [push]
         default = current
 [pull]
