@@ -108,7 +108,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
 [[ -f ${HOME}/.gpg-agent-info ]] && source ${HOME}/.gpg-agent-info
 
-if [[ -S "${GPG_AGENT_INFO%%:*}" -a -n "$(pgrep gpg-agent)" ]]; then
+if [[ -S "${GPG_AGENT_INFO%%:*}" && -n "$(pgrep gpg-agent)" ]]; then
     export GPG_AGENT_INFO
     export GPG_TTY=$(tty)
 else
