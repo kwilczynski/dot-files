@@ -91,4 +91,3 @@ brew 'homebrew/completions/packer-completion'
 brew 'homebrew/completions/vagrant-completion'
 brew 'homebrew/dupes/grep', args: ['with-default-names']
 brew 'homebrew/dupes/rsync'
-brew 'homebrew/versions/v8-315'
