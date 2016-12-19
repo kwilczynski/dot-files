@@ -1,0 +1,3 @@
+dracula-theme
+language-hcl
+sort-lines
