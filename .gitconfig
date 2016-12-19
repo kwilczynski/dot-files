@@ -1,6 +1,6 @@
 [user]
         name = Krzysztof Wilczynski
-        email = krzysztof.wilczynski@linux.com
+        email = kw@linux.com
         signingkey = B63419A6
 [alias]
         a = add
