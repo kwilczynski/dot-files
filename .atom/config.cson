@@ -14,7 +14,5 @@
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
-  "exception-reporting":
-    userId: "6ecbb67d-43a6-511e-a812-ac33ba92607c"
   welcome:
     showOnStartup: false
