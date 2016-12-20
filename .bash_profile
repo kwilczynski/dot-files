@@ -1,9 +1,13 @@
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
+if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-if [ -f $(brew --prefix)/etc/bash_completion.d/vagrant ]; then
+if [[ -f $(brew --prefix)/etc/bash_completion.d/vagrant ]]; then
     . $(brew --prefix)/etc/bash_completion.d/vagrant
+fi
+
+if [[ -e ${HOME}/.iterm2_shell_integration.bash ]]; then
+    . ${HOME}/.iterm2_shell_integration.bash
 fi
 
 if which rbenv > /dev/null ; then
@@ -106,7 +110,9 @@ export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 #    export HOMEBREW_BUILD_FROM_SOURCE=1
 #fi
 
-[[ -f ${HOME}/.gpg-agent-info ]] && source ${HOME}/.gpg-agent-info
+if [[ -f ${HOME}/.gpg-agent-info ]]; then
+    . ${HOME}/.gpg-agent-info
+fi
 
 if [[ -S "${GPG_AGENT_INFO%%:*}" && -n "$(pgrep gpg-agent)" ]]; then
     export GPG_AGENT_INFO
