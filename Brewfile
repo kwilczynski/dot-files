@@ -37,6 +37,7 @@ brew 'libksba'
 brew 'pth'
 brew 'dirmngr'
 brew 'findutils', args: ['with-default-names']
+brew 'fzf'
 brew 'gist'
 brew 'git-flow'
 brew 'gnu-sed', args: ['with-default-names']
