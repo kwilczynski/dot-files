@@ -129,10 +129,13 @@ nnoremap <silent> <F10> :set invnumber number?<CR>
 nnoremap <silent> <F11> :set invlist list?<CR>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <C-f> :FZF<CR>
 
 if has("gui_macvim")
     colorscheme solarized
 endif
+
+set runtimepath+=/usr/local/opt/fzf
 
 set laststatus=2
 
