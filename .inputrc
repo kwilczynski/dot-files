@@ -1,5 +1,7 @@
 $include /etc/inputrc
 
+set bell-style none
+
 set keymap emacs
 set editing-mode emacs
 
