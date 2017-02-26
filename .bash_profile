@@ -44,6 +44,7 @@ shopt -s extglob
 shopt -s globstar
 shopt -s histappend
 shopt -s nocaseglob
+shopt -s cdable_vars
 
 export EDITOR='vim'
 
@@ -52,8 +53,13 @@ export MANPAGER='less -X'
 
 export LESS='-R -M --shift 5 -i -x -4 -S -F -X'
 
-export HISTSIZE=32769
-export HISTCONTROL=ignoredups:erasedups
+export PROMPT_DIRTRIM=2
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
+
+export HISTSIZE=131072
+export HISTFILESIZE=262144
+export HISTCONTROL=ignoreboth:erasedups
+export HISTIGNORE='&:[ ]*:exit:ls:bg:fg:history:clear'
 
 export LANG='en_US.UTF8'
 export LANGUAGE='en_US.UTF-8'

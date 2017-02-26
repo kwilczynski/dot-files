@@ -15,8 +15,15 @@ set visible-stats on
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
 
+set completion-map-case on
 set completion-ignore-case on
 set print-completions-horizontally on
+
+set mark-symlinked-directories on
+
+$if Bash
+  Space: magic-space
+$endif
 
 "\e0d": backward-word
 "\e0c": forward-word
