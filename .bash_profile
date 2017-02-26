@@ -65,6 +65,9 @@ export HISTFILESIZE=262144
 export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE='&:[ ]*:exit:ls:bg:fg:history:clear'
 
+export HH_CONFIG=hicolor,regexp,rawhistory
+export HH_PROMPT='> '
+
 export LANG='en_US.UTF8'
 export LANGUAGE='en_US.UTF-8'
 export LC_COLLATE='en_US.UTF-8'
