@@ -50,12 +50,17 @@ function! go#list#Get(listtype) abort
 endfunction
 
 " Populate populate the location list with the given items
-function! go#list#Populate(listtype, items) abort
+function! go#list#Populate(listtype, items, title) abort
   let l:listtype = go#list#Type(a:listtype)
   if l:listtype == "locationlist"
     call setloclist(0, a:items, 'r')
+
+    " The last argument ({what}) is introduced with 7.4.2200:
+    " https://github.com/vim/vim/commit/d823fa910cca43fec3c31c030ee908a14c272640
+    if has("patch-7.4.2200") | call setloclist(0, [], 'a', {'title': a:title}) | endif
   else
     call setqflist(a:items, 'r')
+    if has("patch-7.4.2200") | call setqflist([], 'a', {'title': a:title}) | endif
   endif
 endfunction
 
@@ -65,7 +70,7 @@ endfunction
 
 " Parse parses the given items based on the specified errorformat nad
 " populates the location list.
-function! go#list#ParseFormat(listtype, errformat, items) abort
+function! go#list#ParseFormat(listtype, errformat, items, title) abort
   let l:listtype = go#list#Type(a:listtype)
   " backup users errorformat, will be restored once we are finished
   let old_errorformat = &errorformat
@@ -74,8 +79,10 @@ function! go#list#ParseFormat(listtype, errformat, items) abort
   let &errorformat = a:errformat
   if l:listtype == "locationlist"
     lgetexpr a:items
+    if has("patch-7.4.2200") | call setloclist(0, [], 'a', {'title': a:title}) | endif
   else
     cgetexpr a:items
+    if has("patch-7.4.2200") | call setqflist([], 'a', {'title': a:title}) | endif
   endif
 
   "restore back
@@ -117,7 +124,7 @@ function! go#list#Type(listtype) abort
   if g:go_list_type == "locationlist"
     return "locationlist"
   elseif g:go_list_type == "quickfix"
-    return "quickfix" 
+    return "quickfix"
   else
     return a:listtype
   endif

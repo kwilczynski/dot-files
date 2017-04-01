@@ -41,6 +41,12 @@ function! go#rename#Rename(bang, ...) abort
 
   let cmd = [bin_path, "-offset", offset, "-to", to_identifier]
 
+  " check for any tags
+  if exists('g:go_build_tags')
+    let tags = get(g:, 'go_build_tags')
+    call extend(cmd, ["-tags", tags])
+  endif
+
   if go#util#has_job()
     call go#util#EchoProgress(printf("renaming to '%s' ...", to_identifier))
     call s:rename_job({
@@ -63,7 +69,7 @@ function s:rename_job(args)
     call add(messages, a:msg)
   endfunction
 
-  let import_path =  go#package#ImportPath(expand('%:p:h'))
+  let status_dir =  expand('%:p:h')
 
   function! s:close_cb(chan) closure
     let l:job = ch_getjob(a:chan)
@@ -79,21 +85,21 @@ function s:rename_job(args)
       let status.state = "failed"
     endif
 
-    call go#statusline#Update(import_path, status)
+    call go#statusline#Update(status_dir, status)
 
     call s:parse_errors(l:info.exitval, a:args.bang, messages)
   endfunction
 
   let start_options = {
-        \ 'callback': function("s:callback"),
-        \ 'close_cb': function("s:close_cb"),
+        \ 'callback': funcref("s:callback"),
+        \ 'close_cb': funcref("s:close_cb"),
         \ }
 
   " modify GOPATH if needed
   let old_gopath = $GOPATH
   let $GOPATH = go#path#Detect()
 
-  call go#statusline#Update(import_path, {
+  call go#statusline#Update(status_dir, {
         \ 'desc': "current status",
         \ 'type': "gorename",
         \ 'state': "started",
@@ -118,7 +124,7 @@ function s:parse_errors(exit_val, bang, out)
   if a:exit_val != 0
     call go#util#EchoError("FAILED")
     let errors = go#tool#ParseErrors(a:out)
-    call go#list#Populate(l:listtype, errors)
+    call go#list#Populate(l:listtype, errors, 'Rename')
     call go#list#Window(l:listtype, len(errors))
     if !empty(errors) && !a:bang
       call go#list#JumpToFirst(l:listtype)

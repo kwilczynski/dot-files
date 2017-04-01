@@ -34,7 +34,7 @@ function! go#coverage#Buffer(bang, ...) abort
   try
     execute cd . fnameescape(expand("%:p:h"))
     if empty(glob("*_test.go"))
-      call go#util#EchoError("no tests files available")
+      call go#util#EchoError("no test files available")
       return
     endif
   finally
@@ -85,19 +85,14 @@ endfunction
 
 " Clear clears and resets the buffer annotation matches
 function! go#coverage#Clear() abort
-  " only reset the syntax if the user has syntax enabled
-  if !empty(&syntax)
-    if exists("g:syntax_on") | syntax enable | endif
-  endif
+  call clearmatches()
 
   if exists("s:toggle") | let s:toggle = 0 | endif
 
-  " remove the autocmd we defined 
-  if exists("#BufWinLeave#<buffer>") 
+  " remove the autocmd we defined
+  if exists("#BufWinLeave#<buffer>")
     autocmd! BufWinLeave <buffer>
   endif
-
-  call clearmatches()
 endfunction
 
 " Browser creates a new cover profile with 'go test -coverprofile' and opens
@@ -165,8 +160,8 @@ function! go#coverage#genmatch(cov) abort
   " example: foo.go:92.2,92.65 1 0
   if a:cov.startline == a:cov.endline
     call add(matches, {
-          \ 'group': color, 
-          \ 'pos': [[a:cov.startline, a:cov.startcol, a:cov.endcol - a:cov.startcol]], 
+          \ 'group': color,
+          \ 'pos': [[a:cov.startline, a:cov.startcol, a:cov.endcol - a:cov.startcol]],
           \ 'priority': 2,
           \ })
     return matches
@@ -176,8 +171,8 @@ function! go#coverage#genmatch(cov) abort
   " the line, we assume it is at maximum 200 bytes. I know this is hacky,
   " but that's only way of fixing the issue
   call add(matches, {
-        \ 'group': color, 
-        \ 'pos': [[a:cov.startline, a:cov.startcol, 200]], 
+        \ 'group': color,
+        \ 'pos': [[a:cov.startline, a:cov.startcol, 200]],
         \ 'priority': 2,
         \ })
 
@@ -186,16 +181,16 @@ function! go#coverage#genmatch(cov) abort
   while start_line < a:cov.endline
     let start_line += 1
     call add(matches, {
-          \ 'group': color, 
-          \ 'pos': [[start_line]], 
+          \ 'group': color,
+          \ 'pos': [[start_line]],
           \ 'priority': 2,
           \ })
   endwhile
 
   " finally end columns
   call add(matches, {
-        \ 'group': color, 
-        \ 'pos': [[a:cov.endline, a:cov.endcol-1]], 
+        \ 'group': color,
+        \ 'pos': [[a:cov.endline, a:cov.endcol-1]],
         \ 'priority': 2,
         \ })
 
@@ -256,8 +251,6 @@ function! go#coverage#overlay(file) abort
     call extend(matches, go#coverage#genmatch(cov))
   endfor
 
-  syntax manual
-
   " clear the matches if we leave the buffer
   autocmd BufWinLeave <buffer> call go#coverage#Clear()
 
@@ -275,7 +268,7 @@ function s:coverage_job(args)
   " autowrite is not enabled for jobs
   call go#cmd#autowrite()
 
-  let import_path =  go#package#ImportPath(expand('%:p:h'))
+  let status_dir =  expand('%:p:h')
   function! s:error_info_cb(job, exit_status, data) closure
     let status = {
           \ 'desc': 'last status',
@@ -287,10 +280,10 @@ function s:coverage_job(args)
       let status.state = "failed"
     endif
 
-    call go#statusline#Update(import_path, status)
+    call go#statusline#Update(status_dir, status)
   endfunction
 
-  let a:args.error_info_cb = function('s:error_info_cb')
+  let a:args.error_info_cb = funcref('s:error_info_cb')
   let callbacks = go#job#Spawn(a:args)
 
   let start_options = {
@@ -308,7 +301,7 @@ function s:coverage_job(args)
   let jobdir = fnameescape(expand("%:p:h"))
   execute cd . jobdir
 
-  call go#statusline#Update(import_path, {
+  call go#statusline#Update(status_dir, {
         \ 'desc': "current status",
         \ 'type': "coverage",
         \ 'state': "started",
