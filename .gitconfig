@@ -9,6 +9,7 @@
         au = add -u .
         ap = add -p
         br = branch -v
+        brc = branch --contains
         bl = blame
         cl = clean
         clf = clean --force
