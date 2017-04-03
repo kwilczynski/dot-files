@@ -48,6 +48,7 @@
         pull-all = pull --recurse-submodules -r
         pt = push --tags
         w = whatchanged
+        wn = whatchanged --name-only --oneline
         sts = status -s
         rl = reflog
         ref = reflog
