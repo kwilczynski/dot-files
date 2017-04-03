@@ -49,6 +49,7 @@
         pt = push --tags
         w = whatchanged
         wn = whatchanged --name-only --oneline
+        wno = whatchanged --pretty='format:' --name-only
         sts = status -s
         rl = reflog
         ref = reflog
