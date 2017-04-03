@@ -155,28 +155,48 @@ let NERDTreeQuitOnOpen = 1
 
 let g:gitgutter_enabled = 0
 
-autocmd StdinReadPre * let s:std_in=1
+function! <SID>StripTrailingWhitespaces()
+    let s = @/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/ = s
+    call cursor(l, c)
+endfunction
 
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+augroup configgroup
+    autocmd!
 
-autocmd BufEnter * if &filetype == "" | setlocal filetype=text | endif
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | quit | endif
+    autocmd StdinReadPre * let s:std_in=1
 
-autocmd FileType text setlocal formatoptions-=t textwidth=0
-autocmd FileType gitcommit setlocal textwidth=80
-autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
-autocmd FileType sh,bash setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
-autocmd FileType rb,ruby setlocal textwidth=120 expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType py,python setlocal textwidth=80 expandtab shiftwidth=4 tabstop=8 softtabstop=4
-autocmd FileType php setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType html,xhtml,xml,xslt setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType js,javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType c,cpp,cs,h,hpp,objc setlocal cindent textwidth=80 noexpandtab shiftwidth=4 tabstop=8 softtabstop=4
-autocmd FileType go setlocal textwidth=120 noexpandtab shiftwidth=8 tabstop=8 softtabstop=8
-autocmd FileType rs,rc setlocal textwidth=100 expandtab shiftwidth=4 tabstop=8 softtabstop=4
-autocmd FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
-autocmd FileType yml,yaml setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd VimEnter * highlight clear SignColumn
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-autocmd BufRead,BufNewFile *.txt set filetype=text
-autocmd BufRead,BufNewFile *.sls set filetype=yaml
+    autocmd BufWritePre *.sh,*.bash :call <SID>StripTrailingWhitespaces()
+    autocmd BufWritePre *.c,*.cs,*.cpp,*.h,*.hpp,*.objc,*.java,*.rs,*.rc :call <SID>StripTrailingWhitespaces()
+    autocmd BufWritePre *.php,*.py,*.rb,*.erb,*.rake,*.js,*.css :call <SID>StripTrailingWhitespaces()
+    autocmd BufWritePre *.yml,*.yaml,*.json,*.toml,*.tf,*.tfvars :call <SID>StripTrailingWhitespaces()
+    autocmd BufWritePre Rakefile,Gemfile,Capfile,Makefile :call <SID>StripTrailingWhitespaces()
+
+    autocmd BufEnter * if &filetype == "" | setlocal filetype=text | endif
+    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | quit | endif
+
+    autocmd BufRead,BufNewFile *.txt set filetype=text
+    autocmd BufRead,BufNewFile *.sls set filetype=yaml
+
+    autocmd FileType text setlocal formatoptions-=t textwidth=0
+    autocmd FileType gitcommit setlocal textwidth=80
+    autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+    autocmd FileType sh,bash setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+    autocmd FileType rb,ruby setlocal textwidth=120 expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType py,python setlocal textwidth=80 expandtab shiftwidth=4 tabstop=8 softtabstop=4
+    autocmd FileType php setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+    autocmd FileType html,xhtml,xml,xslt setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+    autocmd FileType js,javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType c,cpp,cs,h,hpp,objc setlocal cindent textwidth=80 noexpandtab shiftwidth=4 tabstop=8 softtabstop=4
+    autocmd FileType go setlocal textwidth=120 noexpandtab shiftwidth=8 tabstop=8 softtabstop=8
+    autocmd FileType rs,rc setlocal textwidth=100 expandtab shiftwidth=4 tabstop=8 softtabstop=4
+    autocmd FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
+    autocmd FileType yml,yaml setlocal ts=2 sts=2 sw=2 expandtab
+augroup END
