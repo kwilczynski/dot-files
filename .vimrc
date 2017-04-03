@@ -97,6 +97,8 @@ set ruler
 
 set showmode
 
+set cursorline
+
 set backspace=indent,eol,start
 
 set ttyfast
