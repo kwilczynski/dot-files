@@ -116,7 +116,7 @@ alias be='bundle exec '
 #    alias vim='nvim'
 #fi
 
-export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/opt/gpg-agent/bin:${PATH}"
 
 # Only use when bottles are not working as expected.
 #if brew --help &> /dev/null ; then
