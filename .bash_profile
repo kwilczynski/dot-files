@@ -116,23 +116,28 @@ alias be='bundle exec '
 #    alias vim='nvim'
 #fi
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/opt/gpg-agent/bin:${PATH}"
+# Temporarily disabled.
+#export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/opt/gpg-agent/bin:${PATH}"
+
+export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
 # Only use when bottles are not working as expected.
 #if brew --help &> /dev/null ; then
 #    export HOMEBREW_BUILD_FROM_SOURCE=1
 #fi
 
-if [[ -f ${HOME}/.gpg-agent-info ]]; then
-    . ${HOME}/.gpg-agent-info
-fi
+# Temporarily disabled.
+#if [[ -f ${HOME}/.gpg-agent-info ]]; then
+#    . ${HOME}/.gpg-agent-info
+#fi
 
-if [[ -S "${GPG_AGENT_INFO%%:*}" && -n "$(pgrep gpg-agent)" ]]; then
-    export GPG_AGENT_INFO
-    export GPG_TTY=$(tty)
-else
-    eval $(gpg-agent --daemon --write-env-file ${HOME}/.gpg-agent-info)
-fi
+# Temporarily disabled.
+#if [[ -S "${GPG_AGENT_INFO%%:*}" && -n "$(pgrep gpg-agent)" ]]; then
+#    export GPG_AGENT_INFO
+#    export GPG_TTY=$(tty)
+#else
+#    eval $(gpg-agent --daemon --write-env-file ${HOME}/.gpg-agent-info)
+#fi
 
 # Temporarily disabled.
 #function vic {
