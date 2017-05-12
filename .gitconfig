@@ -8,9 +8,9 @@
         t = tag
         au = add -u .
         ap = add -p
+        bl = blame
         br = branch -v
         brc = branch --contains
-        bl = blame
         cl = clean
         clf = clean --force
         clo = clone
@@ -107,7 +107,7 @@
         log = true
 [core]
         pager = diff-highlight | less -FRSX
-	excludesfile = /Users/krzysztof/.gitignore_global
+	excludesfile = /Users/kwilczynski/.gitignore_global
 	trustctime = false
 [init]
         templatedir = ~/.git-templates
@@ -115,6 +115,8 @@
         helper = osxkeychain
 [commit]
         gpgsign = true
+[gpg]
+	program = gpg2
 [push]
         default = current
 [pull]
@@ -154,7 +156,6 @@
         renames = copies
         mnemonicprefix = true
         compactionHeuristic = true
-
 [difftool "diffmerge"]
         cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [interactive]
