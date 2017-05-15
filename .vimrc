@@ -36,8 +36,8 @@ set t_Co=256
 "set termguicolors
 
 syntax on
-"colorscheme slate
-colorscheme dracula
+colorscheme slate
+"colorscheme dracula
 
 filetype plugin indent on
 
@@ -97,7 +97,7 @@ set ruler
 
 set showmode
 
-set cursorline
+"set cursorline
 
 set backspace=indent,eol,start
 
@@ -188,15 +188,15 @@ augroup configgroup
     autocmd FileType gitcommit setlocal textwidth=80
     autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType sh,bash setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
-    autocmd FileType rb,ruby setlocal textwidth=120 expandtab shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType py,python setlocal textwidth=80 expandtab shiftwidth=4 tabstop=8 softtabstop=4
+    autocmd FileType rb,ruby setlocal expandtab textwidth=120 shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType py,python setlocal expandtab textwidth=80 shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType php setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
     autocmd FileType html,xhtml,xml,xslt setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
     autocmd FileType js,javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType c,cpp,cs,h,hpp,objc setlocal cindent textwidth=80 noexpandtab shiftwidth=4 tabstop=8 softtabstop=4
-    autocmd FileType go setlocal textwidth=120 noexpandtab shiftwidth=8 tabstop=8 softtabstop=8
-    autocmd FileType rs,rc setlocal textwidth=100 expandtab shiftwidth=4 tabstop=8 softtabstop=4
+    autocmd FileType c,cpp,cs,h,hpp,objc setlocal noexpandtab cindent textwidth=80 shiftwidth=4 tabstop=8 softtabstop=4
+    autocmd FileType go setlocal noexpandtab textwidth=120 shiftwidth=8 tabstop=8 softtabstop=8
+    autocmd FileType rs,rc setlocal expandtab textwidth=100 shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
-    autocmd FileType yml,yaml setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType yml,yaml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
