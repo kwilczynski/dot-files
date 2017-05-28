@@ -1,0 +1,17 @@
+key_layout = qwerty
+
+session = ~/.rtorrent/session
+
+tos = throughput
+port_range = 8192-65535
+port_random = yes
+
+check_hash = yes
+hash_read_ahead = 5
+
+encryption = allow_incoming, try_outgoing, enable_retry
+
+dht = on
+enable_trackers = yes
+use_udp_trackers = yes
+peer_exchange = yes
