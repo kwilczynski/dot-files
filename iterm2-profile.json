@@ -1,5 +1,9 @@
 {
-  "Custom Directory" : "Advanced",
+  "Ansi 5 Color" : {
+    "Green Component" : 0.4745098039215686,
+    "Red Component" : 1,
+    "Blue Component" : 0.7764705882352941
+  },
   "Working Directory" : "\/Users\/kwilczynski",
   "Prompt Before Closing 2" : 1,
   "Selected Text Color" : {
@@ -27,7 +31,7 @@
     "Blue Component" : 0.3529411852359772
   },
   "Show Mark Indicators" : false,
-  "Mouse Reporting" : false,
+  "Mouse Reporting" : true,
   "Ansi 4 Color" : {
     "Green Component" : 0.5764705882352941,
     "Red Component" : 0.7411764705882353,
@@ -269,6 +273,7 @@
     "Blue Component" : 0.9764705882352941
   },
   "Window Type" : 0,
+  "Allow Title Reporting" : true,
   "Use Bright Bold" : true,
   "Cursor Text Color" : {
     "Green Component" : 1,
@@ -281,25 +286,26 @@
     "Red Component" : 0.7333333492279053,
     "Blue Component" : 0.7333333492279053
   },
+  "Disable Smcup Rmcup" : false,
+  "Name" : "Default",
+  "Blinking Cursor" : false,
   "Ansi 1 Color" : {
     "Green Component" : 0.3333333432674408,
     "Red Component" : 1,
     "Blue Component" : 0.3333333432674408
   },
-  "Name" : "Default",
-  "Blinking Cursor" : false,
   "Guid" : "0CA5D31E-2625-486A-9C71-758425EDE4DE",
-  "Idle Code" : 0,
-  "Ansi 10 Color" : {
-    "Green Component" : 0.9803921568627451,
-    "Red Component" : 0.3137254901960784,
-    "Blue Component" : 0.4823529411764706
-  },
   "Ansi 8 Color" : {
     "Green Component" : 0.3333333333333333,
     "Red Component" : 0.3333333333333333,
     "Blue Component" : 0.3333333333333333
   },
+  "Ansi 10 Color" : {
+    "Green Component" : 0.9803921568627451,
+    "Red Component" : 0.3137254901960784,
+    "Blue Component" : 0.4823529411764706
+  },
+  "Idle Code" : 0,
   "Badge Color" : {
     "Red Component" : 1,
     "Color Space" : "Calibrated",
@@ -315,9 +321,9 @@
   },
   "AWDS Pane Directory" : "",
   "Blur" : false,
+  "Normal Font" : "FiraCode-Regular 12",
   "Vertical Spacing" : 1,
   "Session Close Undo Timeout" : 60,
-  "Normal Font" : "FiraCode-Regular 12",
   "Ansi 7 Color" : {
     "Green Component" : 0.7333333492279053,
     "Red Component" : 0.7333333492279053,
@@ -341,7 +347,7 @@
     "Blue Component" : 0.9921568627450981
   },
   "Transparency" : 0,
-  "Initial Text" : "tmux attach -t default || tmux new -s default",
+  "Initial Text" : "",
   "Background Color" : {
     "Green Component" : 0.1221527233719826,
     "Red Component" : 0.1176581159234047,
@@ -357,11 +363,7 @@
   },
   "Columns" : 80,
   "Visual Bell" : true,
+  "Custom Directory" : "Advanced",
   "ASCII Ligatures" : true,
-  "Thin Strokes" : 1,
-  "Ansi 5 Color" : {
-    "Green Component" : 0.4745098039215686,
-    "Red Component" : 1,
-    "Blue Component" : 0.7764705882352941
-  }
+  "Thin Strokes" : 1
 }
