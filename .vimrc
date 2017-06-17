@@ -5,7 +5,13 @@ Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
 
 Plug 'Yggdroot/indentLine'
+let g:indentLine_enabled=0
 nnoremap <silent> <F6> :IndentLinesToggle<CR>
+
+Plug 'simnalamburt/vim-mundo'
+inoremap <silent> <F7> <ESC>:MundoToggle<CR>
+nnoremap <silent> <F7> :MundoToggle<CR>
+vnoremap <silent> <F7> <ESC>:MundoToggle<CR>
 
 Plug 'jlanzarotta/bufexplorer'
 nnoremap <silent> <C-b> :ToggleBufExplorer<CR>

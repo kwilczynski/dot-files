@@ -101,7 +101,7 @@ brew 'tmux'
 brew 'tree'
 brew 'unrar'
 brew 'vagrant-completion'
-brew 'vim', args: ['override-system-vi', 'with-lua']
+brew 'vim', args: ['override-system-vi', 'with-lua', 'with-luajit', 'with-custom-python', 'without-ruby']
 brew 'watch'
 brew 'watchman'
 brew 'wget'
