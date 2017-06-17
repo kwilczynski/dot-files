@@ -1,4 +1,46 @@
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+
+Plug 'dracula/vim'
+Plug 'altercation/vim-colors-solarized'
+let g:solarized_termcolors=256
+
+Plug 'Yggdroot/indentLine'
+nnoremap <silent> <F6> :IndentLinesToggle<CR>
+
+Plug 'jlanzarotta/bufexplorer'
+nnoremap <silent> <C-b> :ToggleBufExplorer<CR>
+
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+
+Plug 'airblade/vim-gitgutter'
+let g:gitgutter_enabled=0
+nnoremap <silent> <F3> :GitGutterToggle<CR>
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+let g:NERDTreeMouseMode=1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeQuitOnOpen=1
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+
+Plug 'mileszs/ack.vim'
+
+Plug 'junegunn/fzf.vim'
+nnoremap <silent> <C-f> :FZF<CR>
+
+Plug 'fatih/vim-go'
+Plug 'vim-ruby/vim-ruby'
+Plug 'rust-lang/rust.vim'
+Plug 'pangloss/vim-javascript'
+
+Plug 'elzr/vim-json'
+Plug 'gabrielelana/vim-markdown'
+
+Plug 'hashivim/vim-terraform'
+let g:terraform_align=1
+
+call plug#end()
 
 set nocompatible
 set modeline
@@ -17,7 +59,6 @@ set copyindent
 set preserveindent
 set shiftround
 
-set background=dark
 set virtualedit=block
 
 set shiftwidth=2
@@ -32,12 +73,18 @@ set nofoldenable
 set splitright
 set splitbelow
 
+set mouse=a
+set ttymouse=sgr
+
 set t_Co=256
 "set termguicolors
 
-syntax on
-colorscheme slate
-"colorscheme dracula
+syntax enable
+syntax sync minlines=250
+
+set background=dark
+"colorscheme slate
+colorscheme dracula
 
 filetype plugin indent on
 
@@ -45,8 +92,6 @@ set encoding=utf-8
 set fileencodings=utf-8
 set termencoding=utf-8
 set textwidth=120
-set nowritebackup
-set nobackup
 set history=128
 
 set scrolloff=3
@@ -109,6 +154,26 @@ set nostartofline
 
 set pastetoggle=<F5>
 
+set undoreload=65535
+set undofile
+
+set backup noswapfile
+
+set undodir=~/.vim/undo
+if !isdirectory(expand(&undodir))
+  call mkdir(expand(&undodir), "p")
+endif
+
+set backupdir=~/.vim/backup
+if !isdirectory(expand(&backupdir))
+  call mkdir(expand(&backupdir), "p")
+endif
+
+set directory=~/.vim/swap
+if !isdirectory(expand(&directory))
+  call mkdir(expand(&directory), "p")
+endif
+
 if has('nvim')
 else
     command W  :execute ':silent w !sudo tee % >/dev/null' | :edit!
@@ -120,8 +185,6 @@ command Jq  :execute '%!jq . 2>/dev/null'
 
 vnoremap r "_dP
 
-nnoremap <silent> <F3> :GitGutterToggle<CR>
-
 if v:version >= 700 && has("spell")
     set spelllang=en_gb,en_us,en
     nnoremap <silent> <F4> :set invspell spell?<CR><Bar>:echo "Spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
@@ -131,8 +194,6 @@ nnoremap <silent> <F5> :set invpaste paste?<CR><Bar>:echo "Paste mode: " . strpa
 nnoremap <silent> <F10> :set invnumber number?<CR>
 nnoremap <silent> <F11> :set invlist list?<CR>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
-nnoremap <silent> <C-f> :FZF<CR>
 
 if has("gui_macvim")
     colorscheme solarized
@@ -142,18 +203,12 @@ set runtimepath+=/usr/local/opt/fzf
 
 set laststatus=2
 
-set statusline=[%n]\ %<%F%{fugitive#statusline()}%M%R%H%W
+set statusline=[%n]\ %<%F%{exists('g:loaded_fugitive')?fugitive#statusline():''}%M%R%H%W
 set statusline+=\ %=%Y
 set statusline+=\ %{toupper(strlen(&ff)?&ff:'none')}
 set statusline+=\ %{toupper(strlen(&fenc)?&fenc:'none')}
 set statusline+=\ %c,%l/%L\ %p%%
 set statusline+=\ ~\ %{strftime(\"%d/%m/%Y\ %T\",getftime(expand(\"%:p\")))}
-
-let NERDTreeMinimalUI = 1
-let NERDTreeShowHidden = 1
-let NERDTreeQuitOnOpen = 1
-
-let g:gitgutter_enabled = 0
 
 function! <SID>StripTrailingWhitespaces()
     let s = @/
