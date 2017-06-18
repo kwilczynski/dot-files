@@ -6,7 +6,7 @@ tap 'homebrew/completions'
 tap 'homebrew/core'
 tap 'homebrew/dupes'
 tap 'homebrew/versions'
-tap jmespath/jmespath
+tap 'jmespath/jmespath'
 
 brew 'ack'
 brew 'asciinema'
