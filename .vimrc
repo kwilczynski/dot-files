@@ -23,7 +23,7 @@ Plug 'airblade/vim-gitgutter'
 let g:gitgutter_enabled=0
 nnoremap <silent> <F3> :GitGutterToggle<CR>
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 let g:NERDTreeMouseMode=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeShowHidden=1
