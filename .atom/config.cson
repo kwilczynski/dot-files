@@ -1,10 +1,11 @@
 "*":
   core:
     allowPendingPaneItems: false
+    automaticallyUpdate: false
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
-      "dracula-theme"
+      "dracula-syntax"
     ]
   editor:
     autoIndentOnPaste: false
