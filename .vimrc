@@ -43,6 +43,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'gabrielelana/vim-markdown'
 
+Plug 'hashivim/vim-vagrant'
 Plug 'hashivim/vim-terraform'
 let g:terraform_align=1
 
