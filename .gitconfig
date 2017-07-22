@@ -91,7 +91,7 @@
         this = !git init && git add . && git commit -m \"Initial commit.\"
         empty = !git init && git commit --allow-empty -m \"Initial commit.\"
         r = !git ls-files -z --deleted | xargs -0 git rm
-        wd = !git diff --color | diff-highlight | less -r
+        wd = !git diff --color | diff-so-fancy | less -r
 [color]
         branch = auto
         diff = auto
@@ -106,7 +106,7 @@
 [merge]
         log = true
 [core]
-        pager = diff-highlight | less -FRSX
+        pager = diff-so-fancy | less -FRSX
 	excludesfile = /Users/kwilczynski/.gitignore_global
 	trustctime = false
 [init]
@@ -161,7 +161,7 @@
 [difftool "diffmerge"]
         cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [interactive]
-        diffFilter = diff-highlight
+        diffFilter = diff-so-fancy
 [merge]
         tool = diffmerge
 [mergetool "diffmerge"]
