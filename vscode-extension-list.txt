@@ -1,0 +1,5 @@
+dracula-theme.theme-dracula
+lukehoban.Go
+mauve.terraform
+ms-vscode.cpptools
+rebornix.Ruby
