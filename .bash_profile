@@ -121,6 +121,10 @@ alias be='bundle exec '
 
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
+if which tfenv > /dev/null; then
+    export PATH="${HOME}/.tfenv/bin:${PATH}"
+fi
+
 # Only use when bottles are not working as expected.
 #if brew --help &> /dev/null ; then
 #    export HOMEBREW_BUILD_FROM_SOURCE=1
