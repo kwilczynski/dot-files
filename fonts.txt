@@ -1,0 +1,11 @@
+FiraCode
+https://github.com/tonsky/FiraCode
+
+Inconsolata
+http://levien.com/type/myfonts/inconsolata.html
+
+Source Code Pro
+https://www.fontsquirrel.com/fonts/source-code-pro
+
+Hack
+http://sourcefoundry.org/hack/
