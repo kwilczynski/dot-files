@@ -80,6 +80,8 @@ export LC_ALL='en_US.UTF-8'
 
 export RUBYOPT='-rubygems'
 
+export HOMEBREW_NO_ANALYTICS=1
+
 if ls --color &> /dev/null ; then
     alias l='ls --color -CF'
     alias ls='ls --color -G'
