@@ -1,5 +1,5 @@
 {
-    "workbench.welcome.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Dracula",
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
