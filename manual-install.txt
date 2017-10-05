@@ -3,3 +3,6 @@ https://www.ipvanish.com/vpn-setup/
 
 orgalorg
 https://github.com/reconquest/orgalorg
+
+Java JDK
+http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html
