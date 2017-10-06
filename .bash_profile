@@ -82,6 +82,8 @@ export RUBYOPT='-rubygems'
 
 export HOMEBREW_NO_ANALYTICS=1
 
+export CHECKPOINT_DISABLE=1
+
 if ls --color &> /dev/null ; then
     alias l='ls --color -CF'
     alias ls='ls --color -G'
