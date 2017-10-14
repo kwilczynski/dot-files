@@ -37,13 +37,15 @@ Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf.vim'
 nnoremap <silent> <C-f> :FZF<CR>
 
-Plug 'valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --js-completer' }
+" Temporarily disabled.
+" Plug 'valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --js-completer' }
 
 Plug 'fatih/vim-go'
 Plug 'vim-ruby/vim-ruby'
 
-Plug 'python-mode/python-mode'
-let g:pymode_python = 'python3'
+" Temporarily disabled.
+" Plug 'python-mode/python-mode'
+" let g:pymode_python = 'python3'
 
 Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
