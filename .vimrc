@@ -1,4 +1,6 @@
 call plug#begin('~/.vim/plugged')
+let g:plug_timeout=120
+let g:plug_retries=4
 
 Plug 'dracula/vim'
 Plug 'altercation/vim-colors-solarized'
@@ -35,8 +37,14 @@ Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf.vim'
 nnoremap <silent> <C-f> :FZF<CR>
 
+Plug 'valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --js-completer' }
+
 Plug 'fatih/vim-go'
 Plug 'vim-ruby/vim-ruby'
+
+Plug 'python-mode/python-mode'
+let g:pymode_python = 'python3'
+
 Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
 
