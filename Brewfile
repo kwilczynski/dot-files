@@ -32,6 +32,7 @@ brew 'diff-so-fancy'
 brew 'direnv'
 brew 'dirmngr'
 brew 'dos2unix'
+brew 'fd'
 brew 'findutils', args: ['with-default-names']
 brew 'fzf'
 brew 'gdbm'
