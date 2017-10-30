@@ -30,6 +30,10 @@ if which hub >/dev/null; then
     eval "$(hub alias -s)"
 fi
 
+if which thefuck >/dev/null; then
+    eval $(thefuck --alias)
+fi
+
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWSTASHSTATE=true
