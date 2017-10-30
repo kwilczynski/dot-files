@@ -10,20 +10,24 @@ if [[ -e ${HOME}/.iterm2_shell_integration.bash ]]; then
     . ${HOME}/.iterm2_shell_integration.bash
 fi
 
-if which rbenv > /dev/null; then
+if which rbenv >/dev/null; then
     eval "$(rbenv init -)"
 fi
 
-if which direnv > /dev/null; then
+if which direnv >/dev/null; then
     eval "$(direnv hook bash)"
 fi
 
-if which aws > /dev/null; then
+if which aws >/dev/null; then
     complete -C aws_completer aws
 fi
 
-if which fzf > /dev/null; then
+if which fzf >/dev/null; then
     . $(brew --prefix)/opt/fzf/shell/completion.bash
+fi
+
+if which hub >/dev/null; then
+    eval "$(hub alias -s)"
 fi
 
 export GIT_PS1_SHOWDIRTYSTATE=true
@@ -115,6 +119,8 @@ alias egrep='egrep --color=auto'
 alias b='bundle '
 alias br='brew'
 alias be='bundle exec '
+
+alias aws-okta='. aws-okta'
 
 # Temporarily disabled.
 #if nvim --version &>/dev/null; then

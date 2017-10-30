@@ -49,6 +49,7 @@ brew 'homebrew/dupes/grep', args: ['with-default-names']
 brew 'homebrew/dupes/rsync'
 brew 'htop-osx'
 brew 'httpie'
+brew 'hub'
 brew 'icu4c'
 brew 'ipcalc'
 brew 'jid'
