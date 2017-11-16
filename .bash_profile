@@ -95,6 +95,8 @@ export HOMEBREW_NO_ANALYTICS=1
 export CHECKPOINT_DISABLE=1
 export VAGRANT_CHECKPOINT_DISABLE=1
 
+export DIRENV_LOG_FORMAT=
+
 if ls --color &> /dev/null ; then
     alias l='ls --color -CF'
     alias ls='ls --color -G'
