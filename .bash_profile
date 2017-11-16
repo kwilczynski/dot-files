@@ -138,9 +138,14 @@ alias aws-okta='. aws-okta'
 
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
-if which tfenv > /dev/null; then
-    export PATH="${HOME}/.tfenv/bin:${PATH}"
-fi
+# Temporarily disabled.
+#if which tfenv > /dev/null; then
+#    export PATH="${HOME}/.tfenv/bin:${PATH}"
+#fi
+#
+#if which pkenv > /dev/null; then
+#    export PATH="${HOME}/.pkenv/bin:${PATH}"
+#fi
 
 # Only use when bottles are not working as expected.
 #if brew --help &> /dev/null ; then
