@@ -9,3 +9,6 @@ https://www.fontsquirrel.com/fonts/source-code-pro
 
 Hack
 http://sourcefoundry.org/hack/
+
+Iosevka
+https://github.com/be5invis/Iosevka
