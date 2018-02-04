@@ -40,7 +40,13 @@ nnoremap <silent> <C-f> :FZF<CR>
 " Temporarily disabled.
 " Plug 'valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --js-completer' }
 
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+let g:go_fmt_command = "goimports"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+
 Plug 'vim-ruby/vim-ruby'
 
 " Temporarily disabled.
