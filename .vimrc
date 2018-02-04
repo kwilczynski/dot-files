@@ -3,6 +3,7 @@ let g:plug_timeout=120
 let g:plug_retries=4
 
 Plug 'dracula/vim'
+Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
 
@@ -107,7 +108,8 @@ syntax sync minlines=250
 
 set background=dark
 "colorscheme slate
-colorscheme dracula
+"colorscheme dracula
+colorscheme molokai
 
 filetype plugin indent on
 
