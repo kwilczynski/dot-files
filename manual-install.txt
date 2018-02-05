@@ -1,6 +1,9 @@
 IPVanish VPN
 https://www.ipvanish.com/vpn-setup/
 
+ExpressVPN
+https://www.expressvpn.com/vpn-software/vpn-mac
+
 orgalorg
 https://github.com/reconquest/orgalorg
 
