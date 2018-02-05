@@ -1,5 +1,7 @@
 dracula-theme.theme-dracula
 lukehoban.Go
 mauve.terraform
+ms-python.python
 ms-vscode.cpptools
+nonylene.dark-molokai-theme
 rebornix.Ruby
