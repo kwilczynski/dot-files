@@ -1,11 +1,9 @@
 {
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Dracula",
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "files.autoSave": "onFocusChange",
     "editor.renderWhitespace": "boundary",
-    "editor.cursorStyle": "block",
     "editor.fontFamily": "'Fira Code', monospace",
     "editor.quickSuggestions": {
         "other": true,
@@ -15,5 +13,7 @@
     "editor.autoIndent": true,
     "editor.cursorBlinking": "solid",
     "editor.fontLigatures": true,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Monokai"
 }
