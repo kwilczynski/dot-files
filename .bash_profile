@@ -4,10 +4,6 @@ if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-if [[ -f $(brew --prefix)/etc/bash_completion.d/vagrant ]]; then
-    . $(brew --prefix)/etc/bash_completion.d/vagrant
-fi
-
 if [[ -e ${HOME}/.iterm2_shell_integration.bash ]]; then
     . ${HOME}/.iterm2_shell_integration.bash
 fi
