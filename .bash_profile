@@ -61,7 +61,8 @@ export EDITOR='vim'
 export PAGER='less'
 export MANPAGER='less -X'
 
-export LESS='-R -M --shift 5 -i -x -4 -S -F -X'
+export LESS='-R -M --shift 5 -i -x -4 -S -F -X --buffers=65535'
+export LESSSECURE=1
 
 export PROMPT_DIRTRIM=2
 export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
