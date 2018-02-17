@@ -33,26 +33,23 @@ let g:NERDTreeShowHidden=1
 let g:NERDTreeQuitOnOpen=1
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
+Plug 'godlygeek/tabular'
+
+Plug 'terryma/vim-multiple-cursors'
+
 Plug 'mileszs/ack.vim'
 
 Plug 'junegunn/fzf.vim'
 nnoremap <silent> <C-f> :FZF<CR>
 
-" Temporarily disabled.
-" Plug 'valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --js-completer' }
-
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-let g:go_fmt_command = "goimports"
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
+Plug 'fatih/vim-go'
+let g:go_fmt_command="goimports"
+let g:go_highlight_types=1
+let g:go_highlight_fields=1
+let g:go_highlight_functions=1
+let g:go_highlight_methods=1
 
 Plug 'vim-ruby/vim-ruby'
-
-" Temporarily disabled.
-" Plug 'python-mode/python-mode'
-" let g:pymode_python = 'python3'
 
 Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
@@ -107,8 +104,6 @@ syntax enable
 syntax sync minlines=250
 
 set background=dark
-"colorscheme slate
-"colorscheme dracula
 colorscheme molokai
 
 filetype plugin indent on
