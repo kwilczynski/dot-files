@@ -23,7 +23,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 Plug 'airblade/vim-gitgutter'
-let g:gitgutter_enabled=0
+let g:gitgutter_enabled=1
 nnoremap <silent> <F3> :GitGutterToggle<CR>
 
 Plug 'scrooloose/nerdtree'
