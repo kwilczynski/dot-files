@@ -34,6 +34,7 @@ let g:NERDTreeQuitOnOpen=1
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 Plug 'godlygeek/tabular'
+Plug 'kopischke/vim-fetch'
 
 Plug 'terryma/vim-multiple-cursors'
 
