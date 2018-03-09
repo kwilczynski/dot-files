@@ -9,7 +9,6 @@ tap 'homebrew/versions'
 tap 'jmespath/jmespath'
 tap 'wallix/awless'
 tap 'kwilczynski/pkenv'
-tap 'kwilczynski/docker-squash'
 
 brew 'ack'
 brew 'asciinema'
@@ -33,7 +32,7 @@ brew 'devd'
 brew 'diff-so-fancy'
 brew 'direnv'
 brew 'dirmngr'
-brew 'docker-squash'
+brew 'docker-squash', args: ['without-docker', 'without-docker-machine']
 brew 'dos2unix'
 brew 'fd'
 brew 'findutils', args: ['with-default-names']
