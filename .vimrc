@@ -3,7 +3,10 @@ let g:plug_timeout=120
 let g:plug_retries=4
 
 Plug 'dracula/vim'
+
 Plug 'tomasr/molokai'
+let g:rehash256=1
+
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
 
@@ -49,6 +52,7 @@ let g:go_highlight_types=1
 let g:go_highlight_fields=1
 let g:go_highlight_functions=1
 let g:go_highlight_methods=1
+let g:go_highlight_operators=1
 
 Plug 'vim-ruby/vim-ruby'
 
