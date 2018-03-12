@@ -1,19 +1,24 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
-    "files.autoSave": "onFocusChange",
-    "editor.renderWhitespace": "boundary",
-    "editor.fontFamily": "'Fira Code', monospace",
-    "editor.quickSuggestions": {
-        "other": true,
-        "comments": false,
-        "strings": true
-    },
-    "editor.autoIndent": true,
-    "editor.cursorBlinking": "solid",
-    "editor.fontLigatures": true,
-    "editor.formatOnSave": true,
-    "window.zoomLevel": 0,
-    "workbench.colorTheme": "Monokai"
+  "window.zoomLevel": 0,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Monokai",
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "files.autoSave": "onFocusChange",
+  "editor.renderWhitespace": "boundary",
+  "editor.fontFamily": "'Fira Code', monospace",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.autoIndent": true,
+  "editor.cursorBlinking": "blink",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "go.formatTool": "goimports",
+  "go.goroot": "/usr/local/opt/go/libexec",
+  "go.gopath": "/Users/krzysztof/Projects/Personal/Go",
+  "go.inferGopath": true,
+  "go.toolsGopath": "/Users/krzysztof/Projects/Personal/Go"
 }
