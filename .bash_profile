@@ -126,8 +126,6 @@ alias b='bundle '
 alias br='brew'
 alias be='bundle exec '
 
-alias aws-okta='. aws-okta'
-
 # Allow "g" alias to work.
 complete -o default -o nospace -F _git g
 
