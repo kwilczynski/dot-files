@@ -46,13 +46,24 @@ Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf.vim'
 nnoremap <silent> <C-f> :FZF<CR>
 
+Plug 'ctrlpvim/ctrlp.vim'
+
 Plug 'fatih/vim-go'
+let g:go_snippet_engine="ultisnips"
 let g:go_fmt_command="goimports"
-let g:go_highlight_types=1
+let g:go_auto_sameids=1
+let g:go_auto_type_info=1
 let g:go_highlight_fields=1
 let g:go_highlight_functions=1
 let g:go_highlight_methods=1
 let g:go_highlight_operators=1
+let g:go_highlight_types=1
+
+Plug 'Shougo/neocomplete.vim'
+let g:neocomplete#enable_at_startup=1
+
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'SirVer/ultisnips'
 
 Plug 'vim-ruby/vim-ruby'
 
