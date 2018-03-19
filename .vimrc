@@ -1,17 +1,17 @@
 call plug#begin('~/.vim/plugged')
-let g:plug_timeout=120
-let g:plug_retries=4
+let g:plug_timeout = 120
+let g:plug_retries = 4
 
 Plug 'dracula/vim'
 
 Plug 'tomasr/molokai'
-let g:rehash256=1
+let g:rehash256 = 1
 
 Plug 'altercation/vim-colors-solarized'
-let g:solarized_termcolors=256
+let g:solarized_termcolors = 256
 
 Plug 'Yggdroot/indentLine'
-let g:indentLine_enabled=0
+let g:indentLine_enabled = 0
 nnoremap <silent> <F6> :IndentLinesToggle<CR>
 
 Plug 'simnalamburt/vim-mundo'
@@ -26,14 +26,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 Plug 'airblade/vim-gitgutter'
-let g:gitgutter_enabled=1
+let g:gitgutter_enabled = 1
 nnoremap <silent> <F3> :GitGutterToggle<CR>
 
 Plug 'scrooloose/nerdtree'
-let g:NERDTreeMouseMode=1
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeShowHidden=1
-let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeMouseMode = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeQuitOnOpen = 1
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 Plug 'godlygeek/tabular'
@@ -49,18 +49,18 @@ nnoremap <silent> <C-f> :FZF<CR>
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'fatih/vim-go'
-let g:go_snippet_engine="ultisnips"
-let g:go_fmt_command="goimports"
-let g:go_auto_sameids=1
-let g:go_auto_type_info=1
-let g:go_highlight_fields=1
-let g:go_highlight_functions=1
-let g:go_highlight_methods=1
-let g:go_highlight_operators=1
-let g:go_highlight_types=1
+let g:go_snippet_engine = "ultisnips"
+let g:go_fmt_command = "goimports"
+let g:go_auto_sameids = 0
+let g:go_auto_type_info = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_types = 1
 
 Plug 'Shougo/neocomplete.vim'
-let g:neocomplete#enable_at_startup=1
+let g:neocomplete#enable_at_startup = 1
 
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'SirVer/ultisnips'
@@ -75,7 +75,7 @@ Plug 'gabrielelana/vim-markdown'
 
 Plug 'hashivim/vim-vagrant'
 Plug 'hashivim/vim-terraform'
-let g:terraform_align=1
+let g:terraform_align = 1
 
 call plug#end()
 
