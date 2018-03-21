@@ -14,11 +14,14 @@ set expand-tilde on
 set visible-stats on
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
+set skip-completed-text on
 
 set completion-map-case on
 set completion-ignore-case on
-set print-completions-horizontally on
+set completion-query-items 100
 
+set page-completions off
+set print-completions-horizontally on
 set mark-symlinked-directories on
 
 $if Bash
