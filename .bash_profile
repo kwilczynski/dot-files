@@ -114,12 +114,20 @@ alias tree='tree -C'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias b='bundle '
+alias b='bundle'
 alias br='brew'
-alias be='bundle exec '
+alias be='bundle exec'
+alias t='triton'
+alias v='vagrant'
 
-# Allow "g" alias to work.
+# Allow "g" alias to work for Git.
 complete -o default -o nospace -F _git g
+
+# Allow "t" alias to work with triton.
+complete -o default -o nospace -F _triton_completion t
+
+# Allow "v" alias to work for Vagrant.
+complete -o default -o nospace -F _vagrant v
 
 # Temporarily disabled.
 #if nvim --version &>/dev/null; then
