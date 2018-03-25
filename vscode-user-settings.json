@@ -1,7 +1,6 @@
 {
   "window.zoomLevel": 0,
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Monokai",
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   "files.autoSave": "onFocusChange",
@@ -18,7 +17,7 @@
   "editor.formatOnSave": true,
   "go.formatTool": "goimports",
   "go.goroot": "/usr/local/opt/go/libexec",
-  "go.gopath": "/Users/krzysztof/Projects/Personal/Go",
   "go.inferGopath": true,
-  "go.toolsGopath": "/Users/krzysztof/Projects/Personal/Go"
+  "workbench.colorTheme": "Monokai",
+  "workbench.iconTheme": "material-icon-theme"
 }
