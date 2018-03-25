@@ -1,7 +1,14 @@
+PKief.material-icon-theme
+PeterJausovec.vscode-docker
+castwide.solargraph
+donjayamanne.githistory
 dracula-theme.theme-dracula
+eamodio.gitlens
 lukehoban.Go
 mauve.terraform
 ms-python.python
 ms-vscode.cpptools
 nonylene.dark-molokai-theme
 rebornix.Ruby
+shardulm94.trailing-spaces
+zhuangtongfa.Material-theme
