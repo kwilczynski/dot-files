@@ -49,9 +49,8 @@ nnoremap <silent> <C-f> :FZF<CR>
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'fatih/vim-go'
-let g:go_snippet_engine = "ultisnips"
-let g:go_fmt_command = "goimports"
-let g:go_auto_sameids = 0
+let g:go_snippet_engine = 'ultisnips'
+let g:go_fmt_command = 'goimports'
 let g:go_auto_type_info = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -61,6 +60,9 @@ let g:go_highlight_types = 1
 
 Plug 'Shougo/neocomplete.vim'
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_auto_close_preview = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'SirVer/ultisnips'
@@ -76,7 +78,9 @@ Plug 'gabrielelana/vim-markdown'
 Plug 'hashivim/vim-vagrant'
 Plug 'hashivim/vim-terraform'
 let g:terraform_align = 1
-
+let g:terraform_fmt_on_save = 1
+let g:terraform_fold_sections = 0
+let g:terraform_remap_spacebar = 0
 call plug#end()
 
 set nocompatible
@@ -139,6 +143,8 @@ set formatoptions+=n
 if v:version > 703
     set formatoptions+=j
 endif
+
+set completeopt-=preview
 
 set clipboard+=unnamed
 
