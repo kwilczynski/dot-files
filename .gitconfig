@@ -5,20 +5,22 @@
 [alias]
         a = add
         c = clone
+        cr = clone --recursive
         t = tag
         au = add -u .
         ap = add -p
         bl = blame
         br = branch -v
         brc = branch --contains
+        branches = branch -a
         cl = clean
         clf = clean --force
-        clo = clone
         sh = show
         sb = show-branch
         ls = ls-files
         lo = log
         st = status
+        s = status -s
         co = checkout
         cp = cherry-pick
         ci = commit
@@ -41,12 +43,14 @@
         rbr = rebase --root
         me = merge
         rs = remote show
+        remotes = remote -v
         pu = pull
         pur = pull --rebase
         pus = submodule foreach git pull origin master
         purs = pull --recurse-submodules
         pull-all = pull --recurse-submodules -r
         pt = push --tags
+        tags = tag -l
         w = whatchanged
         wn = whatchanged --name-only --oneline
         wno = whatchanged --pretty='format:' --name-only
@@ -82,7 +86,8 @@
         changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
         pob = !sh -c 'git push origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") "$@"' -
         purb = !sh -c 'git pull origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") --rebase "$@"' -
-        amend = commit --amend
+        amend = commit --amend --reuse-message=HEAD
+        amende = commit --amend
         last = log --oneline -10
         review = log --stat=160,180 -p -w --patience --reverse -M -C -C -c
         undo = reset --soft HEAD^
@@ -121,6 +126,7 @@
 	program = gpg
 [push]
         default = current
+        followTags = true
 [pull]
         rebase = true
 [branch]
