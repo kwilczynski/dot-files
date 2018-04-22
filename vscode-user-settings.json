@@ -1,11 +1,15 @@
 {
   "window.zoomLevel": 0,
+  "window.newWindowDimensions": "inherit",
+  "window.restoreFullscreen": true,
   "workbench.startupEditor": "newUntitledFile",
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   "files.autoSave": "onFocusChange",
   "editor.renderWhitespace": "boundary",
-  "editor.fontFamily": "'Fira Code', monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Hack",
   "editor.quickSuggestions": {
     "other": true,
     "comments": false,
@@ -13,11 +17,20 @@
   },
   "editor.autoIndent": true,
   "editor.cursorBlinking": "blink",
-  "editor.fontLigatures": true,
   "editor.formatOnSave": true,
   "go.formatTool": "goimports",
   "go.goroot": "/usr/local/opt/go/libexec",
   "go.inferGopath": true,
   "workbench.colorTheme": "Monokai",
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true
+  }
 }
