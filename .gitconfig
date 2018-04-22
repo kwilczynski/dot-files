@@ -1,178 +1,181 @@
 [user]
-        name = Krzysztof Wilczynski
-        email = kw@linux.com
-        signingkey = 3DE334E7
+  name = Krzysztof Wilczynski
+  email = kw@linux.com
+  signingkey = 3DE334E7
 [alias]
-        a = add
-        c = clone
-        cr = clone --recursive
-        t = tag
-        au = add -u .
-        ap = add -p
-        bl = blame
-        br = branch -v
-        brc = branch --contains
-        branches = branch -a
-        cl = clean
-        clf = clean --force
-        sh = show
-        sb = show-branch
-        ls = ls-files
-        lo = log
-        st = status
-        s = status -s
-        co = checkout
-        cp = cherry-pick
-        ci = commit
-        df = diff
-        ds = diff --stat
-        dfs = diff --staged
-        dfn = diff --name-only
-        dfm = diff master
-        df1 = diff HEAD~
-        df2 = diff HEAD~~
-        df3 = diff HEAD~~~
-        df4 = diff HEAD~~~~
-        df5 = diff HEAD~~~~~
-        ddc = diff --cached
-        wdc = diff --color-words --cache
-        rb = rebase
-        rbc = rebase --continue
-        rbs = rebase --skip
-        rbi = rebase --interactive
-        rbr = rebase --root
-        me = merge
-        rs = remote show
-        remotes = remote -v
-        pu = pull
-        pur = pull --rebase
-        pus = submodule foreach git pull origin master
-        purs = pull --recurse-submodules
-        pull-all = pull --recurse-submodules -r
-        pt = push --tags
-        tags = tag -l
-        w = whatchanged
-        wn = whatchanged --name-only --oneline
-        wno = whatchanged --pretty='format:' --name-only
-        sts = status -s
-        rl = reflog
-        ref = reflog
-        rst = reset
-        rt = remote
-        sm = submodule
-        sts = stash
-        stsp = stash pop
-        stsd = stash drop
-        sms = submodule status
-        smi = submodule init
-        smu = submodule update
-        smf = submodule foreach
-        rup = remote update
-        rpr = remote prune
-        cia = commit -a
-        com = checkout master
-        cob = checkout -b
-        cod = checkout develop
-        detach = checkout HEAD^0
-        info = config --list
-        summary = log --oneline
-        rank = shortlog -sn --no-merges
-        tree = log --graph --oneline --decorate
-        ll = log --graph --pretty='format:%h | %an | %s'
-        los = log --graph --oneline --abbrev-commit
-        llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
-        po = push origin
-        pom = push origin master
-        changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
-        pob = !sh -c 'git push origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") "$@"' -
-        purb = !sh -c 'git pull origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") --rebase "$@"' -
-        amend = commit --amend --reuse-message=HEAD
-        amende = commit --amend
-        last = log --oneline -10
-        review = log --stat=160,180 -p -w --patience --reverse -M -C -C -c
-        undo = reset --soft HEAD^
-        serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
-        hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
-        this = !git init && git add . && git commit -m \"Initial commit.\"
-        empty = !git init && git commit --allow-empty -m \"Initial commit.\"
-        r = !git ls-files -z --deleted | xargs -0 git rm
-        wd = !git diff --color | diff-so-fancy | less -r
+  a = add
+  c = clone
+  cr = clone --recursive
+  t = tag
+  au = add -u .
+  ap = add -p
+  bl = blame
+  br = branch -v
+  brc = branch --contains
+  branches = branch -a
+  cl = clean
+  clf = clean --force
+  sh = show
+  sb = show-branch
+  ls = ls-files
+  lo = log
+  st = status
+  s = status -s
+  co = checkout
+  cp = cherry-pick
+  ci = commit
+  df = diff
+  ds = diff --stat
+  dfs = diff --staged
+  dfn = diff --name-only
+  dfm = diff master
+  df1 = diff HEAD~
+  df2 = diff HEAD~~
+  df3 = diff HEAD~~~
+  df4 = diff HEAD~~~~
+  df5 = diff HEAD~~~~~
+  ddc = diff --cached
+  wdc = diff --color-words --cache
+  rb = rebase
+  rbc = rebase --continue
+  rbs = rebase --skip
+  rbi = rebase --interactive
+  rbr = rebase --root
+  me = merge
+  rs = remote show
+  remotes = remote -v
+  pu = pull
+  pur = pull --rebase
+  pus = submodule foreach git pull origin master
+  purs = pull --recurse-submodules
+  pull-all = pull --recurse-submodules -r
+  pt = push --tags
+  tags = tag -l
+  w = whatchanged
+  wn = whatchanged --name-only --oneline
+  wno = whatchanged --pretty='format:' --name-only
+  sts = status -s
+  rl = reflog
+  ref = reflog
+  rst = reset
+  rt = remote
+  sm = submodule
+  sts = stash
+  stsp = stash pop
+  stsd = stash drop
+  sms = submodule status
+  smi = submodule init
+  smu = submodule update
+  smf = submodule foreach
+  rup = remote update
+  rpr = remote prune
+  cia = commit -a
+  com = checkout master
+  cob = checkout -b
+  cod = checkout develop
+  detach = checkout HEAD^0
+  info = config --list
+  summary = log --oneline
+  rank = shortlog -sn --no-merges
+  tree = log --graph --oneline --decorate
+  ll = log --graph --pretty='format:%h | %an | %s'
+  los = log --graph --oneline --abbrev-commit
+  llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+  po = push origin
+  pom = push origin master
+  changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
+  pob = !sh -c 'git push origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") "$@"' -
+  purb = !sh -c 'git pull origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") --rebase "$@"' -
+  amend = commit --amend --reuse-message=HEAD
+  amende = commit --amend
+  last = log --oneline -10
+  review = log --stat=160,180 -p -w --patience --reverse -M -C -C -c
+  undo = reset --soft HEAD^
+  serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
+  hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
+  this = !git init && git add . && git commit -m \"Initial commit.\"
+  empty = !git init && git commit --allow-empty -m \"Initial commit.\"
+  r = !git ls-files -z --deleted | xargs -0 git rm
+  wd = !git diff --color | diff-so-fancy | less -r
 [color]
-        branch = auto
-        diff = auto
-        status = auto
-        interactive = auto
-        ui = true
-        pager = true
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
+  ui = true
+  pager = true
 [pack]
-        threads = 0
+  threads = 0
 [rename]
-        limit = 0
+  limit = 0
 [merge]
-        log = true
+  log = true
 [core]
-        pager = diff-so-fancy | less -FRSX
-	excludesfile = /Users/kwilczynski/.gitignore_global
-	trustctime = false
+  pager = diff-so-fancy | less -FRSX
+  excludesfile = /Users/kwilczynski/.gitignore_global
+  trustctime = false
 [init]
-        templatedir = ~/.git-templates
+  templatedir = ~/.git-templates
 [credential]
-        helper = osxkeychain
+  helper = osxkeychain
 [commit]
-        gpgsign = true
+  gpgsign = true
 [tag]
-        gpgsign = true
+  gpgsign = true
 [gpg]
-	program = gpg
+  program = gpg
 [push]
-        default = current
-        followTags = true
+  default = current
+  followTags = true
 [pull]
-        rebase = true
+  rebase = true
 [branch]
-        autosetuprebase = always
+  autosetuprebase = always
 [giggle]
-        main-window-maximized = true
-        main-window-view = HistoryView
+  main-window-maximized = true
+  main-window-view = HistoryView
 [sendemail]
-        from = Krzysztof Wilczynski <kw@linux.com>
-        smtpuser =
-        smtppass =
-        smtpserver = smtp.gmail.com
-        smtpserverport = 587
-        smtpencryption = tls
-        suppresscc = self
-        signedoffbycc = false
-        chainreplyto = false
+  from = Krzysztof Wilczynski <kw@linux.com>
+  smtpuser =
+  smtppass =
+  smtpserver = smtp.gmail.com
+  smtpserverport = 587
+  smtpencryption = tls
+  suppresscc = self
+  signedoffbycc = false
+  chainreplyto = false
 [guthub]
-        user = kwilczynski
-        token = !security find-generic-password -gs \"github API token\" 2>&1 >/dev/null | awk '/password/ { print $2 }' | tr -d \\\"
+  user = kwilczynski
+  token = !security find-generic-password -gs \"github API token\" 2>&1 >/dev/null | awk '/password/ { print $2 }' | tr -d \\\"
 [url "git@github.com:"]
-        insteadOf = "gh:"
-        pushInsteadOf = "github:"
-        pushInsteadOf = "git://github.com/"
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
 [url "git://github.com/"]
-        insteadOf = "github:"
+  insteadOf = "github:"
 [url "git@gist.github.com:"]
-        insteadOf = "gst:"
-        pushInsteadOf = "gist:"
-        pushInsteadOf = "git://gist.github.com/"
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
-        insteadOf = "gist:"
+  insteadOf = "gist:"
 [diff]
-        tool = diffmerge
-        renames = copies
-        mnemonicprefix = true
-        compactionHeuristic = true
+  tool = diffmerge
+  renames = copies
+  submodule = diff
+  mnemonicprefix = true
+  compactionHeuristic = true
+  indentHeuristic = true
+  colorMoved = dimmed_zebra
 [difftool "diffmerge"]
-        cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+  cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [interactive]
-        diffFilter = diff-so-fancy
+  diffFilter = diff-so-fancy
 [merge]
-        tool = diffmerge
+  tool = diffmerge
 [mergetool "diffmerge"]
-        cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-        trustExitCode = true
+  cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+  trustExitCode = true
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
