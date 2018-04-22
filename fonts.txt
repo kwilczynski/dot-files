@@ -12,3 +12,6 @@ http://sourcefoundry.org/hack/
 
 Iosevka
 https://github.com/be5invis/Iosevka
+
+Monoid
+https://github.com/larsenwork/monoid
