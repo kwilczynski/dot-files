@@ -20,10 +20,11 @@ nnoremap <silent> <F7> :MundoToggle<CR>
 vnoremap <silent> <F7> <ESC>:MundoToggle<CR>
 
 Plug 'jlanzarotta/bufexplorer'
-nnoremap <silent> <C-b> :ToggleBufExplorer<CR>
+nnoremap <silent> <F2> :ToggleBufExplorer<CR>
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'Townk/vim-autoclose'
 
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_enabled = 1
@@ -34,7 +35,10 @@ let g:NERDTreeMouseMode = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeQuitOnOpen = 1
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <F8> :NERDTreeToggle<CR>
+
+Plug 'majutsushi/tagbar'
+nnoremap <silent> <F9> :TagbarToggle<CR>
 
 Plug 'godlygeek/tabular'
 Plug 'kopischke/vim-fetch'
@@ -64,7 +68,11 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#enable_auto_close_preview = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 
+Plug 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = 'context'
+
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/linediff.vim'
 Plug 'SirVer/ultisnips'
 
 Plug 'vim-ruby/vim-ruby'
