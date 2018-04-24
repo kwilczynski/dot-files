@@ -68,9 +68,6 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#enable_auto_close_preview = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 
-Plug 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = 'context'
-
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'SirVer/ultisnips'
