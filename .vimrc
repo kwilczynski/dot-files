@@ -55,6 +55,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
 let g:go_snippet_engine = 'ultisnips'
 let g:go_fmt_command = 'goimports'
+let g:go_addtags_transform = 'snakecase'
 let g:go_auto_type_info = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -73,6 +74,13 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger = "<S-TAB>"
+
+Plug 'w0rp/ale'
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
+
+Plug 'Shougo/vimshell'
+Plug 'sebdah/vim-delve'
 
 Plug 'vim-ruby/vim-ruby'
 
@@ -244,7 +252,14 @@ nnoremap <silent> <F10> :set invnumber number?<CR>
 nnoremap <silent> <F11> :set invlist list?<CR>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 if has("gui_macvim")
     colorscheme solarized
