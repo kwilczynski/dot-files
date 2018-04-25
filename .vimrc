@@ -63,6 +63,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_types = 1
 
 Plug 'Shougo/neocomplete.vim'
+let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#enable_auto_close_preview = 1
@@ -71,6 +72,7 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger = "<S-TAB>"
 
 Plug 'vim-ruby/vim-ruby'
 
@@ -241,6 +243,8 @@ nnoremap <silent> <F5> :set invpaste paste?<CR><Bar>:echo "Paste mode: " . strpa
 nnoremap <silent> <F10> :set invnumber number?<CR>
 nnoremap <silent> <F11> :set invlist list?<CR>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 if has("gui_macvim")
     colorscheme solarized
