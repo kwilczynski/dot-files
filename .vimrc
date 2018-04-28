@@ -214,19 +214,21 @@ set pastetoggle=<F5>
 set undoreload=65535
 set undofile
 
-set backup noswapfile
+set backup
 
-set undodir=~/.vim/undo
+"set noswapfile
+
+set undodir=~/.vim/undo//
 if !isdirectory(expand(&undodir))
   call mkdir(expand(&undodir), "p")
 endif
 
-set backupdir=~/.vim/backup
+set backupdir=~/.vim/backup//
 if !isdirectory(expand(&backupdir))
   call mkdir(expand(&backupdir), "p")
 endif
 
-set directory=~/.vim/swap
+set directory=~/.vim/swap//
 if !isdirectory(expand(&directory))
   call mkdir(expand(&directory), "p")
 endif
@@ -248,8 +250,8 @@ if v:version >= 700 && has("spell")
 endif
 
 nnoremap <silent> <F5> :set invpaste paste?<CR><Bar>:echo "Paste mode: " . strpart("OffOn", 3 * &paste, 3)<CR>
-nnoremap <silent> <F10> :set invnumber number?<CR>
-nnoremap <silent> <F11> :set invlist list?<CR>
+nnoremap <silent> <F10> :set invnumber number?<CR><Bar>:echo "Line numbers: " . strpart("OffOn", 3 * &number, 3)<CR>
+nnoremap <silent> <F11> :set invlist list?<CR><Bar>:echo "Show invisible: " . strpart("OffOn", 3 * &list, 3)<CR>
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
