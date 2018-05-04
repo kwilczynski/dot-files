@@ -25,7 +25,7 @@ set print-completions-horizontally on
 set mark-symlinked-directories on
 
 $if Bash
-  "\C-r": "\C-a_run_hh \C-j"
+  "\C-r": "\C-ahh -- \C-j"
   Space: magic-space
 $endif
 

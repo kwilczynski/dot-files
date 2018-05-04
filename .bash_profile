@@ -1,16 +1,5 @@
 [[ $- != *i* ]] && return
 
-function _run_hh() {
-    local prefix="$READLINE_LINE"
-    READLINE_LINE=
-
-    hh -- "$prefix"
-
-    if [[ -z $READLINE_LINE ]]; then
-        READLINE_LINE="$prefix"
-    fi
-}
-
 if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
     . $(brew --prefix)/etc/bash_completion
 fi
