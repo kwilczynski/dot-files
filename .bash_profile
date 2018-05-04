@@ -1,5 +1,16 @@
 [[ $- != *i* ]] && return
 
+function _run_hh() {
+    local prefix="$READLINE_LINE"
+    READLINE_LINE=
+
+    hh -- "$prefix"
+
+    if [[ -z $READLINE_LINE ]]; then
+        READLINE_LINE="$prefix"
+    fi
+}
+
 if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
     . $(brew --prefix)/etc/bash_completion
 fi
@@ -62,7 +73,7 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 export HISTSIZE=131072
 export HISTFILESIZE=262144
 export HISTCONTROL=ignoreboth:erasedups
-export HISTIGNORE='&:[ ]*:exit:ls:bg:fg:history:clear'
+export HISTIGNORE='&:[ ]*:[ \t]*:exit:ls:[fb]g:history:clear:pwd:clear:hh'
 
 export HH_CONFIG=hicolor,regexp,rawhistory
 export HH_PROMPT='> '
