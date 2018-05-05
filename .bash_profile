@@ -57,7 +57,7 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 
 export HISTSIZE=131072
 export HISTFILESIZE=262144
-export HISTCONTROL='ignoreboth:erasedups:ignorespace'
+export HISTCONTROL='ignoreboth:ignorespace'
 export HISTIGNORE='&:[ ]*:exit:ls *:[bf]g:date:man:history:clear:pwd'
 
 export HH_CONFIG='hicolor,regexp,rawhistory,noconfirm'
