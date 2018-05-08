@@ -326,4 +326,5 @@ augroup configgroup
     autocmd FileType rs,rc setlocal expandtab textwidth=100 shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
     autocmd FileType yml,yaml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType tf,hcl setlocal commentstring=#\ %s
 augroup END
