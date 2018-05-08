@@ -24,7 +24,11 @@ nnoremap <silent> <F2> :ToggleBufExplorer<CR>
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'Townk/vim-autoclose'
+
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1
 
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_enabled = 1
