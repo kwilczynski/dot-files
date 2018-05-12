@@ -10,6 +10,8 @@ let g:rehash256 = 1
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors = 256
 
+Plug 'kopischke/vim-stay'
+
 Plug 'Yggdroot/indentLine'
 let g:indentLine_enabled = 0
 nnoremap <silent> <F6> :IndentLinesToggle<CR>
@@ -92,7 +94,9 @@ Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
 
 Plug 'elzr/vim-json'
-Plug 'gabrielelana/vim-markdown'
+
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
 
 Plug 'hashivim/vim-vagrant'
 Plug 'hashivim/vim-terraform'
