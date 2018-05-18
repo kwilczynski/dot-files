@@ -55,12 +55,14 @@ export LESSSECURE=1
 export PROMPT_DIRTRIM=2
 export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 
-export HISTSIZE=131072
-export HISTFILESIZE=262144
+# No value enables unlimited history.
+export HISTSIZE=
+export HISTFILESIZE=
+export HISTFILE="${HOME}/.bash_eternal_history"
 export HISTCONTROL='ignoreboth:ignorespace'
 export HISTIGNORE='&:[ ]*:exit:ls *:[bf]g:date:man:history:clear:pwd'
 
-export HH_CONFIG='hicolor,regexp,rawhistory,noconfirm'
+export HH_CONFIG='hicolor,keyword,rawhistory,noconfirm'
 export HH_PROMPT='> '
 
 export LANG='en_US.UTF8'
