@@ -27,7 +27,7 @@ nnoremap <silent> <F2> :ToggleBufExplorer<CR>
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'Townk/vim-autoclose'
+Plug 'cohama/lexima.vim'
 
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
