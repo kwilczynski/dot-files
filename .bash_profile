@@ -62,7 +62,7 @@ export HISTFILE="${HOME}/.bash_eternal_history"
 export HISTCONTROL='ignoreboth:ignorespace'
 export HISTIGNORE='&:[ ]*:exit:ls *:[bf]g:date:man:history:clear:pwd'
 
-export HH_CONFIG='hicolor,keyword,rawhistory,noconfirm'
+export HH_CONFIG='hicolor,keywords,noconfirm'
 export HH_PROMPT='> '
 
 export LANG='en_US.UTF8'
