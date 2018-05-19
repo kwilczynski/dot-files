@@ -7,7 +7,7 @@
   "telemetry.enableCrashReporter": false,
   "files.autoSave": "onFocusChange",
   "editor.renderWhitespace": "boundary",
-  "editor.fontSize": 14,
+  "editor.fontSize": 12,
   "editor.fontLigatures": true,
   "editor.fontFamily": "Hack",
   "editor.quickSuggestions": {
@@ -32,5 +32,12 @@
     "suppressNoRepositoryWarning": false,
     "suppressResultsExplorerNotice": false,
     "suppressShowKeyBindingsNotice": true
-  }
+  },
+  "gitlens.historyExplorer.enabled": true,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.statusBar.enabled": false,
 }
