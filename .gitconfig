@@ -114,6 +114,8 @@
   pager = diff-so-fancy | less -FRSX
   excludesfile = /Users/kwilczynski/.gitignore_global
   trustctime = false
+[diff-so-fancy]
+  stripLeadingSymbols = false
 [init]
   templatedir = ~/.git-templates
 [credential]
@@ -169,8 +171,6 @@
   colorMoved = dimmed_zebra
 [difftool "diffmerge"]
   cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-[interactive]
-  diffFilter = diff-so-fancy
 [merge]
   tool = diffmerge
 [mergetool "diffmerge"]
