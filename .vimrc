@@ -305,7 +305,7 @@ augroup configgroup
     autocmd BufWritePre *.sh,*.bash :call <SID>StripTrailingWhitespaces()
     autocmd BufWritePre *.c,*.cs,*.cpp,*.h,*.hpp,*.objc,*.java,*.rs,*.rc :call <SID>StripTrailingWhitespaces()
     autocmd BufWritePre *.php,*.py,*.rb,*.erb,*.rake,*.js,*.css :call <SID>StripTrailingWhitespaces()
-    autocmd BufWritePre *.yml,*.yaml,*.json,*.toml,*.tf,*.tfvars :call <SID>StripTrailingWhitespaces()
+    autocmd BufWritePre *.yml,*.yaml,*.json,*.toml,*.tf,*.tfvars,*.hcl :call <SID>StripTrailingWhitespaces()
     autocmd BufWritePre Rakefile,Gemfile,Capfile,Makefile :call <SID>StripTrailingWhitespaces()
 
     autocmd BufEnter * if &filetype == "" | setlocal filetype=text | endif
@@ -313,6 +313,7 @@ augroup configgroup
 
     autocmd BufRead,BufNewFile *.txt set filetype=text
     autocmd BufRead,BufNewFile *.sls set filetype=yaml
+    autocmd BufRead,BufNewFile *.hcl set filetype=terraform
 
     autocmd FileType text setlocal formatoptions-=t textwidth=0
     autocmd FileType gitcommit setlocal textwidth=80
