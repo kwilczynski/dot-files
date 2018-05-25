@@ -56,6 +56,7 @@ Plug 'junegunn/fzf.vim'
 nnoremap <silent> <C-f> :FZF<CR>
 
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-scripts/SearchComplete'
 
 Plug 'fatih/vim-go'
 let g:go_snippet_engine = 'ultisnips'
@@ -224,6 +225,8 @@ set undofile
 set backup
 
 "set noswapfile
+
+set viewoptions=cursor,folds,slash,unix
 
 set undodir=~/.vim/undo//
 if !isdirectory(expand(&undodir))
