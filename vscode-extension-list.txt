@@ -7,6 +7,7 @@ eamodio.gitlens
 lukehoban.Go
 mauve.terraform
 ms-python.python
+ms-vscode.Go
 ms-vscode.cpptools
 nonylene.dark-molokai-theme
 rebornix.Ruby
