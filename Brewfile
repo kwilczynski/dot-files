@@ -31,6 +31,7 @@ brew 'direnv'
 brew 'dirmngr'
 brew 'docker-squash', args: ['without-docker', 'without-docker-machine']
 brew 'dos2unix'
+brew 'envchain'
 brew 'fd'
 brew 'findutils', args: ['with-default-names']
 brew 'fzf'
