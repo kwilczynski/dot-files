@@ -92,11 +92,15 @@ if ls --color &>/dev/null ; then
     alias ls='ls --color -G'
     alias ll='ls --color -alF'
     alias la='ls --color -Ah'
+    alias lsd="ls --color -ald */"
+    alias lsdr="ls --color -altrd */"
 else
     alias l='ls -G -CF'
     alias ls='ls -G'
     alias ll='ls -G -alF'
     alias la='ls -G -Ah'
+    alias lsd="ls -G -ald */"
+    alias lsdr="ls -G -altrd */"
 fi
 
 alias mv='mv -i'
@@ -118,14 +122,10 @@ alias egrep='egrep --color=auto'
 alias b='bundle'
 alias br='brew'
 alias be='bundle exec'
-alias t='triton'
 alias v='vagrant'
 
 # Allow "g" alias to work for Git.
 complete -o default -o nospace -F _git g
-
-# Allow "t" alias to work with triton.
-complete -o default -o nospace -F _triton_completion t
 
 # Allow "v" alias to work for Vagrant.
 complete -o default -o nospace -F _vagrant v
