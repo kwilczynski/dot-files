@@ -1,5 +1,7 @@
 [[ $- != *i* ]] && return
 
+export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
+
 if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
     . $(brew --prefix)/etc/bash_completion
 fi
@@ -129,5 +131,3 @@ complete -o default -o nospace -F _git g
 
 # Allow "v" alias to work for Vagrant.
 complete -o default -o nospace -F _vagrant v
-
-export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
