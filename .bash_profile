@@ -91,7 +91,7 @@ export DIRENV_LOG_FORMAT=
 
 if ls --color &>/dev/null ; then
     alias l='ls --color -CF'
-    alias ls='ls --color -G'
+    alias ls='ls --color'
     alias ll='ls --color -alF'
     alias la='ls --color -Ah'
     alias lsd="ls --color -ald */"
