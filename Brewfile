@@ -116,7 +116,7 @@ brew 'torsocks'
 brew 'tree'
 brew 'unrar'
 brew 'vagrant-completion'
-brew 'vim', args: ['override-system-vi', 'with-lua', 'with-custom-python', 'without-ruby']
+brew 'vim', args: ['override-system-vi', 'with-lua', 'with-custom-python', 'with-python@2', 'without-ruby']
 brew 'watch'
 brew 'watchman'
 brew 'wget'
