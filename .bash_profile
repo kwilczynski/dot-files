@@ -10,15 +10,15 @@ if [[ -e ${HOME}/.iterm2_shell_integration.bash ]]; then
     . ${HOME}/.iterm2_shell_integration.bash
 fi
 
-if which rbenv >/dev/null; then
+if command -v rbenv >/dev/null; then
     eval "$(rbenv init -)"
 fi
 
-if which direnv >/dev/null; then
+if command -v direnv >/dev/null; then
     eval "$(direnv hook bash)"
 fi
 
-if which jump >/dev/null; then
+if command -v jump >/dev/null; then
     eval "$(jump shell)"
 fi
 
