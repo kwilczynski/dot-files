@@ -125,9 +125,13 @@ alias b='bundle'
 alias br='brew'
 alias be='bundle exec'
 alias v='vagrant'
+alias k='kubectl'
 
 # Allow "g" alias to work for Git.
 complete -o default -o nospace -F _git g
 
 # Allow "v" alias to work for Vagrant.
 complete -o default -o nospace -F _vagrant v
+
+# Allow "k" alias to work for Kubernetes (kubectl).
+complete -o default -o nospace -F __start_kubectl k
