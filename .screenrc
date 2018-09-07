@@ -8,6 +8,7 @@ multiuser off
 pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
 shell -$SHELL
 defscrollback 32768
+# Temporarily disabled.
 #zombie "^["
 
 termcap xterm hs@:cs=\E[%i%d;%dr:im=\E[4h:ei=\E[4l
@@ -34,6 +35,7 @@ bind \\
 bind ^h
 bind h
 bind 'K' kill
+# Temporarily disabled.
 #bind 'I' login on
 #bind 'O' login off
 bind '}' history
@@ -47,6 +49,6 @@ bind = resize =
 bind + resize +1
 bind - resize -1
 bind _ resize max
-
-attrcolor u "-u b"
-attrcolor b "R"
+# Temporarily disabled.
+#attrcolor u "-u b"
+#attrcolor b "R"
