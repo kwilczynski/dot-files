@@ -42,6 +42,7 @@ brew 'gettext'
 brew 'gist'
 brew 'git'
 brew 'git-crypt'
+brew 'git-extras'
 brew 'git-flow'
 brew 'gnu-sed', args: ['with-default-names']
 brew 'gnupg2'
