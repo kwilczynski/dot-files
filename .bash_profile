@@ -1,5 +1,7 @@
 [[ $- != *i* ]] && return
 
+export GPG_TTY="$(tty)"
+
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
 if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
