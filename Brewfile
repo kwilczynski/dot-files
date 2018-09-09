@@ -124,6 +124,7 @@ brew 'watch'
 brew 'watchman'
 brew 'wget'
 brew 'whatmask'
+brew 'xsv'
 brew 'xz'
 
 cask_args appdir: '/Applications'
