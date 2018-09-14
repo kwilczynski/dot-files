@@ -3,16 +3,18 @@ require 'pp'
 
 Pry.editor = 'vim'
 
-Pry.commands.alias_command 'c', 'continue'
-Pry.commands.alias_command 'n', 'next'
-Pry.commands.alias_command 's', 'step'
-Pry.commands.alias_command 'quit!', 'quit-program'
+# Temporarily disabled.
+# Pry.commands.alias_command 'c', 'continue'
+# Pry.commands.alias_command 'n', 'next'
+# Pry.commands.alias_command 's', 'step'
+# Pry.commands.alias_command 'quit!', 'quit-program'
 
-begin
-  require 'awesome_print'
-  Pry.config.print = proc { |output, value| output.puts value.ai(:indent => 2) }
-rescue LoadError
-end
+# Temporarily disabled.
+# begin
+#   require 'awesome_print'
+#   Pry.config.print = proc { |output, value| output.puts value.ai(:indent => 2) }
+# rescue LoadError
+# end
 
 class Object
   def local_methods(obj = self)
