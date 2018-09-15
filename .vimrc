@@ -10,10 +10,19 @@ let g:rehash256 = 1
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors = 256
 
+Plug 'morhetz/gruvbox'
+let g:gruvbox_contrast_dark = 'hard'
+
+Plug 'ayu-theme/ayu-vim'
+let ayucolor = 'dark'
+
 Plug 'kopischke/vim-stay'
 
 Plug 'Yggdroot/indentLine'
-let g:indentLine_enabled = 0
+let g:indentLine_char = '┆'
+let g:indentLine_first_char = '┆'
+let g:indentLine_setColors = 0
+let g:indentLine_showFirstIndentLevel = 1
 nnoremap <silent> <F6> :IndentLinesToggle<CR>
 
 Plug 'simnalamburt/vim-mundo'
@@ -141,13 +150,13 @@ set mouse=a
 set ttymouse=sgr
 
 set t_Co=256
-"set termguicolors
+set termguicolors
 
 syntax enable
 syntax sync minlines=250
 
 set background=dark
-colorscheme molokai
+colorscheme ayu
 
 filetype plugin indent on
 
