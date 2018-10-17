@@ -5,6 +5,7 @@ tap 'homebrew/core'
 tap 'jmespath/jmespath'
 tap 'wallix/awless'
 tap 'kwilczynski/pkenv'
+tap 'moncho/dry'
 
 brew 'ack'
 brew 'asciinema'
@@ -33,6 +34,7 @@ brew 'direnv'
 brew 'dirmngr'
 brew 'docker-squash', args: ['without-docker', 'without-docker-machine']
 brew 'dos2unix'
+brew 'dry'
 brew 'envchain'
 brew 'fd'
 brew 'findutils', args: ['with-default-names']
