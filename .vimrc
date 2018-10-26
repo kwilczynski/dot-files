@@ -19,6 +19,7 @@ let ayucolor = 'dark'
 Plug 'kopischke/vim-stay'
 
 Plug 'Yggdroot/indentLine'
+let g:indentLine_enabled = 0
 let g:indentLine_char = '┆'
 let g:indentLine_first_char = '┆'
 let g:indentLine_setColors = 0
@@ -65,12 +66,16 @@ Plug 'junegunn/fzf.vim'
 nnoremap <silent> <C-f> :FZF<CR>
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-scripts/SearchComplete'
+" Temporarily disabled.
+"Plug 'vim-scripts/SearchComplete'
 
-Plug 'fatih/vim-go'
+Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 let g:go_snippet_engine = 'ultisnips'
 let g:go_fmt_command = 'goimports'
 let g:go_addtags_transform = 'snakecase'
+let g:go_list_autoclose = 1
 let g:go_auto_type_info = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -82,6 +87,7 @@ Plug 'Shougo/neocomplete.vim'
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#enable_auto_close_preview = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 
@@ -91,6 +97,7 @@ Plug 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger = "<S-TAB>"
 
 Plug 'w0rp/ale'
+let g:ale_sign_column_always = 1
 let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
 
@@ -216,6 +223,7 @@ set ruler
 
 set showmode
 
+" Temporarily disabled.
 "set cursorline
 
 set backspace=indent,eol,start
@@ -233,6 +241,7 @@ set undofile
 
 set backup
 
+" Temporarily disabled.
 "set noswapfile
 
 set viewoptions=cursor,folds,slash,unix
@@ -263,6 +272,8 @@ command Jq  :execute '%!jq . 2>/dev/null'
 
 vnoremap r "_dP
 
+nnoremap <silent> <F1> <nop>
+
 if v:version >= 700 && has("spell")
     set spelllang=en_gb,en_us,en
     nnoremap <silent> <F4> :set invspell spell?<CR><Bar>:echo "Spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
@@ -275,16 +286,17 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return pumvisible() ? "\<C-y>" : "\<CR>"
+    return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
-if has("gui_macvim")
-    colorscheme solarized
-endif
+" Temporarily disabled.
+"if has("gui_macvim")
+"   colorscheme solarized
+"endif
 
 set runtimepath+=/usr/local/opt/fzf
 
