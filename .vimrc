@@ -70,6 +70,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'vim-scripts/SearchComplete'
 
 Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+let g:go_gocode_unimported_packages = 1
 
 " Temporarily disabled.
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -88,14 +89,18 @@ let g:go_highlight_types = 1
 Plug 'maralla/completor.vim'
 let g:completor_auto_trigger = 1
 
+Plug 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabClosePreviewOnPopupClose = 1
+
 " Temporarily disabled.
-" Plug 'Shougo/neocomplete.vim'
-" let g:acp_enableAtStartup = 0
-" let g:neocomplete#enable_at_startup = 1
-" let g:neocomplete#enable_smart_case = 1
-" let g:neocomplete#enable_auto_select = 1
-" let g:neocomplete#enable_auto_close_preview = 1
-" let g:neocomplete#sources#syntax#min_keyword_length = 3
+"Plug 'Shougo/neocomplete.vim'
+"let g:acp_enableAtStartup = 0
+"let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#enable_smart_case = 1
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#enable_auto_close_preview = 1
+"let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/linediff.vim'
@@ -170,7 +175,7 @@ syntax sync minlines=250
 
 set background=dark
 " Temporarily disabled.
-" colorscheme molokai
+"colorscheme molokai
 colorscheme ayu
 
 filetype plugin indent on
@@ -298,23 +303,24 @@ function! s:my_cr_function()
 endfunction
 
 " Temporarily disabled.
-" inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
-function! Tab_Or_Complete() abort
-  if pumvisible()
-    return "\<C-N>"
-  elseif col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return "\<C-R>=completor#do('complete')\<CR>"
-  else
-    return "\<Tab>"
-  endif
-endfunction
+" Temporarily disabled.
+"function! Tab_Or_Complete() abort
+"  if pumvisible()
+"    return "\<C-N>"
+"  elseif col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+"    return "\<C-R>=completor#do('complete')\<CR>"
+"  else
+"    return "\<Tab>"
+"  endif
+"endfunction
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <Tab> Tab_Or_Complete()
+"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"inoremap <expr> <Tab> Tab_Or_Complete()
 
 " Temporarily disabled.
 "if has("gui_macvim")
