@@ -60,6 +60,12 @@ Plug 'kopischke/vim-fetch'
 
 Plug 'terryma/vim-multiple-cursors'
 
+Plug 'ntpeters/vim-better-whitespace'
+let g:better_whitespace_enabled = 1
+let g:strip_whitespace_on_save = 1
+let g:show_spaces_that_precede_tabs = 1
+let g:better_whitespace_skip_empty_lines = 1
+
 Plug 'mileszs/ack.vim'
 
 Plug 'junegunn/fzf.vim'
@@ -338,14 +344,15 @@ set statusline+=\ %{toupper(strlen(&fenc)?&fenc:'none')}
 set statusline+=\ %c,%l/%L\ %p%%
 set statusline+=\ ~\ %{strftime(\"%d/%m/%Y\ %T\",getftime(expand(\"%:p\")))}
 
-function! <SID>StripTrailingWhitespaces()
-    let s = @/
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    let @/ = s
-    call cursor(l, c)
-endfunction
+" Temporarily disabled.
+"function! <SID>StripTrailingWhitespaces()
+"     let s = @/
+"    let l = line(".")
+"    let c = col(".")
+"    %s/\s\+$//e
+"    let @/ = s
+"    call cursor(l, c)
+"endfunction
 
 augroup configgroup
     autocmd!
@@ -355,11 +362,12 @@ augroup configgroup
     autocmd VimEnter * highlight clear SignColumn
     autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-    autocmd BufWritePre *.sh,*.bash :call <SID>StripTrailingWhitespaces()
-    autocmd BufWritePre *.c,*.cs,*.cpp,*.h,*.hpp,*.objc,*.java,*.rs,*.rc :call <SID>StripTrailingWhitespaces()
-    autocmd BufWritePre *.php,*.py,*.rb,*.erb,*.rake,*.js,*.css :call <SID>StripTrailingWhitespaces()
-    autocmd BufWritePre *.yml,*.yaml,*.json,*.toml,*.tf,*.tfvars,*.hcl :call <SID>StripTrailingWhitespaces()
-    autocmd BufWritePre Rakefile,Gemfile,Capfile,Makefile :call <SID>StripTrailingWhitespaces()
+    " Temporarily disabled.
+    "autocmd BufWritePre *.sh,*.bash :call <SID>StripTrailingWhitespaces()
+    "autocmd BufWritePre *.c,*.cs,*.cpp,*.h,*.hpp,*.objc,*.java,*.rs,*.rc :call <SID>StripTrailingWhitespaces()
+    "autocmd BufWritePre *.php,*.py,*.rb,*.erb,*.rake,*.js,*.css :call <SID>StripTrailingWhitespaces()
+    "autocmd BufWritePre *.yml,*.yaml,*.json,*.toml,*.tf,*.tfvars,*.hcl :call <SID>StripTrailingWhitespaces()
+    "autocmd BufWritePre Rakefile,Gemfile,Capfile,Makefile :call <SID>StripTrailingWhitespaces()
 
     autocmd BufEnter * if &filetype == "" | setlocal filetype=text | endif
     autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | quit | endif
