@@ -4,8 +4,8 @@ export GPG_TTY="$(tty)"
 
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
-if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
-    . $(brew --prefix)/etc/bash_completion
+if [[ -f $(brew --prefix)/share/bash-completion/bash_completion ]]; then
+    . $(brew --prefix)/share/bash-completion/bash_completion
 fi
 
 if [[ -e ${HOME}/.iterm2_shell_integration.bash ]]; then
