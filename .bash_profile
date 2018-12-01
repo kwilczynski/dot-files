@@ -66,8 +66,8 @@ export HISTFILE="${HOME}/.bash_eternal_history"
 export HISTCONTROL='ignoreboth:ignorespace'
 export HISTIGNORE='&:[ ]*:exit:[bf]g:history:clear:pwd'
 
-export HH_CONFIG='hicolor,keywords,rawhistory,noconfirm'
-export HH_PROMPT='> '
+export HSTR_CONFIG='hicolor,blacklist,keywords-matching,raw-history-view,no-confirm'
+export HSTR_PROMPT='> '
 
 export LANG='en_US.UTF8'
 export LANGUAGE='en_US.UTF-8'
@@ -106,7 +106,7 @@ else
     alias lsd="ls -G -ald */"
     alias lsdr="ls -G -altrd */"
 fi
-
+alias hh='hstr'
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
