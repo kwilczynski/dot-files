@@ -50,7 +50,7 @@ brew 'gnu-sed', args: ['with-default-names']
 brew 'gnupg2'
 brew 'go'
 brew 'graphviz'
-brew 'hh'
+brew 'hstr'
 brew 'grep', args: ['with-default-names']
 brew 'rsync'
 brew 'htop-osx'
