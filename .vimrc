@@ -4,7 +4,9 @@ let g:plug_retries = 4
 
 Plug 'dracula/vim'
 
-Plug 'tomasr/molokai'
+" Temporarily disabled.
+"Plug 'tomasr/molokai'
+Plug 'fatih/molokai'
 let g:rehash256 = 1
 
 Plug 'altercation/vim-colors-solarized'
@@ -180,9 +182,9 @@ syntax enable
 syntax sync minlines=250
 
 set background=dark
+colorscheme molokai
 " Temporarily disabled.
-"colorscheme molokai
-colorscheme ayu
+"colorscheme ayu
 
 filetype plugin indent on
 
