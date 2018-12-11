@@ -282,9 +282,17 @@ if !isdirectory(expand(&directory))
   call mkdir(expand(&directory), "p")
 endif
 
+function! SudoSaveAction()
+let answer = confirm('Save with sudo?', "&Yes\n&No", 2)
+if answer == 1
+    :execute ':silent w !sudo tee % >/dev/null' | :edit!
+    redraw
+endif
+endfunction
+
 if has('nvim')
 else
-    command W  :execute ':silent w !sudo tee % >/dev/null' | :edit!
+    command W call SudoSaveAction()
     command Wq :execute ':W' | :q
     command WQ :Wq
 endif
