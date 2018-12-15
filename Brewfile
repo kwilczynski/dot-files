@@ -57,6 +57,7 @@ brew 'grep', args: ['with-default-names']
 brew 'rsync'
 brew 'htop-osx'
 brew 'httpie'
+brew 'httpstat'
 brew 'icu4c'
 brew 'ipcalc'
 brew 'jid'
