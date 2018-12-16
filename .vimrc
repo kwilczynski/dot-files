@@ -283,11 +283,13 @@ if !isdirectory(expand(&directory))
 endif
 
 function! SudoSaveAction()
-let answer = confirm('Save with sudo?', "&Yes\n&No", 2)
-if answer == 1
-    :execute ':silent w !sudo tee % >/dev/null' | :edit!
+    let answer = confirm('Save with sudo?', "&Yes\n&No", 2)
+    if answer == 1
+        :execute ':silent w !sudo tee % >/dev/null' | :edit!
+    else
+        :execute ':silent w'
+    endif
     redraw
-endif
 endfunction
 
 if has('nvim')
