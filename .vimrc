@@ -77,8 +77,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Temporarily disabled.
 "Plug 'vim-scripts/SearchComplete'
 
-Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-let g:go_gocode_unimported_packages = 1
+" Temporarily disabled.
+"Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+"let g:go_gocode_unimported_packages = 1
 
 " Temporarily disabled.
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -93,6 +94,7 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_types = 1
+let g:go_gocode_unimported_packages = 1
 
 Plug 'maralla/completor.vim'
 let g:completor_auto_trigger = 1
@@ -175,8 +177,9 @@ set splitbelow
 set mouse=a
 set ttymouse=sgr
 
-set t_Co=256
-set termguicolors
+" Temporarily disabled.
+"set t_Co=256
+"set termguicolors
 
 syntax enable
 syntax sync minlines=250
