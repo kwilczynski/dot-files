@@ -40,4 +40,10 @@
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.currentLine.enabled": false,
   "gitlens.statusBar.enabled": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "breadcrumbs.enabled": true,
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "todo-tree.defaultHighlight": {},
+  "spellright.useDocumentSymbolsInCode": false,
 }

@@ -1,3 +1,4 @@
+Gruntfuggly.todo-tree
 PKief.material-icon-theme
 PeterJausovec.vscode-docker
 castwide.solargraph
@@ -6,10 +7,14 @@ dracula-theme.theme-dracula
 eamodio.gitlens
 lukehoban.Go
 mauve.terraform
+mechatroner.rainbow-csv
 ms-python.python
 ms-vscode.Go
 ms-vscode.cpptools
 nonylene.dark-molokai-theme
 rebornix.Ruby
+rebornix.ruby
+ryu1kn.partial-diff
 shardulm94.trailing-spaces
+thenikso.github-plus-theme
 zhuangtongfa.Material-theme
