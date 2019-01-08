@@ -58,6 +58,7 @@ brew 'go'
 brew 'graphviz'
 brew 'hstr'
 brew 'grep', args: ['with-default-names']
+brew 'gron'
 brew 'rsync'
 brew 'htop-osx'
 brew 'httpie'
