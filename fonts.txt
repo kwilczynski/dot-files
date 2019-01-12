@@ -1,5 +1,8 @@
-FiraCode
+Fira Code
 https://github.com/tonsky/FiraCode
+
+Fira Mono
+https://mozilla.github.io/Fira
 
 Inconsolata
 http://levien.com/type/myfonts/inconsolata.html
