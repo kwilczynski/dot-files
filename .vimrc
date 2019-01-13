@@ -9,6 +9,8 @@ Plug 'dracula/vim'
 Plug 'fatih/molokai'
 let g:rehash256 = 1
 
+Plug 'phanviet/vim-monokai-pro'
+
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors = 256
 
@@ -16,7 +18,16 @@ Plug 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark = 'hard'
 
 Plug 'ayu-theme/ayu-vim'
-let ayucolor = 'dark'
+let ayucolor = 'mirage'
+
+Plug 'cocopon/iceberg.vim'
+
+Plug 'arcticicestudio/nord-vim'
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_italic_comments = 1
+let g:nord_comment_brightness = 15
+let g:nord_cursor_line_number_background = 1
 
 Plug 'kopischke/vim-stay'
 
@@ -180,17 +191,18 @@ set splitbelow
 set mouse=a
 set ttymouse=sgr
 
-" Temporarily disabled.
-"set t_Co=256
-"set termguicolors
+set t_Co=256
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 syntax enable
 syntax sync minlines=250
 
 set background=dark
-colorscheme molokai
 " Temporarily disabled.
-"colorscheme ayu
+"colorscheme molokai
+colorscheme ayu
 
 filetype plugin indent on
 
@@ -275,17 +287,17 @@ set viewoptions=cursor,folds,slash,unix
 
 set undodir=~/.vim/undo//
 if !isdirectory(expand(&undodir))
-  call mkdir(expand(&undodir), "p")
+    call mkdir(expand(&undodir), "p")
 endif
 
 set backupdir=~/.vim/backup//
 if !isdirectory(expand(&backupdir))
-  call mkdir(expand(&backupdir), "p")
+    call mkdir(expand(&backupdir), "p")
 endif
 
 set directory=~/.vim/swap//
 if !isdirectory(expand(&directory))
-  call mkdir(expand(&directory), "p")
+    call mkdir(expand(&directory), "p")
 endif
 
 function! SudoSaveAction()
