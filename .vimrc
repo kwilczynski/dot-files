@@ -263,7 +263,8 @@ set ruler
 set showmode
 
 " Temporarily disabled.
-"set cursorline
+"set cursorcolumn
+set cursorline
 
 set backspace=indent,eol,start
 
