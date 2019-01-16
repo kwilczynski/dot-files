@@ -9,8 +9,6 @@ Plug 'dracula/vim'
 Plug 'fatih/molokai'
 let g:rehash256 = 1
 
-Plug 'phanviet/vim-monokai-pro'
-
 Plug 'altercation/vim-colors-solarized'
 let g:solarized_termcolors = 256
 
