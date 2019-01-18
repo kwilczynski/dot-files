@@ -9,7 +9,6 @@
   "editor.renderWhitespace": "boundary",
   "editor.fontSize": 12,
   "editor.fontLigatures": true,
-  "editor.fontFamily": "Hack",
   "editor.quickSuggestions": {
     "other": true,
     "comments": false,
@@ -21,8 +20,6 @@
   "go.formatTool": "goimports",
   "go.goroot": "/usr/local/opt/go/libexec",
   "go.inferGopath": true,
-  "workbench.colorTheme": "Monokai",
-  "workbench.iconTheme": "material-icon-theme",
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
     "suppressCommitNotFoundWarning": false,
@@ -44,6 +41,12 @@
   "breadcrumbs.enabled": true,
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
+  "workbench.colorTheme": "Ayu Mirage Bordered",
   "todo-tree.defaultHighlight": {},
   "spellright.useDocumentSymbolsInCode": false,
+  "editor.fontFamily": "Fira Mono, Hack",
+  "editor.minimap.enabled": true,
+  "editor.renderControlCharacters": false,
+  "sync.gist": "645c860c47ad3698e09d5f922934fbaa",
+  "workbench.iconTheme": "material-icon-theme",
 }
