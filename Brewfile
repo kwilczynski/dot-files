@@ -1,5 +1,6 @@
 tap 'caskroom/cask'
-tap 'homebrew/boneyard'
+# Homebrew deprecated this tap.
+#tap 'homebrew/boneyard'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'jmespath/jmespath'
