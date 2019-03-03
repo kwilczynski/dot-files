@@ -1,11 +1,37 @@
-IPVanish VPN
-https://www.ipvanish.com/vpn-setup/
+Software to install manually:
 
-ExpressVPN
-https://www.expressvpn.com/vpn-software/vpn-mac
-
-orgalorg
-https://github.com/reconquest/orgalorg
-
-Java JDK
-http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html
+- 1Password
+- Authy Desktop
+- Charles Proxy
+- CleanMyMac 3
+- Cyberduck
+- Docker
+- Docker
+- Etcher
+- ExpressVPN
+- Firefox
+- Flux
+- Franz
+- Google Chrome
+- Java JDK
+- Keybase
+- LibreOffice
+- LittleSnitch
+- MacDown
+- Magnet
+- MicroSnitch
+- Owly
+- Postman
+- Shadow
+- Skype
+- Spotify
+- TorBrowser
+- Tunnelblick
+- Typora
+- VLC
+- Vagrant
+- VirtualBox
+- Visual Stuido Code
+- Wireshark
+- Zoom
+- iTerm2
