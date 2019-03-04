@@ -146,7 +146,7 @@ brew 'watchman'
 brew 'wget'
 brew 'whatmask'
 brew 'wrk'
-brew 'wrk2'
+brew 'wrk2', args: ['HEAD']
 brew 'xsv'
 brew 'xz'
 
