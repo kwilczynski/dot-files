@@ -16,6 +16,10 @@ if command -v rbenv >/dev/null; then
     eval "$(rbenv init -)"
 fi
 
+if command -v jenv >/dev/null; then
+    eval "$(jenv init -)"
+fi
+
 if command -v direnv >/dev/null; then
     eval "$(direnv hook bash)"
 fi
