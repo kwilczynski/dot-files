@@ -4,12 +4,12 @@ export GPG_TTY="$(tty)"
 
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
-if [[ -f $(brew --prefix)/share/bash-completion/bash_completion ]]; then
-    . $(brew --prefix)/share/bash-completion/bash_completion
+if [[ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]]; then
+    . "$(brew --prefix)/share/bash-completion/bash_completion"
 fi
 
-if [[ -e ${HOME}/.iterm2_shell_integration.bash ]]; then
-    . ${HOME}/.iterm2_shell_integration.bash
+if [[ -e "${HOME}/.iterm2_shell_integration.bash" ]]; then
+    . "${HOME}/.iterm2_shell_integration.bash"
 fi
 
 if command -v rbenv >/dev/null; then
@@ -87,8 +87,8 @@ export RUBYOPT='-rrubygems'
 
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
-# Only use when bottles are not working as expected.
-#export HOMEBREW_BUILD_FROM_SOURCE=1
+# Disabled. Only use when bottles are not working as expected.
+# export HOMEBREW_BUILD_FROM_SOURCE=1
 
 export CHECKPOINT_DISABLE=1
 export VAGRANT_CHECKPOINT_DISABLE=1
@@ -96,42 +96,24 @@ export VAGRANT_CHECKPOINT_DISABLE=1
 export DIRENV_LOG_FORMAT=
 
 if ls --color &>/dev/null ; then
-    alias l='ls --color -CF'
-    alias ls='ls --color'
-    alias ll='ls --color -alF'
-    alias la='ls --color -Ah'
-    alias lsd="ls --color -ald */"
-    alias lsdr="ls --color -altrd */"
+    alias ls='ls --color=auto'
+    alias l='ls -CF'
+    alias ll='ls -alF'
+    alias la='ls -Ah'
+    alias lsd="ls -ald */"
+    alias lsdr="ls -altrd */"
 else
-    alias l='ls -G -CF'
     alias ls='ls -G'
-    alias ll='ls -G -alF'
-    alias la='ls -G -Ah'
-    alias lsd="ls -G -ald */"
-    alias lsdr="ls -G -altrd */"
+    alias l='ls -CF'
+    alias ll='ls -alF'
+    alias la='ls -Ah'
+    alias lsd="ls -ald */"
+    alias lsdr="ls -altrd */"
 fi
-alias hh='hstr'
-alias mv='mv -i'
-alias cp='cp -i'
-alias ln='ln -i'
-alias g='git'
-alias df='df -H'
-alias du='du -ch'
-alias wget='wget -c'
-alias h='history'
-alias jj='jobs -l'
-alias diff='colordiff'
-alias diffu='colordiff -uNr'
-alias bc='bc -l'
-alias tree='tree -C'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias b='bundle'
-alias br='brew'
-alias be='bundle exec'
-alias v='vagrant'
-alias k='kubectl'
+
+if [[ -f "${HOME}/.bash_aliases" ]]; then
+    . "${HOME}/.bash_aliases"
+fi
 
 # Allow "g" alias to work for Git.
 complete -o default -o nospace -F _git g
