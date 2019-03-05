@@ -4,6 +4,14 @@ export GPG_TTY="$(tty)"
 
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
+if [[ -d "${HOME}/.linuxbrew" ]]; then
+    eval "$("${HOME}/.linuxbrew/bin/brew" shellenv)"
+fi
+
+if [[ -d /home/linuxbrew/.linuxbrew ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 if [[ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]]; then
     . "$(brew --prefix)/share/bash-completion/bash_completion"
 fi
