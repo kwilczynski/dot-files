@@ -12,6 +12,11 @@ if [[ -d /home/linuxbrew/.linuxbrew ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+if [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]]; then
+    export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
+    . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+fi
+
 if [[ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]]; then
     . "$(brew --prefix)/share/bash-completion/bash_completion"
 fi
