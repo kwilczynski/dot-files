@@ -14,7 +14,7 @@ tap 'wallix/awless'
 brew 'asciinema'
 brew 'awscli'
 brew 'azure-cli'
-brew 'bash'
+brew 'bash', args: ['build-from-source']
 brew 'bash-completion@2'
 brew 'bat'
 brew 'bench'
