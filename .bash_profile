@@ -54,6 +54,10 @@ shopt -s cdable_vars
 
 export EDITOR='vim'
 
+if [[ -x /usr/bin/lesspipe ]]; then
+    eval "$(SHELL=/bin/bash lesspipe)"
+fi
+
 export PAGER='less'
 export MANPAGER='less -X'
 
