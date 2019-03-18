@@ -29,7 +29,6 @@
     "suppressResultsExplorerNotice": false,
     "suppressShowKeyBindingsNotice": true
   },
-  "gitlens.historyExplorer.enabled": true,
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.enabled": false,
@@ -42,10 +41,12 @@
   "gitlens.views.lineHistory.enabled": true,
   "workbench.colorTheme": "Ayu Mirage Bordered",
   "todo-tree.defaultHighlight": {},
-  "spellright.useDocumentSymbolsInCode": false,
   "editor.fontFamily": "Fira Mono, Hack",
   "editor.minimap.enabled": true,
   "editor.renderControlCharacters": false,
   "workbench.iconTheme": "material-icon-theme",
   "sync.gist": "8f68a374d83e458563be054ad00cfab9",
+  "terraform.indexing": {
+    "enabled": false
+  }
 }
