@@ -18,7 +18,6 @@
   "editor.cursorBlinking": "blink",
   "editor.formatOnSave": true,
   "go.formatTool": "goimports",
-  "go.goroot": "/usr/local/opt/go/libexec",
   "go.inferGopath": true,
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
@@ -47,6 +46,6 @@
   "editor.fontFamily": "Fira Mono, Hack",
   "editor.minimap.enabled": true,
   "editor.renderControlCharacters": false,
-  "sync.gist": "645c860c47ad3698e09d5f922934fbaa",
   "workbench.iconTheme": "material-icon-theme",
+  "sync.gist": "8f68a374d83e458563be054ad00cfab9",
 }
