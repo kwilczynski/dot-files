@@ -1,0 +1,3 @@
+set commit-order = default
+
+bind generic r refresh
