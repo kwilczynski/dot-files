@@ -262,7 +262,7 @@ set showmode
 
 " Temporarily disabled.
 "set cursorcolumn
-set cursorline
+"set cursorline
 
 set backspace=indent,eol,start
 
