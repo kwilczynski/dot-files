@@ -93,6 +93,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Temporarily disabled.
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fatih/vim-go'
+" Temporarily disabled.
+"let g:go_info_mode = 'gocode'
+"let g:go_def_mode = 'gopls'
 let g:go_snippet_engine = 'ultisnips'
 let g:go_fmt_command = 'goimports'
 let g:go_addtags_transform = 'snakecase'
@@ -187,7 +190,9 @@ set splitright
 set splitbelow
 
 set mouse=a
-set ttymouse=sgr
+" Temporarily disabled.
+"set ttymouse=sgr
+set ttymouse=xterm2
 
 set t_Co=256
 if (has("termguicolors"))
@@ -195,7 +200,10 @@ if (has("termguicolors"))
 endif
 
 syntax enable
+syntax sync fromstart
 syntax sync minlines=250
+
+set synmaxcol=4096
 
 set background=dark
 " Temporarily disabled.
@@ -212,6 +220,9 @@ set history=128
 
 set scrolloff=3
 
+set shortmess+=c
+set belloff+=ctrlg
+
 set viminfo='20,\"50
 set formatoptions+=1
 set formatoptions+=n
@@ -222,7 +233,11 @@ endif
 
 set completeopt-=preview
 
-set clipboard+=unnamed
+"set clipboard+=unnamed
+set clipboard^=unnamed
+set clipboard^=unnamedplus
+
+set maxmempattern=20480
 
 set iskeyword+=_,$,@,%,#
 
@@ -267,6 +282,7 @@ set showmode
 set backspace=indent,eol,start
 
 set ttyfast
+se ttyscroll=3
 
 set noerrorbells
 
@@ -404,6 +420,7 @@ augroup configgroup
     autocmd BufRead,BufNewFile *.txt set filetype=text
     autocmd BufRead,BufNewFile *.sls set filetype=yaml
     autocmd BufRead,BufNewFile *.hcl set filetype=terraform
+    autocmd BufRead,BufNewFile *.gotmpl set filetype=gotexttmpl
 
     autocmd FileType text setlocal formatoptions-=t textwidth=0
     autocmd FileType gitcommit setlocal textwidth=80
