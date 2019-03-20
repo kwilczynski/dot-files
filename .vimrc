@@ -146,9 +146,11 @@ Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
 
 Plug 'elzr/vim-json'
+let g:vim_json_syntax_conceal = 0
 
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_fenced_languages = ['go=go', 'viml=vim', 'bash=sh']
 
 Plug 'hashivim/vim-vagrant'
 Plug 'hashivim/vim-terraform'
