@@ -93,9 +93,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Temporarily disabled.
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fatih/vim-go'
-" Temporarily disabled.
-"let g:go_info_mode = 'gocode'
-"let g:go_def_mode = 'gopls'
+let g:go_info_mode = 'gocode'
+let g:go_def_mode = 'gopls'
 let g:go_snippet_engine = 'ultisnips'
 let g:go_fmt_command = 'goimports'
 let g:go_addtags_transform = 'snakecase'
@@ -108,7 +107,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_types = 1
 let g:go_highlight_space_tab_error = 1
-let g:go_gocode_propose_source = 1
+let g:go_gocode_propose_source = 0
 let g:go_gocode_unimported_packages = 1
 
 Plug 'maralla/completor.vim'
