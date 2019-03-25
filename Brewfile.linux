@@ -42,7 +42,7 @@ brew 'git'
 brew 'git-crypt'
 brew 'git-extras'
 brew 'git-flow'
-brew 'go'
+brew 'go', args: ['build-from-source']
 brew 'graphviz'
 brew 'gron'
 brew 'hexyl'
