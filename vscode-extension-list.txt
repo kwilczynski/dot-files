@@ -1,9 +1,13 @@
 arcticicestudio.nord-visual-studio-code
 castwide.solargraph
+codezombiech.gitignore
+CoenraadS.bracket-pair-colorizer
 donjayamanne.githistory
 dracula-theme.theme-dracula
 eamodio.gitlens
 Gruntfuggly.todo-tree
+jolaleye.horizon-theme-vscode
+kevinkyang.auto-comment-blocks
 mauve.terraform
 mechatroner.rainbow-csv
 ms-python.python
@@ -15,5 +19,8 @@ rebornix.ruby
 ryu1kn.partial-diff
 Shan.code-settings-sync
 shardulm94.trailing-spaces
+stkb.rewrap
 teabyii.ayu
+vscoss.vscode-ansible
+wmaurer.change-case
 zhuangtongfa.Material-theme
