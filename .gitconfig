@@ -116,8 +116,9 @@
   trustctime = false
 [init]
   templatedir = ~/.git-templates
-[credential]
-  helper = osxkeychain
+; Temporarily disabled. Not available on Linux.
+; [credential]
+;   helper = osxkeychain
 [commit]
   gpgsign = true
 [tag]
@@ -151,6 +152,8 @@
   insteadOf = "gh:"
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
+[url "git@github.com:"]
+    insteadOf = https://github.com/
 [url "git://github.com/"]
   insteadOf = "github:"
 [url "git@gist.github.com:"]
