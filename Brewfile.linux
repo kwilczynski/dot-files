@@ -24,6 +24,7 @@ brew 'caddy'
 brew 'calc'
 brew 'ccat'
 brew 'cfssl'
+brew 'curl', args: ['build-from-source']
 brew 'cli53'
 brew 'colordiff'
 brew 'ctags'
