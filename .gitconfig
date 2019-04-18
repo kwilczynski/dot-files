@@ -97,6 +97,7 @@
   empty = !git init && git commit --allow-empty -m \"Initial commit.\"
   r = !git ls-files -z --deleted | xargs -0 git rm
   wd = !git diff --color | diff-so-fancy | less -FRSX
+  update-author = !bash -c 'git rebase --onto $1 --exec \"git commit --amend --author=$2\" $1' --
 [color]
   branch = auto
   diff = auto
