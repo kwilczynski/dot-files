@@ -35,3 +35,10 @@ Software to install manually:
 - Wireshark
 - Zoom
 - iTerm2
+
+Linux:
+
+- s-tue
+- http-prompt
+- intel-undervort
+- tlp
