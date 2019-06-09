@@ -1,17 +1,28 @@
-key_layout = qwerty
+encoding.add = utf8
 
-session = ~/.rtorrent/session
+keys.layout.set = qwerty
 
-tos = throughput
-port_range = 8192-65535
-port_random = yes
+session.path.set = ~/.rtorrent/session
 
-check_hash = yes
-hash_read_ahead = 5
+throttle.max_uploads.global.set = 10
+throttle.global_up.max_rate.set_kb = 128
 
-encryption = allow_incoming, try_outgoing, enable_retry
+network.port_range.set = 8192-65535
+network.port_random.set = yes
 
-dht = on
-enable_trackers = yes
-use_udp_trackers = yes
-peer_exchange = yes
+network.http.dns_cache_timeout.set = 30
+
+dht.mode.set = on
+
+protocol.pex.set = yes
+
+trackers.disable = no
+trackers.use_udp.set = yes
+
+pieces.hash.on_completion.set = yes
+
+protocol.encryption.set = allow_incoming, try_outgoing, enable_retry
+
+strings.ip_tos = throughput
+strings.connection_type = leech
+strings.encryption = allow_incoming, try_outgoing, enable_retry
