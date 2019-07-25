@@ -32,6 +32,7 @@ brew 'cfssl'
 brew 'cli53'
 brew 'cmake'
 brew 'colordiff'
+brew 'cowsay'
 brew 'ctags'
 brew 'curl'
 brew 'devd'
@@ -45,9 +46,11 @@ brew 'dry'
 brew 'envchain'
 brew 'exa'
 brew 'fd'
+brew 'fdupes'
 brew 'findutils', args: ['with-default-names']
 brew 'fpp'
 brew 'fselect'
+brew 'fx'
 brew 'fzf'
 brew 'gdbm'
 brew 'gettext'
@@ -146,7 +149,7 @@ brew 'unrar'
 brew 'vagrant-completion'
 # Temporarily disabled.
 # brew 'vim', args: ['override-system-vi', 'with-lua', 'with-custom-python', 'with-python@2', 'without-ruby']
-brew 'vim', args: ['with-luajit', 'without-ruby']
+brew 'vim', args: ['with-luajit', 'without-ruby', 'build-from-source']
 brew 'watch'
 brew 'watchman'
 brew 'wget'
@@ -154,6 +157,7 @@ brew 'whatmask'
 # Disabled in favour of wrk2.
 # brew 'wrk'
 brew 'wrk2', args: ['HEAD']
+brew 'wuzz'
 brew 'xsv'
 brew 'xz'
 
