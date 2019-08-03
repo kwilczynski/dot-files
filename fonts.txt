@@ -4,6 +4,9 @@ https://github.com/tonsky/FiraCode
 Fira Mono
 https://mozilla.github.io/Fira
 
+Fira Mono Regular Nerd Font Complete Mono
+https://github.com/ryanoasis/nerd-fonts
+
 Inconsolata
 http://levien.com/type/myfonts/inconsolata.html
 
@@ -18,3 +21,6 @@ https://github.com/be5invis/Iosevka
 
 Monoid
 https://github.com/larsenwork/monoid
+
+Operator Mono
+https://www.typography.com/blog/introducing-operator
