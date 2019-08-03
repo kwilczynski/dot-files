@@ -27,6 +27,10 @@ fi
 
 if command -v rbenv >/dev/null; then
     eval "$(rbenv init -)"
+
+    if [[ -d "$(brew --prefix openssl)" ]]; then
+        export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
+    fi
 fi
 
 if command -v pyenv >/dev/null; then
@@ -49,15 +53,21 @@ if command -v jump >/dev/null; then
     eval "$(jump shell)"
 fi
 
-export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWUNTRACKEDFILES=true
-export GIT_PS1_SHOWSTASHSTATE=true
+# Disabled in favour of using gbt.
+# export GIT_PS1_SHOWDIRTYSTATE=true
+# export GIT_PS1_SHOWUNTRACKEDFILES=true
+# export GIT_PS1_SHOWSTASHSTATE=true
+#
+# if [[ $EUID == 0 || $USER == 'root' ]] ; then
+#     PS1="\[\033[01;31m\]\h\[\033[01;34m\] \W\[\033[1;33m\]\$(__git_ps1 ' (%s)')\[\033[00m\]#\[\033[00m\] "
+# else
+#     PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[1;33m\]\$(__git_ps1 ' (%s)')\[\033[00m\]\$\[\033[00m\] "
+# fi
 
-if [[ $EUID == 0 || $USER == 'root' ]] ; then
-    PS1="\[\033[01;31m\]\h\[\033[01;34m\] \W\[\033[1;33m\]\$(__git_ps1 ' (%s)')\[\033[00m\]#\[\033[00m\] "
-else
-    PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[1;33m\]\$(__git_ps1 ' (%s)')\[\033[00m\]\$\[\033[00m\] "
-fi
+export GBT_CAR_OS_NAME='linux'
+export GBT_CAR_DIR_DEPTH='2'
+
+PS1='$(gbt $?)'
 
 export CLICOLOR=1
 export LSCOLORS='ExGxFxDxCxDxDxhbhdacEc'
