@@ -100,14 +100,14 @@ let g:go_fmt_command = 'goimports'
 let g:go_addtags_transform = 'snakecase'
 let g:go_list_type = 'quickfix'
 let g:go_list_autoclose = 1
-let g:go_auto_type_info = 1
+let g:go_auto_type_info = 0
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_types = 1
 let g:go_highlight_space_tab_error = 1
-let g:go_gocode_propose_source = 0
+let g:go_gocode_propose_source = 1
 let g:go_gocode_unimported_packages = 1
 
 Plug 'maralla/completor.vim'
