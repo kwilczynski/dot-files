@@ -433,7 +433,7 @@ augroup configgroup
     autocmd FileType html,xhtml,xml,xslt setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
     autocmd FileType js,javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType c,cpp,cs,h,hpp,objc setlocal noexpandtab cindent textwidth=80 shiftwidth=4 tabstop=8 softtabstop=4
+    autocmd FileType c,cpp,cs,h,hpp,objc setlocal noexpandtab cindent textwidth=80 shiftwidth=8 tabstop=8 softtabstop=8
     autocmd FileType go setlocal noexpandtab textwidth=120 shiftwidth=8 tabstop=8 softtabstop=8
     autocmd FileType rs,rc setlocal expandtab textwidth=100 shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType make setlocal noexpandtab shiftwidth=8 softtabstop=0
