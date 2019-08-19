@@ -80,6 +80,7 @@
   tree = log --graph --oneline --decorate
   ll = log --graph --pretty='format:%h | %an | %s'
   los = log --graph --oneline --abbrev-commit
+  lok = log --oneline --abbrev-commit --pretty='%h ("%s")'
   llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
   po = push origin
   pom = push origin master
