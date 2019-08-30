@@ -1,0 +1,127 @@
+set realname = "Krzysztof Wilczynski"
+set from     = "kw@linux.com"
+
+alternates \
+  "krzysztof.wilczynski@linux.com" \
+  "kw@fsck.io"                     \
+  "krzysztof.wilczynski@fsck.io"
+
+unset user_agent
+unset use_domain
+unset mime_forward
+set use_from      = yes
+set envelope_from = yes
+set edit_headers  = yes
+set fast_reply    = yes
+set reply_to      = yes
+set reverse_name  = yes
+set include       = yes
+set askcc         = yes
+set fcc_attach    = yes
+
+set forward_format = "Fwd: %s"
+set forward_decode = yes
+set forward_quote  = yes
+
+set attribution = "On %d, %n wrote:"
+
+set mail_check     = 30
+set timeout        = 300
+set imap_keepalive = 900
+
+unset ssl_starttls
+set ssl_force_tls = yes
+
+set sendmail_wait = 0
+
+set smtp_url            = "smtp://kswilczynski@smtp.gmail.com:587/"
+set smtp_pass           = ""
+set smtp_authenticators = "login"
+
+unset imap_passive
+set imap_user             = "kswilczynski@googlemail.com"
+set imap_pass             = ""
+set imap_check_subscribed = yes
+
+set folder    = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set mbox      = "+[Gmail]/All Mail"
+set record    = "+[Gmail]/Sent Mail"
+set postponed = "+[Gmail]/Drafts"
+set trash     = "+[Gmail]/Bin"
+
+unset move
+set move = no
+
+unset mark_old
+set mark_old = no
+
+set header_cache     = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+
+set sleep_time = 0
+
+set auto_tag = yes
+
+set sort            = "threads"
+set sort_aux        = "reverse-last-date-received
+set strict_threads  = yes
+set uncollapse_jump = yes
+
+auto_view "text/html"
+
+alternative_order \
+  "text/plain"    \
+  "text/enriched" \
+  "text/html"     \
+  "*"
+
+set editor = "vim -c 'set syntax=mail filetype=mail encoding=utf-8 textwidth=72'"
+bind editor ^T complete
+bind editor <space> noop
+
+set charset         = "utf-8"
+set assumed_charset = "utf-8"
+set send_charset    = "utf-8"
+
+set date_format  = "%y-%m-%d %T"
+set index_format = "%2C | %Z [%d] %-30.30F (%-4.4c) %s"
+
+set wait_key    = no
+set tilde       = yes
+set pager_stop  = yes
+set menu_scroll = yes
+
+ignore \
+  "Authentication-Results:" \
+  "DomainKey-Signature:"    \
+  "DKIM-Signature:"
+
+ignore "*"
+unignore \
+  "From" \
+  "To"   \
+  "Cc"   \
+  "Bcc"  \
+  "Date" \
+  "Subject"
+
+unhdr_order "*"
+hdr_order \
+  "From:" \
+  "To:"   \
+  "Cc:"   \
+  "Bcc:"  \
+  "Date:" \
+  "Subject:"
+
+macro index,pager ! "<save-message>=[Gmail]/Spam<enter><enter>"      "Report as Spam"
+macro index,pager + "<save-message>=[Gmail]/Important<enter><enter>" "Mark as Important"
+macro index,pager e "<save-message>=[Gmail]/All Mail<enter><enter>"  "Archive Message"
+macro index,pager d "<save-message>=[Gmail]/Bin<enter><enter>"       "Delete Message"
+
+macro index,pager gi "<change-folder>=INBOX<enter>"            "Go to Inbox"
+macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to All Mail"
+macro index,pager gs "<change-folder>=[Gmail]/Starred<enter>"  "Go to Starred"
+macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>"   "Go to Drafts"
