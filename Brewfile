@@ -9,6 +9,7 @@ tap 'kwilczynski/pkenv'
 tap 'moncho/dry'
 tap 'wagoodman/dive'
 tap 'jabley/homebrew-wrk2'
+tap 'beeftornado/rmtree'
 
 brew 'ack'
 brew 'asciinema'

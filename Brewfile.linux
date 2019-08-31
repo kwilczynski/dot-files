@@ -10,6 +10,7 @@ tap 'linuxbrew/xorg'
 tap 'moncho/dry'
 tap 'wagoodman/dive'
 tap 'wallix/awless'
+tap 'beeftornado/rmtree'
 
 brew 'asciinema'
 brew 'awscli'
