@@ -64,7 +64,12 @@ fi
 #     PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[1;33m\]\$(__git_ps1 ' (%s)')\[\033[00m\]\$\[\033[00m\] "
 # fi
 
-export GBT_CAR_OS_NAME='linux'
+if [[ "$(uname)" == 'Linux' ]]; then
+    export GBT_CAR_OS_NAME='linux'
+else
+    export GBT_CAR_OS_NAME='darwin'
+fi
+
 export GBT_CAR_DIR_DEPTH='2'
 
 PS1='$(gbt $?)'
