@@ -155,7 +155,7 @@
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
 [url "git@github.com:"]
-    insteadOf = https://github.com/
+    insteadOf = "https://github.com/"
 [url "git://github.com/"]
   insteadOf = "github:"
 [url "git@gist.github.com:"]
@@ -164,6 +164,8 @@
   pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
+[url "git@bitbucket.org:"]
+  insteadOf = "https://bitbucket.org/"
 [diff]
   tool = diffmerge
   renames = copies
