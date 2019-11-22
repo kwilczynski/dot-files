@@ -121,6 +121,8 @@
 ; Temporarily disabled. Not available on Linux.
 ; [credential]
 ;   helper = osxkeychain
+[credential "https://github.com"]
+  username = kwilczynski
 [commit]
   gpgsign = true
 [tag]
