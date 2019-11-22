@@ -114,7 +114,7 @@
   log = true
 [core]
   pager = diff-so-fancy | less -FRSX
-  excludesfile = /Users/kwilczynski/.gitignore_global
+  excludesfile = ~/.gitignore_global
   trustctime = false
 [init]
   templatedir = ~/.git-templates
