@@ -1,6 +1,7 @@
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'homebrew/core', 'https://github.com/Homebrew/linuxbrew-core.git'
+tap 'aws/tap'
 tap 'beeftornado/rmtree'
 tap 'jabley/wrk2'
 tap 'jmespath/jmespath'
@@ -13,6 +14,7 @@ tap 'wallix/awless'
 tap 'zloesabo/nettools'
 
 brew 'asciinema'
+brew 'aws-sam-cli'
 brew 'awscli'
 brew 'azure-cli'
 brew 'bash', args: ['build-from-source']
