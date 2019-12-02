@@ -33,7 +33,9 @@ alias be='bundle exec'
 alias v='vagrant'
 alias k='kubectl'
 
-alias docker='podman'
+if command -v podman >/dev/null; then
+    alias docker='podman'
+fi
 
 if command -v aws-v3.rb >/dev/null; then
     alias aws.rb='aws-v3.rb'
