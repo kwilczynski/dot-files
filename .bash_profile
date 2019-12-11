@@ -130,8 +130,12 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # Disabled. Only use when bottles are not working as expected.
 # export HOMEBREW_BUILD_FROM_SOURCE=1
 
+# HashiCorp tools.
 export CHECKPOINT_DISABLE=1
 export VAGRANT_CHECKPOINT_DISABLE=1
+
+# Microsoft Azure Functions.
+export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
 
 export DIRENV_LOG_FORMAT=
 
