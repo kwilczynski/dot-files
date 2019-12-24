@@ -14,6 +14,7 @@ tap 'wagoodman/dive'
 tap 'wallix/awless'
 tap 'zloesabo/nettools'
 
+brew 'angle-grinder'
 brew 'asciinema'
 brew 'aws-sam-cli'
 brew 'awscli'

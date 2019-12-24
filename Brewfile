@@ -13,6 +13,7 @@ tap 'wallix/awless'
 tap 'zloesabo/nettools'
 
 brew 'ack'
+brew 'angle-grinder'
 brew 'asciinema'
 brew 'autoconf'
 brew 'automake'
