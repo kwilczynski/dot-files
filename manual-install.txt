@@ -11,7 +11,9 @@ Software to install manually:
 - ExpressVPN
 - Firefox
 - Flux
-- Franz
+# Disabled in favour of Station.
+# - Franz
+- Station
 - Google Chrome
 - Java JDK
 - Keybase
