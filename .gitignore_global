@@ -39,6 +39,7 @@ core
 *.iso
 
 .DS_Store?
+.DS_Store
 .Spotlight*
 .Trash*
 

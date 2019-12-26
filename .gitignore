@@ -77,6 +77,8 @@ Gemfile.lock
 .direnv
 .envrc
 
+.vscode
+
 Icon?
 
 tmp
