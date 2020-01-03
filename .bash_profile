@@ -31,6 +31,18 @@ if command -v rbenv >/dev/null; then
     if [[ -d "$(brew --prefix openssl)" ]]; then
         export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
     fi
+
+    if [[ -d "$(brew --prefix)/opt/curl-openssl" ]]; then
+        export PATH="$(brew --prefix)/opt/curl-openssl/bin:${PATH}"
+    else
+        export PATH="$(brew --prefix)/opt/curl/bin:${PATH}"
+    fi
+
+    for d in 'grep' 'sed' 'gnu-sed' 'findutils'; do
+        if [[ -d "$(brew --prefix)/opt/${d}" ]]; then
+            export PATH="$(brew --prefix)/opt/${d}/libexec/gnubin:${PATH}"
+        fi
+    done
 fi
 
 if command -v pyenv >/dev/null; then
