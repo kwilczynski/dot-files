@@ -24,3 +24,6 @@ https://github.com/larsenwork/monoid
 
 Operator Mono
 https://www.typography.com/blog/introducing-operator
+
+JetBrains Mono
+https://www.jetbrains.com/lp/mono/
