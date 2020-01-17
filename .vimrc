@@ -52,6 +52,8 @@ Plug 'tpope/vim-commentary'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
+Plug 'jiangmiao/auto-pairs'
+
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_enabled = 1
 nnoremap <silent> <F3> :GitGutterToggle<CR>
@@ -109,6 +111,9 @@ let g:go_highlight_types = 1
 let g:go_highlight_space_tab_error = 1
 let g:go_gocode_propose_source = 1
 let g:go_gocode_unimported_packages = 1
+
+" Temporarily disabled.
+"Plug 'govim/govim'
 
 Plug 'maralla/completor.vim'
 let g:completor_auto_trigger = 1
