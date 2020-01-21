@@ -1,9 +1,12 @@
 * text=auto
 
+Makefile eol=lf
+
 ks.cfg eol=lf
 preseed.cfg eol=lf
 
 *.sh eol=lf
+*.go binary
 
 *.bat text eol=crlf
 *.cmd text eol=crlf
