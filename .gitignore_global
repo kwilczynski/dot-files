@@ -1,16 +1,17 @@
 ._*
 *~
 
-[568a].out
+*.[568avq]
+[568avq].out
 core
 
 *.o
 *.a
-*.ko
 *.obj
 *.elf
 *.dylib
 *.[as]o
+*.[mk]o
 *.[568ao]
 
 *.bundle
@@ -19,32 +20,39 @@ core
 *.py[cod]
 
 *.exe
+*.exe~
 *.com
 *.dll
 
-*.sw[a-z]
-.*.sw[a-z]
-
 *.gem
 
-*.7z
-*.xz
-*.gz
-*.jar
-*.rar
-*.tar
+*.[7gx]z
+*.[jrt]ar
 *.zip
 
 *.dmg
 *.iso
 
-.DS_Store?
+*.rej
+*.orig
+
+*.sw[a-z]
+.*.sw[a-z]
+
+.git
+.svn
+.cvs
+
 .DS_Store
-.Spotlight*
-.Trash*
+.DS_Store?
+.AppleDouble
+.LSOverride
+.Spotlight-*
 
 Icon?
 Icon[]
+
+.Trash
 
 .idea
 .vscode

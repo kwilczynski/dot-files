@@ -1,7 +1,8 @@
 ._*
 *~
 
-[568a].out
+*.[568avq]
+[568avq].out
 core
 
 _cgo_*
@@ -9,6 +10,7 @@ _obj
 _test
 _testmain.go
 test.out
+vendor/
 _?vendor
 Godeps/_vendor
 Godeps/_workspace
@@ -18,21 +20,20 @@ __pycache__/
 
 *.o
 *.a
-*.ko
 *.obj
 *.elf
 *.dylib
 *.[as]o
+*.[mk]o
 *.[568ao]
 *.bundle
 *.un~
 *.rbc
 *.py[cod]
 *.exe
-*.gem
-*.log
-*.rej
-*.orig
+*.exe~
+*.com
+*.dll
 *.class
 *.sqlite
 *.tmproj*
@@ -44,7 +45,23 @@ __pycache__/
 *.egg-info/
 *.egg
 .installed.cfg
-*.mo
+
+*.[7gx]z
+*.[jrt]ar
+*.zip
+
+*.dmg
+*.iso
+*.gem
+
+*.rej
+*.orig
+
+*.log
+
+*.test
+*.prof
+*.out
 
 .git
 .svn
@@ -69,7 +86,8 @@ Gemfile.lock
 .DS_Store
 .DS_Store?
 .AppleDouble
-.Spotlight*
+.LSOverride
+.Spotlight-*
 .Trash*
 
 .vagrant
@@ -77,9 +95,11 @@ Gemfile.lock
 .direnv
 .envrc
 
-.vscode
-
 Icon?
+Icon[]
+
+.idea
+.vscode
 
 tmp
 temp
