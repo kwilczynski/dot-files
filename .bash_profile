@@ -12,6 +12,18 @@ if [[ -d /home/linuxbrew/.linuxbrew ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+if [[ -d "$(brew --prefix)/opt/curl-openssl" ]]; then
+    export PATH="$(brew --prefix)/opt/curl-openssl/bin:${PATH}"
+else
+    export PATH="$(brew --prefix)/opt/curl/bin:${PATH}"
+fi
+
+for d in 'grep' 'sed' 'gnu-sed' 'findutils'; do
+    if [[ -d "$(brew --prefix)/opt/${d}" ]]; then
+        export PATH="$(brew --prefix)/opt/${d}/libexec/gnubin:${PATH}"
+    fi
+done
+
 if [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]]; then
     export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
     . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
@@ -32,17 +44,9 @@ if command -v rbenv >/dev/null; then
         export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
     fi
 
-    if [[ -d "$(brew --prefix)/opt/curl-openssl" ]]; then
-        export PATH="$(brew --prefix)/opt/curl-openssl/bin:${PATH}"
-    else
-        export PATH="$(brew --prefix)/opt/curl/bin:${PATH}"
+    if [[ -e "${HOME}/.rbenv/completions/rbenv.bash" ]]; then
+        . "${HOME}/.rbenv/completions/rbenv.bash"
     fi
-
-    for d in 'grep' 'sed' 'gnu-sed' 'findutils'; do
-        if [[ -d "$(brew --prefix)/opt/${d}" ]]; then
-            export PATH="$(brew --prefix)/opt/${d}/libexec/gnubin:${PATH}"
-        fi
-    done
 fi
 
 if command -v pyenv >/dev/null; then
