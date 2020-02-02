@@ -4,6 +4,10 @@ export GPG_TTY="$(tty)"
 
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
+if command -v brew >/dev/null; then
+    export BREW_PREFIX="$(dirname $(dirname $(type -p brew)))"
+fi
+
 if [[ -d "${HOME}/.linuxbrew" ]]; then
     eval "$("${HOME}/.linuxbrew/bin/brew" shellenv)"
 fi
@@ -12,36 +16,33 @@ if [[ -d /home/linuxbrew/.linuxbrew ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-if [[ -d "$(brew --prefix)/opt/curl-openssl" ]]; then
-    export PATH="$(brew --prefix)/opt/curl-openssl/bin:${PATH}"
+if [[ -d "${BREW_PREFIX}/opt/curl-openssl" ]]; then
+    export PATH="${BREW_PREFIX}/opt/curl-openssl/bin:${PATH}"
 else
-    export PATH="$(brew --prefix)/opt/curl/bin:${PATH}"
+    export PATH="${BREW_PREFIX}/opt/curl/bin:${PATH}"
 fi
 
 for d in 'grep' 'sed' 'gnu-sed' 'findutils'; do
-    if [[ -d "$(brew --prefix)/opt/${d}" ]]; then
-        export PATH="$(brew --prefix)/opt/${d}/libexec/gnubin:${PATH}"
+    if [[ -d "${BREW_PREFIX}/opt/${d}" ]]; then
+        export PATH="${BREW_PREFIX}/opt/${d}/libexec/gnubin:${PATH}"
     fi
 done
 
-if [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]]; then
-    export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
-    . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+if [[ -r "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    export BASH_COMPLETION_COMPAT_DIR="${BREW_PREFIX}/etc/bash_completion.d"
+    . "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
 fi
 
-if [[ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]]; then
-    . "$(brew --prefix)/share/bash-completion/bash_completion"
-fi
-
-if [[ -e "${HOME}/.iterm2_shell_integration.bash" ]]; then
-    . "${HOME}/.iterm2_shell_integration.bash"
+if [[ -f "${BREW_PREFIX}/share/bash-completion/bash_completion" ]]; then
+    . "${BREW_PREFIX}/share/bash-completion/bash_completion"
 fi
 
 if command -v rbenv >/dev/null; then
     eval "$(rbenv init -)"
 
-    if [[ -d "$(brew --prefix openssl)" ]]; then
-        export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
+    OPENSSL_DIRECTORY="$(brew --prefix openssl)"
+    if [[ -d "$OPENSSL_DIRECTORY" ]]; then
+        export RUBY_CONFIGURE_OPTS="--with-openssl-dir=${OPENSSL_DIRECTORY}"
     fi
 
     if [[ -e "${HOME}/.rbenv/completions/rbenv.bash" ]]; then
