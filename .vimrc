@@ -27,6 +27,8 @@ let g:nord_italic_comments = 1
 let g:nord_comment_brightness = 15
 let g:nord_cursor_line_number_background = 1
 
+Plug 'wadackel/vim-dogrun'
+
 Plug 'kopischke/vim-stay'
 
 Plug 'Yggdroot/indentLine'
@@ -214,7 +216,8 @@ set synmaxcol=4096
 set background=dark
 " Temporarily disabled.
 "colorscheme molokai
-colorscheme ayu
+"colorscheme ayu
+colorscheme dogrun
 
 filetype plugin indent on
 
