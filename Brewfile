@@ -14,6 +14,7 @@ tap 'zloesabo/nettools'
 
 brew 'ack'
 brew 'angle-grinder'
+brew 'aria2'
 brew 'asciinema'
 brew 'autoconf'
 brew 'automake'
