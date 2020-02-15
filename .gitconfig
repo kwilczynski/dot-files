@@ -140,7 +140,7 @@
   main-window-maximized = true
   main-window-view = HistoryView
 [sendemail]
-  from = Krzysztof Wilczynski <kw@linux.com>
+  from = Krzysztof Wilczyński <kw@linux.com>
   smtpuser =
   smtppass =
   smtpserver = smtp.gmail.com
