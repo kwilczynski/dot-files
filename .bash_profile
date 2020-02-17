@@ -40,14 +40,22 @@ fi
 if command -v rbenv >/dev/null; then
     eval "$(rbenv init -)"
 
-    OPENSSL_DIRECTORY="$(brew --prefix openssl)"
-    if [[ -d "$OPENSSL_DIRECTORY" ]]; then
-        export RUBY_CONFIGURE_OPTS="--with-openssl-dir=${OPENSSL_DIRECTORY}"
-    fi
-
     if [[ -e "${HOME}/.rbenv/completions/rbenv.bash" ]]; then
         . "${HOME}/.rbenv/completions/rbenv.bash"
     fi
+
+    if [[ -f "${HOME}/.rbenv/configure-options" ]]; then
+        . "${HOME}/.rbenv/configure-options"
+        export RUBY_CONFIGURE_OPTS
+    else
+        OPENSSL_DIRECTORY="$(brew --prefix openssl)"
+        if [[ -d "$OPENSSL_DIRECTORY" ]]; then
+            export RUBY_CONFIGURE_OPTS="--with-openssl-dir=${OPENSSL_DIRECTORY}"
+            printf "%s=%s\n" 'RUBY_CONFIGURE_OPTS' "$RUBY_CONFIGURE_OPTS" \
+                > "${HOME}/.rbenv/configure-options"
+        fi
+    fi
+
 fi
 
 if command -v pyenv >/dev/null; then
@@ -71,15 +79,15 @@ if command -v jump >/dev/null; then
 fi
 
 # Disabled in favour of using gbt.
-# export GIT_PS1_SHOWDIRTYSTATE=true
-# export GIT_PS1_SHOWUNTRACKEDFILES=true
-# export GIT_PS1_SHOWSTASHSTATE=true
+#export GIT_PS1_SHOWDIRTYSTATE=true
+#export GIT_PS1_SHOWUNTRACKEDFILES=true
+#export GIT_PS1_SHOWSTASHSTATE=true
 #
-# if [[ $EUID == 0 || $USER == 'root' ]] ; then
-#     PS1="\[\033[01;31m\]\h\[\033[01;34m\] \W\[\033[1;33m\]\$(__git_ps1 ' (%s)')\[\033[00m\]#\[\033[00m\] "
-# else
-#     PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[1;33m\]\$(__git_ps1 ' (%s)')\[\033[00m\]\$\[\033[00m\] "
-# fi
+#if [[ $EUID == 0 || $USER == 'root' ]] ; then
+#    PS1="\[\033[01;31m\]\h\[\033[01;34m\] \W\[\033[1;33m\]\$(__git_ps1 ' (%s)')\[\033[00m\]#\[\033[00m\] "
+#else
+#    PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[1;33m\]\$(__git_ps1 ' (%s)')\[\033[00m\]\$\[\033[00m\] "
+#fi
 
 if [[ "$(uname)" == 'Linux' ]]; then
     export GBT_CAR_OS_NAME='linux'
@@ -145,7 +153,7 @@ export RUBYOPT='-rrubygems'
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 # Disabled. Only use when bottles are not working as expected.
-# export HOMEBREW_BUILD_FROM_SOURCE=1
+#export HOMEBREW_BUILD_FROM_SOURCE=1
 
 # HashiCorp tools.
 export CHECKPOINT_DISABLE=1
