@@ -24,10 +24,13 @@ Plug 'arcticicestudio/nord-vim'
 let g:nord_italic = 1
 let g:nord_underline = 1
 let g:nord_italic_comments = 1
-let g:nord_comment_brightness = 15
 let g:nord_cursor_line_number_background = 1
 
 Plug 'wadackel/vim-dogrun'
+
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+
+Plug 'jacoborus/tender.vim'
 
 Plug 'kopischke/vim-stay'
 
@@ -219,8 +222,9 @@ set synmaxcol=4096
 set background=dark
 " Temporarily disabled.
 "colorscheme molokai
+"colorscheme dogrun
 "colorscheme ayu
-colorscheme dogrun
+colorscheme onehalfdark
 
 filetype plugin indent on
 
