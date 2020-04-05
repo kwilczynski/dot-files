@@ -207,6 +207,7 @@ cask 'google-chrome'
 cask 'iterm2'
 # Temporarily disabled.
 # cask 'java'
+cask 'karabiner-elements'
 cask 'keybase'
 cask 'libreoffice'
 cask 'little-snitch'
