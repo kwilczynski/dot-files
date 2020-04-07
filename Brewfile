@@ -153,7 +153,8 @@ brew 'step'
 # Disabled in favour of tfenv.
 # brew 'terraform'
 brew 'tfenv'
-brew 'the_silver_searcher'
+# Disabled in favour of ripgrep.
+# brew 'the_silver_searcher'
 brew 'tig'
 brew 'tldr'
 brew 'tmux'
