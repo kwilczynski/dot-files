@@ -191,7 +191,7 @@ cask 'cleanmymac'
 cask 'cyberduck'
 # Temporarily disabled.
 # cask 'dash'
-cask 'discord'
+# cask 'discord'
 cask 'docker'
 # Temporarily disabled.
 # cask 'dropbox'
