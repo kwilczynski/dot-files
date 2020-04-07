@@ -1,14 +1,23 @@
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
-
-defaults write -g ApplePressAndHoldEnabled -bool false
-
+defaults write com.apple.finder ShowStatusBar -bool false
 defaults write com.apple.finder ShowPathbar -bool true
+
 defaults write com.apple.dock size-immutable -bool yes
 defaults write com.apple.dock mru-spaces -bool false
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0.30
 
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
 defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool false
+
+sudo defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+sudo pmset -a sms 0
