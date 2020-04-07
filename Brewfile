@@ -5,7 +5,8 @@ tap 'homebrew/core'
 tap 'aws/tap'
 tap 'azure/functions'
 tap 'beeftornado/rmtree'
-tap 'jabley/homebrew-wrk2'
+# Disabled. Not compatible with OS X 10.15+
+#tap 'jabley/homebrew-wrk2'
 tap 'jmespath/jmespath'
 tap 'kwilczynski/pkenv'
 tap 'miserlou/loop', 'https://github.com/Miserlou/Loop.git'
@@ -163,7 +164,8 @@ brew 'wget'
 brew 'whatmask'
 # Disabled in favour of wrk2.
 # brew 'wrk'
-brew 'wrk2', args: ['HEAD']
+# Disabled. Not compatible with OS X 10.15+
+# brew 'wrk2', args: ['HEAD']
 brew 'wuzz'
 brew 'xsv'
 brew 'xz'
