@@ -14,7 +14,8 @@ tap 'wagoodman/dive'
 tap 'wallix/awless'
 tap 'zloesabo/nettools'
 
-brew 'ack'
+# Disabled in favour of ripgrep.
+# brew 'ack'
 brew 'angle-grinder'
 brew 'aria2'
 brew 'asciinema'
