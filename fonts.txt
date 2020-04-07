@@ -4,7 +4,7 @@ https://github.com/tonsky/FiraCode
 Fira Mono
 https://mozilla.github.io/Fira
 
-Fira Mono Regular Nerd Font Complete Mono
+Nerd Fonts (Fira Code, Fira Mono, Hack, etc.)
 https://github.com/ryanoasis/nerd-fonts
 
 Inconsolata
