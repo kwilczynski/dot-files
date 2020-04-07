@@ -182,7 +182,7 @@ cask '1password'
 # cask 'adobe-reader'
 # cask 'android-file-transfer'
 # cask 'atom'
-cask 'brave-browser'
+# cask 'brave-browser'
 cask 'charles'
 # Temporarily disabled.
 # cask 'chefdk'
