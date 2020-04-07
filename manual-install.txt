@@ -1,39 +1,49 @@
 Software to install manually:
 
-- 1Password
-- Authy Desktop
+- 1Password 7
+# Disabled.
+# - Authy Desktop
 - Charles Proxy
-- CleanMyMac 3
+# Disabled in favour of CleanMyMac X.
+# - CleanMyMac 3
+- CleanMyMac X
 - Cyberduck
 - Docker
-- Docker
-- Etcher
-- ExpressVPN
+# Disabled.
+# - Discord
+# - Etcher
+# - ExpressVPN
 - Firefox
 - Flux
 # Disabled in favour of Station.
 # - Franz
 - Station
+- GitKraken
 - Google Chrome
 - Java JDK
+- Karabiner-Elements
 - Keybase
 - LibreOffice
-- LittleSnitch
-- MacDown
+- Little Snitch
+# Disabled.
+# - MacDown
 - Magnet
-- MicroSnitch
+- Macs Fan Control
+# Disabled.
+# - MicroSnitch
 - Owly
 - Postman
 - Shadow
 - Skype
 - Spotify
-- TorBrowser
+- Tor Browser
 - Tunnelblick
-- Typora
+# Disabled.
+# - Typora
 - VLC
 - Vagrant
 - VirtualBox
-- Visual Stuido Code
+- Visual Studio Code
 - Wireshark
 - Zoom
 - iTerm2
