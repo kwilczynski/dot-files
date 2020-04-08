@@ -14,7 +14,8 @@ Software to install manually:
 # - Etcher
 # - ExpressVPN
 - Firefox
-- Flux
+# Disabled.
+# - Flux
 # Disabled in favour of Station.
 # - Franz
 - Station
