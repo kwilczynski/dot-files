@@ -73,6 +73,8 @@ brew 'jid'
 brew 'jp'
 brew 'jq'
 brew 'jump'
+brew 'krew'
+brew 'kubernetes-cli'
 brew 'lnav'
 brew 'loop', args: ['HEAD']
 brew 'mkcert'
