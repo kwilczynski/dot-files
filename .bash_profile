@@ -37,47 +37,6 @@ if [[ -f "${BREW_PREFIX}/share/bash-completion/bash_completion" ]]; then
     . "${BREW_PREFIX}/share/bash-completion/bash_completion"
 fi
 
-if command -v rbenv >/dev/null; then
-    eval "$(rbenv init -)"
-
-    if [[ -e "${HOME}/.rbenv/completions/rbenv.bash" ]]; then
-        . "${HOME}/.rbenv/completions/rbenv.bash"
-    fi
-
-    if [[ -f "${HOME}/.rbenv/configure-options" ]]; then
-        . "${HOME}/.rbenv/configure-options"
-        export RUBY_CONFIGURE_OPTS
-    else
-        OPENSSL_DIRECTORY="$(brew --prefix openssl)"
-        if [[ -d "$OPENSSL_DIRECTORY" ]]; then
-            export RUBY_CONFIGURE_OPTS="--with-openssl-dir=${OPENSSL_DIRECTORY}"
-            printf "%s=%s\n" 'RUBY_CONFIGURE_OPTS' "$RUBY_CONFIGURE_OPTS" \
-                > "${HOME}/.rbenv/configure-options"
-        fi
-    fi
-
-fi
-
-if command -v pyenv >/dev/null; then
-    eval "$(pyenv init -)"
-fi
-
-if command -v pyenv-virtualenv-init >/dev/null; then
-    eval "$(pyenv virtualenv-init -)"
-fi
-
-if command -v jenv >/dev/null; then
-    eval "$(jenv init -)"
-fi
-
-if command -v direnv >/dev/null; then
-    eval "$(direnv hook bash)"
-fi
-
-if command -v jump >/dev/null; then
-    eval "$(jump shell)"
-fi
-
 # Disabled in favour of using gbt.
 #export GIT_PS1_SHOWDIRTYSTATE=true
 #export GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -148,37 +107,10 @@ export LC_NUMERIC='en_US.UTF-8'
 export LC_TIME='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 
-export RUBYOPT='-rrubygems'
-
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 # Disabled. Only use when bottles are not working as expected.
 #export HOMEBREW_BUILD_FROM_SOURCE=1
-
-# HashiCorp tools.
-export CHECKPOINT_DISABLE=1
-export VAGRANT_CHECKPOINT_DISABLE=1
-
-# Microsoft Azure Functions.
-export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
-
-export DIRENV_LOG_FORMAT=
-
-if ls --color &>/dev/null ; then
-    alias ls='ls --color=auto'
-    alias l='ls -CF'
-    alias ll='ls -alF'
-    alias la='ls -Ah'
-    alias lsd="ls -ald */"
-    alias lsdr="ls -altrd */"
-else
-    alias ls='ls -G'
-    alias l='ls -CF'
-    alias ll='ls -alF'
-    alias la='ls -Ah'
-    alias lsd="ls -ald */"
-    alias lsdr="ls -altrd */"
-fi
 
 if [[ -f "${HOME}/.bash_aliases" ]]; then
     . "${HOME}/.bash_aliases"
@@ -188,11 +120,11 @@ if [[ -f "${HOME}/.bash_functions" ]]; then
     . "${HOME}/.bash_functions"
 fi
 
-# Allow "g" alias to work for Git.
-complete -o default -o nospace -F _git g
-
-# Allow "v" alias to work for Vagrant.
-complete -o default -o nospace -F _vagrant v
-
-# Allow "k" alias to work for Kubernetes (kubectl).
-complete -o default -o nospace -F __start_kubectl k
+if [[ -d "${HOME}/.bash_profile.d" ]]; then
+    for i in "${HOME}"/.bash_profile.d/*; do
+        if [[ -r "$i" ]]; then
+            . "$i"
+        fi
+    done
+    unset i
+fi

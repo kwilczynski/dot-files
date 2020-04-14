@@ -1,0 +1,2 @@
+# Allow "g" alias to work for Git.
+complete -o default -o nospace -F _git g

@@ -1,3 +1,19 @@
+if ls --color &>/dev/null; then
+    alias ls='ls --color=auto'
+    alias l='ls -CF'
+    alias ll='ls -alF'
+    alias la='ls -Ah'
+    alias lsd="ls -ald */"
+    alias lsdr="ls -altrd */"
+else
+    alias ls='ls -G'
+    alias l='ls -CF'
+    alias ll='ls -alF'
+    alias la='ls -Ah'
+    alias lsd="ls -ald */"
+    alias lsdr="ls -altrd */"
+fi
+
 alias hh='hstr'
 alias h='history'
 

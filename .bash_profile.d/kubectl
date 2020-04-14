@@ -1,0 +1,2 @@
+# Allow "k" alias to work for Kubernetes command-line.
+complete -o default -o nospace -F __start_kubectl k

@@ -1,0 +1,22 @@
+if command -v rbenv >/dev/null; then
+    eval "$(rbenv init -)"
+
+    if [[ -e "${HOME}/.rbenv/completions/rbenv.bash" ]]; then
+        . "${HOME}/.rbenv/completions/rbenv.bash"
+    fi
+
+    if [[ -f "${HOME}/.rbenv/configure-options" ]]; then
+        . "${HOME}/.rbenv/configure-options"
+        export RUBY_CONFIGURE_OPTS
+    else
+        OPENSSL_DIRECTORY="$(brew --prefix openssl)"
+        if [[ -d "$OPENSSL_DIRECTORY" ]]; then
+            export RUBY_CONFIGURE_OPTS="--with-openssl-dir=${OPENSSL_DIRECTORY}"
+            printf "%s=%s\n" 'RUBY_CONFIGURE_OPTS' "$RUBY_CONFIGURE_OPTS" \
+                > "${HOME}/.rbenv/configure-options"
+        fi
+    fi
+
+fi
+
+export RUBYOPT='-rgems'
