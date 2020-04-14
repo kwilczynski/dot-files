@@ -173,6 +173,7 @@ brew 'whatmask'
 brew 'wuzz'
 brew 'xsv'
 brew 'xz'
+brew 'yq'
 
 cask_args appdir: '/Applications'
 

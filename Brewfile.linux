@@ -110,3 +110,4 @@ brew 'wrk2', args: ['HEAD']
 brew 'wuzz'
 brew 'xclip'
 brew 'xsv'
+brew 'yq'
