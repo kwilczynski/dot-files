@@ -1,0 +1,2 @@
+# Opt out from using fzf with kubectx.
+export KUBECTX_IGNORE_FZF=1
