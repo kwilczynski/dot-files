@@ -65,6 +65,7 @@ brew 'git-flow'
 brew 'go', args: ['build-from-source']
 brew 'graphviz'
 brew 'gron'
+brew 'grpcurl'
 brew 'hexyl'
 brew 'hstr'
 brew 'httpie'
