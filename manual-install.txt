@@ -35,6 +35,7 @@ Software to install manually:
 - Owly
 - Postman
 - Shadow
+- Signal
 - Skype
 - Spotify
 - Tor Browser

@@ -225,6 +225,7 @@ cask 'macs-fan-control'
 # cask 'micro-snitch'
 cask 'postman'
 cask 'shadow'
+cask 'signal'
 cask 'skype'
 cask 'slack'
 # Temporarily disabled.
