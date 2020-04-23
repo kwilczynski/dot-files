@@ -1,5 +1,6 @@
 export ZSH="/Users/${USER}/.oh-my-zsh"
 export ZSH_DISABLE_COMPFIX=true
+export ENABLE_CORRECTION=true
 export ZSH_THEME=""
 
 fpath=(
@@ -9,5 +10,6 @@ fpath=(
 )
 
 plugins=()
+
 
 source "${ZSH}/oh-my-zsh.sh"
