@@ -19,4 +19,4 @@ if command -v rbenv >/dev/null; then
 
 fi
 
-export RUBYOPT='-rgems'
+export RUBYOPT='-rrubygems'
