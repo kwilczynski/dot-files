@@ -440,7 +440,8 @@ augroup configgroup
     autocmd BufRead,BufNewFile *.gotmpl set filetype=gotexttmpl
 
     autocmd FileType text setlocal formatoptions-=t textwidth=0
-    autocmd FileType gitcommit setlocal textwidth=72
+    autocmd FileType git,gitcommit colorscheme slate
+    autocmd FileType git,gitcommit setlocal textwidth=72 foldmethod=syntax foldlevel=1
     autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType sh,bash setlocal formatoptions-=t expandtab shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType rb,ruby setlocal formatoptions-=t expandtab textwidth=120 shiftwidth=2 tabstop=2 softtabstop=2
@@ -453,6 +454,7 @@ augroup configgroup
     autocmd FileType go setlocal formatoptions-=t noexpandtab textwidth=120 shiftwidth=8 tabstop=8 softtabstop=8
     autocmd FileType rs,rc setlocal formatoptions-=t expandtab textwidth=100 shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType make setlocal formatoptions-=t noexpandtab shiftwidth=8 softtabstop=0
+    autocmd FileType sql setlocal commentstring=--\ %s
     autocmd FileType yml,yaml setlocal formatoptions-=t expandtab shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType tf,hcl setlocal formatoptions-=t commentstring=#\ %s
 augroup END
