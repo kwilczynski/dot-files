@@ -30,8 +30,9 @@ alias wget='wget -c'
 
 alias jj='jobs -l'
 
-alias diff='colordiff'
-alias diffu='colordiff -uNr'
+# Disabled in favour of git-delta.
+# alias diff='colordiff'
+# alias diffu='colordiff -uNr'
 
 alias bc='bc -l'
 
