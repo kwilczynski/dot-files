@@ -65,7 +65,7 @@ set sleep_time = 0
 set auto_tag = yes
 
 set sort            = "threads"
-set sort_aux        = "reverse-last-date-received
+set sort_aux        = "reverse-last-date-received"
 set strict_threads  = yes
 set uncollapse_jump = yes
 
@@ -121,7 +121,9 @@ macro index,pager + "<save-message>=[Gmail]/Important<enter><enter>" "Mark as Im
 macro index,pager e "<save-message>=[Gmail]/All Mail<enter><enter>"  "Archive Message"
 macro index,pager d "<save-message>=[Gmail]/Bin<enter><enter>"       "Delete Message"
 
-macro index,pager gi "<change-folder>=INBOX<enter>"            "Go to Inbox"
-macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to All Mail"
-macro index,pager gs "<change-folder>=[Gmail]/Starred<enter>"  "Go to Starred"
-macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>"   "Go to Drafts"
+macro index,pager gi "<change-folder>=INBOX<enter>"             "Go to Inbox"
+macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>"  "Go to All Mail"
+macro index,pager gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent"
+macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>"    "Go to Drafts"
+macro index,pager gS "<change-folder>=[Gmail]/Starred<enter>"   "Go to Starred"
+
