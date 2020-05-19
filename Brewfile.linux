@@ -57,6 +57,7 @@ brew 'curl-openssl'
 brew 'devd'
 # Disabled in favour of git-delta.
 # brew 'diff-so-fancy'
+brew 'diff-so-fancy'
 brew 'direnv'
 brew 'dive'
 brew 'docker-squash'
