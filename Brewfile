@@ -127,6 +127,7 @@ brew 'openssl'
 # Disabled in favour of pkenv.
 # brew 'packer'
 brew 'packer-completion'
+brew 'patchutils'
 brew 'pcre'
 brew 'peco'
 brew 'pinentry-mac'
