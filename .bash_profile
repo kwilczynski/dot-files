@@ -4,16 +4,16 @@ export GPG_TTY="$(tty)"
 
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
-if command -v brew >/dev/null; then
-    export BREW_PREFIX="$(dirname $(dirname $(type -p brew)))"
-fi
-
 if [[ -d "${HOME}/.linuxbrew" ]]; then
     eval "$("${HOME}/.linuxbrew/bin/brew" shellenv)"
 fi
 
 if [[ -d /home/linuxbrew/.linuxbrew ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+if command -v brew >/dev/null; then
+    export BREW_PREFIX="$(dirname $(dirname $(type -p brew)))"
 fi
 
 if [[ -d "${BREW_PREFIX}/opt/curl-openssl" ]]; then
