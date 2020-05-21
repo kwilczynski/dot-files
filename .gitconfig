@@ -97,7 +97,7 @@
   this = !git init && git add . && git commit -m \"Initial commit.\"
   empty = !git init && git commit --allow-empty -m \"Initial commit.\"
   r = !git ls-files -z --deleted | xargs -0 git rm
-  wd = !git diff --color | diff-so-fancy | less -FRSX
+  wd = !git diff | delta --dark --24-bit-color='never' --theme='ansi-dark' --color-only | less -FRSX
   update-author = !bash -c 'git rebase --onto $1 --exec \"git commit --amend --author=$2\" $1' --
 [color]
   branch = auto
@@ -113,9 +113,11 @@
 [merge]
   log = true
 [core]
-  pager = diff-so-fancy | less -FRSX
+  pager = delta --dark --24-bit-color='never' --theme='ansi-dark'
   excludesfile = ~/.gitignore_global
   trustctime = false
+[interactive]
+  diffFilter = delta --dark --24-bit-color='never' --theme='ansi-dark' --color-only
 [init]
   templatedir = ~/.git-templates
 ; Temporarily disabled. Not available on Linux.
