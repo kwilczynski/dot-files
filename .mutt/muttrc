@@ -77,8 +77,19 @@ alternative_order \
   "text/html"     \
   "*"
 
+bind index gg first-entry
+bind index G last-entry
+
+set pager_stop        = yes
+set pager_index_lines = 10
+set pager_context     = 3
+bind pager gg top
+bind pager G bottom
+bind pager R group-reply
+
 set editor = "vim -c 'set syntax=mail filetype=mail encoding=utf-8 textwidth=72'"
 bind editor ^T complete
+bind editor <tab> complete-query
 bind editor <space> noop
 
 set charset         = "utf-8"
@@ -88,9 +99,9 @@ set send_charset    = "utf-8"
 set date_format  = "%y-%m-%d %T"
 set index_format = "%2C | %Z [%d] %-30.30F (%-4.4c) %s"
 
-set wait_key    = no
-set tilde       = yes
-set pager_stop  = yes
+set wait_key = no
+set tilde    = yes
+
 set menu_scroll = yes
 
 ignore \
@@ -126,4 +137,3 @@ macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>"  "Go to All Mail"
 macro index,pager gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent"
 macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>"    "Go to Drafts"
 macro index,pager gS "<change-folder>=[Gmail]/Starred<enter>"   "Go to Starred"
-
