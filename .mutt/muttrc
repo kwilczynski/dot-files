@@ -6,6 +6,8 @@ alternates \
   "kw@fsck.io"                     \
   "krzysztof.wilczynski@fsck.io"
 
+set quit = ask-yes
+
 unset user_agent
 unset use_domain
 unset mime_forward
@@ -46,12 +48,17 @@ set imap_check_subscribed = yes
 set folder    = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set mbox      = "+[Gmail]/All Mail"
-set record    = "+[Gmail]/Sent Mail"
+unset record
+# Disabled. Causes duplicates in GMail.
+# set record    = "+[Gmail]/Sent Mail"
 set postponed = "+[Gmail]/Drafts"
 set trash     = "+[Gmail]/Bin"
 
 unset move
 set move = no
+
+unset copy
+set copy = yes
 
 unset mark_old
 set mark_old = no
@@ -64,9 +71,12 @@ set sleep_time = 0
 
 set auto_tag = yes
 
-set sort            = "threads"
-set sort_aux        = "reverse-last-date-received"
-set strict_threads  = yes
+set sort     = "threads"
+set sort_aux = "reverse-last-date-received"
+
+set strict_threads    = yes
+set duplicate_threads = yes
+
 set uncollapse_jump = yes
 
 auto_view "text/html"
