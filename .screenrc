@@ -1,5 +1,7 @@
 encoding UTF-8
 defencoding UTF-8
+# Disaled. Using xterm-256color instead.
+# term screen-256color
 term xterm-256color
 vbell on
 autodetach on
