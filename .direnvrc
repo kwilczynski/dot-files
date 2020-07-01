@@ -1,0 +1,5 @@
+layout_golang() {
+  export GOPATH="${PWD}"
+  PATH_add "${PWD}/vendor/bin"
+  PATH_add "${PWD}/bin"
+}
