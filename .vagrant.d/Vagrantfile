@@ -1,0 +1,30 @@
+def linked_clones?
+  Gem::Version.new(Vagrant::VERSION) >= Gem::Version.new('1.8.0')
+end
+
+Vagrant.configure('2') do |config|
+  config.ssh.forward_agent = true
+
+  if config.vm.respond_to? :box_check_update
+    config.vm.box_check_update = true
+  end
+
+  if config.vm.respond_to? :use_linked_clone
+    config.use_linked_clone = true
+  end
+
+  config.vm.provider :virtualbox do |vm, override|
+    vm.linked_clone = true if linked_clones?
+    vm.customize [ 'modifyvm', :id,
+      '--chipset', 'ich9',
+      '--rtcuseutc', 'on',
+      '--natdnsproxy1', 'on',
+      '--natdnshostresolver1', 'on',
+      '--nictype1', 'virtio',
+      '--uartmode1', 'file', '/dev/null'
+    ]
+    vm.customize ['guestproperty', 'set', :id,
+      '/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold', 5000
+    ]
+  end
+end
