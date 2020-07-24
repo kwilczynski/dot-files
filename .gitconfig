@@ -28,7 +28,7 @@
   ds = diff --stat
   dfs = diff --staged
   dfn = diff --name-only
-  dfm = diff master
+  dfm = diff HEAD
   df1 = diff HEAD~
   df2 = diff HEAD~~
   df3 = diff HEAD~~~
@@ -46,7 +46,7 @@
   remotes = remote -v
   pu = pull
   pur = pull --rebase
-  pus = submodule foreach git pull origin master
+  pus = submodule foreach git pull origin HEAD
   purs = pull --recurse-submodules
   pull-all = pull --recurse-submodules -r
   pt = push --tags
@@ -70,7 +70,7 @@
   rup = remote update
   rpr = remote prune
   cia = commit -a
-  com = checkout master
+  com = checkout HEAD
   cob = checkout -b
   cod = checkout develop
   detach = checkout HEAD^0
@@ -83,7 +83,7 @@
   lok = log --oneline --abbrev-commit --pretty='%h (\"%s\")'
   llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
   po = push origin
-  pom = push origin master
+  pom = push origin HEAD
   changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
   pob = !sh -c 'git push origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") "$@"' -
   purb = !sh -c 'git pull origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") --rebase "$@"' -
