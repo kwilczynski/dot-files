@@ -142,6 +142,7 @@ brew 'socat'
 brew 'speedtest'
 brew 'sqlite'
 brew 'step'
+brew 'stern'
 brew 'tfenv'
 # Disabled in favour of ripgrep.
 # brew 'the_silver_searcher'
