@@ -46,6 +46,7 @@
   remotes = remote -v
   pu = pull
   pur = pull --rebase
+  pup = pull remote --prune
   pus = !sh -c 'git submodule foreach git pull origin $(git origin)'
   purs = pull --recurse-submodules
   pull-all = pull --recurse-submodules -r
