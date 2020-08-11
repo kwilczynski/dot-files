@@ -88,6 +88,7 @@ brew 'go', args: ['build-from-source']
 brew 'graphviz'
 brew 'gron'
 brew 'grpcurl'
+brew 'helm'
 brew 'hexyl'
 brew 'hstr'
 brew 'htop'
