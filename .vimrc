@@ -443,8 +443,11 @@ augroup configgroup
     autocmd BufRead,BufNewFile *.gotmpl set filetype=gotexttmpl
 
     autocmd FileType text setlocal formatoptions-=t textwidth=0
+    autocmd FileType mail DisableWhitespace
+    autocmd FileType mail colorscheme slate
+    autocmd FileType mail setlocal textwidth=78 noautoindent nolist nonumber digraph wrapmargin=0
     autocmd FileType git,gitcommit,gitsendemail colorscheme slate
-    autocmd FileType git,gitcommit,gitsendemail setlocal textwidth=72 foldmethod=syntax foldlevel=1
+    autocmd FileType git,gitcommit,gitsendemail setlocal textwidth=78 foldmethod=syntax foldlevel=1
     autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType sh,bash setlocal formatoptions-=t expandtab shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType rb,ruby setlocal formatoptions-=t expandtab textwidth=120 shiftwidth=2 tabstop=2 softtabstop=2
