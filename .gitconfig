@@ -98,9 +98,20 @@
   this = !git init && git add . && git commit -m \"Initial commit.\"
   empty = !git init && git commit --allow-empty -m \"Initial commit.\"
   r = !git ls-files -z --deleted | xargs -0 git rm
-  wd = !git diff | delta --dark --24-bit-color='never' --theme='ansi-dark' --color-only | less -FRSX
+  wd = !git diff | delta --features='default no-line-numbers' --color-only | less -FRSX
   update-author = !bash -c 'git rebase --onto $1 --exec \"git commit --amend --author=$2\" $1' --
   origin = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+[delta]
+  tabs = 0
+  keep-plus-minus-markers = true
+  inspect-raw-lines = false
+  features = default
+[delta "default"]
+  dark = true
+  syntax-theme = ansi-dark
+  line-numbers = true
+[delta "no-line-numbers"]
+  line-numbers = false
 [color]
   branch = auto
   diff = auto
@@ -115,11 +126,11 @@
 [merge]
   log = true
 [core]
-  pager = delta --dark --24-bit-color='never' --theme='ansi-dark'
+  pager = delta
   excludesfile = ~/.gitignore_global
   trustctime = false
 [interactive]
-  diffFilter = delta --dark --24-bit-color='never' --theme='ansi-dark' --color-only
+  diffFilter = delta --color-only
 [init]
   templatedir = ~/.git-templates
   defaultBranch = main
