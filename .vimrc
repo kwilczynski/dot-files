@@ -101,24 +101,23 @@ Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fatih/vim-go'
 let g:go_doc_popup_window = 1
-" Temporarily disabled.
-"let g:go_info_mode = 'gocode'
-"let g:go_def_mode = 'gopls'
-"let g:go_snippet_engine = 'ultisnips'
-"let g:go_fmt_command = 'goimports'
+let g:go_info_mode = 'gopls'
+let g:go_def_mode = 'gopls'
+let g:go_imports_mode = 'gopls'
+let g:go_fmt_command = 'goimports'
+let g:go_snippet_engine = 'ultisnips'
 let g:go_addtags_transform = 'snakecase'
 let g:go_list_type = 'quickfix'
 let g:go_list_autoclose = 1
-let g:go_auto_type_info = 0
+let g:go_auto_type_info = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_types = 1
 let g:go_highlight_space_tab_error = 1
-" Temporarily disabled.
-"let g:go_gocode_propose_source = 1
-"let g:go_gocode_unimported_packages = 1
+let g:go_gocode_propose_source = 1
+let g:go_gocode_unimported_packages = 1
 
 " Temporarily disabled.
 "Plug 'govim/govim'
