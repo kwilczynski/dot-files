@@ -6,14 +6,19 @@ set keymap emacs
 set editing-mode emacs
 
 set meta-flag on
+
 set input-meta on
 set output-meta on
 set convert-meta off
 
 set expand-tilde on
+
 set visible-stats on
+set colored-stats on
+
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
+
 set skip-completed-text on
 
 set completion-map-case on
