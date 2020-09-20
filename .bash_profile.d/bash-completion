@@ -1,0 +1,8 @@
+if [[ -r "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    export BASH_COMPLETION_COMPAT_DIR="${BREW_PREFIX}/etc/bash_completion.d"
+    . "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
+fi
+
+if [[ -f "${BREW_PREFIX}/share/bash-completion/bash_completion" ]]; then
+    . "${BREW_PREFIX}/share/bash-completion/bash_completion"
+fi

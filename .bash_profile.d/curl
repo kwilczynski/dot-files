@@ -1,0 +1,5 @@
+if [[ -d "${BREW_PREFIX}/opt/curl-openssl" ]]; then
+    export PATH="${BREW_PREFIX}/opt/curl-openssl/bin:${PATH}"
+else
+    export PATH="${BREW_PREFIX}/opt/curl/bin:${PATH}"
+fi

@@ -1,0 +1,9 @@
+if [[ "$(uname)" == 'Linux' ]]; then
+    export GBT_CAR_OS_NAME='linux'
+else
+    export GBT_CAR_OS_NAME='darwin'
+fi
+
+export GBT_CAR_DIR_DEPTH='2'
+
+PS1='$(gbt $?)'

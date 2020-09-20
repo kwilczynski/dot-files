@@ -1,0 +1,4 @@
+export LESSHISTSIZE=0
+export LESSHISTFILE='/dev/null'
+export LESSSECURE=1
+export LESS='-R -M --shift 5 -i -x -4 -S -F -X --buffers=65535'

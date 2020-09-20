@@ -1,0 +1,2 @@
+export HSTR_CONFIG='hicolor,blacklist,keywords-matching,raw-history-view,no-confirm'
+export HSTR_PROMPT='> '

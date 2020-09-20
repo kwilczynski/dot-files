@@ -1,0 +1,7 @@
+if [[ -d "${BREW_PREFIX}/opt/sed" ]]; then
+    export PATH="${BREW_PREFIX}/opt/sed/libexec/gnubin:${PATH}"
+fi
+
+if [[ -d "${BREW_PREFIX}/opt/gnu-sed" ]]; then
+    export PATH="${BREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${PATH}"
+fi
