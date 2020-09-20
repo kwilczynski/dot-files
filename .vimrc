@@ -101,9 +101,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fatih/vim-go'
 let g:go_doc_popup_window = 1
+let g:go_doc_popup_border = ['─', '│', '─', '│', '╭', '╮', '╯', '╰']
 let g:go_info_mode = 'gopls'
 let g:go_def_mode = 'gopls'
 let g:go_imports_mode = 'gopls'
+let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports'
 let g:go_snippet_engine = 'ultisnips'
 let g:go_addtags_transform = 'snakecase'
