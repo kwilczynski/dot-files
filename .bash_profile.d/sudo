@@ -1,0 +1,3 @@
+if [[ -f "${HOME}/.sudo_as_admin_successful" ]]; then
+  rm -f "${HOME}/.sudo_as_admin_successful"
+fi
