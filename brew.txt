@@ -1,0 +1,5 @@
+brew alias u='update'
+brew alias i='install'
+brew alias s='search'
+brew alias new='upgrade'
+brew alias prune='cleanup --prune 0'
