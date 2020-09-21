@@ -1,0 +1,18 @@
+pko() {
+    echo "$*" | piknik -copy
+}
+
+pkf() {
+    piknik -copy < $1
+}
+
+pkfr() {
+    tar czpvf - "${1:-'.'}" | piknik -copy
+}
+
+alias pkc='piknik -copy'
+alias pkp='piknik -paste'
+alias pkm='piknik -move'
+alias pkz='piknik -copy </dev/null >/dev/null'
+
+alias pkpr='piknik -paste | tar xzpvf -'
