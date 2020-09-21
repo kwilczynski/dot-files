@@ -125,6 +125,7 @@ brew 'jump'
 # brew 'kubeval'
 # brew 'lftp'
 brew 'lnav'
+brew 'loc'
 brew 'loop', args: ['HEAD']
 brew 'lua'
 # Temporarily disabled.
