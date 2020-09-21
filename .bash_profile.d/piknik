@@ -13,6 +13,6 @@ pkfr() {
 alias pkc='piknik -copy'
 alias pkp='piknik -paste'
 alias pkm='piknik -move'
-alias pkz='piknik -copy </dev/null >/dev/null'
+alias pkz='piknik -copy </dev/null 2>/dev/null'
 
 alias pkpr='piknik -paste | tar xzpvf -'
