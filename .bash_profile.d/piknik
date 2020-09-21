@@ -10,6 +10,8 @@ pkfr() {
     tar czpvf - "${1:-'.'}" | piknik -copy
 }
 
+export -f pko pkf pkfr
+
 alias pkc='piknik -copy'
 alias pkp='piknik -paste'
 alias pkm='piknik -move'
