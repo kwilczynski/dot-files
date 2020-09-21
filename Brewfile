@@ -153,6 +153,8 @@ brew 'parallel'
 brew 'patchutils'
 brew 'pcre'
 brew 'peco'
+# Temporarily disabled.
+# brew 'piknik'
 brew 'pinentry-mac'
 # Temporarily disabled.
 # brew 'pipenv'

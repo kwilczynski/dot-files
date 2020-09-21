@@ -141,6 +141,8 @@ brew 'packer-completion'
 brew 'parallel'
 brew 'patchutils'
 brew 'peco'
+# Temporarily disabled.
+# brew 'piknik'
 brew 'pkenv'
 # Temporarily disabled.
 # brew 'popeye'
