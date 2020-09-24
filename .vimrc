@@ -264,13 +264,11 @@ set shortmess+=c
 set belloff+=ctrlg
 
 set viminfo='20,\"50
+
 set formatoptions+=1
 set formatoptions+=n
-
-if v:version > 703
-    set formatoptions+=j
-    set colorcolumn=+1
-endif
+set formatoptions+=j
+set colorcolumn=+1
 
 set completeopt-=preview
 
@@ -325,7 +323,7 @@ set showmode
 set backspace=indent,eol,start
 
 set ttyfast
-se ttyscroll=3
+set ttyscroll=3
 
 set noerrorbells
 
@@ -378,6 +376,9 @@ endif
 command Jq  :execute '%!jq . 2>/dev/null'
 
 vnoremap r "_dP
+
+nnoremap <silent> zj o<esc>k
+nnoremap <silent> zk O<esc>j
 
 nnoremap <silent> <F1> <nop>
 
