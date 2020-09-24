@@ -2,35 +2,43 @@ call plug#begin('~/.vim/plugged')
 let g:plug_timeout = 120
 let g:plug_retries = 4
 
-Plug 'dracula/vim'
+" Temporarily disabled.
+"Plug 'dracula/vim'
 
 " Temporarily disabled.
 "Plug 'tomasr/molokai'
-Plug 'fatih/molokai'
-let g:rehash256 = 1
+"Plug 'fatih/molokai'
+"let g:rehash256 = 1
 
-Plug 'altercation/vim-colors-solarized'
-let g:solarized_termcolors = 256
+" Temporarily disabled.
+"Plug 'altercation/vim-colors-solarized'
+"let g:solarized_termcolors = 256
 
-Plug 'morhetz/gruvbox'
-let g:gruvbox_contrast_dark = 'hard'
+" Temporarily disabled.
+"Plug 'morhetz/gruvbox'
+"let g:gruvbox_contrast_dark = 'hard'
 
-Plug 'ayu-theme/ayu-vim'
-let ayucolor = 'mirage'
+" Temporarily disabled.
+"Plug 'ayu-theme/ayu-vim'
+"let ayucolor = 'mirage'
 
-Plug 'cocopon/iceberg.vim'
+" Temporarily disabled.
+"Plug 'cocopon/iceberg.vim'
+"
+" Temporarily disabled.
+"Plug 'arcticicestudio/nord-vim'
+"let g:nord_italic = 1
+"let g:nord_underline = 1
+"let g:nord_italic_comments = 1
+"let g:nord_cursor_line_number_background = 1
 
-Plug 'arcticicestudio/nord-vim'
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_italic_comments = 1
-let g:nord_cursor_line_number_background = 1
-
-Plug 'wadackel/vim-dogrun'
+" Temporarily disabled.
+"Plug 'wadackel/vim-dogrun'
 
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
-Plug 'jacoborus/tender.vim'
+" Temporarily disabled.
+"Plug 'jacoborus/tender.vim'
 
 Plug 'kopischke/vim-stay'
 
@@ -68,7 +76,13 @@ let g:NERDTreeMouseMode = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeIgnore = ['^node_modules$']
 nnoremap <silent> <F8> :NERDTreeToggle<CR>
+
+" Temporarily disabled.
+"Plug 'ryanoasis/vim-devicons'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'majutsushi/tagbar'
 nnoremap <silent> <F9> :TagbarToggle<CR>
@@ -84,12 +98,16 @@ let g:strip_whitespace_on_save = 1
 let g:show_spaces_that_precede_tabs = 1
 let g:better_whitespace_skip_empty_lines = 1
 
-Plug 'mileszs/ack.vim'
-
-Plug 'junegunn/fzf.vim'
-nnoremap <silent> <C-f> :FZF<CR>
+" Temporarily disabled.
+"Plug 'mileszs/ack.vim'
+"
+" Temporarily disabled.
+"Plug 'junegunn/fzf.vim'
+"nnoremap <silent> <C-f> :FZF<CR>
 
 Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 " Temporarily disabled.
 "Plug 'vim-scripts/SearchComplete'
 
@@ -142,8 +160,10 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/linediff.vim'
-Plug 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger = "<S-TAB>"
+
+" Temporarily disabled.
+"Plug 'SirVer/ultisnips'
+"let g:UltiSnipsExpandTrigger = "<S-TAB>"
 
 Plug 'w0rp/ale'
 let g:ale_sign_column_always = 1
@@ -270,6 +290,8 @@ set wildignore+=*.bmp,*.gif,*.png,*.jpg,*.jpeg,*.woff,*.ttf,*.svg,*.eot
 set wildignore+=*.o,*.obj,*.exe,*.dll
 set wildignore+=*.sw?
 set wildignore+=*.DS_Store
+
+set signcolumn=yes
 
 set lazyredraw
 set linespace=0
