@@ -2,11 +2,15 @@ call plug#begin('~/.vim/plugged')
 let g:plug_timeout = 120
 let g:plug_retries = 4
 
+Plug 'sheerun/vim-polyglot'
+
 " Temporarily disabled.
 "Plug 'dracula/vim'
 
 " Temporarily disabled.
 "Plug 'tomasr/molokai'
+
+" Temporarily disabled.
 "Plug 'fatih/molokai'
 "let g:rehash256 = 1
 
@@ -81,7 +85,11 @@ nnoremap <silent> <F8> :NERDTreeToggle<CR>
 
 " Temporarily disabled.
 "Plug 'ryanoasis/vim-devicons'
+
+" Temporarily disabled.
 "Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Temporarily disabled.
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'majutsushi/tagbar'
@@ -117,6 +125,7 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 
 " Temporarily disabled.
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 Plug 'fatih/vim-go'
 let g:go_doc_popup_window = 1
 let g:go_doc_popup_border = ['─', '│', '─', '│', '╭', '╮', '╯', '╰']
@@ -148,6 +157,10 @@ let g:completor_auto_trigger = 1
 Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabRetainCompletionType = 2
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabContextTextOmniPrecedence = ['&omnifunc','&completefunc']
 
 " Temporarily disabled.
 "Plug 'Shougo/neocomplete.vim'
@@ -171,11 +184,13 @@ let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
 
 Plug 'Shougo/vimshell'
+
 Plug 'sebdah/vim-delve'
 
 Plug 'vim-ruby/vim-ruby'
 
 Plug 'rust-lang/rust.vim'
+
 Plug 'pangloss/vim-javascript'
 
 Plug 'elzr/vim-json'
@@ -203,6 +218,8 @@ set guioptions-=L
 set winaltkeys=no
 
 set showcmd
+" Temporarily disabled.
+"set cmdheight=2
 
 set autoindent
 set smartindent
@@ -244,10 +261,6 @@ syntax sync minlines=250
 set synmaxcol=4096
 
 set background=dark
-" Temporarily disabled.
-"colorscheme molokai
-"colorscheme dogrun
-"colorscheme ayu
 colorscheme onehalfdark
 
 filetype plugin indent on
@@ -289,7 +302,9 @@ set wildignore+=*.o,*.obj,*.exe,*.dll
 set wildignore+=*.sw?
 set wildignore+=*.DS_Store
 
-set signcolumn=yes
+" Temporarily disabled.
+"set signcolumn=yes
+set signcolumn=number
 
 set lazyredraw
 set linespace=0
@@ -336,6 +351,8 @@ set undofile
 
 set backup
 
+set updatetime=300
+
 " Temporarily disabled.
 "set noswapfile
 
@@ -366,12 +383,9 @@ function! SudoSaveAction()
     redraw
 endfunction
 
-if has('nvim')
-else
-    command W call SudoSaveAction()
-    command Wq :execute ':W' | :q
-    command WQ :Wq
-endif
+command W call SudoSaveAction()
+command Wq :execute ':W' | :q
+command WQ :Wq
 
 command Jq  :execute '%!jq . 2>/dev/null'
 
@@ -382,11 +396,9 @@ nnoremap <silent> zk O<esc>j
 
 nnoremap <silent> <F1> <nop>
 
-if v:version >= 700 && has("spell")
-    set spelllang=en_gb,en_us,en
-    nnoremap <silent> <F4> :set invspell spell?<CR><Bar>:echo "Spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
-endif
+set spelllang=en_gb,en_us,en
 
+nnoremap <silent> <F4> :set invspell spell?<CR><Bar>:echo "Spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 nnoremap <silent> <F5> :set invpaste paste?<CR><Bar>:echo "Paste mode: " . strpart("OffOn", 3 * &paste, 3)<CR>
 nnoremap <silent> <F10> :set invnumber number?<CR><Bar>:echo "Line numbers: " . strpart("OffOn", 3 * &number, 3)<CR>
 nnoremap <silent> <F11> :set invlist list?<CR><Bar>:echo "Show invisible: " . strpart("OffOn", 3 * &list, 3)<CR>
@@ -418,11 +430,7 @@ endfunction
 "inoremap <expr> <Tab> Tab_Or_Complete()
 
 " Temporarily disabled.
-"if has("gui_macvim")
-"   colorscheme solarized
-"endif
-
-set runtimepath+=/usr/local/opt/fzf
+"set runtimepath+=/usr/local/opt/fzf
 
 set laststatus=2
 
