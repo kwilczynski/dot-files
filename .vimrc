@@ -69,6 +69,9 @@ Plug 'tpope/vim-commentary'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
+Plug 'tjdevries/overlength.vim'
+let g:overlength#default_to_textwidth = 1
+
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'airblade/vim-gitgutter'
@@ -211,6 +214,13 @@ call plug#end()
 set nocompatible
 set modeline
 
+nnoremap <Space> <Nop>
+let mapleader = "\<Space>"
+let maplocalleader = "\\"
+
+set timeoutlen=1000
+set ttimeoutlen=100
+
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
@@ -263,7 +273,8 @@ set synmaxcol=4096
 set background=dark
 colorscheme onehalfdark
 
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 
 set encoding=utf-8
 set fileencodings=utf-8
@@ -276,12 +287,20 @@ set scrolloff=3
 set shortmess+=c
 set belloff+=ctrlg
 
-set viminfo='20,\"50
+set viminfo=%,'50,\"1000,/50,:50,h,f0,n~/.vim/.viminfo
 
 set formatoptions+=1
 set formatoptions+=n
 set formatoptions+=j
-set colorcolumn=+1
+
+" Temporarily disabled.
+"set colorcolumn=+1
+"let &colorcolumn="80,".join(range(120,999),",")
+"highlight ColorColumn ctermbg=100
+
+set showbreak=↪\
+set fillchars+=vert:│
+set listchars+=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:❯,precedes:❮
 
 set completeopt-=preview
 
@@ -391,6 +410,13 @@ command Jq  :execute '%!jq . 2>/dev/null'
 
 vnoremap r "_dP
 
+nnoremap <silent> <leader>\| :vsplit<CR>
+nnoremap <silent> <leader>- :split<CR>
+nnoremap <silent> <leader><left>  <c-w><c-h>
+nnoremap <silent> <leader><right> <c-w><c-l>
+nnoremap <silent> <leader><up>    <c-w><c-k>
+nnoremap <silent> <leader><down>  <c-w><c-j>
+
 nnoremap <silent> zj o<esc>k
 nnoremap <silent> zk O<esc>j
 
@@ -434,7 +460,8 @@ endfunction
 
 set laststatus=2
 
-set statusline=[%n]\ %<%F%{exists('g:loaded_fugitive')?fugitive#statusline():''}%M%R%H%W
+set statusline=
+set statusline+=[%n]\ %<%F%{exists('g:loaded_fugitive')?fugitive#statusline():''}%M%R%H%W
 set statusline+=\ %=%Y
 set statusline+=\ %{toupper(strlen(&ff)?&ff:'none')}
 set statusline+=\ %{toupper(strlen(&fenc)?&fenc:'none')}
