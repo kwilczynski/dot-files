@@ -83,7 +83,8 @@ brew 'fping'
 brew 'fpp'
 brew 'fselect'
 brew 'fx'
-brew 'fzf'
+# Temporarily disabled.
+# brew 'fzf'
 # Disabled. Not supported on Linux.
 # brew 'gbt'
 brew 'gist'
