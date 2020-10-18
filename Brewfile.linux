@@ -180,7 +180,7 @@ brew 'tfenv'
 brew 'tig'
 # Temporarily disabled.
 # brew 'tldr'
-brew 'tmux'
+# brew 'tmux'
 brew 'tokei'
 brew 'tor'
 brew 'torsocks'
