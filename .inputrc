@@ -29,6 +29,8 @@ set page-completions off
 set print-completions-horizontally on
 set mark-symlinked-directories on
 
+set enable-bracketed-paste on
+
 $if Bash
   "\C-r": "\C-a hstr -- \C-j"
   "\C-xk": "\C-a hstr -k \C-j"
