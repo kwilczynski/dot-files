@@ -126,6 +126,7 @@
   limit = 0
 [merge]
   log = true
+  renamelimit = 2048
 [core]
   pager = delta --24-bit-color='never'
   excludesfile = ~/.gitignore_global
