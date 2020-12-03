@@ -93,6 +93,7 @@ brew 'git-crypt'
 brew 'git-delta'
 brew 'git-extras'
 brew 'git-flow'
+brew 'git-lfs'
 brew 'gnupg2'
 brew 'gpatch'
 brew 'go', args: ['build-from-source']
