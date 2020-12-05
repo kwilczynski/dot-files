@@ -1,7 +1,11 @@
-[user]
-  name = Krzysztof Wilczyński
-  email = kw@linux.com
-  signingkey = 3DE334E7
+[includeIf "gitdir:~/Projects/Personal/"]
+  path = ~/.gitconfig-personal
+[includeIf "gitdir:~/Projects/Work/"]
+  path = ~/.gitconfig-work
+[includeIf "gitdir:~/Development/Projects/Personal/"]
+  path = ~/.gitconfig-personal
+[includeIf "gitdir:~/Development/Projects/Work/"]
+  path = ~/.gitconfig-work
 [alias]
   a = add
   c = clone
@@ -127,9 +131,23 @@
 [merge]
   log = true
   renamelimit = 2048
+  tool = diffmerge
+[mergetool "diffmerge"]
+  cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+  trustExitCode = true
+[diff]
+  renames = copies
+  submodule = diff
+  mnemonicprefix = true
+  compactionHeuristic = true
+  indentHeuristic = true
+  colorMoved = dimmed_zebra
+  tool = diffmerge
+[difftool "diffmerge"]
+  cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [core]
   pager = delta --24-bit-color='never'
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore-global
   trustctime = false
 [interactive]
   diffFilter = delta --color-only
@@ -167,7 +185,7 @@
   suppresscc = self
   signedoffbycc = false
   chainreplyto = false
-[guthub]
+[github]
   user = kwilczynski
   token = !security find-generic-password -gs \"github API token\" 2>&1 >/dev/null | awk '/password/ { print $2 }' | tr -d \\\"
 [url "git@github.com:"]
@@ -186,21 +204,11 @@
   insteadOf = "gist:"
 [url "git@bitbucket.org:"]
   insteadOf = "https://bitbucket.org/"
-[diff]
-  tool = diffmerge
-  renames = copies
-  submodule = diff
-  mnemonicprefix = true
-  compactionHeuristic = true
-  indentHeuristic = true
-  colorMoved = dimmed_zebra
-[difftool "diffmerge"]
-  cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-[merge]
-  tool = diffmerge
-[mergetool "diffmerge"]
-  cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-  trustExitCode = true
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  process = git-lfs filter-process
+  smudge = git-lfs smudge -- %f
