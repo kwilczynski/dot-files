@@ -23,7 +23,7 @@ set skip-completed-text on
 
 set completion-map-case on
 set completion-ignore-case on
-set completion-query-items 100
+set completion-query-items 1000
 
 set page-completions off
 set print-completions-horizontally on
