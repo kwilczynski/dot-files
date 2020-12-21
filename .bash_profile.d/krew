@@ -1,1 +1,2 @@
-export PATH="${PATH}:${HOME}/.krew/bin"
+export KREW_HOME="${HOME}/.krew"
+export PATH="${KREW_HOME}/bin:${PATH}"
