@@ -106,6 +106,7 @@ Plug 'sebdah/vim-delve'
 Plug 'vim-ruby/vim-ruby'
 
 Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
 
 Plug 'pangloss/vim-javascript'
 

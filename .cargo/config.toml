@@ -1,0 +1,25 @@
+[alias]
+b = "build"
+c = "check"
+t = "test"
+r = "run"
+
+[build]
+pipelining = true
+
+[cargo-new]
+name = "Krzysztof Wilczyński"
+email = "kw@linux.com"
+vcs = "git"
+
+[term]
+color = 'auto'
+progress.when = 'auto'
+
+[net]
+retry = 4
+
+[http]
+timeout = 30
+ssl-version = "tlsv1.3"
+multiplexing = true

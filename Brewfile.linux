@@ -162,6 +162,7 @@ brew 'ripgrep'
 brew 'rng'
 brew 'rsync'
 brew 'ruby-build'
+brew 'rustup'
 # Temporarily disabled.
 # brew 'saw'
 brew 's-search'

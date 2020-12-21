@@ -181,6 +181,7 @@ brew 'rlwrap'
 brew 'rng'
 brew 'rsync'
 brew 'ruby-build'
+brew 'rustup'
 brew 's-search'
 # Temporarily disabled.
 # brew 'saw'
