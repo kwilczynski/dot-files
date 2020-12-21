@@ -1,2 +1,16 @@
 export CARGO_HOME="${HOME}/.cargo"
 export PATH="${CARGO_HOME}/bin:${PATH}"
+
+if command -v rustc >/dev/null; then
+    if [[ -f "${HOME}/.cargo/completion-options" ]]; then
+        . "${HOME}/.cargo/completion-options"
+        export RUSTC_SYSROOT
+    else
+        export RUSTC_SYSROOT="$(rustc --print sysroot)"
+        printf "%s=%s\n" 'RUSTC_SYSROOT' "${RUSTC_SYSROOT}" > "${HOME}/.cargo/completion-options"
+    fi
+
+    if [[ -f "${RUSTC_SYSROOT}/etc/bash_completion.d/cargo" ]]; then
+      . "${RUSTC_SYSROOT}/etc/bash_completion.d/cargo"
+    fi
+fi
