@@ -1,6 +1,0 @@
-atom-material-syntax
-atom-material-ui
-dracula-syntax
-dracula-ui
-language-hcl
-sort-lines
