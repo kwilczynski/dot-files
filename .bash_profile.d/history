@@ -2,6 +2,6 @@
 export HISTSIZE=
 export HISTFILESIZE=
 export HISTFILE="${HOME}/.bash_eternal_history"
-export HISTCONTROL='ignoreboth:ignorespace'
+export HISTCONTROL='ignoredups:ignorespace:erasedups'
 export HISTIGNORE='&:[ ]*:exit:[bf]g:history:clear:pwd'
 

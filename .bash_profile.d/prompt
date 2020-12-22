@@ -1,2 +1,7 @@
+function _bash_history_append() {
+    builtin history -a
+    builtin history -n
+}
+
 export PROMPT_DIRTRIM=2
-export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
+export PROMPT_COMMAND="_bash_history_append; ${PROMPT_COMMAND}"
