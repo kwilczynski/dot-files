@@ -95,9 +95,13 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/linediff.vim'
 
 Plug 'w0rp/ale'
+let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
-let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
+let g:ale_sign_error = '⤫'
+let g:ale_linters = { 'rust': [ 'analyzer', 'cargo' ] }
+let g:ale_fixers = { 'rust': [ 'rustfmt' ] }
+let g:ale_rust_cargo_use_clippy = 1
 
 Plug 'Shougo/vimshell'
 
