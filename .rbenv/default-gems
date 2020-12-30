@@ -1,6 +1,6 @@
-bundler
-awesome_print
-wirble
 pry
 pry-byebug
 pry-toys
+bundler
+amazing_print
+wirble

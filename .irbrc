@@ -1,8 +1,5 @@
 require 'rubygems'
 
-require 'ap'
-require 'pp'
-require 'wirble'
 require 'irb/completion'
 require 'irb/ext/save-history'
 
@@ -21,11 +18,15 @@ IRB.conf[:PROMPT][:CUSTOM] = {
 
 IRB.conf[:PROMPT_MODE] = :CUSTOM
 
-IRB::Irb.class_eval do
-  def output_value
-    ap @context.last_value
-  end
-end
+require 'amazing_print'
+AmazingPrint.irb!
+
+require 'wirble'
+Wirble.init({
+  skip_prompt: true,
+  skip_shortcuts: true,
+  init_color: true
+})
 
 class Object
   def local_methods(obj = self)
@@ -41,27 +42,12 @@ class Object
   end
 end
 
-def quick(repetitions=100, &block)
-  require 'benchmark'
-  Benchmark.bmbm { |b| b.report { repetitions.times(&block) } }
-  nil
-end
-
-def reset_irb
+def reset_irb!
   exec $0
 end
 
-Wirble.init
-Wirble.colorize
-
-class Array
-  def self.toy(n=10, &block)
-    block_given? ? Array.new(n,&block) : Array.new(n) {|i| i+1}
-  end
-end
-
-class Hash
-  def self.toy(n=10)
-    Hash[Array.toy(n).zip(Array.toy(n){|c| (96+(c+1)).chr})]
-  end
+def quick(repetitions = 100, &block)
+  require 'benchmark'
+  Benchmark.bmbm {|b| b.report { repetitions.times(&block) }}
+  nil
 end
