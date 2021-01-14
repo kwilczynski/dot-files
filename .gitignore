@@ -102,8 +102,9 @@ Icon[]
 .vscode
 
 tmp
-temp
-coverage
+
+coverage/
+coverage.*
 
 *.box
 packer*.log
