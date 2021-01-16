@@ -1,11 +1,14 @@
-tap 'homebrew/aliases'
-tap 'homebrew/bundle'
-tap 'homebrew/cask'
-tap 'homebrew/cask-fonts'
 tap 'homebrew/core'
+tap 'homebrew/bundle'
+tap 'homebrew/aliases'
+
+tap 'homebrew/cask'
+tap 'homebrew/cask-versions'
+tap 'homebrew/cask-fonts'
 
 tap 'aws/tap'
-tap 'azure/functions'
+# Temporarily disabled.
+# tap 'azure/functions'
 tap 'beeftornado/rmtree'
 tap 'c-bata/kube-prompt'
 tap 'derailed/k9s'
@@ -22,6 +25,8 @@ tap 'martido/homebrew-graph'
 tap 'miserlou/loop', 'https://github.com/Miserlou/Loop.git'
 tap 'moncho/dry'
 tap 'nickolasburr/pfa'
+# Temporarily disabled.
+# tap 'olafurpg/scalafmt'
 tap 'teamookla/speedtest'
 tap 'tylerbrock/saw'
 tap 'wagoodman/dive'
@@ -36,11 +41,12 @@ brew 'asciinema'
 brew 'autossh'
 # Temporarily disabled.
 # brew 'awless'
-# brew 'aws-sam-cli'
+brew 'aws-sam-cli'
 brew 'awscli'
 brew 'axel'
-brew 'azure-cli'
-brew 'azure-functions-core-tools'
+# Temporarily disabled.
+# brew 'azure-cli'
+# brew 'azure-functions-core-tools'
 brew 'bash'
 brew 'bash-completion@2'
 brew 'bat'
@@ -61,8 +67,7 @@ brew 'ctags'
 # Disabled in favour of curl-openssl.
 # brew 'curl'
 brew 'curl-openssl'
-# Temporarily disabled.
-# brew 'cw'
+brew 'cw'
 brew 'devd'
 # Disabled in favour of git-delta.
 # brew 'diff-so-fancy'
@@ -98,11 +103,11 @@ brew 'gnu-sed'
 brew 'gnupg2'
 brew 'gpatch'
 brew 'go'
+brew 'graphviz'
 brew 'grep'
 brew 'gron'
-# Temporarily disabled.
-# brew 'grpcurl'
-# brew 'helm'
+brew 'grpcurl'
+brew 'helm'
 brew 'hexyl'
 brew 'hstr'
 brew 'htop'
@@ -119,14 +124,13 @@ brew 'jo'
 brew 'jp'
 brew 'jq'
 brew 'jump'
-# Temporarily disabled.
-# brew 'k9s'
-# brew 'krew'
-# brew 'kube-prompt'
-# brew 'kubernetes-cli'
-# brew 'kubespy'
-# brew 'kubeval'
-# brew 'lftp'
+brew 'k9s'
+brew 'krew'
+brew 'kube-prompt'
+brew 'kubernetes-cli'
+brew 'kubespy'
+brew 'kubeval'
+brew 'lftp'
 brew 'lnav'
 brew 'loc'
 brew 'loop', args: ['HEAD']
@@ -151,9 +155,9 @@ brew 'nmap'
 # Temporarily disabled.
 # brew 'nnn'
 brew 'node'
+brew 'p7zip'
 # Disabled in favour of pkenv.
 # brew 'packer'
-brew 'p7zip'
 brew 'packer-completion'
 brew 'parallel'
 brew 'patchutils'
@@ -165,8 +169,7 @@ brew 'pinentry-mac'
 # Temporarily disabled.
 # brew 'pipenv'
 brew 'pkenv'
-# Temporarily disabled.
-# brew 'popeye'
+brew 'popeye'
 brew 'pstree'
 brew 'pth'
 brew 'pv'
@@ -183,8 +186,7 @@ brew 'rsync'
 brew 'ruby-build'
 brew 'rustup'
 brew 's-search'
-# Temporarily disabled.
-# brew 'saw'
+brew 'saw'
 brew 'scc'
 # Disabled in favour of neofetch.
 # brew 'screenfetch'
@@ -193,8 +195,7 @@ brew 'socat'
 brew 'speedtest'
 brew 'sshfs'
 brew 'step'
-# Temporarily disabled.
-# brew 'stern'
+brew 'stern'
 # Disabled in favour of tfenv.
 # brew 'terraform'
 brew 'tfenv'
@@ -210,8 +211,7 @@ brew 'torsocks'
 brew 'tree'
 brew 'unrar'
 brew 'vagrant-completion'
-# Temporarily disabled.
-# brew 'vault'
+brew 'vault'
 brew 'vim'
 brew 'watch'
 brew 'watchman'
@@ -230,10 +230,11 @@ brew 'yq'
 cask_args appdir: '/Applications'
 
 cask '1password'
-cask 'all-in-one-messenger'
 # Temporarily disabled.
+# cask 'all-in-one-messenger'
 # cask 'adobe-reader'
-# cask 'android-file-transfer'
+cask 'android-file-transfer'
+# Temporarily disabled.
 # cask 'atom'
 # cask 'authy'
 # cask 'brave-browser'
@@ -244,16 +245,18 @@ cask 'cleanmymac'
 cask 'cyberduck'
 # Temporarily disabled.
 # cask 'dash'
-# cask 'discord'
+cask 'discord'
 cask 'docker'
 # Temporarily disabled.
 # cask 'dropbox'
 # cask 'etcher'
 # cask 'expressvpn'
-cask 'exodus'
+# Temporarily disabled.
+# cask 'exodus'
 cask 'firefox'
 # Temporarily disabled.
 # cask 'flux'
+# Disabled in favour of All-in-One Messenger.
 # cask 'franz'
 cask 'gemini'
 # Temporarily disabled.
@@ -264,6 +267,7 @@ cask 'google-chrome'
 # cask 'google-cloud-sdk'
 # cask 'google-drive'
 # cask 'insomnia'
+cask 'irccloud'
 cask 'iterm2'
 # Temporarily disabled.
 # cask 'java'
@@ -277,6 +281,7 @@ cask 'macs-fan-control'
 # Temporarily disabled.
 # cask 'micro-snitch'
 cask 'microsoft-office'
+cask 'nvidia-geforce-now'
 cask 'postman'
 # Disabled in favour of Magnet.
 # cask 'rectangle'
@@ -288,15 +293,17 @@ cask 'quicklook-csv'
 cask 'quicklook-json'
 # Temporarily disabled.
 # cask 'shadow'
-# cask 'signal'
+cask 'signal'
+# Temporarily disabled.
 # cask 'skype'
-# cask 'slack'
+cask 'slack'
 # cask 'soulver'
 # Disabled in favour of Rectangle.
 # cask 'spectacle'
 cask 'spotify'
-# Temporarily disabled.
+# Disabled in favour of All-in-One Messenger.
 # cask 'station'
+# Temporarily disabled.
 # cask 'steam'
 # cask 'telegram'
 cask 'tor-browser'
@@ -304,14 +311,13 @@ cask 'tor-browser'
 # cask 'tunnelblick'
 # cask 'typora'
 cask 'vagrant'
-# Temporarily disabled.
-# cask 'viber'
+cask 'viber'
 cask 'virtualbox'
 cask 'visual-studio-code'
 cask 'vlc'
 # Temporarily disabled.
 # cask 'vmware-fusion'
-# cask 'whatsapp'
+cask 'whatsapp'
 cask 'wireshark'
 cask 'zoomus'
 
@@ -337,7 +343,6 @@ cask 'zoomus'
 # cask 'font-ubuntu-nerd-font'
 
 mas 'Magnet', id: 441258766
-# Temporarily disabled.
-# mas 'Microsoft Remote Desktop', id: 1295203466
+mas 'Microsoft Remote Desktop', id: 1295203466
 mas 'Owly', id: 882812218
 mas 'Wireguard', id: 1451685025
