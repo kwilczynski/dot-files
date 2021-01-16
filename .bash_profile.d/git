@@ -10,4 +10,4 @@
 #fi
 
 # Allow "g" alias to work for Git.
-complete -o default -o nospace -F _git g
+complete -o default -o nospace -F __git_main g
