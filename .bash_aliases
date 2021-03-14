@@ -50,6 +50,10 @@ alias be='bundle exec'
 alias v='vagrant'
 alias k='kubectl'
 
+if command -v vgrep >/dev/null; then
+    alias vg='vgrep'
+fi
+
 if command -v podman >/dev/null; then
     alias docker='podman'
 fi
