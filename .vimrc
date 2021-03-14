@@ -199,6 +199,7 @@ set history=128
 set scrolloff=3
 
 set shortmess+=c
+set shortmess+=I
 set belloff+=ctrlg
 
 set viminfo=%,'50,\"1000,/50,:50,h,f0,n~/.vim/.viminfo
