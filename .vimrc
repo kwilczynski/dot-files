@@ -28,6 +28,7 @@ Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
 Plug 'tjdevries/overlength.vim'
+let g:overlength#default_overlength = 120
 let g:overlength#default_to_textwidth = 1
 
 Plug 'jiangmiao/auto-pairs'
