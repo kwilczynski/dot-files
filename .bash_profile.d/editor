@@ -4,5 +4,5 @@ if [[ -x /usr/bin/lesspipe ]]; then
     eval "$(SHELL=/bin/bash lesspipe)"
 fi
 
-export PAGER='less'
+export PAGER='less -RF'
 export MANPAGER='less -X'
