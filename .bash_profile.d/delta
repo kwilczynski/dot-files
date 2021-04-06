@@ -1,4 +1,4 @@
-export DELTA_PAGER="less -RF"
+export DELTA_PAGER="less -RF --mouse"
 
 delta() {
   if (( $# == 0 )); then
