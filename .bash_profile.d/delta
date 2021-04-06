@@ -1,3 +1,5 @@
+export DELTA_PAGER="less -RF"
+
 delta() {
   if (( $# == 0 )); then
     set -- \
