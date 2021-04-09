@@ -1,8 +1,8 @@
 [user]
   name = Krzysztof Wilczyński
   email = kw@linux.com
-  signingkey = 3DE334E7
+  signingkey =
 [commit]
-  gpgsign = true
+  gpgsign = false
 [tag]
-  gpgsign = true
+  gpgsign = false

@@ -1,9 +1,13 @@
 [includeIf "gitdir:~/Projects/Personal/"]
   path = ~/.gitconfig-personal
+[includeIf "gitdir:~/Projects/Personal/Linux/"]
+  path = ~/.gitconfig-linux
 [includeIf "gitdir:~/Projects/Work/"]
   path = ~/.gitconfig-work
 [includeIf "gitdir:~/Development/Projects/Personal/"]
   path = ~/.gitconfig-personal
+[includeIf "gitdir:~/Development/Projects/Personal/Linux/"]
+  path = ~/.gitconfig-linux
 [includeIf "gitdir:~/Development/Projects/Work/"]
   path = ~/.gitconfig-work
 [alias]
@@ -159,10 +163,6 @@
 ;   helper = osxkeychain
 [credential "https://github.com"]
   username = kwilczynski
-[commit]
-  gpgsign = true
-[tag]
-  gpgsign = true
 [gpg]
   program = gpg
 [push]
