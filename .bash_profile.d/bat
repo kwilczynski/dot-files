@@ -1,1 +1,2 @@
+export BAT_CONFIG_PATH="${HOME}/.batrc"
 export BAT_PAGER="less -RF --mouse"
