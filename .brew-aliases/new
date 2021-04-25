@@ -1,0 +1,6 @@
+#! /home/linuxbrew/.linuxbrew/bin/bash
+# alias: brew new
+#:  * `new` [args...]
+#:    `brew new` is an alias for `brew upgrade`
+brew upgrade $*
+

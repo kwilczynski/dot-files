@@ -1,0 +1,6 @@
+#! /home/linuxbrew/.linuxbrew/bin/bash
+# alias: brew prune
+#:  * `prune` [args...]
+#:    `brew prune` is an alias for `brew cleanup --prune 0`
+brew cleanup --prune 0 $*
+
