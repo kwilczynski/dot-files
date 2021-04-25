@@ -133,8 +133,7 @@ brew "modd"
 # Temporarily disabled.
 # brew "moreutils", link: false
 brew "mtr"
-# Temporarily disabled.
-# brew "mutt"
+brew "mutt"
 brew "ncdu"
 brew "neofetch"
 brew "ngrep"
