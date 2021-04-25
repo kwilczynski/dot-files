@@ -1,0 +1,1 @@
+export GUILE_TLS_CERTIFICATE_DIRECTORY="${BREW_PREFIX}/etc/gnutls/"
