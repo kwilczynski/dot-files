@@ -1,6 +1,6 @@
 Linux:
 
-- s-tue
+- s-tui
 - http-prompt
 - intel-undervort
 - tlp
