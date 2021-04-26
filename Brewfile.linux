@@ -45,7 +45,7 @@ brew "axel"
 # Temporarily disabled.
 # brew "azure-cli"
 # brew "azure-functions-core-tools"
-brew "bash"
+brew "bash", args: ["build-from-source"]
 brew "bash-completion@2"
 brew "bat"
 brew "bcal"
