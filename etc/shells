@@ -3,5 +3,7 @@
 /usr/bin/bash
 /bin/zsh
 /usr/bin/zsh
+/bin/screen
+/usr/bin/screen
 /usr/local/bin/bash
 /home/linuxbrew/.linuxbrew/bin/bash
