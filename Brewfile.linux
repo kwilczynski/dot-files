@@ -176,6 +176,7 @@ brew "speedtest"
 brew "sshfs"
 brew "step"
 brew "stern"
+brew "stress-ng"
 # Disabled in favour of tfenv.
 # brew "terraform"
 brew "tfenv"
