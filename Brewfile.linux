@@ -200,6 +200,8 @@ brew "vault"
 brew "vgrep"
 brew "vim"
 brew "watchman"
+# Temporarily disabled.
+# brew "wavemon"
 brew "wget"
 brew "whatmask"
 # Disabled in favour of wrk2.
