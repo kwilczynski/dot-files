@@ -69,6 +69,7 @@
   ref = reflog
   rst = reset
   rt = remote
+  se = send-email
   sm = submodule
   sts = stash
   stsp = stash pop
@@ -91,7 +92,10 @@
   ll = log --graph --pretty='format:%h | %an | %s'
   los = log --graph --oneline --abbrev-commit
   lok = log --oneline --abbrev-commit --pretty='%h (\"%s\")'
+  lom = !sh -c 'git log $(git origin)..HEAD'
+  lokm = !sh -c 'git log --oneline --abbrev-commit --pretty=\"%h (\\\"%s\\\")\" $(git origin)..HEAD'
   llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+  fpm = !sh -c 'git format-patch $(git origin)..HEAD'
   po = push origin
   pom = !sh -c 'git push origin $(git origin)'
   changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
@@ -108,7 +112,7 @@
   empty = !git init && git commit --allow-empty -m \"Initial commit.\"
   r = !git ls-files -z --deleted | xargs -0 git rm
   wd = !git diff | delta --features='default no-line-numbers' --24-bit-color='never' --color-only | less -FRSX
-  update-author = !bash -c 'git rebase --onto $1 --exec \"git commit --amend --author=$2\" $1' --
+  update-author = !sh -c 'git rebase --onto $1 --exec \"git commit --amend --author=$2\" $1' --
   origin = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
   wa = worktree add
   wl = worktree list --verbose
