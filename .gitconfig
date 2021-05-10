@@ -110,6 +110,10 @@
   wd = !git diff | delta --features='default no-line-numbers' --24-bit-color='never' --color-only | less -FRSX
   update-author = !bash -c 'git rebase --onto $1 --exec \"git commit --amend --author=$2\" $1' --
   origin = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+  wa = worktree add
+  wl = worktree list --verbose
+  wr = worktree remove
+  wp = worktree prune --verbose
 [delta]
   tabs = 0
   keep-plus-minus-markers = true
