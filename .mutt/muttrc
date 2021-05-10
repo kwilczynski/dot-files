@@ -156,3 +156,5 @@ macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>"  "Go to All Mail"
 macro index,pager gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent"
 macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>"    "Go to Drafts"
 macro index,pager gS "<change-folder>=[Gmail]/Starred<enter>"   "Go to Starred"
+
+source ~/.mutt/dracula.muttrc
