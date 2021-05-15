@@ -49,6 +49,7 @@
   rbs = rebase --skip
   rbi = rebase --interactive
   rbr = rebase --root
+  rbm = !sh -c 'git rebase --interactive $(git origin) "$@"' -
   me = merge
   rs = remote show
   remotes = remote -v
@@ -62,6 +63,7 @@
   pt = push --tags
   tags = tag -l
   w = whatchanged
+  wo = whatchanged --oneline
   wn = whatchanged --name-only --oneline
   wno = whatchanged --pretty='format:' --name-only
   sts = status -s
@@ -92,12 +94,12 @@
   ll = log --graph --pretty='format:%h | %an | %s'
   los = log --graph --oneline --abbrev-commit
   lok = log --oneline --abbrev-commit --pretty='%h (\"%s\")'
-  lom = !sh -c 'git log $(git origin)..HEAD'
-  lokm = !sh -c 'git log --oneline --abbrev-commit --pretty=\"%h (\\\"%s\\\")\" $(git origin)..HEAD'
+  lom = !sh -c 'git log $(git origin)..HEAD "$@"' -
+  lokm = !sh -c 'git log --oneline --abbrev-commit --pretty=\"%h (\\\"%s\\\")\" $(git origin)..HEAD "$@"' -
   llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
-  fpm = !sh -c 'git format-patch $(git origin)..HEAD'
+  fpm = !sh -c 'git format-patch $(git origin)..HEAD "$@"' -
   po = push origin
-  pom = !sh -c 'git push origin $(git origin)'
+  pom = !sh -c 'git push origin $(git origin) "$@"' -
   changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
   pob = !sh -c 'git push origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") "$@"' -
   purb = !sh -c 'git pull origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") --rebase "$@"' -
