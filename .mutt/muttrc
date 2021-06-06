@@ -1,5 +1,6 @@
 set realname = "Krzysztof Wilczyński"
 set from     = "kw@linux.com"
+set hostname = ""
 
 alternates \
   "krzysztof.wilczynski@linux.com" \
