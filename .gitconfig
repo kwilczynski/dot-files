@@ -168,9 +168,8 @@
 [init]
   templatedir = ~/.git-templates
   defaultBranch = main
-; Temporarily disabled. Not available on Linux.
-; [credential]
-;   helper = osxkeychain
+[credential]
+  helper = store
 [credential "https://github.com"]
   username = kwilczynski
 [gpg]
