@@ -222,6 +222,7 @@ brew "watch"
 brew "watchman"
 brew "wget"
 brew "whatmask"
+brew "whois"
 # Disabled in favour of wrk2.
 # brew "wrk"
 # Disabled. Not compatible with OS X 10.15+

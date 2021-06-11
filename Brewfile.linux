@@ -204,6 +204,7 @@ brew "watchman"
 # brew "wavemon"
 brew "wget"
 brew "whatmask"
+brew "whois"
 # Disabled in favour of wrk2.
 # brew "wrk"
 brew "wrk2", args: ["HEAD"]
