@@ -31,8 +31,6 @@ Plug 'tjdevries/overlength.vim'
 let g:overlength#default_overlength = 120
 let g:overlength#default_to_textwidth = 1
 
-Plug 'jiangmiao/auto-pairs'
-
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_enabled = 1
 
@@ -46,9 +44,8 @@ let g:NERDTreeIgnore = ['^node_modules$']
 Plug 'majutsushi/tagbar'
 
 Plug 'godlygeek/tabular'
-Plug 'kopischke/vim-fetch'
 
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 
 Plug 'ntpeters/vim-better-whitespace'
 let g:better_whitespace_enabled = 1
@@ -92,7 +89,6 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 let g:SuperTabContextTextOmniPrecedence = ['&omnifunc','&completefunc']
 
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/linediff.vim'
 
 Plug 'w0rp/ale'
@@ -103,8 +99,6 @@ let g:ale_sign_error = '⤫'
 let g:ale_linters = { 'rust': [ 'analyzer', 'cargo' ] }
 let g:ale_fixers = { 'rust': [ 'rustfmt' ] }
 let g:ale_rust_cargo_use_clippy = 1
-
-Plug 'Shougo/vimshell'
 
 Plug 'sebdah/vim-delve'
 
@@ -123,6 +117,7 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_fenced_languages = ['go=go', 'viml=vim', 'bash=sh']
 
 Plug 'hashivim/vim-vagrant'
+
 Plug 'hashivim/vim-terraform'
 let g:terraform_align = 1
 let g:terraform_fmt_on_save = 1
@@ -372,7 +367,7 @@ augroup configgroup
     autocmd FileType text setlocal formatoptions-=t textwidth=0
     autocmd FileType mail DisableWhitespace
     autocmd FileType mail colorscheme slate
-    autocmd FileType mail setlocal textwidth=78 noautoindent nolist nonumber digraph wrapmargin=0
+    autocmd FileType mail setlocal textwidth=78 noautoindent nolist nonumber noexpandtab digraph wrapmargin=0
     autocmd FileType git,gitcommit,gitsendemail DisableWhitespace
     autocmd FileType git,gitcommit,gitsendemail colorscheme slate
     autocmd FileType git,gitcommit,gitsendemail setlocal textwidth=72 foldmethod=syntax foldlevel=1
