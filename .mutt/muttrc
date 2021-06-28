@@ -1,11 +1,9 @@
 set realname = "Krzysztof Wilczyński"
 set from     = "kw@linux.com"
-set hostname = ""
+set hostname = "rocinante"
 
 alternates \
-  "krzysztof.wilczynski@linux.com" \
-  "kw@fsck.io"                     \
-  "krzysztof.wilczynski@fsck.io"
+  "((kw|krzysztof.wilczynski)@(linux.com|fsck.io))"
 
 set quit = ask-yes
 
@@ -17,10 +15,17 @@ set envelope_from = yes
 set edit_headers  = yes
 set fast_reply    = yes
 set reply_to      = yes
-set reverse_name  = yes
 set include       = yes
 set askcc         = yes
 set fcc_attach    = yes
+set fcc_clear     = no
+
+set reverse_name     = yes
+set reverse_realname = yes
+
+set postpone         = ask-yes
+set abort_unmodified = ask-yes
+set abort_nosubject  = no
 
 set forward_format = "Fwd: %s"
 set forward_decode = yes
@@ -39,12 +44,12 @@ set ssl_force_tls = yes
 
 set sendmail_wait = 0
 
-set smtp_url            = "smtp://kswilczynski@smtp.gmail.com:587/"
+set smtp_url            = ""
 set smtp_pass           = ""
 set smtp_authenticators = "login"
 
 unset imap_passive
-set imap_user             = "kswilczynski@googlemail.com"
+set imap_user             = ""
 set imap_pass             = ""
 set imap_authenticators   = "login"
 set imap_check_subscribed = yes
@@ -67,6 +72,9 @@ set copy = yes
 unset mark_old
 set mark_old = no
 
+unset collapse_unread
+set collapse_unread = no
+
 set header_cache     = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/bodies"
 set certificate_file = "~/.mutt/certificates"
@@ -78,7 +86,7 @@ set auto_tag = yes
 set sort     = "threads"
 set sort_aux = "reverse-last-date-received"
 
-set strict_threads    = yes
+set strict_threads    = no
 set duplicate_threads = yes
 
 set uncollapse_jump = yes
@@ -95,6 +103,7 @@ bind index gg first-entry
 bind index G last-entry
 bind index <tab> sync-mailbox
 bind index <space> collapse-thread
+bind index "^" imap-fetch-mail
 
 unset markers
 set smart_wrap        = yes
@@ -107,7 +116,7 @@ bind pager R group-reply
 bind pager k previous-line
 bind pager j next-line
 
-set editor = "vim -c 'set syntax=mail filetype=mail encoding=utf-8 textwidth=72'"
+set editor = "vim -c 'set syntax=mail filetype=mail'"
 bind editor ^T complete
 bind editor <tab> complete-query
 bind editor <space> noop
