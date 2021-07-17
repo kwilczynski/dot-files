@@ -114,7 +114,7 @@
   this = !git init && git add . && git commit -m \"Initial commit.\"
   empty = !git init && git commit --allow-empty -m \"Initial commit.\"
   r = !git ls-files -z --deleted | xargs -0 git rm
-  wd = !git diff | delta --features='default no-line-numbers' --24-bit-color='always' --color-only | less -FRSX
+  wd = !git diff | delta --features='default no-line-numbers' --true-color='always' --color-only | less -FRSX
   update-author = !sh -c 'git rebase --onto $1 --exec \"git commit --amend --author=$2\" $1' --
   origin = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
   branch-date = !git for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:iso8601)|%(committerdate:relative)|%(committername)|%(refname:short)' refs/heads/ | column -s '|' -t
@@ -164,7 +164,7 @@
 [difftool "diffmerge"]
   cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [core]
-  pager = delta --24-bit-color='always'
+  pager = delta --true-color='always'
   excludesfile = ~/.gitignore-global
   trustctime = false
 [interactive]
