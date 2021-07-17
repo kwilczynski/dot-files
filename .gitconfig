@@ -97,6 +97,7 @@
   lom = !sh -c 'git log $(git origin)..HEAD "$@"' -
   lokm = !sh -c 'git log --oneline --abbrev-commit --pretty=\"%h (\\\"%s\\\")\" $(git origin)..HEAD "$@"' -
   llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+  fp = format-patch
   fpm = !sh -c 'git format-patch $(git origin)..HEAD "$@"' -
   po = push origin
   pom = !sh -c 'git push origin $(git origin) "$@"' -
@@ -116,6 +117,8 @@
   wd = !git diff | delta --features='default no-line-numbers' --24-bit-color='never' --color-only | less -FRSX
   update-author = !sh -c 'git rebase --onto $1 --exec \"git commit --amend --author=$2\" $1' --
   origin = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+  branch-date = !git for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:iso8601)|%(committerdate:relative)|%(committername)|%(refname:short)' refs/heads/ | column -s '|' -t
+  tag-date = !git for-each-ref --sort='-taggerdate' --format='%(taggerdate:iso8601)|%(taggerdate:relative)|%(taggername)|%(tag)|%(subject)' refs/tags/ | column -s '|' -t
   wa = worktree add
   wl = worktree list --verbose
   wr = worktree remove
