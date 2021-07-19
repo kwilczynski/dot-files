@@ -367,7 +367,7 @@ augroup configgroup
     autocmd FileType text setlocal formatoptions-=t textwidth=0
     autocmd FileType mail DisableWhitespace
     autocmd FileType mail colorscheme slate
-    autocmd FileType mail setlocal textwidth=78 noautoindent nolist nonumber noexpandtab digraph wrapmargin=0
+    autocmd FileType mail setlocal textwidth=78 noautoindent nolist nonumber noexpandtab digraph wrapmargin=0 shiftwidth=8 tabstop=8 softtabstop=8
     autocmd FileType git,gitcommit,gitsendemail DisableWhitespace
     autocmd FileType git,gitcommit,gitsendemail colorscheme slate
     autocmd FileType git,gitcommit,gitsendemail setlocal textwidth=72 foldmethod=syntax foldlevel=1
