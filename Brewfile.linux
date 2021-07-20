@@ -6,6 +6,7 @@ tap "linuxbrew/extra"
 # Temporarily disabled.
 # tap "linuxbrew/xorg"
 
+tap "afnanenayet/tap"
 tap "aws/tap"
 # Temporarily disabled.
 # tap "azure/functions"
@@ -68,6 +69,7 @@ brew "cw"
 brew "devd"
 # Disabled in favour of git-delta.
 # brew "diff-so-fancy"
+brew "diffsitter"
 brew "direnv"
 brew "dive"
 brew "docker-completion"

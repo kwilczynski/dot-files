@@ -6,6 +6,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/cask-fonts"
 
+tap "afnanenayet/tap"
 tap "aws/tap"
 # Temporarily disabled.
 # tap "azure/functions"
@@ -72,6 +73,7 @@ brew "cw"
 brew "devd"
 # Disabled in favour of git-delta.
 # brew "diff-so-fancy"
+brew "diffsitter"
 brew "direnv"
 brew "dive"
 brew "docker-completion"
