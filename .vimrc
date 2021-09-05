@@ -20,9 +20,10 @@ Plug 'simnalamburt/vim-mundo'
 
 Plug 'jlanzarotta/bufexplorer'
 
+Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
