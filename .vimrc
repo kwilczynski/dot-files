@@ -277,6 +277,8 @@ set spelllang=en_gb,en_us,en
 
 set laststatus=2
 
+set switchbuf=usetab
+
 set statusline=
 set statusline+=[%n]\ %<%F%{exists('g:loaded_fugitive')?fugitive#statusline():''}%M%R%H%W
 set statusline+=\ %=%Y
@@ -363,6 +365,7 @@ augroup configgroup
     autocmd BufRead,BufNewFile *.sls set filetype=yaml
     autocmd BufRead,BufNewFile *.hcl set filetype=terraform
     autocmd BufRead,BufNewFile *.gotmpl set filetype=gotexttmpl
+    autocmd BufRead,BufNewFile COMMIT_EDITMSG set filetype=gitcommit
 
     autocmd FileType text setlocal formatoptions-=t textwidth=0
     autocmd FileType mail DisableWhitespace
@@ -372,18 +375,20 @@ augroup configgroup
     autocmd FileType git,gitcommit,gitsendemail colorscheme slate
     autocmd FileType git,gitcommit,gitsendemail setlocal textwidth=72 foldmethod=syntax foldlevel=1
     autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
-    autocmd FileType sh,bash setlocal formatoptions-=t expandtab shiftwidth=4 tabstop=8 softtabstop=4
+    autocmd FileType sh,bash setlocal formatoptions-=t expandtab shiftwidth=4 tabstop=8 softtabstop=4 commentstring=#\ %s
     autocmd FileType rb,ruby setlocal formatoptions-=t expandtab textwidth=120 shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType py,python setlocal formatoptions-=t expandtab textwidth=80 shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType php setlocal formatoptions-=t expandtab shiftwidth=4 tabstop=4 softtabstop=4
     autocmd FileType html,xhtml,xml,xslt setlocal formatoptions-=t expandtab shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType css setlocal formatoptions-=t expandtab shiftwidth=4 tabstop=4 softtabstop=4
     autocmd FileType js,javascript setlocal formatoptions-=t expandtab shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType c,cpp,cs,h,hpp,objc setlocal formatoptions-=t noexpandtab cindent textwidth=80 shiftwidth=8 tabstop=8 softtabstop=8
+    autocmd FileType cpp,hpp setlocal formatoptions-=t noexpandtab cindent textwidth=80 shiftwidth=8 tabstop=8 softtabstop=8 commentstring=//\ %s
+    autocmd FileType c,h setlocal formatoptions-=t noexpandtab cindent textwidth=80 shiftwidth=8 tabstop=8 softtabstop=8 commentstring=/*\ %s
     autocmd FileType go setlocal formatoptions-=t noexpandtab textwidth=120 shiftwidth=8 tabstop=8 softtabstop=8
     autocmd FileType rs,rc setlocal formatoptions-=t expandtab textwidth=100 shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType make setlocal formatoptions-=t noexpandtab shiftwidth=8 softtabstop=0
     autocmd FileType sql setlocal commentstring=--\ %s
     autocmd FileType yml,yaml setlocal formatoptions-=t expandtab shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType tf,hcl setlocal formatoptions-=t commentstring=#\ %s
+    autocmd FileType vim setlocal formatoptions-=t commentstring=\"\ %s
 augroup END
