@@ -1,3 +1,6 @@
+reset all
+unhook *
+
 set realname = "Krzysztof Wilczyński"
 set from     = "kw@linux.com"
 set hostname = "rocinante"
@@ -121,15 +124,11 @@ bind editor ^T complete
 bind editor <tab> complete-query
 bind editor <space> noop
 
+set rfc2047_parameters = yes
+
 set charset         = "utf-8"
 set assumed_charset = "utf-8"
 set send_charset    = "utf-8"
-
-charset-hook us-ascii     utf-8
-charset-hook iso-8859-1   utf-8
-charset-hook x-unknown    utf-8
-charset-hook windows-1250 utf-8
-charset-hook windows-1252 utf-8
 
 set date_format  = "%y-%m-%d %T"
 set index_format = "%2C | %Z [%d] %-30.30F (%-4.4c) %s"
