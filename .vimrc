@@ -48,6 +48,8 @@ Plug 'godlygeek/tabular'
 
 Plug 'mg979/vim-visual-multi'
 
+Plug 'junegunn/vim-easy-align'
+
 Plug 'ntpeters/vim-better-whitespace'
 let g:better_whitespace_enabled = 1
 let g:strip_whitespace_on_save = 1
@@ -150,7 +152,7 @@ set copyindent
 set preserveindent
 set shiftround
 
-set virtualedit=block
+set virtualedit=block,onemore
 
 set shiftwidth=2
 set softtabstop=2
