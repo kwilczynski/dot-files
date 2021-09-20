@@ -12,7 +12,6 @@ set quit = ask-yes
 
 unset user_agent
 unset use_domain
-unset mime_forward
 set use_from      = yes
 set envelope_from = yes
 set edit_headers  = yes
@@ -33,6 +32,9 @@ set abort_nosubject  = no
 set forward_format = "Fwd: %s"
 set forward_decode = yes
 set forward_quote  = yes
+
+unset mime_forward
+set mime_forward = yes
 
 set attribution = "On %d, %n wrote:"
 
