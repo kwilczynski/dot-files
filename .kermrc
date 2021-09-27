@@ -1,0 +1,6 @@
+set control prefix all
+set carrier-watch off
+set modem type none
+set transfer mode manual
+set file type binary
+set prompt "> "
