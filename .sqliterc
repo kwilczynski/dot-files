@@ -1,0 +1,4 @@
+.header on
+.mode column
+.nullvalue NULL
+.timer on
