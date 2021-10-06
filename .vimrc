@@ -368,7 +368,8 @@ augroup configgroup
     autocmd BufRead,BufNewFile *.sls set filetype=yaml
     autocmd BufRead,BufNewFile *.hcl set filetype=terraform
     autocmd BufRead,BufNewFile *.gotmpl set filetype=gotexttmpl
-    autocmd BufRead,BufNewFile COMMIT_EDITMSG set filetype=gitcommit
+    " Disabled.  Breaks editing Git commits.
+    "autocmd BufRead,BufNewFile COMMIT_EDITMSG set filetype=gitcommit
 
     autocmd FileType text setlocal formatoptions-=t textwidth=0
     autocmd FileType mail DisableWhitespace
