@@ -40,7 +40,6 @@ set attribution = "On %d, %n wrote:"
 
 set mail_check     = 30
 set timeout        = 300
-set imap_keepalive = 900
 
 set use_ipv6 = no
 
@@ -53,11 +52,12 @@ set smtp_url            = "smtp://kswilczynski@smtp.gmail.com:587/"
 set smtp_pass           = ""
 set smtp_authenticators = "login"
 
-unset imap_passive
-set imap_user             = "kswilczynski@googlemail.com"
+set imap_passive          = no
+set imap_keepalive        = 300
+set imap_check_subscribed = no
+set imap_user             = "kswilczynski@gmail.com"
 set imap_pass             = ""
 set imap_authenticators   = "login"
-set imap_check_subscribed = yes
 
 set folder    = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
