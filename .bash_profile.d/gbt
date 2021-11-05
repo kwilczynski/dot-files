@@ -4,6 +4,7 @@ else
     export GBT_CAR_OS_NAME='darwin'
 fi
 
+export GBT_FORCE_HIGHER_COLORS='0'
 export GBT_CAR_DIR_DEPTH='2'
 
 PS1='$(gbt $?)'
