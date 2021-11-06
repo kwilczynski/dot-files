@@ -2,3 +2,5 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 # Disabled. Only use when bottles are not working as expected.
 #export HOMEBREW_BUILD_FROM_SOURCE=1
+export HOMEBREW_INSTALL_CLEANUP=1
+export HOMEBREW_UPDATE_REPORT_ONLY_INSTALLED=1
