@@ -33,7 +33,6 @@ set forward_format = "Fwd: %s"
 set forward_decode = yes
 set forward_quote  = yes
 
-unset mime_forward
 set mime_forward = yes
 
 set attribution = "On %d, %n wrote:"
@@ -68,16 +67,10 @@ unset record
 set postponed = "+[Gmail]/Drafts"
 set trash     = "+[Gmail]/Bin"
 
-unset move
 set move = no
-
-unset copy
 set copy = yes
 
-unset mark_old
-set mark_old = no
-
-unset collapse_unread
+set mark_old        = no
 set collapse_unread = no
 
 set header_cache     = "~/.mutt/cache/headers"
