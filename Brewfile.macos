@@ -31,7 +31,6 @@ tap "nickolasburr/pfa"
 # tap "olafurpg/scalafmt"
 tap "teamookla/speedtest"
 tap "tylerbrock/saw"
-tap "wagoodman/dive"
 tap "wallix/awless"
 tap "zloesabo/nettools"
 
