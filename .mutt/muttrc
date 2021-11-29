@@ -49,14 +49,20 @@ set sendmail_wait = 0
 
 set smtp_url            = "smtp://kswilczynski@smtp.gmail.com:587/"
 set smtp_pass           = ""
-set smtp_authenticators = "login"
+# Disabled.  Mutt will try all available methods,
+# in order from most-secure to least-secure.
+# set smtp_authenticators = "login"
+set smtp_authenticators = ""
 
 set imap_passive          = no
 set imap_keepalive        = 300
 set imap_check_subscribed = no
 set imap_user             = "kswilczynski@gmail.com"
 set imap_pass             = ""
-set imap_authenticators   = "login"
+# Disabled.  Mutt will try all available methods,
+# in order from most-secure to least-secure.
+# set imap_authenticators   = "login"
+set imap_authenticators   = ""
 
 set folder    = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
