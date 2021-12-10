@@ -1,4 +1,4 @@
 if command -v gcloud >/dev/null; then
-    GCLOUD_HOME="$(cd "$(dirname "$(readlink "$(command -v gcloud)")")/.." && pwd -P)"
+    GCLOUD_HOME="$(cd "$(dirname "$(readlink -f "$(command -v gcloud)")")/.." && pwd -P)"
     export PATH="${GCLOUD_HOME}/bin:${PATH}"
 fi
