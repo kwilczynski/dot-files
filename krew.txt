@@ -16,6 +16,7 @@ open-svc
 outdated
 pod-dive
 podevents
+pod-inspect
 popeye
 rbac-lookup
 rbac-view
