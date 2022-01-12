@@ -1,3 +1,5 @@
+export DIRENV_CONFIG="${HOME}/.direnvrc"
+
 if command -v direnv >/dev/null; then
     eval "$(direnv hook bash)"
 fi
