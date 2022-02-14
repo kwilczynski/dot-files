@@ -1,0 +1,3 @@
+gsettings reset org.gnome.shell app-picker-layout
+
+gsettings get org.gnome.desktop.privacy remember-app-usage false
