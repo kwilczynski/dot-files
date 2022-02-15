@@ -1,6 +1,7 @@
 require 'rubygems'
 
 Pry.editor = 'vim'
+Pry.config.history_file = "~/.irb_history"
 
 require 'amazing_print'
 AmazingPrint.pry!
