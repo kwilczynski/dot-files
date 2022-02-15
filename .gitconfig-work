@@ -2,3 +2,7 @@
   name = Krzysztof Wilczyński
   email =
   signingkey = 3DE334E7
+[commit]
+  gpgsign = true
+[tag]
+  gpgsign = true
