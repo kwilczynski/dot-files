@@ -4,8 +4,8 @@ delta() {
   if (( $# == 0 )); then
     set -- \
       --line-numbers --keep-plus-minus-markers \
-      --dark --theme='ansi-dark' --24-bit-color='never' \
-      --inspect-raw-lines \
+      --dark --syntax-theme='ansi-dark' --24-bit-color='never' \
+      --inspect-raw-lines=true \
       --tabs=0
   fi
 
