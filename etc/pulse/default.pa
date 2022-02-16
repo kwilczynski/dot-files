@@ -1,0 +1,68 @@
+.fail
+
+load-module module-device-restore
+load-module module-stream-restore
+load-module module-card-restore
+load-module module-augment-properties
+load-module module-switch-on-port-available
+
+.ifexists module-switch-on-connect.so
+load-module module-switch-on-connect
+.endif
+
+.ifexists module-udev-detect.so
+load-module module-udev-detect
+.else
+load-module module-detect
+.endif
+
+.ifexists module-jackdbus-detect.so
+.nofail
+load-module module-jackdbus-detect channels=2
+.fail
+.endif
+
+.ifexists module-bluetooth-policy.so
+load-module module-bluetooth-policy
+.endif
+
+.ifexists module-bluetooth-discover.so
+load-module module-bluetooth-discover headset="native" a2dp_config="sbc_cmode=dual sbc_min_bp=53 sbc_max_bp=53 sbc_freq=44k ldac_eqmid=hq ldac_fmt=f32"
+.endif
+
+.ifexists module-esound-protocol-unix.so
+load-module module-esound-protocol-unix
+.endif
+load-module module-native-protocol-unix
+
+.ifexists module-gsettings.so
+.nofail
+load-module module-gsettings
+.fail
+.endif
+
+load-module module-default-device-restore
+load-module module-always-sink
+load-module module-intended-roles
+load-module module-suspend-on-idle
+
+.ifexists module-console-kit.so
+load-module module-console-kit
+.endif
+
+.ifexists module-systemd-login.so
+load-module module-systemd-login
+.endif
+
+load-module module-position-event-sounds
+load-module module-role-cork
+
+.ifexists module-snap-policy.so
+load-module module-snap-policy
+.endif
+
+load-module module-filter-heuristics
+load-module module-filter-apply
+
+.nofail
+.include /etc/pulse/default.pa.d
