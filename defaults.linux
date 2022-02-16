@@ -1,3 +1,7 @@
 gsettings reset org.gnome.shell app-picker-layout
 
 gsettings get org.gnome.desktop.privacy remember-app-usage false
+
+dconf reset -f /com/gexperts/Tilix/
+dconf load /com/gexperts/Tilix/ < tilix.dconf
+
