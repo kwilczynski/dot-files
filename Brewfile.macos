@@ -31,7 +31,6 @@ tap "nickolasburr/pfa"
 # tap "olafurpg/scalafmt"
 tap "teamookla/speedtest"
 tap "tylerbrock/saw"
-tap "wallix/awless"
 tap "zloesabo/nettools"
 
 # Disabled in favour of ripgrep.
@@ -40,8 +39,6 @@ brew "angle-grinder"
 brew "aria2"
 brew "asciinema"
 brew "autossh"
-# Temporarily disabled.
-# brew "awless"
 brew "aws-iam-authenticator"
 brew "aws-sam-cli"
 brew "awscli"

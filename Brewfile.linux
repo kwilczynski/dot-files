@@ -30,7 +30,6 @@ tap "nickolasburr/pfa"
 # Disabled. Not available on Linux.
 # tap "teamookla/speedtest"
 tap "tylerbrock/saw"
-tap "wallix/awless"
 tap "zloesabo/nettools"
 
 # Disabled in favour of ripgrep.
