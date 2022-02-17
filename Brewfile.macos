@@ -187,7 +187,8 @@ brew "rng"
 brew "rsync"
 brew "ruby-build"
 brew "rustup-init"
-brew "s-search"
+# Temporarily disabled.
+# brew "s-search"
 brew "saw"
 brew "scc"
 # Disabled in favour of neofetch.
