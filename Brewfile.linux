@@ -27,8 +27,7 @@ tap "moncho/dry"
 tap "nickolasburr/pfa"
 # Temporarily disabled.
 # tap "olafurpg/scalafmt"
-# Disabled. Not available on Linux.
-# tap "teamookla/speedtest"
+tap "teamookla/speedtest"
 tap "tylerbrock/saw"
 tap "zloesabo/nettools"
 
@@ -177,8 +176,7 @@ brew "scc"
 brew "shellcheck"
 brew "socat"
 brew "spark"
-# Disabled. Not available on Linux.
-# brew "speedtest"
+brew "speedtest"
 brew "sshfs"
 brew "step"
 brew "stern"
