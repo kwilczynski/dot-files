@@ -1,0 +1,7 @@
+[Context]
+filesystems=home
+
+[Environment]
+MOZ_DISABLE_RDD_SANDBOX=1
+MOZ_X11_EGL=1
+LIBVA_DRIVER_NAME=radeonsi
