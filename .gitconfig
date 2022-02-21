@@ -151,7 +151,7 @@
   renamelimit = 2048
   tool = diffmerge
 [mergetool "diffmerge"]
-  cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+  cmd = diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\"
   trustExitCode = true
 [diff]
   renames = copies
@@ -202,21 +202,21 @@
   user = kwilczynski
   token = !security find-generic-password -gs \"github API token\" 2>&1 >/dev/null | awk '/password/ { print $2 }' | tr -d \\\"
 [url "git@github.com:"]
-  insteadOf = "gh:"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
+  insteadOf = gh:
+  pushInsteadOf = github:
+  pushInsteadOf = git://github.com/
 [url "git@github.com:"]
-    insteadOf = "https://github.com/"
+    insteadOf = https://github.com/
 [url "git://github.com/"]
-  insteadOf = "github:"
+  insteadOf = github:
 [url "git@gist.github.com:"]
-  insteadOf = "gst:"
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
+  insteadOf = gst:
+  pushInsteadOf = gist:
+  pushInsteadOf = git://gist.github.com/
 [url "git://gist.github.com/"]
-  insteadOf = "gist:"
+  insteadOf = gist:
 [url "git@bitbucket.org:"]
-  insteadOf = "https://bitbucket.org/"
+  insteadOf = https://bitbucket.org/
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f

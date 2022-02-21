@@ -1,7 +1,11 @@
 [user]
   name = Krzysztof Wilczyński
   email =
-  signingkey = 3DE334E7
+  signingkey =
+#[github]
+#  user =
+#[url ""]
+#  insteadof =
 [commit]
   gpgsign = true
 [tag]
