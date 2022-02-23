@@ -4,8 +4,10 @@
   signingkey =
 [github]
   user =
-[url "git@work.github.com:work"]
-  insteadof = "git@github.com:work"
+#[url "git@work.github.com:work"]
+#  insteadof = "git@github.com:work"
+#[url "ssh://git@work.github.com/work"]
+#  insteadof = "ssh://git@github.com/work"
 [commit]
   gpgsign = true
 [tag]
