@@ -189,6 +189,7 @@ brew "ruby-build"
 brew "rustup-init"
 # Temporarily disabled.
 # brew "s-search"
+brew "saml2aws"
 brew "saw"
 brew "scc"
 # Disabled in favour of neofetch.
