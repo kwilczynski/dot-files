@@ -108,6 +108,7 @@ brew "httpie"
 brew "httpstat"
 brew "hyperfine"
 brew "imgcat"
+brew "inxi"
 brew "ipcalc"
 brew "iperf3"
 # Temporarily disabled.
