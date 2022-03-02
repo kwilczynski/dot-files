@@ -8,6 +8,8 @@
 #  insteadof = "git@github.com:work"
 #[url "ssh://git@work.github.com/work"]
 #  insteadof = "ssh://git@github.com/work"
+#[url "ssh://git@work.github.com/work"]
+#  insteadof = "https://github.com/work"
 [commit]
   gpgsign = true
 [tag]
