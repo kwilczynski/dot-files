@@ -172,7 +172,8 @@ brew "rustup"
 # Temporarily disabled.
 # brew "s-search"
 brew "saml2aws"
-brew "saw"
+# Disabled.  Homebrew recipe only installs macOS version.
+# brew "saw"
 brew "scc"
 # Disabled in favour of neofetch.
 # brew "screenfetch"
