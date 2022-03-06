@@ -4,7 +4,9 @@ let g:plug_retries = 4
 
 Plug 'sheerun/vim-polyglot'
 
-Plug 'ayu-theme/ayu-vim'
+" Disabled. No longer maintained?
+"Plug 'ayu-theme/ayu-vim'
+Plug 'Luxed/ayu-vim'
 let ayucolor = 'mirage'
 
 Plug 'kopischke/vim-stay'
