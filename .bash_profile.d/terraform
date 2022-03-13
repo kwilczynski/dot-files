@@ -1,2 +1,7 @@
 export TF_REGISTRY_DISCOVERY_RETRY=10
 export TF_REGISTRY_CLIENT_TIMEOUT=5
+
+alias t="terraform"
+
+# Allow "t" alias to work for Terraform command-line.
+complete -o bashdefault -o default -o nospace -C terraform t
