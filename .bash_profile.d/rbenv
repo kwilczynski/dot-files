@@ -1,3 +1,5 @@
+OPENSSL_VERSION="openssl@1.1"
+
 if command -v rbenv >/dev/null; then
     eval "$(rbenv init -)"
 
@@ -9,11 +11,17 @@ if command -v rbenv >/dev/null; then
         . "${HOME}/.rbenv/configure-options"
         export RUBY_CONFIGURE_OPTS
     else
-        OPENSSL_DIRECTORY="$(brew --prefix openssl)"
+        OPENSSL_DIRECTORY="$(brew --prefix ${OPENSSL_VERSION})"
         if [[ -d "${OPENSSL_DIRECTORY}" ]]; then
             export RUBY_CONFIGURE_OPTS="--with-openssl-dir=${OPENSSL_DIRECTORY}"
-            printf "%s=%s\n" 'RUBY_CONFIGURE_OPTS' "${RUBY_CONFIGURE_OPTS}" > "${HOME}/.rbenv/configure-options"
         fi
+
+        ZLIB_DIRECTORY="$(brew --prefix zlib)"
+        if [[ -d "${ZLIB_DIRECTORY}" ]]; then
+            export RUBY_CONFIGURE_OPTS="--with-zlib-dir=${ZLIB_DIRECTORY} ${RUBY_CONFIGURE_OPTS}"
+        fi
+
+        printf '%s="%s"\n' 'RUBY_CONFIGURE_OPTS' "${RUBY_CONFIGURE_OPTS}" > "${HOME}/.rbenv/configure-options"
     fi
 
 fi
