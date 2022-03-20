@@ -131,7 +131,7 @@
   true-color = always
 [delta "default"]
   dark = true
-  syntax-theme = ansi-dark
+  syntax-theme = ansi
   line-numbers = true
 [delta "no-line-numbers"]
   line-numbers = false
