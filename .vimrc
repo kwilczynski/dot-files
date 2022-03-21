@@ -124,7 +124,7 @@ let g:vim_markdown_fenced_languages = ['go=go', 'viml=vim', 'bash=sh']
 Plug 'hashivim/vim-vagrant'
 
 Plug 'hashivim/vim-terraform'
-let g:terraform_align = 1
+let g:terraform_align = 0
 let g:terraform_fmt_on_save = 1
 let g:terraform_fold_sections = 0
 let g:terraform_remap_spacebar = 0
