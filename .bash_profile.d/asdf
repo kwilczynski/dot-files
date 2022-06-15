@@ -1,0 +1,3 @@
+if [[ -d "${BREW_PREFIX}/opt/asdf" ]]; then
+    . "${BREW_PREFIX}/opt/asdf/libexec/asdf.sh"
+fi

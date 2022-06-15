@@ -36,6 +36,8 @@ tap "zloesabo/nettools"
 brew "angle-grinder"
 brew "aria2"
 brew "asciinema"
+# Temporarily disabled.
+# brew "asdf"
 brew "autossh"
 brew "aws-iam-authenticator"
 brew "aws-sam-cli"
