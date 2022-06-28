@@ -6,3 +6,7 @@ dconf reset -f /com/gexperts/Tilix/
 dconf load /com/gexperts/Tilix/ < tilix.dconf
 
 fc-cache -f -v
+
+dpkg-divert --local --add --rename --divert \
+    /etc/xdg/autostart/io.elementary.appcenter-daemon.desktop.disabled \
+    /etc/xdg/autostart/io.elementary.appcenter-daemon.desktop
