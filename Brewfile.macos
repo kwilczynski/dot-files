@@ -124,6 +124,7 @@ brew "iperf3"
 # Temporarily disabled.
 # brew "jenv"
 brew "jid"
+brew "jless"
 brew "jo"
 brew "jp"
 brew "jq"
