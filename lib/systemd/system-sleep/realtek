@@ -1,0 +1,9 @@
+#!/bin/sh
+
+REALTEK_NIC_USB_ID="0bda:8156"
+
+case $1 in
+  post)
+    /usr/bin/usbreset $REALTEK_NIC_USB_ID | /usr/bin/logger -t usbreset 
+    ;;
+esac
