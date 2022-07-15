@@ -70,6 +70,7 @@
   rl = reflog
   ref = reflog
   rst = reset
+  rr = restore
   rt = remote
   se = send-email
   sm = submodule
@@ -86,6 +87,8 @@
   com = !sh -c 'git checkout $(git origin)'
   cob = checkout -b
   cod = checkout develop
+  sw = switch
+  swc = switch -c
   detach = checkout HEAD^0
   info = config --list
   summary = log --oneline
