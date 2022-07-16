@@ -1,7 +1,10 @@
 require 'rubygems'
 
+Pry.color = true
 Pry.editor = 'vim'
+
 Pry.config.history_file = "~/.irb_history"
+Pry.config.prompt = Pry::Prompt[:rails] if Pry::Prompt[:rails]
 
 require 'amazing_print'
 AmazingPrint.pry!
