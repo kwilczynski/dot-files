@@ -1,12 +1,24 @@
 gsettings reset org.gnome.shell app-picker-layout
 
-gsettings get org.gnome.desktop.privacy remember-app-usage false
+gsettings set org.gnome.desktop.privacy remember-app-usage false
 
 dconf reset -f /com/gexperts/Tilix/
 dconf load /com/gexperts/Tilix/ < tilix.dconf
 
 fc-cache -f -v
 
+c_rehash -v
+
+update-ca-certificates --verbose
+
 dpkg-divert --local --add --rename --divert \
     /etc/xdg/autostart/io.elementary.appcenter-daemon.desktop.disabled \
     /etc/xdg/autostart/io.elementary.appcenter-daemon.desktop
+
+dpkg-divert --local --add --rename --divert \
+    /etc/xdg/autostart/touchegg.desktop.disabled \
+    /etc/xdg/autostart/touchegg.desktop
+
+systemctl stop touchegg.service
+
+systemctl disable touchegg.service
