@@ -1,5 +1,5 @@
 --hidden
+--no-ignore
+--context=2
 --smart-case
---max-columns=150
---max-columns-preview
---glob=!git/*
+--glob=!.git/*
