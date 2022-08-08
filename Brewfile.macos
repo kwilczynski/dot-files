@@ -162,6 +162,7 @@ brew "nmap"
 # Temporarily disabled.
 # brew "nnn"
 brew "node"
+brew "octant"
 brew "p7zip"
 # Disabled in favour of pkenv.
 # brew "packer"
