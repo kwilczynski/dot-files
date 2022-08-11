@@ -101,6 +101,8 @@ brew "git-delta"
 brew "git-extras"
 brew "git-flow"
 brew "git-lfs"
+# Temporarily disabled.
+# brew "gitleaks"
 brew "gnu-sed"
 brew "gnupg"
 brew "gpatch"
