@@ -1,0 +1,4 @@
+export DFT_BACKGROUND="dark"
+export DFT_DISPLAY="inline"
+export DFT_SYNTAX_HIGHLIGHT="on"
+export DFT_TAB_WIDTH="8"

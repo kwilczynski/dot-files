@@ -75,6 +75,7 @@ brew "devd"
 # Disabled in favour of git-delta.
 # brew "diff-so-fancy"
 brew "diffsitter"
+brew "difftastic"
 brew "direnv"
 brew "dive"
 brew "docker-completion"
