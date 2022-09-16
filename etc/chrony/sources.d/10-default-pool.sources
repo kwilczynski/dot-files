@@ -1,0 +1,4 @@
+pool 0.jp.pool.ntp.org iburst maxsources 2
+pool 1.jp.pool.ntp.org iburst maxsources 2
+pool 2.jp.pool.ntp.org iburst maxsources 2
+pool 3.jp.pool.ntp.org iburst maxsources 2
