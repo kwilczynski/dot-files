@@ -24,6 +24,7 @@
   cl = clean
   clf = clean --force
   sh = show
+  shm = !sh -c 'git show $(git origin)..HEAD'
   sb = show-branch
   ls = ls-files
   lo = log
@@ -158,6 +159,7 @@
   cmd = diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\"
   trustExitCode = true
 [diff]
+  algorithm = histogram
   renames = copies
   submodule = diff
   mnemonicprefix = true
