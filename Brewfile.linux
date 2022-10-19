@@ -164,6 +164,7 @@ brew "nmap"
 # brew "nnn"
 brew "node"
 brew "octant"
+brew "openshift-cli"
 brew "p7zip"
 # Disabled in favour of pkenv.
 # brew "packer"
