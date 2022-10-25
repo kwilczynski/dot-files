@@ -6,8 +6,16 @@ Plug 'sheerun/vim-polyglot'
 
 " Disabled. No longer maintained?
 "Plug 'ayu-theme/ayu-vim'
-Plug 'Luxed/ayu-vim'
+Plug 'Luxed/ayu-vim', { 'commit': '9f266761b1d9b1fb4a75886d5b74574dd604c7bf' }
 let ayucolor = 'mirage'
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'sjl/badwolf'
+
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 Plug 'kopischke/vim-stay'
 
@@ -117,6 +125,11 @@ Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0
 
+" Disabled. No longer in use.
+"Plug 'google/vim-jsonnet'
+"let g:jsonnet_fmt_on_save = 1
+"let g:jsonnet_fmt_fail_silently = 0
+
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_fenced_languages = ['go=go', 'viml=vim', 'bash=sh']
@@ -186,7 +199,7 @@ syntax sync minlines=250
 set synmaxcol=4096
 
 set background=dark
-colorscheme ayu
+colorscheme badwolf
 
 filetype plugin on
 filetype indent on
