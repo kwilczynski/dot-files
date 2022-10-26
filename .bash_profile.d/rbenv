@@ -26,5 +26,4 @@ if command -v rbenv >/dev/null; then
 
 fi
 
-export RUBY_CFLAGS='-O3 -D_FORTIFY_SOURCE=2'
-export RUBYOPT='-rrubygems'
+export RUBY_CFLAGS='-O2 -D_FORTIFY_SOURCE=2'

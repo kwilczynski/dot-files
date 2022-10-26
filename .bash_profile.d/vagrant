@@ -1,3 +1,5 @@
+alias v='vagrant'
+
 export VAGRANT_CHECKPOINT_DISABLE=1
 
 # Allow "v" alias to work for Vagrant.

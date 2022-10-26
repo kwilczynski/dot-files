@@ -41,23 +41,3 @@ alias tree='tree -C'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
-alias br='brew'
-
-alias b='bundle'
-alias be='bundle exec'
-
-alias v='vagrant'
-alias k='kubectl'
-
-if command -v vgrep >/dev/null; then
-    alias vg='vgrep'
-fi
-
-if command -v podman >/dev/null; then
-    alias docker='podman'
-fi
-
-if command -v aws-v3.rb >/dev/null; then
-    alias aws.rb='aws-v3.rb'
-fi

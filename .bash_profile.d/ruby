@@ -1,0 +1,4 @@
+alias b='bundle'
+alias be='bundle exec'
+
+export RUBYOPT='-rrubygems'
