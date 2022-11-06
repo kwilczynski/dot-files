@@ -1,1 +1,1 @@
-complete -C "$(which vault)" bit
+complete -C "$(which bit)" bit
