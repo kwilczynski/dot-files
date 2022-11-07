@@ -221,6 +221,7 @@ brew "tokei"
 brew "tor"
 brew "torsocks"
 brew "tree"
+brew "typos-cli"
 # Temporarily disabled.
 # brew "unrar"
 brew "vagrant-completion"
