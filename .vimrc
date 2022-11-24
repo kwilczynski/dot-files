@@ -38,9 +38,10 @@ Plug 'tpope/vim-surround'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
-Plug 'tjdevries/overlength.vim'
-let g:overlength#default_overlength = 120
-let g:overlength#default_to_textwidth = 1
+" Disabled. No longer in use.
+"Plug 'tjdevries/overlength.vim'
+"let g:overlength#default_overlength = 120
+"let g:overlength#default_to_textwidth = 1
 
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_enabled = 1
@@ -116,6 +117,10 @@ let g:ale_rust_cargo_use_clippy = 1
 Plug 'sebdah/vim-delve'
 
 Plug 'vim-ruby/vim-ruby'
+
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
+Plug 'davidhalter/jedi-vim'
 
 Plug 'rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
