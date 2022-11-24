@@ -189,6 +189,8 @@
   followTags = true
 [pull]
   rebase = true
+[tag]
+  forceSignAnnotated = true
 [branch]
   autosetuprebase = always
 [giggle]
