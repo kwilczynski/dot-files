@@ -6,7 +6,9 @@ Plug 'sheerun/vim-polyglot'
 
 " Disabled. No longer maintained?
 "Plug 'ayu-theme/ayu-vim'
-Plug 'Luxed/ayu-vim', { 'commit': '9f266761b1d9b1fb4a75886d5b74574dd604c7bf' }
+" Disabled. Was the theme fixed?
+"Plug 'Luxed/ayu-vim', { 'commit': '9f266761b1d9b1fb4a75886d5b74574dd604c7bf' }
+Plug 'Luxed/ayu-vim'
 let ayucolor = 'mirage'
 
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -67,8 +69,14 @@ let g:strip_whitespace_on_save = 1
 let g:show_spaces_that_precede_tabs = 1
 let g:better_whitespace_skip_empty_lines = 1
 
-Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+" Disabled. No longer in use.
+"Plug 'ctrlpvim/ctrlp.vim'
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'airblade/vim-rooter'
 
 Plug 'fatih/vim-go'
 let g:go_doc_popup_window = 1
@@ -204,7 +212,9 @@ syntax sync minlines=250
 set synmaxcol=4096
 
 set background=dark
-colorscheme badwolf
+" Disabled. Old theme was fixed?
+"colorscheme badwolf
+colorscheme ayu
 
 filetype plugin on
 filetype indent on
@@ -345,10 +355,16 @@ vnoremap r "_dP
 
 nnoremap <silent> <leader>\| :vsplit<CR>
 nnoremap <silent> <leader>- :split<CR>
-nnoremap <silent> <leader><left>  <c-w><c-h>
-nnoremap <silent> <leader><right> <c-w><c-l>
-nnoremap <silent> <leader><up>    <c-w><c-k>
-nnoremap <silent> <leader><down>  <c-w><c-j>
+nnoremap <silent> <leader><left>  <C-w><C-h>
+nnoremap <silent> <leader><right> <C-w><C-l>
+nnoremap <silent> <leader><up>    <C-w><C-k>
+nnoremap <silent> <leader><down>  <C-w><C-j>
+
+nnoremap <silent> <C-b> :Buffers<CR>
+nnoremap <silent> <C-f> :Rg<CR>
+nnoremap <silent> <C-h> :History/<CR>
+nnoremap <silent> <C-o> :Files<CR>
+nnoremap <silent> <C-p> :FZF<CR>
 
 nnoremap <silent> zj o<esc>k
 nnoremap <silent> zk O<esc>j
