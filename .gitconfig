@@ -173,6 +173,7 @@
   pager = delta --true-color='always'
   excludesfile = ~/.gitignore-global
   trustctime = false
+  quotepath = false
 [interactive]
   diffFilter = delta --color-only
 [init]
@@ -193,6 +194,8 @@
   forceSignAnnotated = true
 [branch]
   autosetuprebase = always
+[rebase]
+  autosquash = true
 [giggle]
   main-window-maximized = true
   main-window-view = HistoryView
