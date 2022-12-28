@@ -392,13 +392,16 @@ endfunction
 augroup configgroup
     autocmd!
 
-    autocmd StdinReadPre * let s:std_in=1
+    " Disabled.  Broken?
+    "autocmd StdinReadPre * let s:std_in=1
 
     autocmd VimEnter * highlight clear SignColumn
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    " Disabled.  Broken?
+    "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
     autocmd BufEnter * if &filetype == "" | setlocal filetype=text | endif
-    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | quit | endif
+    " Disabled.  Broken?
+    "autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
     autocmd BufRead,BufNewFile *.txt set filetype=text
     autocmd BufRead,BufNewFile *.sls set filetype=yaml
