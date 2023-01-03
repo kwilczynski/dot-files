@@ -249,6 +249,8 @@ brew "xsv"
 brew "xz"
 brew "yamllint"
 brew "yq"
+# Temporarily disabled.
+# brew "yubikey-personalization"
 
 cask_args appdir: "/Applications"
 
