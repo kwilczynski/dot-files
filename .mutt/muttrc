@@ -6,7 +6,7 @@ set from     = "kw@linux.com"
 set hostname = "rocinante"
 
 alternates \
-  "((kw|krzysztof.wilczynski)@(linux.com|fsck.io))"
+  "((kw|kwilczynski|krzysztof.wilczynski)@(linux.com|kernel.org|fsck.io))"
 
 set quit = ask-yes
 
@@ -45,14 +45,17 @@ set use_ipv6 = no
 unset ssl_starttls
 set ssl_force_tls = yes
 
+set sendmail      = "msmtp"
 set sendmail_wait = 0
 
-set smtp_url            = "smtp://kswilczynski@smtp.gmail.com:587/"
-set smtp_pass           = ""
+# Disabled.  Moved to msmtp.
+# set smtp_url            = "smtp://kswilczynski@smtp.gmail.com:587/"
+# set smtp_pass           = ""
 # Disabled.  Mutt will try all available methods,
 # in order from most-secure to least-secure.
 # set smtp_authenticators = "login"
-set smtp_authenticators = ""
+# Disabled.  Moved to msmtp.
+# set smtp_authenticators = ""
 
 set imap_passive          = no
 set imap_keepalive        = 300
@@ -163,6 +166,9 @@ hdr_order \
   "Date:" \
   "Subject:"
 
+macro compose <esc>1 "<esc>f^UKrzysztof Wilczyński <kw@linux.com><enter>"
+macro compose <esc>2 "<esc>f^UKrzysztof Wilczyński <kwilczynski@kernel.org><enter>"
+
 macro index,pager ! "<save-message>=[Gmail]/Spam<enter><enter>"      "Report as Spam"
 macro index,pager + "<save-message>=[Gmail]/Important<enter><enter>" "Mark as Important"
 macro index,pager e "<save-message>=[Gmail]/All Mail<enter><enter>"  "Archive Message"
@@ -173,5 +179,7 @@ macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>"  "Go to All Mail"
 macro index,pager gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent"
 macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>"    "Go to Drafts"
 macro index,pager gS "<change-folder>=[Gmail]/Starred<enter>"   "Go to Starred"
+
+send2-hook '~e kwilczynski@kernel.org' "set sendmail = 'msmtp -a kernel'"
 
 source ~/.mutt/dracula.muttrc
