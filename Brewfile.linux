@@ -152,6 +152,7 @@ brew "lua"
 # brew "luarocks"
 brew "mkcert"
 brew "modd"
+brew "msmtp"
 # Temporarily disabled.
 # brew "moreutils", link: false
 brew "mtr"

@@ -156,6 +156,7 @@ brew "mas"
 brew "md5sha1sum"
 brew "mkcert"
 brew "modd"
+brew "msmtp"
 # Temporarily disabled.
 # brew "moreutils", link: false
 brew "mtr"
