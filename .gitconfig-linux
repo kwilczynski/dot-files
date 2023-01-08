@@ -2,14 +2,18 @@
   name = Krzysztof Wilczyński
   email = kwilczynski@kernel.org
   signingkey = 3DE334E7
+
 [url "ssh://git@gitolite.kernel.org"]
-  insteadOf = "https://git.kernel.org"
-  insteadOf = "http://git.kernel.org"
-  insteadOf = "git://git.kernel.org"
+  insteadOf = https://git.kernel.org
+  insteadOf = http://git.kernel.org
+  insteadOf = git://git.kernel.org
+
 [commit]
   gpgsign = false
+
 [tag]
   gpgsign = false
+
 [sendemail]
   from = Krzysztof Wilczyński <kwilczynski@kernel.org>
   smtpuser =

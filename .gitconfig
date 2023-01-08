@@ -1,15 +1,21 @@
 [includeIf "gitdir:~/Projects/Personal/"]
   path = ~/.gitconfig-personal
-[includeIf "gitdir:~/Projects/Personal/Linux/"]
-  path = ~/.gitconfig-linux
-[includeIf "gitdir:~/Projects/Work/"]
-  path = ~/.gitconfig-work
+
 [includeIf "gitdir:~/Development/Projects/Personal/"]
   path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/Projects/Personal/Linux/"]
+  path = ~/.gitconfig-linux
+
 [includeIf "gitdir:~/Development/Projects/Personal/Linux/"]
   path = ~/.gitconfig-linux
+
+[includeIf "gitdir:~/Projects/Work/"]
+  path = ~/.gitconfig-work
+
 [includeIf "gitdir:~/Development/Projects/Work/"]
   path = ~/.gitconfig-work
+
 [alias]
   a = add
   c = clone
@@ -29,6 +35,7 @@
   ls = ls-files
   lo = log
   st = status
+  stb = status -sb
   s = status -s
   co = checkout
   cp = cherry-pick
@@ -78,6 +85,7 @@
   sts = stash
   stsp = stash pop
   stsd = stash drop
+  stash-all = stash save --include-untracked
   sms = submodule status
   smi = submodule init
   smu = submodule update
@@ -127,18 +135,22 @@
   wl = worktree list --verbose
   wr = worktree remove
   wp = worktree prune --verbose
+
 [delta]
   tabs = 0
   keep-plus-minus-markers = true
   inspect-raw-lines = false
   features = default
   true-color = always
+
 [delta "default"]
   dark = true
   syntax-theme = ansi
   line-numbers = true
+
 [delta "no-line-numbers"]
   line-numbers = false
+
 [color]
   branch = auto
   diff = auto
@@ -146,15 +158,19 @@
   interactive = auto
   ui = true
   pager = true
+
 [pack]
   threads = 0
+
 [rename]
   limit = 0
+
 [merge]
   log = true
   renamelimit = 2048
   tool = diffmerge
   conflictstyle = diff3
+
 [diff]
   algorithm = histogram
   renames = copies
@@ -165,61 +181,73 @@
   colorMoved = dimmed_zebra
 
 [core]
+  autocrlf = input
   pager = delta --true-color='always'
   excludesfile = ~/.gitignore-global
   trustctime = false
   quotepath = false
+
 [interactive]
   diffFilter = delta --color-only
+
 [init]
   templatedir = ~/.git-templates
   defaultBranch = main
+
 [credential]
   helper = store
+
 [credential "https://github.com"]
   username = kwilczynski
+
 [gpg]
   program = gpg
+
 [push]
   default = current
   followTags = true
+
 [pull]
   rebase = true
-[tag]
-  forceSignAnnotated = true
-[branch]
-  autosetuprebase = always
+
+[fetch]
+  prune = true
+
 [rebase]
   autosquash = true
-[sendemail]
-  from = Krzysztof Wilczyński <kw@linux.com>
-  smtpuser =
-  smtppass =
-  smtpserver = smtp.gmail.com
-  smtpserverport = 587
-  smtpencryption = tls
-  suppresscc = self
-  signedoffbycc = false
-  chainreplyto = false
+
+[tag]
+  forceSignAnnotated = true
+
+[branch]
+  autosetuprebase = always
+
 [url "git@github.com:"]
   insteadOf = gh:
   pushInsteadOf = github:
   pushInsteadOf = git://github.com/
+
 [url "git@github.com:"]
     insteadOf = https://github.com/
+
 [url "git://github.com/"]
   insteadOf = github:
+
 [url "git@gist.github.com:"]
   insteadOf = gst:
   pushInsteadOf = gist:
   pushInsteadOf = git://gist.github.com/
+
 [url "git://gist.github.com/"]
   insteadOf = gist:
+
 [url "git@bitbucket.org:"]
   insteadOf = https://bitbucket.org/
+
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
+
 [filter "lfs"]
   required = true
   clean = git-lfs clean -- %f
