@@ -155,9 +155,6 @@
   renamelimit = 2048
   tool = diffmerge
   conflictstyle = diff3
-[mergetool "diffmerge"]
-  cmd = diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\"
-  trustExitCode = true
 [diff]
   algorithm = histogram
   renames = copies
@@ -166,9 +163,7 @@
   compactionHeuristic = true
   indentHeuristic = true
   colorMoved = dimmed_zebra
-  tool = diffmerge
-[difftool "diffmerge"]
-  cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+
 [core]
   pager = delta --true-color='always'
   excludesfile = ~/.gitignore-global
@@ -196,9 +191,6 @@
   autosetuprebase = always
 [rebase]
   autosquash = true
-[giggle]
-  main-window-maximized = true
-  main-window-view = HistoryView
 [sendemail]
   from = Krzysztof Wilczyński <kw@linux.com>
   smtpuser =
@@ -209,9 +201,6 @@
   suppresscc = self
   signedoffbycc = false
   chainreplyto = false
-[github]
-  user = kwilczynski
-  token = !security find-generic-password -gs \"github API token\" 2>&1 >/dev/null | awk '/password/ { print $2 }' | tr -d \\\"
 [url "git@github.com:"]
   insteadOf = gh:
   pushInsteadOf = github:
