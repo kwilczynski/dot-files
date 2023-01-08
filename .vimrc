@@ -410,6 +410,8 @@ augroup configgroup
     " Disabled.  Breaks editing Git commits.
     "autocmd BufRead,BufNewFile COMMIT_EDITMSG set filetype=gitcommit
 
+    autocmd BufRead,BufNewFile *mutt-* setfiletype mail
+
     autocmd FileType text setlocal formatoptions-=t textwidth=0
     autocmd FileType mail DisableWhitespace
     autocmd FileType mail colorscheme slate
