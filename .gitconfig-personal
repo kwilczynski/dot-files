@@ -2,10 +2,13 @@
   name = Krzysztof Wilczyński
   email = kw@linux.com
   signingkey = 3DE334E7
+
 [commit]
   gpgsign = true
+
 [tag]
   gpgsign = true
+
 [sendemail]
   from = Krzysztof Wilczyński <kw@linux.com>
   smtpuser =
