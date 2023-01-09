@@ -55,7 +55,7 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeIgnore = ['^node_modules$']
 
-Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 
 Plug 'godlygeek/tabular'
 
@@ -75,6 +75,7 @@ let g:better_whitespace_skip_empty_lines = 1
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+let g:fzf_buffers_jump = 1
 
 Plug 'airblade/vim-rooter'
 
@@ -113,7 +114,10 @@ let g:SuperTabContextTextOmniPrecedence = ['&omnifunc','&completefunc']
 
 Plug 'AndrewRadev/linediff.vim'
 
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
+let g:ale_set_balloons = 1
+let g:ale_hover_to_preview = 1
+let g:ale_open_list = 1
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_warning = '⚠'
@@ -364,6 +368,7 @@ nnoremap <silent> <C-b> :Buffers<CR>
 nnoremap <silent> <C-f> :Rg<CR>
 nnoremap <silent> <C-h> :History/<CR>
 nnoremap <silent> <C-o> :Files<CR>
+nnoremap <silent> <C-g> :GFiles<CR>
 nnoremap <silent> <C-p> :FZF<CR>
 
 nnoremap <silent> zj o<esc>k
