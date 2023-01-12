@@ -403,6 +403,8 @@ endfunction
 augroup configgroup
     autocmd!
 
+    autocmd QuitPre * if empty(&buftype) | lclose | endif
+
     " Disabled.  Broken?
     "autocmd StdinReadPre * let s:std_in=1
 
