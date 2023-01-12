@@ -40,6 +40,12 @@ Plug 'tpope/vim-surround'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 
+Plug 'Raimondi/delimitMate'
+
+Plug 'sickill/vim-pasta'
+
+Plug 'ConradIrwin/vim-bracketed-paste'
+
 " Disabled. No longer in use.
 "Plug 'tjdevries/overlength.vim'
 "let g:overlength#default_overlength = 120
