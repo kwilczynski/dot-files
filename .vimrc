@@ -19,6 +19,8 @@ Plug 'kyoz/purify', { 'rtp': 'vim' }
 
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
+Plug 'NLKNguyen/papercolor-theme'
+
 Plug 'kopischke/vim-stay'
 
 Plug 'Yggdroot/indentLine'
@@ -98,8 +100,12 @@ let g:go_addtags_transform = 'snakecase'
 let g:go_list_type = 'quickfix'
 let g:go_list_autoclose = 1
 let g:go_auto_type_info = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
 let g:go_highlight_functions = 1
+let g:go_highlight_generate_tags = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_types = 1
@@ -224,7 +230,8 @@ set synmaxcol=4096
 set background=dark
 " Disabled. Old theme was fixed?
 "colorscheme badwolf
-colorscheme ayu
+"colorscheme ayu
+colorscheme PaperColor
 
 filetype plugin on
 filetype indent on
