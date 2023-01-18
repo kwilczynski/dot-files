@@ -9,13 +9,13 @@
 [tag]
   gpgsign = true
 
-[sendemail]
-  from = Krzysztof Wilczyński <kw@linux.com>
-  smtpuser =
-  smtppass =
-  smtpserver = smtp.gmail.com
-  smtpserverport = 587
-  smtpencryption = tls
-  suppresscc = self
-  signedoffbycc = false
-  chainreplyto = false
+#[sendemail]
+#  from = Krzysztof Wilczyński <kw@linux.com>
+#  smtpuser =
+#  smtppass =
+#  smtpserver = smtp.gmail.com
+#  smtpserverport = 587
+#  smtpencryption = tls
+#  suppresscc = self
+#  signedoffbycc = false
+#  chainreplyto = false

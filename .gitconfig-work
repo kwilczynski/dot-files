@@ -3,8 +3,14 @@
   email =
   signingkey =
 
-[github]
-  user =
+#[github]
+#  user =
+
+[commit]
+  gpgsign = true
+
+[tag]
+  gpgsign = true
 
 #[url "git@work.github.com:work"]
 #  insteadof = "git@github.com:work"
@@ -12,9 +18,3 @@
 #  insteadof = "ssh://git@github.com/work"
 #[url "ssh://git@work.github.com/work"]
 #  insteadof = "https://github.com/work"
-
-[commit]
-  gpgsign = true
-
-[tag]
-  gpgsign = true
