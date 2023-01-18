@@ -229,9 +229,9 @@ set synmaxcol=4096
 
 set background=dark
 " Disabled. Old theme was fixed?
-"colorscheme badwolf
+colorscheme badwolf
 "colorscheme ayu
-colorscheme PaperColor
+"colorscheme PaperColor
 
 filetype plugin on
 filetype indent on
