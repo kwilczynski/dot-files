@@ -3,24 +3,24 @@
   email = kwilczynski@kernel.org
   signingkey = 3DE334E7
 
-[url "ssh://git@gitolite.kernel.org"]
-  insteadOf = https://git.kernel.org
-  insteadOf = http://git.kernel.org
-  insteadOf = git://git.kernel.org
-
 [commit]
   gpgsign = false
 
 [tag]
   gpgsign = false
 
-[sendemail]
-  from = Krzysztof Wilczyński <kwilczynski@kernel.org>
-  smtpuser =
-  smtppass =
-  smtpserver = mail.kernel.org
-  smtpserverport = 465
-  smtpencryption = ssl
-  suppresscc = self
-  signedoffbycc = false
-  chainreplyto = false
+#[url "ssh://git@gitolite.kernel.org"]
+#  insteadOf = "https://git.kernel.org"
+#  insteadOf = "http://git.kernel.org"
+#  insteadOf = "git://git.kernel.org"
+
+#[sendemail]
+#  from = Krzysztof Wilczyński <kwilczynski@kernel.org>
+#  smtpuser =
+#  smtppass =
+#  smtpserver = mail.kernel.org
+#  smtpserverport = 465
+#  smtpencryption = ssl
+#  suppresscc = self
+#  signedoffbycc = false
+#  chainreplyto = false
