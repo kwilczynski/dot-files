@@ -4,10 +4,6 @@ let g:plug_retries = 4
 
 Plug 'sheerun/vim-polyglot'
 
-" Disabled. No longer maintained?
-"Plug 'ayu-theme/ayu-vim'
-" Disabled. Was the theme fixed?
-"Plug 'Luxed/ayu-vim', { 'commit': '9f266761b1d9b1fb4a75886d5b74574dd604c7bf' }
 Plug 'Luxed/ayu-vim'
 let ayucolor = 'mirage'
 
@@ -48,11 +44,6 @@ Plug 'sickill/vim-pasta'
 
 Plug 'ConradIrwin/vim-bracketed-paste'
 
-" Disabled. No longer in use.
-"Plug 'tjdevries/overlength.vim'
-"let g:overlength#default_overlength = 120
-"let g:overlength#default_to_textwidth = 1
-
 Plug 'airblade/vim-gitgutter'
 let g:gitgutter_enabled = 1
 
@@ -77,10 +68,6 @@ let g:strip_whitespace_on_save = 1
 let g:show_spaces_that_precede_tabs = 1
 let g:better_whitespace_skip_empty_lines = 1
 
-" Disabled. No longer in use.
-"Plug 'ctrlpvim/ctrlp.vim'
-"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 let g:fzf_buffers_jump = 1
@@ -90,6 +77,10 @@ Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go'
 let g:go_doc_popup_window = 1
 let g:go_doc_popup_border = ['─', '│', '─', '│', '╭', '╮', '╯', '╰']
+let g:go_diagnostics_enabled = 0
+let g:go_jump_to_error = 0
+let g:go_auto_sameids = 0
+let g:go_auto_type_info = 0
 let g:go_info_mode = 'gopls'
 let g:go_def_mode = 'gopls'
 let g:go_imports_mode = 'gopls'
@@ -99,7 +90,6 @@ let g:go_snippet_engine = 'ultisnips'
 let g:go_addtags_transform = 'snakecase'
 let g:go_list_type = 'quickfix'
 let g:go_list_autoclose = 1
-let g:go_auto_type_info = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
@@ -153,11 +143,6 @@ Plug 'pangloss/vim-javascript'
 
 Plug 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0
-
-" Disabled. No longer in use.
-"Plug 'google/vim-jsonnet'
-"let g:jsonnet_fmt_on_save = 1
-"let g:jsonnet_fmt_fail_silently = 0
 
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
@@ -228,10 +213,7 @@ syntax sync minlines=250
 set synmaxcol=4096
 
 set background=dark
-" Disabled. Old theme was fixed?
 colorscheme badwolf
-"colorscheme ayu
-"colorscheme PaperColor
 
 filetype plugin on
 filetype indent on
@@ -258,6 +240,7 @@ set showbreak=↪\
 set fillchars+=vert:│
 set listchars+=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:❯,precedes:❮
 
+set completeopt+=menuone,noselect,noinsert
 set completeopt-=preview
 
 set clipboard^=unnamed
