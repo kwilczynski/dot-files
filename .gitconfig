@@ -145,7 +145,7 @@
 
 [delta "default"]
   dark = true
-  syntax-theme = ansi
+  syntax-theme = zenburn
   line-numbers = true
 
 [delta "no-line-numbers"]
