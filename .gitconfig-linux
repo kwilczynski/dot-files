@@ -4,10 +4,10 @@
   signingkey = 3DE334E7
 
 [commit]
-  gpgsign = false
+  gpgsign = true
 
 [tag]
-  gpgsign = false
+  gpgsign = true
 
 #[url "ssh://git@gitolite.kernel.org"]
 #  insteadOf = "https://git.kernel.org"
