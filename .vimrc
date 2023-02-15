@@ -17,6 +17,12 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 Plug 'NLKNguyen/papercolor-theme'
 
+Plug 'jacoborus/tender.vim'
+
+Plug 'mhartington/oceanic-next'
+let g:oceanic_next_terminal_italic = 1
+let g:oceanic_next_terminal_bold = 1
+
 Plug 'kopischke/vim-stay'
 
 Plug 'Yggdroot/indentLine'
@@ -29,6 +35,10 @@ let g:indentLine_showFirstIndentLevel = 1
 Plug 'simnalamburt/vim-mundo'
 
 Plug 'jlanzarotta/bufexplorer'
+let g:bufExplorerDefaultHelp = 0
+let g:bufExplorerDetailedHelp = 0
+let g:bufExplorerFindActive = 0
+let g:bufExplorerShowUnlisted = 0
 
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
@@ -77,6 +87,7 @@ Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go'
 let g:go_doc_popup_window = 1
 let g:go_doc_popup_border = ['─', '│', '─', '│', '╭', '╮', '╯', '╰']
+let g:go_gopls_enabled = 0
 let g:go_diagnostics_enabled = 0
 let g:go_jump_to_error = 0
 let g:go_auto_sameids = 0
@@ -228,7 +239,7 @@ syntax sync minlines=250
 set synmaxcol=4096
 
 set background=dark
-colorscheme badwolf
+colorscheme purify
 
 filetype plugin on
 filetype indent on
