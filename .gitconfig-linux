@@ -9,6 +9,9 @@
 [tag]
   gpgsign = true
 
+[push]
+  followTags = false
+
 #[url "ssh://git@gitolite.kernel.org"]
 #  insteadOf = "https://git.kernel.org"
 #  insteadOf = "http://git.kernel.org"
