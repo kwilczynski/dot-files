@@ -87,7 +87,7 @@ Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go'
 let g:go_doc_popup_window = 1
 let g:go_doc_popup_border = ['─', '│', '─', '│', '╭', '╮', '╯', '╰']
-let g:go_gopls_enabled = 0
+let g:go_gopls_enabled = 1
 let g:go_diagnostics_enabled = 0
 let g:go_jump_to_error = 0
 let g:go_auto_sameids = 0
@@ -266,7 +266,7 @@ set showbreak=↪\
 set fillchars+=vert:│
 set listchars+=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:❯,precedes:❮
 
-set completeopt+=menuone,noselect,noinsert
+set completeopt+=menu,menuone,noselect,noinsert
 set completeopt-=preview
 
 set clipboard^=unnamed
@@ -416,6 +416,8 @@ function! s:my_cr_function()
     return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 
+nnoremap <C-LeftMouse> :ALEGoToDefinition<CR>
+
 augroup configgroup
     autocmd!
 
@@ -443,10 +445,10 @@ augroup configgroup
 
     autocmd FileType text setlocal formatoptions-=t textwidth=0
     autocmd FileType mail DisableWhitespace
-    autocmd FileType mail colorscheme slate
+    autocmd FileType mail colorscheme quiet
     autocmd FileType mail setlocal textwidth=75 noautoindent nolist nonumber noexpandtab digraph wrapmargin=0 shiftwidth=8 tabstop=8 softtabstop=8
     autocmd FileType git,gitcommit,gitsendemail DisableWhitespace
-    autocmd FileType git,gitcommit,gitsendemail colorscheme slate
+    autocmd FileType git,gitcommit,gitsendemail colorscheme quiet
     autocmd FileType git,gitcommit,gitsendemail setlocal textwidth=72 foldmethod=syntax foldlevel=1
     autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType sh,bash setlocal formatoptions-=t expandtab shiftwidth=4 tabstop=8 softtabstop=4 commentstring=#\ %s
