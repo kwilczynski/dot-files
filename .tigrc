@@ -1,3 +1,23 @@
+set refresh-mode = auto
+
 set commit-order = default
+
+set vertical-split = no
+
+set diff-highlight = true
+
+set line-graphics = utf-8
+
+set truncation-delimiter = utf-8
+
+set show-changes   = yes
+set show-untracked = yes
+
+set ignore-case = smart-case
+set ignore-space = at-eol
+
+set tab-size = 8
+
+set mouse = true
 
 bind generic r refresh
