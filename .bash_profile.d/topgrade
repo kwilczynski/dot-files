@@ -1,0 +1,1 @@
+export TOPGRADE_NO_SELF_UPGRADE=true
