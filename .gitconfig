@@ -67,6 +67,7 @@
   pur = pull --rebase
   pup = pull --prune
   purp = pull --prune --rebase
+  puo = !sh -c 'git pull upstream $(git origin)'
   pus = !sh -c 'git submodule foreach git pull origin $(git origin)'
   purs = pull --recurse-submodules
   pull-all = pull --recurse-submodules -r
