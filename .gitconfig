@@ -169,6 +169,9 @@
 [rename]
   limit = 0
 
+[checkout]
+  workers = 0
+
 [merge]
   log = true
   renamelimit = 2048
@@ -188,8 +191,11 @@
   autocrlf = input
   pager = delta --true-color='always'
   excludesfile = ~/.gitignore-global
-  trustctime = false
+  trustctime = true
   quotepath = false
+  untrackedCache = true
+  fsync = loose-objec
+  fsyncMethod = batch
 
 [interactive]
   diffFilter = delta --color-only
