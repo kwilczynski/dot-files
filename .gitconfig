@@ -36,6 +36,7 @@
   sb = show-branch
   ls = ls-files
   lo = log
+  lof = log --follow
   st = status
   stb = status -sb
   s = status -s
