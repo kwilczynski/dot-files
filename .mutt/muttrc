@@ -37,8 +37,10 @@ set mime_forward = yes
 
 set attribution = "On %d, %n wrote:"
 
-set mail_check     = 30
-set timeout        = 300
+set message_id_format = "<%Y%02m%02d%02H%02M%02S.G%c%p@%f>"
+
+set mail_check = 30
+set timeout    = 300
 
 set use_ipv6 = no
 
@@ -57,6 +59,7 @@ set sendmail_wait = 0
 # Disabled.  Moved to msmtp.
 # set smtp_authenticators = ""
 
+unset imap_passive
 set imap_passive          = no
 set imap_keepalive        = 300
 set imap_check_subscribed = no
@@ -71,7 +74,7 @@ set folder    = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set mbox      = "+[Gmail]/All Mail"
 unset record
-# Waring!  Causes duplicates in GMail.
+# Disabled. Causes duplicates in GMail.
 set record    = "+[Gmail]/Sent Mail"
 set postponed = "+[Gmail]/Drafts"
 set trash     = "+[Gmail]/Bin"
@@ -133,7 +136,7 @@ set rfc2047_parameters = yes
 
 set charset         = "utf-8"
 set assumed_charset = "utf-8"
-set send_charset    = "utf-8"
+set send_charset    = "us-ascii:utf-8"
 
 set date_format  = "%y-%m-%d %T"
 set index_format = "%2C | %Z [%d] %-30.30F (%-4.4c) %s"
