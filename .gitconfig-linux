@@ -27,3 +27,7 @@
 #  suppresscc = self
 #  signedoffbycc = false
 #  chainreplyto = false
+
+[b4]
+  thanks-am-template = ~/.b4-thanks-am-template
+  thanks-commit-url-mask = https://git.kernel.org/pci/pci/c/%.12s
