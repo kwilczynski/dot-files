@@ -3,7 +3,9 @@ unhook *
 
 set realname = "Krzysztof Wilczyński"
 set from     = "kw@linux.com"
-set hostname = "rocinante"
+
+set hostname    = "rocinante"
+set hidden_host = yes
 
 alternates \
   "((kw|kwilczynski|krzysztof.wilczynski)@(linux.com|kernel.org|fsck.io))"
