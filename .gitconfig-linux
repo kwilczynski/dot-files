@@ -24,7 +24,7 @@
 #  smtpserver = mail.kernel.org
 #  smtpserverport = 465
 #  smtpencryption = ssl
-#  suppresscc = self
+#  suppresscc = all
 #  signedoffbycc = false
 #  chainreplyto = false
 
