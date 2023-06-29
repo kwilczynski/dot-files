@@ -445,10 +445,10 @@ augroup configgroup
 
     autocmd FileType text setlocal formatoptions-=t textwidth=0
     autocmd FileType mail DisableWhitespace
-    autocmd FileType mail colorscheme quiet
+    autocmd FileType mail colorscheme slate
     autocmd FileType mail setlocal textwidth=75 noautoindent nolist nonumber noexpandtab digraph wrapmargin=0 shiftwidth=8 tabstop=8 softtabstop=8
     autocmd FileType git,gitcommit,gitsendemail DisableWhitespace
-    autocmd FileType git,gitcommit,gitsendemail colorscheme quiet
+    autocmd FileType git,gitcommit,gitsendemail colorscheme slate
     autocmd FileType git,gitcommit,gitsendemail setlocal textwidth=72 foldmethod=syntax foldlevel=1
     autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType sh,bash setlocal formatoptions-=t expandtab shiftwidth=4 tabstop=8 softtabstop=4 commentstring=#\ %s
