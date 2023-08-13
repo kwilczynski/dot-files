@@ -240,6 +240,7 @@ brew "tree"
 brew "typos-cli"
 # Temporarily disabled.
 # brew "unrar"
+brew "vagrant"
 brew "vagrant-completion"
 brew "valgrind"
 brew "vault"
