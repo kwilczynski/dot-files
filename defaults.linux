@@ -19,6 +19,11 @@ dpkg-divert --local --add --rename --divert \
     /etc/xdg/autostart/touchegg.desktop.disabled \
     /etc/xdg/autostart/touchegg.desktop
 
+
+dpkg-divert --local --add --rename --divert \
+    /usr/share/applications/amdgpu_top.desktop.disabled
+    /usr/share/applications/amdgpu_top.desktop
+
 systemctl stop touchegg.service
 
 systemctl disable touchegg.service
