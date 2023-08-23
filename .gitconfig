@@ -166,6 +166,7 @@
 
 [pack]
   threads = 0
+  useBitmapBoundaryTraversal = true
 
 [rename]
   limit = 0
