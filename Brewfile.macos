@@ -197,6 +197,7 @@ brew "pth"
 brew "pv"
 brew "qpdf"
 brew "rbenv"
+brew "rbenv-bundler"
 brew "rbenv-default-gems"
 brew "rbenv-gemset"
 # Temporarily disabled.
