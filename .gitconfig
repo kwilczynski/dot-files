@@ -26,9 +26,11 @@
   ap = add -p
   bl = blame
   br = branch -v
+  bra = branch -a
   brd = branch-date
   brc = branch --contains
-  branches = branch -a
+  brm = branch --merged
+  brnm = branch --no-merged
   cl = clean
   clf = clean --force
   sh = show
