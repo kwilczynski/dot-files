@@ -9,6 +9,9 @@
 [tag]
   gpgsign = true
 
+#[push]
+#  gpgsign = true
+
 #[sendemail]
 #  from = Krzysztof Wilczyński <kw@linux.com>
 #  smtpuser =
