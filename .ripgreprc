@@ -1,5 +1,11 @@
+--pretty
 --hidden
---no-ignore
 --context=2
+# Temporarily disabled.
+#--no-ignore
 --smart-case
+--block-buffered
+--no-sort-files
+--no-unicode
 --glob=!.git/*
+--glob=!vednor/*
