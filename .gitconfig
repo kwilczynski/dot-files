@@ -43,8 +43,8 @@
   stb = status -sb
   s = status -s
   co = checkout
-  cp = cherry-pick
   ci = commit
+  cep = cherry-pick
   df = diff
   ds = diff --stat
   dfs = diff --staged
