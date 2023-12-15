@@ -53,7 +53,7 @@ set sendmail      = "msmtp"
 set sendmail_wait = 0
 
 # Disabled.  Moved to msmtp.
-# set smtp_url            = "smtp://kswilczynski@smtp.gmail.com:587/"
+# set smtp_url            = ""
 # set smtp_pass           = ""
 # Disabled.  Mutt will try all available methods,
 # in order from most-secure to least-secure.
@@ -65,7 +65,7 @@ unset imap_passive
 set imap_passive          = no
 set imap_keepalive        = 300
 set imap_check_subscribed = no
-set imap_user             = "kswilczynski@gmail.com"
+set imap_user             = ""
 set imap_pass             = ""
 # Disabled.  Mutt will try all available methods,
 # in order from most-secure to least-secure.
@@ -85,7 +85,7 @@ set move = no
 set copy = yes
 
 set mark_old        = no
-set collapse_unread = no
+set collapse_unread = yes
 
 set header_cache     = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/bodies"
@@ -96,10 +96,11 @@ set sleep_time = 0
 set auto_tag = yes
 
 set sort               = "threads"
-set sort_thread_groups = "last-date-received"
-set sort_aux           = "reverse-last-date-received"
+set sort_aux           = "last-date-received"
+set sort_browser       = "reverse-date"
+set sort_thread_groups = "aux"
 
-set strict_threads    = no
+set strict_threads    = yes
 set duplicate_threads = yes
 
 set uncollapse_jump = yes
@@ -119,6 +120,7 @@ bind index <space> collapse-thread
 bind index "^" imap-fetch-mail
 
 unset markers
+
 set smart_wrap        = yes
 set pager_stop        = yes
 set pager_index_lines = 10
