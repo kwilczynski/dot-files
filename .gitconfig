@@ -31,6 +31,7 @@
   brc = branch --contains
   brm = branch --merged
   brnm = branch --no-merged
+  b4 = !sh -c 'b4 "$@"' -
   cl = clean
   clf = clean --force
   sh = show
@@ -61,12 +62,15 @@
   rba = rebase --abort
   rbc = rebase --continue
   rbi = rebase --interactive
+  rbik = rebase --interactive --keep-base
   rbm = !sh -c 'git rebase --interactive $(git origin) "$@"' -
   rbr = rebase --root
   rbs = rebase --skip
   me = merge
   rs = remote show
   remotes = remote -v
+  f = fetch
+  fa = fetch --all
   pu = pull
   pur = pull --rebase
   pup = pull --prune
@@ -84,7 +88,8 @@
   sts = status -s
   rl = reflog
   ref = reflog
-  rst = reset
+  r = reset
+  rh = reset --hard
   rr = restore
   rt = remote
   se = send-email
@@ -138,6 +143,7 @@
   origin = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
   branch-date = !git for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:iso8601)|%(committerdate:relative)|%(committername)|%(refname:short)' refs/heads/ | column -s '|' -t
   tag-date = !git for-each-ref --sort='-taggerdate' --format='%(taggerdate:iso8601)|%(taggerdate:relative)|%(taggername)|%(tag)|%(subject)' refs/tags/ | column -s '|' -t
+  shazam = !sh -c 'b4 shazam "$@"' -
   wa = worktree add
   wl = worktree list --verbose
   wr = worktree remove
@@ -169,12 +175,16 @@
 [pack]
   threads = 0
   useBitmapBoundaryTraversal = true
+  allowPackReuse = multi
 
 [rename]
   limit = 0
 
 [checkout]
   workers = 0
+
+[commit]
+  verbose = true
 
 [merge]
   log = true
@@ -191,6 +201,9 @@
   indentHeuristic = true
   colorMoved = dimmed_zebra
 
+[log]
+  date = local
+
 [core]
   autocrlf = input
   pager = delta --true-color='always'
@@ -203,6 +216,9 @@
 
 [interactive]
   diffFilter = delta --color-only
+
+[rerere]
+  enabled = true
 
 [init]
   templatedir = ~/.git-templates
@@ -231,6 +247,7 @@
   autosquash = true
 
 [tag]
+  sort = version:refname
   forceSignAnnotated = true
 
 [branch]
