@@ -2,5 +2,5 @@ reconnect_delay = 5
 connection_timeout = 60
 num_connections = 4
 save_state_interval = 5
-alternate_output = 1
+progress_style = alternative
 buffer_size = 204800
