@@ -8,4 +8,4 @@
 --no-sort-files
 --no-unicode
 --glob=!.git/*
---glob=!vednor/*
+--glob=!vendor/*
