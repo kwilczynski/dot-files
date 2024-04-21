@@ -11,5 +11,4 @@ fpath=(
 
 plugins=()
 
-
 source "${ZSH}/oh-my-zsh.sh"
