@@ -1,0 +1,6 @@
+export RESTIC_COMPRESSION="max"
+export RESTIC_READ_CONCURRENCY="8"
+export RESTIC_EXCLUDE_FILE="${HOME}/.restic-exclude"
+export RESTIC_REPOSITORY="."
+
+alias restic-backup="restic backup --verbose --exclude-caches --exclude-file $RESTIC_EXCLUDE_FILE"
