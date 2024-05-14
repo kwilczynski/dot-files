@@ -19,11 +19,10 @@
 [alias]
   a = add
   ame = amend
-  c = clone
-  cr = clone --recursive
   t = tag
   au = add -u .
   ap = add -p
+  b = branch
   bl = blame
   br = branch -v
   bra = branch -a
@@ -32,21 +31,27 @@
   brm = branch --merged
   brnm = branch --no-merged
   b4 = !sh -c 'b4 "$@"' -
+  c = clone
+  cr = clone --recursive
   cl = clean
+  co = checkout
   clf = clean --force
+  conflicts = diff --name-only --diff-filter=U
   sh = show
   shm = !sh -c 'git show $(git origin)..HEAD'
   sb = show-branch
   ls = ls-files
-  lo = log
-  lof = log --follow
+  l = log
+  lf = log --follow
   st = status
   stb = status -sb
   s = status -s
+  sn = status -s -b --untracked=no
   co = checkout
   ci = commit
   cep = cherry-pick
-  df = diff
+  d = diff
+  dc = diff --cached
   ds = diff --stat
   dfs = diff --staged
   dfn = diff --name-only
@@ -56,7 +61,6 @@
   df3 = diff HEAD~~~
   df4 = diff HEAD~~~~
   df5 = diff HEAD~~~~~
-  ddc = diff --cached
   wdc = diff --color-words --cache
   rb = rebase
   rba = rebase --abort
@@ -116,6 +120,7 @@
   rank = shortlog -sn --no-merges
   tree = log --graph --oneline --decorate
   ll = log --graph --pretty='format:%h | %an | %s'
+  ls = ls-files
   los = log --graph --oneline --abbrev-commit
   lok = log --oneline --abbrev-commit --pretty='%h (\"%s\")'
   lom = !sh -c 'git log $(git origin)..HEAD "$@"' -
@@ -124,6 +129,8 @@
   fp = format-patch
   fpm = !sh -c 'git format-patch $(git origin)..HEAD "$@"' -
   po = push origin
+  pu = push -u origin HEAD
+  pf = push --force-with-lease
   pom = !sh -c 'git push origin $(git origin) "$@"' -
   changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
   pob = !sh -c 'git push origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") "$@"' -
