@@ -262,7 +262,8 @@ brew "typos-cli"
 # Temporarily disabled.
 # brew "unrar"
 brew "unzip"
-brew "vagrant"
+# Temporarily disabled.
+# brew "vagrant"
 brew "vagrant-completion"
 brew "valgrind"
 brew "vault"
