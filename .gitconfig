@@ -41,7 +41,7 @@
   shm = !sh -c 'git show $(git origin)..HEAD'
   sb = show-branch
   ls = ls-files
-  l = log
+  lo = log
   lf = log --follow
   st = status
   stb = status -sb
@@ -50,7 +50,7 @@
   co = checkout
   ci = commit
   cep = cherry-pick
-  d = diff
+  df = diff
   dc = diff --cached
   ds = diff --stat
   dfs = diff --staged
@@ -73,8 +73,8 @@
   me = merge
   rs = remote show
   remotes = remote -v
-  f = fetch
-  fa = fetch --all
+  fe = fetch
+  fea = fetch --all
   pu = pull
   pur = pull --rebase
   pup = pull --prune
