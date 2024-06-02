@@ -151,6 +151,10 @@
   branch-date = !git for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:iso8601)|%(committerdate:relative)|%(committername)|%(refname:short)' refs/heads/ | column -s '|' -t
   tag-date = !git for-each-ref --sort='-taggerdate' --format='%(taggerdate:iso8601)|%(taggerdate:relative)|%(taggername)|%(tag)|%(subject)' refs/tags/ | column -s '|' -t
   shazam = !sh -c 'b4 shazam "$@"' -
+  root = !git rev-parse --show-toplevel
+  reref = rerere forget
+  rerefc = !sh -c 'rm -Rf "$(git root)/.git/rr-cache"'
+  mt = mergetool
   wa = worktree add
   wl = worktree list --verbose
   wr = worktree remove
@@ -196,8 +200,14 @@
 [merge]
   log = true
   renamelimit = 2048
-  tool = diffmerge
+  tool = meld
   conflictstyle = diff3
+
+[mergetool]
+  prompt = false
+
+[mergetool "meld"]
+  path = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 
 [diff]
   algorithm = histogram
@@ -217,6 +227,7 @@
   excludesfile = ~/.gitignore-global
   trustctime = true
   quotepath = false
+  longpaths = true
   untrackedCache = true
   fsync = loose-objec
   fsyncMethod = batch
