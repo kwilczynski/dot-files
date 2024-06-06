@@ -13,6 +13,9 @@
   followTags = false
   gpgsign = true
 
+[includeIf "hasconfig:remote.*.url:git@github.com*/**"]
+    path = ~/.gitconfig-push
+
 #[url "ssh://git@gitolite.kernel.org"]
 #  insteadOf = "https://git.kernel.org"
 #  insteadOf = "http://git.kernel.org"
