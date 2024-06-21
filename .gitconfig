@@ -18,10 +18,10 @@
 
 [alias]
   a = add
-  ame = amend
-  t = tag
   au = add -u .
   ap = add -p
+  ame = amend
+  ami = am -i
   b = branch
   bl = blame
   br = branch -v
@@ -84,6 +84,7 @@
   purs = pull --recurse-submodules
   pull-all = pull --recurse-submodules -r
   pt = push --tags
+  t = tag
   tags = tag -l
   w = whatchanged
   wo = whatchanged --oneline
