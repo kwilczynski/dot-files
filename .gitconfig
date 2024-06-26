@@ -31,8 +31,8 @@
   brm = branch --merged
   brnm = branch --no-merged
   b4 = !sh -c 'b4 "$@"' -
-  c = clone
-  cr = clone --recursive
+  clo = clone
+  clor = clone --recursive
   cl = clean
   co = checkout
   clf = clean --force
