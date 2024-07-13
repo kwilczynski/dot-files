@@ -2,6 +2,9 @@ gsettings reset org.gnome.shell app-picker-layout
 
 gsettings set org.gnome.desktop.privacy remember-app-usage false
 
+gsettings set org.gnome.desktop.default-applications.terminal exec "/usr/bin/tilix.wrapper"
+gsettings set org.gnome.desktop.default-applications.terminal exec-arg "--focus-window"
+
 dconf reset -f /com/gexperts/Tilix/
 dconf load /com/gexperts/Tilix/ < tilix.dconf
 
@@ -11,6 +14,10 @@ c_rehash -v
 
 update-ca-certificates --verbose
 
+update-alternatives --install \
+    /usr/bin/x-terminal-emulator x-terminal-emulator \
+    /usr/bin/tilix.wrapper 30
+
 dpkg-divert --local --add --rename --divert \
     /etc/xdg/autostart/io.elementary.appcenter-daemon.desktop.disabled \
     /etc/xdg/autostart/io.elementary.appcenter-daemon.desktop
@@ -18,7 +25,6 @@ dpkg-divert --local --add --rename --divert \
 dpkg-divert --local --add --rename --divert \
     /etc/xdg/autostart/touchegg.desktop.disabled \
     /etc/xdg/autostart/touchegg.desktop
-
 
 dpkg-divert --local --add --rename --divert \
     /usr/share/applications/amdgpu_top.desktop.disabled
