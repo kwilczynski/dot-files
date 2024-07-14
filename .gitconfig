@@ -233,6 +233,12 @@
   fsync = loose-objec
   fsyncMethod = batch
 
+[gc]
+  auto = 0
+  autoDetach = false
+  refLogExpire = never
+  refLogExpireUnreachable = never
+
 [interactive]
   diffFilter = delta --color-only
 
