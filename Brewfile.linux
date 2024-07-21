@@ -271,6 +271,7 @@ brew "vgrep", args: ["build-from-source"]
 brew "vim"
 brew "watch"
 brew "watchman"
+brew "wcurl"
 # Temporarily disabled.
 # brew "wavemon"
 brew "wget"
