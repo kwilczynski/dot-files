@@ -202,7 +202,7 @@
   log = true
   renamelimit = 2048
   tool = meld
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 
 [mergetool]
   prompt = false
