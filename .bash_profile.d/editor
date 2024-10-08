@@ -1,4 +1,6 @@
-export EDITOR='vim'
+export EDITOR='nvim'
+
+alias vim='nvim'
 
 if [[ -x /usr/bin/lesspipe ]]; then
     eval "$(SHELL=/bin/bash lesspipe)"
