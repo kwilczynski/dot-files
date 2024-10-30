@@ -161,6 +161,10 @@
   wr = worktree remove
   wp = worktree prune --verbose
 
+[advice]
+  mergeConflict = false
+  skippedCherryPicks = false
+
 [delta]
   tabs = 0
   keep-plus-minus-markers = true
