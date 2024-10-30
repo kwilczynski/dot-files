@@ -4,4 +4,3 @@ export HISTFILESIZE=
 export HISTFILE="${HOME}/.bash_eternal_history"
 export HISTCONTROL='ignoredups:ignorespace:erasedups'
 export HISTIGNORE='&:[ ]*:exit:[bf]g:history:clear:pwd'
-
