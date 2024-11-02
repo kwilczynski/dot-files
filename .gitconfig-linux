@@ -35,3 +35,4 @@
 [b4]
   thanks-am-template = ~/.b4-thanks-am-template
   thanks-commit-url-mask = https://git.kernel.org/pci/pci/c/%.12s
+  trailer-order = fixes*,reported*,closes*,originally*,suggested*,co-developed*,signed*,tested*,reviewed*,acked*,cc*,link*,*
