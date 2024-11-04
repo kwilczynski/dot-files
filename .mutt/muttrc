@@ -96,7 +96,7 @@ set sleep_time = 0
 set auto_tag = yes
 
 set sort               = "threads"
-set sort_aux           = "last-date-received"
+set sort_aux           = "reverse-last-date-received"
 set sort_browser       = "reverse-date"
 set sort_thread_groups = "aux"
 
