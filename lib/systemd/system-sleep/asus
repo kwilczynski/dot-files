@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ASUS_AUDIO_USB_ID="0b05:1a5c"
+
+case $1 in
+  post)
+    /usr/bin/usbreset $ASUS_AUDIO_USB_ID | /usr/bin/logger -t usbreset
+    ;;
+esac
