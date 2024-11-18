@@ -27,6 +27,7 @@ tap "lucagrulla/tap"
 tap "martido/graph"
 tap "miserlou/loop", "https://github.com/Miserlou/Loop.git"
 tap "moncho/dry"
+tap "nao1215/tap"
 tap "nickolasburr/pfa"
 # Temporarily disabled.
 # tap "olafurpg/scalafmt"
@@ -36,6 +37,7 @@ tap "zloesabo/nettools"
 
 # Disabled in favour of ripgrep.
 # brew "ack"
+brew "aerc"
 brew "angle-grinder"
 brew "aria2"
 brew "asciinema"
@@ -114,11 +116,14 @@ brew "glow"
 # brew "gitleaks"
 brew "gnu-sed"
 brew "gnupg"
+brew "gup"
 brew "go", args: ["build-from-source"]
-brew "go@1.18, args: ["build-from-source"]
-brew "go@1.19, args: ["build-from-source"]
+# Disabled.  Deprecated.
+# brew "go@1.18, args: ["build-from-source"]
+# brew "go@1.19, args: ["build-from-source"]
 brew "go@1.20, args: ["build-from-source"]
 brew "go@1.21, args: ["build-from-source"]
+brew "go@1.22, args: ["build-from-source"]
 brew "gpatch"
 brew "gping"
 brew "graphviz"
@@ -172,6 +177,7 @@ brew "lua@5.3"
 # brew "luarocks"
 brew "markdownlint-cli2"
 brew "minikube"
+brew "minisign"
 brew "mkcert"
 brew "modd"
 brew "msmtp"
@@ -181,6 +187,7 @@ brew "mtr"
 brew "mutt"
 brew "ncdu"
 brew "neofetch"
+brew "neovim"
 brew "ngrep"
 brew "nmap"
 # Temporarily disabled.
@@ -269,6 +276,7 @@ brew "valgrind"
 brew "vault"
 brew "vgrep", args: ["build-from-source"]
 brew "vim"
+brew "w3m"
 brew "watch"
 brew "watchman"
 brew "wcurl"
