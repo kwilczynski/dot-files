@@ -252,6 +252,7 @@
 
 [rerere]
   enabled = true
+  autoupdate = true
 
 [init]
   templatedir = ~/.git-templates
