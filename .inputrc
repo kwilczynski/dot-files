@@ -16,6 +16,8 @@ set expand-tilde on
 set visible-stats on
 set colored-stats on
 
+set bind-tty-special-chars off
+
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
 
@@ -24,17 +26,24 @@ set skip-completed-text on
 set completion-map-case on
 set completion-ignore-case on
 set completion-query-items 1000
-
 set page-completions off
+
 set print-completions-horizontally on
 set mark-symlinked-directories on
+set menu-complete-display-prefix on
 
 set enable-bracketed-paste on
+
+set colored-completion-prefix on
+set colored-stats on
 
 $if Bash
   "\C-r": "\C-a hstr -- \C-j"
   "\C-xk": "\C-a hstr -k \C-j"
   Space: magic-space
+$endif
+
+$if Python
 $endif
 
 "\e0d": backward-word
