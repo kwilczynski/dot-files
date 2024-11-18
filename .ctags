@@ -1,6 +1,10 @@
---exclude=*.js
---exclude=*.coffee
---exclude=*.git*
---exclude=vendor/*
 --recurse=yes
 --links=no
+--tag-relative=yes
+
+--exclude=.git
+--exclude=.ccls-cache
+--exclude=.clangd
+--exclude=\*.o
+--exclude=\*.so
+--exclude=vendor/\*
