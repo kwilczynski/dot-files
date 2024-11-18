@@ -141,6 +141,7 @@
   last = log --oneline -10
   review = log --stat=160,180 -p -w --patience --reverse -M -C -C -c
   undo = reset --soft HEAD^
+  nuke = !sh -c 'git reset --hard HEAD && git clean -fd'
   serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
   hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
   this = !git init && git add . && git commit -m \"Initial commit.\"
@@ -242,6 +243,9 @@
   autoDetach = false
   refLogExpire = never
   refLogExpireUnreachable = never
+
+[trailer]
+  ifexists = addIfDifferent
 
 [interactive]
   diffFilter = delta --color-only
