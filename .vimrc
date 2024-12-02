@@ -4,24 +4,7 @@ let g:plug_retries = 4
 
 Plug 'sheerun/vim-polyglot'
 
-Plug 'Luxed/ayu-vim'
-let ayucolor = 'mirage'
-
-Plug 'dracula/vim', { 'as': 'dracula' }
-
-Plug 'sjl/badwolf'
-
 Plug 'kyoz/purify', { 'rtp': 'vim' }
-
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
-
-Plug 'NLKNguyen/papercolor-theme'
-
-Plug 'jacoborus/tender.vim'
-
-Plug 'mhartington/oceanic-next'
-let g:oceanic_next_terminal_italic = 1
-let g:oceanic_next_terminal_bold = 1
 
 Plug 'kopischke/vim-stay'
 
@@ -248,7 +231,7 @@ syntax sync minlines=250
 set synmaxcol=4096
 
 set background=dark
-colorscheme purify
+colorscheme sorbet
 
 filetype plugin on
 filetype indent on
