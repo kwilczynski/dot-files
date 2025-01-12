@@ -287,6 +287,9 @@
 [branch]
   autosetuprebase = always
 
+[remote "origin"]
+  followRemoteHead = always
+
 [url "git@github.com:"]
   insteadOf = gh:
   pushInsteadOf = github:
