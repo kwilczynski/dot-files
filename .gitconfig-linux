@@ -33,6 +33,5 @@
 #  chainreplyto = false
 
 [b4]
-  trailer-order = fixes*,reported-by*,closes*,originally-by*,suggested-by*,co-developed-by*,signed-off-by*,tested-by*,reviewed-by*,acked-by*,cc*,link*,*
   thanks-am-template = ~/.b4-thanks-am-template
   thanks-commit-url-mask = https://git.kernel.org/pci/pci/c/%.12s
