@@ -312,13 +312,3 @@
 
 [url "git@bitbucket.org:"]
   insteadOf = https://bitbucket.org/
-
-[filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
-
-[filter "lfs"]
-  required = true
-  clean = git-lfs clean -- %f
-  process = git-lfs filter-process
-  smudge = git-lfs smudge -- %f
