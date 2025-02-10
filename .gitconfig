@@ -309,6 +309,3 @@
 
 [url "git://gist.github.com/"]
   insteadOf = gist:
-
-[url "git@bitbucket.org:"]
-  insteadOf = https://bitbucket.org/
