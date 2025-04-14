@@ -1,3 +1,1 @@
-[global]
-  skip_dotenv = true
-  warn_timeout = 0
+.config/direnv/direnv.toml

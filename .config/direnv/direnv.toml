@@ -1,0 +1,5 @@
+[global]
+  disable_stdin = true
+  load_dotenv = false
+  hide_env_diff = true
+  warn_timeout = 0
