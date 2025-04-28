@@ -6,6 +6,7 @@ r = "run"
 
 [build]
 pipelining = true
+rustflags = ["-C", "target-cpu=native"]
 
 [cargo-new]
 name = "Krzysztof Wilczyński"
@@ -13,8 +14,8 @@ email = "kw@linux.com"
 vcs = "git"
 
 [term]
-color = 'auto'
-progress.when = 'auto'
+color = "auto"
+progress.when = "auto"
 
 [net]
 retry = 4
