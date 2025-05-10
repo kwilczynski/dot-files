@@ -1,20 +1,20 @@
 [user]
   name = Krzysztof Wilczyński
   email = kwilczynski@kernel.org
-  signingkey = 3DE334E7
+  signingKey = 3DE334E7
+
+#[core]
+#  sshCommand = ssh -i ~/.ssh/
 
 [commit]
-  gpgsign = true
+  gpgSign = true
 
 [tag]
-  gpgsign = true
+  gpgSign = true
 
 [push]
   followTags = false
-  gpgsign = true
-
-[includeIf "hasconfig:remote.*.url:git@github.com*/**"]
-    path = ~/.gitconfig-push
+  gpgSign = true
 
 #[url "ssh://git@gitolite.kernel.org"]
 #  insteadOf = "https://git.kernel.org"

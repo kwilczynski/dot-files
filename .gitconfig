@@ -16,6 +16,9 @@
 [includeIf "gitdir:~/Development/Projects/Work/"]
   path = ~/.gitconfig-work
 
+[includeIf "hasconfig:remote.*.url:git@github.com*/**"]
+  path = ~/.gitconfig-push
+
 [alias]
   a = add
   au = add -u .
@@ -153,7 +156,7 @@
   branch-date = !git for-each-ref --sort='-committerdate:iso8601' --format='%(committerdate:iso8601)|%(committerdate:relative)|%(committername)|%(refname:short)' refs/heads/ | column -s '|' -t
   tag-date = !git for-each-ref --sort='-taggerdate' --format='%(taggerdate:iso8601)|%(taggerdate:relative)|%(taggername)|%(tag)|%(subject)' refs/tags/ | column -s '|' -t
   shz = !sh -c 'b4 shazam "$@"' -
-  shzsl = !sh -c 'b4 shazam -s -l "$@"' -
+  shzl = !sh -c 'b4 shazam -s -l "$@"' -
   root = !git rev-parse --show-toplevel
   reref = rerere forget
   rerefc = !sh -c 'rm -Rf "$(git root)/.git/rr-cache"'

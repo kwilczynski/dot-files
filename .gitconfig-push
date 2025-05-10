@@ -1,2 +1,2 @@
 [push]
-  gpgsign = false
+  gpgSign = false

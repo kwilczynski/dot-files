@@ -1,19 +1,23 @@
 [user]
   name = Krzysztof Wilczyński
   email =
-  signingkey =
+  signingKey =
 
 #[github]
 #  user =
 
+#[core]
+#  sshCommand = ssh -i ~/.ssh/
+
 [commit]
-  gpgsign = true
+  gpgSign = true
 
 [tag]
-  gpgsign = true
+  gpgSign = true
 
-#[push]
-#  gpgsign = true
+[push]
+  followTags = false
+  gpgSign = true
 
 #[url "git@work.github.com:work"]
 #  insteadof = "git@github.com:work"
