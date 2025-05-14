@@ -32,6 +32,13 @@
 #  signedoffbycc = false
 #  chainreplyto = false
 
+[alias]
+  b4 = !sh -c 'b4 "$@"' -
+  b4am = !sh -c 'b4 am -tlsS -o - "$@" | git am' -
+  b4s = !sh -c 'b4 shazam -tlsS "$@"' -
+  lok = log --oneline --abbrev-commit --pretty='%h (\"%s\")'
+  lokm = !sh -c 'git log --oneline --abbrev-commit --pretty=\"%h (\\\"%s\\\")\" $(git origin)..HEAD "$@"' -
+
 [b4]
   thanks-am-template = ~/.b4-thanks-am-template
   thanks-commit-url-mask = https://git.kernel.org/pci/pci/c/%.12s
