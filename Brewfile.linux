@@ -102,6 +102,7 @@ brew "lnav"
 brew "loc"
 brew "loop", args: ["HEAD"]
 brew "lua"
+brew "midnight-commander"
 brew "minisign"
 brew "mkcert"
 brew "modd"
