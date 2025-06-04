@@ -1,4 +1,7 @@
-[[ $- != *i* ]] && return
+case $- in
+    *i*) ;;
+    *) return ;;
+esac
 
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
