@@ -55,6 +55,7 @@
   df = diff
   dc = diff --cached
   ds = diff --stat
+  dfr = diff --relative
   dfs = diff --staged
   dfn = diff --name-only
   dfm = !sh -c 'git diff $(git name-rev --name-only $(git origin))'
