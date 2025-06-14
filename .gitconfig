@@ -244,6 +244,10 @@
   refLogExpire = never
   refLogExpireUnreachable = never
 
+[maintenance]
+  auto = false
+  strategy = none
+
 [trailer]
   ifexists = addIfDifferent
 
