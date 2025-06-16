@@ -165,6 +165,7 @@
 [advice]
   mergeConflict = false
   skippedCherryPicks = false
+  addEmptyPathspec = false
 
 [delta]
   tabs = 0
@@ -204,10 +205,10 @@
   verbose = true
 
 [merge]
-  log = true
-  renamelimit = 2048
   tool = meld
+  renameLimit = 0
   conflictstyle = zdiff3
+  log = true
 
 [mergetool]
   prompt = false
@@ -228,15 +229,14 @@
   date = local
 
 [core]
-  autocrlf = input
-  pager = delta --true-color='always'
   excludesfile = ~/.gitignore-global
-  trustctime = true
-  quotepath = false
-  longpaths = true
+  pager = delta --true-color='always'
+  autocrlf = input
+  quotePath = false
+  longPaths = true
+  commitGraph = true
   untrackedCache = true
-  fsync = loose-objec
-  fsyncMethod = batch
+  preloadIndex = true
 
 [gc]
   auto = 0
@@ -280,6 +280,7 @@
 
 [fetch]
   prune = true
+  writeCommitGraph = true
 
 [rebase]
   autosquash = true
