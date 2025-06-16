@@ -162,6 +162,9 @@
   wr = worktree remove
   wp = worktree prune --verbose
 
+[feature]
+  manyFiles = true
+
 [advice]
   mergeConflict = false
   skippedCherryPicks = false
@@ -188,6 +191,9 @@
   interactive = auto
   ui = true
   pager = true
+
+[status]
+  aheadBehind = false
 
 [pack]
   threads = 0
@@ -228,13 +234,16 @@
   date = local
 
 [core]
-  autocrlf = input
-  pager = delta --true-color='always'
   excludesfile = ~/.gitignore-global
+  pager = delta --true-color='always'
+  autocrlf = input
   trustctime = true
-  quotepath = false
-  longpaths = true
+  quotePath = false
+  longPaths = true
+  commitGraph = true
   untrackedCache = true
+  preloadIndex = true
+  fscache = true
   fsync = loose-objec
   fsyncMethod = batch
 
@@ -280,6 +289,7 @@
 
 [fetch]
   prune = true
+  writeCommitGraph = true
 
 [rebase]
   autosquash = true
