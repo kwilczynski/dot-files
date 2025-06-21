@@ -1,0 +1,37 @@
+{
+  "data-root": "/var/lib/docker",
+  "storage-driver": "overlay2",
+  "insecure-registries": [
+    "127.0.0.0/8"
+  ],
+  "ipv6": false,
+  "dns": [
+    "1.1.1.1",
+    "1.0.0.1"
+  ],
+  "icc": false,
+  "live-restore": true,
+  "userland-proxy": false,
+  "experimental": true,
+  "features": {
+    "cdi": false
+  },
+  "default-ulimits": {
+    "nofile": {
+      "Name": "nofile",
+      "Hard": 1048576,
+      "Soft": 1048576
+    }
+  },
+  "default-runtime": "crun",
+  "runtimes": {
+    "crun": {
+      "path": "/usr/bin/crun"
+    }
+  },
+  "log-driver": "local",
+  "log-opts": {
+    "max-size": "10m",
+    "max-file": "7"
+  }
+}
