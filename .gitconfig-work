@@ -25,3 +25,8 @@
 #  insteadof = "ssh://git@github.com/work"
 #[url "ssh://git@work.github.com/work"]
 #  insteadof = "https://github.com/work"
+
+#[alias]
+#  lok = log --oneline --abbrev-commit --pretty='%h (\"%s\")'
+#  lokm = !sh -c 'git log --oneline --abbrev-commit --pretty=\"%h (\\\"%s\\\")\" $(git origin)..HEAD "$@"' -
+
