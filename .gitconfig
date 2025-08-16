@@ -142,6 +142,7 @@
   last = log --oneline -10
   review = log --stat=160,180 -p -w --patience --reverse -M -C -C -c
   undo = reset --soft HEAD^
+  unstage = reset HEAD --
   nuke = !sh -c 'git reset --hard HEAD && git clean -fd'
   serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
   hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
