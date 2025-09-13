@@ -33,24 +33,30 @@
   brc = branch --contains
   brm = branch --merged
   brnm = branch --no-merged
+  ci = commit
+  cl = clean
+  clf = clean --force
   clo = clone
   clor = clone --recursive
-  cl = clean
   co = checkout
-  clf = clean --force
   conflicts = diff --name-only --diff-filter=U
   sh = show
   shm = !sh -c 'git show $(git origin)..HEAD'
   sb = show-branch
-  ls = ls-files
   lo = log
   lf = log --follow
+  ll = log --graph --pretty='format:%h [%an] %s'
+  loa = log --graph --oneline --all --decorate --simplify-by-decoration
+  lot = log --graph --oneline --all --decorate --topo-order
+  los = log --graph --oneline --abbrev-commit
+  lof = log --format=fuller
+  lom = !sh -c 'git log $(git origin)..HEAD "$@"' -
+  llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
+  ls = ls-files
   st = status
   stb = status -sb
   s = status -s
   sn = status -s -b --untracked=no
-  co = checkout
-  ci = commit
   cep = cherry-pick
   df = diff
   dc = diff --cached
@@ -101,6 +107,7 @@
   rr = restore
   rt = remote
   se = send-email
+  sl = shortlog
   sm = submodule
   sts = stash
   stsp = stash pop
@@ -123,11 +130,6 @@
   summary = log --oneline
   rank = shortlog -sn --no-merges
   tree = log --graph --oneline --decorate
-  ll = log --graph --pretty='format:%h | %an | %s'
-  ls = ls-files
-  los = log --graph --oneline --abbrev-commit
-  lom = !sh -c 'git log $(git origin)..HEAD "$@"' -
-  llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
   fp = format-patch
   fpm = !sh -c 'git format-patch $(git origin)..HEAD "$@"' -
   po = push origin
@@ -141,7 +143,8 @@
   amende = commit --amend
   last = log --oneline -10
   review = log --stat=160,180 -p -w --patience --reverse -M -C -C -c
-  undo = reset --soft HEAD^
+  undo = reset HEAD^ --mixed
+  undoc = reset --soft HEAD^
   unstage = reset HEAD --
   nuke = !sh -c 'git reset --hard HEAD && git clean -fd'
   serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
