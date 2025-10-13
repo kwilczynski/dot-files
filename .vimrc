@@ -53,6 +53,8 @@ Plug 'godlygeek/tabular'
 
 Plug 'mg979/vim-visual-multi'
 
+Plug 'machakann/vim-highlightedyank'
+
 Plug 'junegunn/vim-easy-align'
 
 Plug 'ntpeters/vim-better-whitespace'
@@ -61,11 +63,12 @@ let g:strip_whitespace_on_save = 1
 let g:show_spaces_that_precede_tabs = 1
 let g:better_whitespace_skip_empty_lines = 1
 
+Plug 'airblade/vim-rooter'
+let g:rooter_silent_chdir = 1
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 let g:fzf_buffers_jump = 1
-
-Plug 'airblade/vim-rooter'
 
 Plug 'fatih/vim-go'
 let g:go_doc_popup_window = 1
