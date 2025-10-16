@@ -1,6 +1,7 @@
 alias v='vagrant'
 
 export VAGRANT_CHECKPOINT_DISABLE=1
+export VAGRANT_BOX_UPDATE_CHECK_DISABLE=1
 
 # Allow "v" alias to work for Vagrant.
 complete -o bashdefault -o default -o nospace -F _vagrant v

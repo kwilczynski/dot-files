@@ -1,0 +1,5 @@
+test -n "${XDG_RUNTIME_DIR}" || exit 0
+
+if [[ -e "${XDG_RUNTIME_DIR}/gcr/ssh" ]]; then
+    export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gcr/ssh"
+fi

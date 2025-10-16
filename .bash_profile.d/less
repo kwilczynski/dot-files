@@ -1,4 +1,7 @@
 export LESSHISTSIZE=10240
 export LESSHISTFILE="${HOME}/.less_history"
+
 export LESSSECURE=1
+export LESSSECURE_ALLOW="edit,glob,history,stop"
+
 export LESS='-R -M --shift 5 -i -x -4 -S -F -X --buffers=65535'
