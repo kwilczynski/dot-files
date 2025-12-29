@@ -95,10 +95,10 @@
   pt = push --tags
   t = tag
   tags = tag -l
-  w = whatchanged
-  wo = whatchanged --oneline
-  wn = whatchanged --name-only --oneline
-  wno = whatchanged --pretty='format:' --name-only
+  w = log --raw
+  wo = log --raw --oneline
+  wn = log --raw --name-only --oneline
+  wno = log --raw --pretty='format:' --name-only
   sts = status -s
   rl = reflog
   ref = reflog
@@ -166,10 +166,14 @@
   wr = worktree remove
   wp = worktree prune --verbose
 
+[protocol]
+  version = 2
+
 [advice]
   mergeConflict = false
   skippedCherryPicks = false
   addEmptyPathspec = false
+  addIgnoredFile = false
 
 [delta]
   tabs = 0
@@ -245,11 +249,16 @@
 [gc]
   auto = 0
   autoDetach = false
-  refLogExpire = never
-  refLogExpireUnreachable = never
+  prune = false
+  logExpiry = never
+  reflogExpire = never
+  reflogExpireUnreachable = never
+  worktreePruneExpire = never
+  pruneExpire = never
 
 [maintenance]
   auto = false
+  autoDetach = false
   strategy = none
 
 [trailer]
