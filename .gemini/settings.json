@@ -1,0 +1,54 @@
+{
+  "general": {
+    "checkpointing": {
+      "enabled": true
+    },
+    "previewFeatures": true,
+    "disableAutoUpdate": true,
+    "disableUpdateNag": true,
+    "enablePromptCompletion": false,
+    "preferredEditor": "vim"
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    },
+    "disableYoloMode": true
+  },
+  "telemetry": {
+    "enabled": false
+  },
+  "tools": {
+    "shell": {
+      "showColor": true
+    }
+  },
+  "ui": {
+    "accessibility": {
+      "disableLoadingPhrases": true
+    },
+    "hideTips": true,
+    "hideBanner": true,
+    "hideContextSummary": true,
+    "footer": {
+      "hideSandboxStatus": true,
+      "hideCWD": true,
+      "hideModelInfo": false
+    },
+    "useAlternateBuffer": false,
+    "hideWindowTitle": true,
+    "theme": "Dracula",
+    "showModelInfoInChat": true
+  },
+  "output": {
+    "format": "text"
+  },
+  "experimental": {
+    "codebaseInvestigatorSettings": {
+      "maxNumTurns": 20
+    }
+  }
+}
