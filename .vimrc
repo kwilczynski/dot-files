@@ -6,6 +6,9 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 
+Plug 'ayu-theme/ayu-vim'
+let ayucolor = "mirage"
+
 Plug 'kopischke/vim-stay'
 
 Plug 'Yggdroot/indentLine'
@@ -59,9 +62,11 @@ Plug 'junegunn/vim-easy-align'
 
 Plug 'ntpeters/vim-better-whitespace'
 let g:better_whitespace_enabled = 1
-let g:strip_whitespace_on_save = 1
-let g:show_spaces_that_precede_tabs = 1
 let g:better_whitespace_skip_empty_lines = 1
+let g:show_spaces_that_precede_tabs = 1
+let g:strip_whitespace_on_save = 1
+let g:strip_only_modified_lines = 1
+let g:strip_whitelines_at_eof = 1
 
 Plug 'airblade/vim-rooter'
 let g:rooter_silent_chdir = 1
@@ -141,7 +146,7 @@ Plug 'sebdah/vim-delve'
 
 Plug 'vim-ruby/vim-ruby'
 
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 Plug 'davidhalter/jedi-vim'
 
@@ -234,7 +239,8 @@ syntax sync minlines=250
 set synmaxcol=4096
 
 set background=dark
-colorscheme sorbet
+"colorscheme sorbet
+colorscheme ayu
 
 filetype plugin on
 filetype indent on
