@@ -54,13 +54,17 @@
   llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
   ls = ls-files
   st = status
+  stu = status --untracked=no
   stb = status -sb
   s = status -s
-  sn = status -s -b --untracked=no
+  su = status -s --untracked=no
+  sn = status -sb --untracked=no
   cep = cherry-pick
   df = diff
-  dc = diff --cached
-  ds = diff --stat
+  dfp = diff --diff-algorithm=patience
+  dfc = diff --cached
+  dfcs = diff --compact-summary
+  dfs = diff --stat
   dfr = diff --relative
   dfs = diff --staged
   dfn = diff --name-only
@@ -161,6 +165,7 @@
   reref = rerere forget
   rerefc = !sh -c 'rm -Rf "$(git root)/.git/rr-cache"'
   mt = mergetool
+  vc = verify-commit
   wa = worktree add
   wl = worktree list --verbose
   wr = worktree remove
