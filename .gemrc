@@ -5,8 +5,8 @@ backtrace: false
 bulk_threshold: 1000
 verbose: true
 sources:
-  - http://rubygems.org
-  - http://gemcutter.org
-  - http://gems.rubyforge.org/
-  - http://gems.github.com/
+  - https://rubygems.org
+  - https://gemcutter.org
+  - https://gems.rubyforge.org/
+  - https://gems.github.com/
 gem: --no-document --suggestions
