@@ -7,6 +7,5 @@
 --smart-case
 --block-buffered
 --no-sort-files
---no-unicode
 --glob=!.git/*
 --glob=!vendor/*
