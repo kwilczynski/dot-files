@@ -13,6 +13,18 @@ indent_style = tab
 indent_style = space
 indent_size = 2
 
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+[*.sh]
+indent_style = space
+indent_size = 4
+
+[*.c]
+indent_style = tab
+indent_size = 8
+
 [go.{mod,sum}]
 indent_style = tab
 indent_size = 8
@@ -20,3 +32,15 @@ indent_size = 8
 [*.go]
 indent_style = tab
 indent_size = 8
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.rb]
+indent_style = space
+indent_size = 2
+
+[*.rs]
+indent_style = space
+indent_size = 4
