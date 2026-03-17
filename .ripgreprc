@@ -9,3 +9,4 @@
 --no-sort-files
 --glob=!.git/*
 --glob=!vendor/*
+--glob=!**/.direnv/*
