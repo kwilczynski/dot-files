@@ -62,7 +62,7 @@ Plug 'junegunn/vim-easy-align'
 
 Plug 'ntpeters/vim-better-whitespace'
 let g:better_whitespace_enabled = 1
-let g:better_whitespace_skip_empty_lines = 1
+"let g:better_whitespace_skip_empty_lines = 1
 let g:show_spaces_that_precede_tabs = 1
 let g:strip_whitespace_on_save = 1
 let g:strip_only_modified_lines = 1
@@ -89,12 +89,12 @@ let g:go_def_mode = 'gopls'
 let g:go_imports_mode = 'gopls'
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports'
-let g:go_snippet_engine = 'ultisnips'
+"let g:go_snippet_engine = 'ultisnips'
 let g:go_addtags_transform = 'snakecase'
 let g:go_list_type = 'quickfix'
 let g:go_list_autoclose = 1
-let g:go_gocode_propose_source = 1
-let g:go_gocode_unimported_packages = 1
+"let g:go_gocode_propose_source = 1
+"let g:go_gocode_unimported_packages = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_chan_whitespace_error = 1
@@ -119,7 +119,7 @@ Plug 'maralla/completor.vim'
 let g:completor_auto_trigger = 1
 
 Plug 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = 'context'
+"let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabRetainCompletionType = 2
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -146,7 +146,7 @@ Plug 'sebdah/vim-delve'
 
 Plug 'vim-ruby/vim-ruby'
 
-"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 Plug 'davidhalter/jedi-vim'
 
@@ -172,7 +172,9 @@ let g:terraform_remap_spacebar = 0
 call plug#end()
 
 set nocompatible
-set modeline
+set nomodeline
+
+set display+=lastline
 
 nnoremap <Space> <Nop>
 let mapleader = "\<Space>"
@@ -209,19 +211,19 @@ set nofoldenable
 set splitright
 set splitbelow
 
-set mouse+=a
+set mouse=a
 if has("mouse_sgr")
     set ttymouse=sgr
 else
     set ttymouse=xterm2
-end
+endif
 
 if &term =~ '^screen'
     set ttymouse=xterm2
 endif
 
-set t_fd=
-set t_fe=
+"set t_fd=
+"set t_fe=
 set t_Co=256
 
 set term=xterm-256color
@@ -234,9 +236,9 @@ endif
 
 syntax enable
 syntax sync fromstart
-syntax sync minlines=250
+"syntax sync minlines=250
 
-set synmaxcol=4096
+set synmaxcol=1024
 
 set background=dark
 "colorscheme sorbet
@@ -246,12 +248,12 @@ filetype plugin on
 filetype indent on
 
 set encoding=utf-8
-set fileencodings=utf-8
+set fileencodings=utf-8,default,latin1
 set termencoding=utf-8
 set textwidth=120
-set history=128
+set history=1024
 
-set scrolloff=3
+set scrolloff=5
 
 set shortmess+=c
 set shortmess+=I
@@ -302,7 +304,7 @@ set smartcase
 set hidden
 set autoread
 
-set autochdir
+"set autochdir
 
 set showmatch
 
@@ -325,6 +327,7 @@ set nostartofline
 set pastetoggle=<F5>
 
 set undoreload=65535
+set undolevels=16384
 set undofile
 
 set backup
@@ -431,6 +434,8 @@ augroup configgroup
     " Disabled.  Broken?
     "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+    autocmd BufReadPre * if getfsize(expand("%")) > 1048576 | syntax off | endif
+
     autocmd BufEnter * if &filetype == "" | setlocal filetype=text | endif
     " Disabled.  Broken?
     "autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
@@ -451,21 +456,20 @@ augroup configgroup
     autocmd FileType git,gitcommit,gitsendemail DisableWhitespace
     autocmd FileType git,gitcommit,gitsendemail colorscheme slate
     autocmd FileType git,gitcommit,gitsendemail setlocal textwidth=72 foldmethod=syntax foldlevel=1
-    autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
-    autocmd FileType sh,bash setlocal formatoptions-=t expandtab shiftwidth=4 tabstop=8 softtabstop=4 commentstring=#\ %s
-    autocmd FileType rb,ruby setlocal formatoptions-=t expandtab textwidth=120 shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType py,python setlocal formatoptions-=t expandtab textwidth=80 shiftwidth=4 tabstop=8 softtabstop=4
+    autocmd FileType vim setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 formatoptions-=t commentstring=\"\ %s
+    autocmd FileType bash setlocal formatoptions-=t expandtab shiftwidth=4 tabstop=8 softtabstop=4 commentstring=#\ %s
+    autocmd FileType ruby setlocal formatoptions-=t expandtab textwidth=120 shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType python setlocal formatoptions-=t expandtab textwidth=80 shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType php setlocal formatoptions-=t expandtab shiftwidth=4 tabstop=4 softtabstop=4
     autocmd FileType html,xhtml,xml,xslt setlocal formatoptions-=t expandtab shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType css setlocal formatoptions-=t expandtab shiftwidth=4 tabstop=4 softtabstop=4
-    autocmd FileType js,javascript setlocal formatoptions-=t expandtab shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType cpp,hpp setlocal formatoptions-=t noexpandtab cindent textwidth=80 shiftwidth=8 tabstop=8 softtabstop=8 commentstring=//\ %s
-    autocmd FileType c,h setlocal formatoptions-=t noexpandtab cindent textwidth=80 shiftwidth=8 tabstop=8 softtabstop=8 commentstring=/*\ %s
+    autocmd FileType javascript setlocal formatoptions-=t expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType cpp setlocal formatoptions-=t noexpandtab cindent textwidth=80 shiftwidth=8 tabstop=8 softtabstop=8 commentstring=//\ %s
+    autocmd FileType c setlocal formatoptions-=t noexpandtab cindent textwidth=80 shiftwidth=8 tabstop=8 softtabstop=8 commentstring=/*\ %s
     autocmd FileType go setlocal formatoptions-=t noexpandtab textwidth=120 shiftwidth=8 tabstop=8 softtabstop=8
-    autocmd FileType rs,rc setlocal formatoptions-=t expandtab textwidth=100 shiftwidth=4 tabstop=8 softtabstop=4
+    autocmd FileType rust setlocal formatoptions-=t expandtab textwidth=100 shiftwidth=4 tabstop=8 softtabstop=4
     autocmd FileType make setlocal formatoptions-=t noexpandtab shiftwidth=8 softtabstop=0
     autocmd FileType sql setlocal commentstring=--\ %s
-    autocmd FileType yml,yaml setlocal formatoptions-=t expandtab shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd FileType tf,hcl setlocal formatoptions-=t commentstring=#\ %s
-    autocmd FileType vim setlocal formatoptions-=t commentstring=\"\ %s
+    autocmd FileType yaml setlocal formatoptions-=t expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType terraform setlocal formatoptions-=t commentstring=#\ %s
 augroup END
