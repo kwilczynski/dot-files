@@ -4,10 +4,10 @@
 [includeIf "gitdir:~/Development/Projects/Personal/"]
   path = ~/.gitconfig-personal
 
-[includeIf "gitdir:~/Projects/Personal/Linux/"]
+[includeIf "hasconfig:remote.*.url:ssh://git@gitolite.kernel.org/**"]
   path = ~/.gitconfig-linux
 
-[includeIf "gitdir:~/Development/Projects/Personal/Linux/"]
+[includeIf "hasconfig:remote.*.url:*://git.kernel.org/**"]
   path = ~/.gitconfig-linux
 
 [includeIf "gitdir:~/Projects/Work/"]
@@ -23,8 +23,10 @@
   a = add
   au = add -u .
   ap = add -p
+  ay = apply
   ame = amend
   ami = am -i
+  ama = am --abort
   b = branch
   bl = blame
   br = branch -v
@@ -36,11 +38,14 @@
   ci = commit
   cl = clean
   clf = clean --force
+  clfd = clean --force -d
   clo = clone
   clor = clone --recursive
   co = checkout
   conflicts = diff --name-only --diff-filter=U
   sh = show
+  sh1 = show -1
+  sh2 = show -2
   shm = !sh -c 'git show $(git origin)..HEAD'
   sb = show-branch
   lo = log
@@ -51,6 +56,7 @@
   los = log --graph --oneline --abbrev-commit
   lof = log --format=fuller
   lom = !sh -c 'git log $(git origin)..HEAD "$@"' -
+  lop = log --first-parent --oneline
   llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
   ls = ls-files
   st = status
@@ -59,22 +65,32 @@
   s = status -s
   su = status -s --untracked=no
   sn = status -sb --untracked=no
+  bi = bisect
+  bis = bisect start
+  bir = bisect reset
+  big = bisect good
+  bib = bisect bad
   cep = cherry-pick
+  cepa = cherry-pick --abort
+  cepc = cherry-pick --continue
   df = diff
   dfp = diff --diff-algorithm=patience
   dfc = diff --cached
   dfcs = diff --compact-summary
-  dfs = diff --stat
   dfr = diff --relative
   dfs = diff --staged
+  dft = diff --stat
   dfn = diff --name-only
+  dftt = diff-tree
+  dfns = diff --name-status
+  dfw = diff -w
   dfm = !sh -c 'git diff $(git name-rev --name-only $(git origin))'
   df1 = diff HEAD~
   df2 = diff HEAD~~
   df3 = diff HEAD~~~
   df4 = diff HEAD~~~~
   df5 = diff HEAD~~~~~
-  wdc = diff --color-words --cache
+  wdc = diff --color-words --cached
   rb = rebase
   rba = rebase --abort
   rbc = rebase --continue
@@ -83,9 +99,11 @@
   rbm = !sh -c 'git rebase --interactive $(git origin) "$@"' -
   rbr = rebase --root
   rbs = rebase --skip
+  rd = range-diff
   me = merge
   rs = remote show
   remotes = remote -v
+  f = fetch
   fe = fetch
   fea = fetch --all
   pu = pull
@@ -109,14 +127,16 @@
   r = reset
   rh = reset --hard
   rr = restore
+  rrs = restore --staged
   rt = remote
   se = send-email
   sl = shortlog
   sm = submodule
-  sts = stash
-  stsp = stash pop
-  stsd = stash drop
-  stash-all = stash save --include-untracked
+  sta = stash
+  stal = stash list
+  stap = stash pop
+  stad = stash drop
+  staa = stash push --include-untracked
   sms = submodule status
   smi = submodule init
   smu = submodule update
@@ -135,13 +155,15 @@
   rank = shortlog -sn --no-merges
   tree = log --graph --oneline --decorate
   fp = format-patch
+  fp1 = format-patch -1
   fpm = !sh -c 'git format-patch $(git origin)..HEAD "$@"' -
   po = push origin
-  pu = push -u origin HEAD
+  poh = push -u origin HEAD
   pf = push --force-with-lease
   pom = !sh -c 'git push origin $(git origin) "$@"' -
   changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
   pob = !sh -c 'git push origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") "$@"' -
+  pobf = !sh -c 'git push origin $(git branch --show-current) --force-with-lease "$@"' -
   purb = !sh -c 'git pull origin $(git branch -l 2> /dev/null | sed -e \"/^[^*]/d\" -e \"s/* \\(.*\\)/\\1/\") --rebase "$@"' -
   amend = commit --amend --reuse-message=HEAD
   amende = commit --amend
@@ -155,7 +177,7 @@
   hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
   this = !git init && git add . && git commit -m \"Initial commit.\"
   empty = !git init && git commit --allow-empty -m \"Initial commit.\"
-  r = !git ls-files -z --deleted | xargs -0 git rm
+  rmd = !git ls-files -z --deleted | xargs -0 git rm
   wd = !git diff | delta --features='default no-line-numbers' --true-color='always' --color-only | less -FRSX
   update-author = !sh -c 'git rebase --onto $1 --exec \"git commit --amend --author=$2\" $1' --
   origin = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
@@ -170,9 +192,6 @@
   wl = worktree list --verbose
   wr = worktree remove
   wp = worktree prune --verbose
-
-[protocol]
-  version = 2
 
 [advice]
   mergeConflict = false
@@ -211,6 +230,9 @@
 [rename]
   limit = 0
 
+[status]
+  compareBranches = @{upstream} @{push}
+
 [checkout]
   workers = 0
 
@@ -227,15 +249,13 @@
   prompt = false
 
 [mergetool "meld"]
-  path = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+  cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 
 [diff]
   algorithm = histogram
   renames = copies
   submodule = diff
   mnemonicprefix = true
-  compactionHeuristic = true
-  indentHeuristic = true
   colorMoved = dimmed_zebra
 
 [log]
@@ -247,9 +267,7 @@
   autocrlf = input
   quotePath = false
   longPaths = true
-  commitGraph = true
   untrackedCache = true
-  preloadIndex = true
 
 [gc]
   auto = 0
@@ -281,7 +299,7 @@
   defaultBranch = main
 
 [credential]
-  helper = store
+  helper = cache --timeout=3600
 
 [credential "https://github.com"]
   username = kwilczynski
@@ -315,13 +333,11 @@
 
 [url "git@github.com:"]
   insteadOf = gh:
+  insteadOf = https://github.com/
   pushInsteadOf = github:
   pushInsteadOf = git://github.com/
 
-[url "git@github.com:"]
-    insteadOf = https://github.com/
-
-[url "git://github.com/"]
+[url "https://github.com/"]
   insteadOf = github:
 
 [url "git@gist.github.com:"]
@@ -329,5 +345,5 @@
   pushInsteadOf = gist:
   pushInsteadOf = git://gist.github.com/
 
-[url "git://gist.github.com/"]
+[url "https://gist.github.com/"]
   insteadOf = gist:
