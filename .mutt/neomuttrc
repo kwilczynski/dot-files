@@ -12,6 +12,8 @@ alternates \
 
 set quit = ask-yes
 
+set abort_key = "<Esc>"
+
 unset user_agent
 unset use_domain
 set use_from      = yes
@@ -35,7 +37,7 @@ set forward_format = "Fwd: %s"
 set forward_decode = yes
 set forward_quote  = yes
 
-set mime_forward = yes
+set mime_forward = no
 
 set attribution = "On %d, %n wrote:"
 
@@ -54,35 +56,36 @@ set sendmail_wait = 0
 
 # Disabled.  Moved to msmtp.
 # set smtp_url            = ""
-# set smtp_pass           = ""
-# Disabled.  Mutt will try all available methods,
-# in order from most-secure to least-secure.
-# set smtp_authenticators = "login"
-# Disabled.  Moved to msmtp.
-# set smtp_authenticators = ""
+# set imap_pass           = ""
+# set smtp_authenticators = "plain:login"
 
-unset imap_passive
 set imap_passive          = no
 set imap_keepalive        = 300
 set imap_check_subscribed = no
 set imap_user             = ""
 set imap_pass             = ""
-# Disabled.  Mutt will try all available methods,
-# in order from most-secure to least-secure.
-# set imap_authenticators   = "login"
-set imap_authenticators   = ""
+set imap_authenticators   = "plain:login"
+
+set imap_deflate   = yes
+set imap_condstore = yes
+set imap_qresync   = yes
+
+set header_cache_compress_method = "zlib"
+set header_cache_backend         = "lmdb"
 
 set folder    = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set mbox      = "+[Gmail]/All Mail"
 unset record
-# Disabled. Causes duplicates in GMail.
-set record    = "+[Gmail]/Sent Mail"
+# Disabled. Causes duplicate messages.
+# set record    = "+[Gmail]/Sent Mail"
 set postponed = "+[Gmail]/Drafts"
 set trash     = "+[Gmail]/Bin"
 
 set move = no
-set copy = yes
+# Disabled. Causes duplicate messages.
+# set copy = yes
+set copy = no
 
 set mark_old        = no
 set collapse_unread = yes
@@ -95,10 +98,9 @@ set sleep_time = 0
 
 set auto_tag = yes
 
-set sort               = "threads"
-set sort_aux           = "reverse-last-date-received"
-set sort_browser       = "reverse-date"
-set sort_thread_groups = "aux"
+set sort         = "threads"
+set sort_aux     = "reverse-last-date-received"
+set sort_browser = "reverse-date"
 
 set strict_threads    = yes
 set duplicate_threads = yes
@@ -112,6 +114,12 @@ alternative_order \
   "text/enriched" \
   "text/html"     \
   "*"
+
+bind index \e[M noop
+bind pager \e[M noop
+
+bind index g noop
+bind pager g noop
 
 bind index gg first-entry
 bind index G last-entry
@@ -150,11 +158,6 @@ set tilde    = yes
 
 set menu_scroll = yes
 
-ignore \
-  "Authentication-Results:" \
-  "DomainKey-Signature:"    \
-  "DKIM-Signature:"
-
 ignore "*"
 unignore \
   "From" \
@@ -173,6 +176,29 @@ hdr_order \
   "Date:" \
   "Subject:"
 
+bind index,pager B sidebar-toggle-visible
+
+set sidebar_visible       = no
+set sidebar_width         = 35
+set sidebar_format        = "%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_short_path    = yes
+set sidebar_delim_chars   = "/."
+set sidebar_folder_indent = yes
+set sidebar_indent_string = "  "
+
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
+
+mailboxes \
+  "=INBOX" \
+  "=[Gmail]/All Mail" \
+  "=[Gmail]/Sent Mail" \
+  "=[Gmail]/Drafts" \
+  "=[Gmail]/Starred" \
+  "=[Gmail]/Bin" \
+  "=Linux PCI"
+
 macro compose <esc>1 "<esc>f^UKrzysztof Wilczyński <kw@linux.com><enter>"
 macro compose <esc>2 "<esc>f^UKrzysztof Wilczyński <kwilczynski@kernel.org><enter>"
 
@@ -187,6 +213,8 @@ macro index,pager gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent"
 macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>"    "Go to Drafts"
 macro index,pager gS "<change-folder>=[Gmail]/Starred<enter>"   "Go to Starred"
 
-send2-hook "~e kwilczynski@kernel.org" "set sendmail = 'msmtp -a kernel'"
+send2-hook \
+  "~e kwilczynski@kernel.org" \
+  "set sendmail = 'msmtp -a kernel'"
 
 source ~/.mutt/dracula.muttrc
