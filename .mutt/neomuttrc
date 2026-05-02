@@ -12,19 +12,20 @@ alternates \
 
 set quit = ask-yes
 
-set abort_key = "<Esc>"
-
 unset user_agent
 unset use_domain
-set use_from      = yes
-set envelope_from = yes
+
+set use_from          = yes
+set use_envelope_from = yes
+
 set edit_headers  = yes
 set fast_reply    = yes
 set reply_to      = yes
 set include       = yes
 set askcc         = yes
-set fcc_attach    = yes
-set fcc_clear     = no
+
+set fcc_attach = yes
+set fcc_clear  = no
 
 set reverse_name     = yes
 set reverse_realname = yes
@@ -46,53 +47,24 @@ set message_id_format = "<%Y%02m%02d%02H%02M%02S.G%c%p@%f>"
 set mail_check = 30
 set timeout    = 300
 
-set use_ipv6 = no
-
-unset ssl_starttls
-set ssl_force_tls = yes
-
 set sendmail      = "msmtp"
 set sendmail_wait = 0
-
-# Disabled.  Moved to msmtp.
-# set smtp_url            = ""
-# set imap_pass           = ""
-# set smtp_authenticators = "plain:login"
-
-set imap_passive          = no
-set imap_keepalive        = 300
-set imap_check_subscribed = no
-set imap_user             = ""
-set imap_pass             = ""
-set imap_authenticators   = "plain:login"
-
-set imap_deflate   = yes
-set imap_condstore = yes
-set imap_qresync   = yes
 
 set header_cache_compress_method = "zlib"
 set header_cache_backend         = "lmdb"
 
-set folder    = "imaps://imap.gmail.com:993"
+set folder    = "~/Mail/gmail"
 set spoolfile = "+INBOX"
-set mbox      = "+[Gmail]/All Mail"
 unset record
-# Disabled. Causes duplicate messages.
-# set record    = "+[Gmail]/Sent Mail"
 set postponed = "+[Gmail]/Drafts"
 set trash     = "+[Gmail]/Bin"
 
 set move = no
-# Disabled. Causes duplicate messages.
-# set copy = yes
-set copy = no
 
 set mark_old        = no
 set collapse_unread = yes
 
-set header_cache     = "~/.mutt/cache/headers"
-set message_cachedir = "~/.mutt/cache/bodies"
-set certificate_file = "~/.mutt/certificates"
+set header_cache = "~/.mutt/cache/headers"
 
 set sleep_time = 0
 
@@ -115,6 +87,7 @@ alternative_order \
   "text/html"     \
   "*"
 
+
 bind index \e[M noop
 bind pager \e[M noop
 
@@ -125,7 +98,6 @@ bind index gg first-entry
 bind index G last-entry
 bind index <tab> sync-mailbox
 bind index <space> collapse-thread
-bind index "^" imap-fetch-mail
 
 unset markers
 
@@ -192,15 +164,17 @@ bind index,pager \Co sidebar-open
 
 mailboxes \
   "=INBOX" \
-  "=[Gmail]/All Mail" \
   "=[Gmail]/Sent Mail" \
   "=[Gmail]/Drafts" \
   "=[Gmail]/Starred" \
+  "=[Gmail]/Spam" \
   "=[Gmail]/Bin" \
   "=Linux PCI"
 
-macro compose <esc>1 "<esc>f^UKrzysztof Wilczyński <kw@linux.com><enter>"
-macro compose <esc>2 "<esc>f^UKrzysztof Wilczyński <kwilczynski@kernel.org><enter>"
+macro index "^" "<shell-escape>mbsync -a<enter>" "Sync Mail"
+
+macro compose <f1> "<edit-from>^UKrzysztof Wilczyński <kw@linux.com><enter>"
+macro compose <f2> "<edit-from>^UKrzysztof Wilczyński <kwilczynski@kernel.org><enter>"
 
 macro index,pager ! "<save-message>=[Gmail]/Spam<enter><enter>"      "Report as Spam"
 macro index,pager + "<save-message>=[Gmail]/Important<enter><enter>" "Mark as Important"
@@ -208,13 +182,15 @@ macro index,pager e "<save-message>=[Gmail]/All Mail<enter><enter>"  "Archive Me
 macro index,pager d "<save-message>=[Gmail]/Bin<enter><enter>"       "Delete Message"
 
 macro index,pager gi "<change-folder>=INBOX<enter>"             "Go to Inbox"
-macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>"  "Go to All Mail"
+
 macro index,pager gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent"
 macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>"    "Go to Drafts"
 macro index,pager gS "<change-folder>=[Gmail]/Starred<enter>"   "Go to Starred"
+macro index,pager gp "<change-folder>=Linux PCI<enter>"         "Go to Linux PCI"
 
-send2-hook \
-  "~e kwilczynski@kernel.org" \
-  "set sendmail = 'msmtp -a kernel'"
+set record = "+[Gmail]/Sent Mail"
+set copy = yes
+send2-hook "~f kwilczynski@kernel.org" "set sendmail = 'msmtp -a kernel'; set copy = yes"
+send2-hook "!~f kwilczynski@kernel.org" "set sendmail = 'msmtp'; set copy = no"
 
 source ~/.mutt/dracula.muttrc

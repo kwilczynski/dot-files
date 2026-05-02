@@ -1,0 +1,87 @@
+CopyArrivalDate yes
+
+IMAPAccount gmail
+Host imap.gmail.com
+Port 993
+User
+Pass
+TLSType IMAPS
+TLSVersions +1.3
+AuthMechs PLAIN LOGIN
+# Disabled. Enable to bust GMail quota limit.
+# PipelineDepth 50
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+SubFolders Verbatim
+Path ~/Mail/gmail/
+Inbox ~/Mail/gmail/INBOX
+
+Channel gmail-inbox
+Far :gmail-remote:
+Near :gmail-local:
+Patterns INBOX
+Sync All
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-sent
+Far :gmail-remote:"[Gmail]/Sent Mail"
+Near :gmail-local:"[Gmail]/Sent Mail"
+Sync All
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-drafts
+Far :gmail-remote:"[Gmail]/Drafts"
+Near :gmail-local:"[Gmail]/Drafts"
+Sync All
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-starred
+Far :gmail-remote:"[Gmail]/Starred"
+Near :gmail-local:"[Gmail]/Starred"
+Sync All
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-bin
+Far :gmail-remote:"[Gmail]/Bin"
+Near :gmail-local:"[Gmail]/Bin"
+Sync All
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-spam
+Far :gmail-remote:"[Gmail]/Spam"
+Near :gmail-local:"[Gmail]/Spam"
+Sync All
+Create Both
+Expunge Both
+SyncState *
+
+
+Channel gmail-linux-pci
+Far :gmail-remote:"Linux PCI"
+Near :gmail-local:"Linux PCI"
+Sync All
+Create Near
+Expunge Near
+SyncState *
+
+Group gmail
+Channel gmail-inbox
+Channel gmail-sent
+Channel gmail-drafts
+Channel gmail-starred
+Channel gmail-bin
+Channel gmail-spam
+Channel gmail-linux-pci
